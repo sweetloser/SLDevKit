@@ -1,0 +1,22 @@
+PODS:
+  - SLDevKit (0.0.1):
+    - SLDevKit/SLFoundation (= 0.0.1)
+  - SLDevKit/SLDefs (0.0.1)
+  - SLDevKit/SLFoundation (0.0.1):
+    - SLDevKit/SLDefs
+    - SLDevKit/SLUtils
+  - SLDevKit/SLUtils (0.0.1)
+
+DEPENDENCIES:
+  - SLDevKit (from `../`)
+
+EXTERNAL SOURCES:
+  SLDevKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SLDevKit: 908a3f2583599bec4fd4fa8d7ddf1a31be6e30fb
+
+PODFILE CHECKSUM: 2fab8fc10576fdb2dcdacf8f41d20a9a42ea225d
+
+COCOAPODS: 1.11.3
