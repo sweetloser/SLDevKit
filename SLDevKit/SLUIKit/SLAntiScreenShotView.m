@@ -83,11 +83,18 @@
         [self.realContainView addSubview:view];
     }
 }
+#pragma mark - UITextField代理方法
+// 禁止当前UITextField成为响应者，从而导致键盘莫名其妙弹出
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == self.textField) return NO;
+    return YES;
+}
 #pragma mark - 懒加载
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
         _textField.secureTextEntry = YES;
+        _textField.delegate = self;
     }
     return _textField;
 }
