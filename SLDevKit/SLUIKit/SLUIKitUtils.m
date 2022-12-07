@@ -6,11 +6,13 @@
 //
 
 #import "SLUIKitUtils.h"
+#import "SLDefs.h"
 
 @implementation SLUIKitUtils
 
 + (UIColor *)_colorWithColorObject:(id)object {
     if ([object isKindOfClass:UIColor.class]) {
+        // 参数是一个 UIColor对象，则直接返回该对象。
         return object;
     }else if ([object isKindOfClass:NSString.class]) {
         CGFloat alpha_ = 1.f;
@@ -48,11 +50,11 @@
             BOOL isHex_ = NO;
             // 判断是否是 @"#FFFFFF" 之类的颜色值
             if ([object hasPrefix:@"#"]) {
-                [object substringFromIndex:1];
+                object = [object substringFromIndex:1];
                 isHex_ = YES;
             }
             if ([object hasPrefix:@"0x"] || [object hasPrefix:@"0X"]) {
-                [object substringFromIndex:2];
+                object = [object substringFromIndex:2];
                 isHex_ = YES;
             }
             
@@ -82,6 +84,60 @@
         }
     } else if ([object isKindOfClass:[UIImage class]]) {
         return [UIColor colorWithPatternImage:object];
+    }
+    return nil;
+}
+
++ (UIFont *)_fontWithFontObject:(id)object {
+    if ([object isKindOfClass:[UIFont class]]) {
+        // 参数是 UIFont 类型，直接返回 object
+        return object;
+    } else if ([object isKindOfClass:[NSNumber class]]){
+        // 参数是 NSNumber 类型，则默认为系统bold字体+字号
+        return [UIFont boldSystemFontOfSize:[object floatValue]];
+    } else if ([object isKindOfClass:[NSString class]]) {
+        // 参数是 NSString 类型
+        // 1.判断是否为固定字体。eg.@"body",@"title1"等。
+        static NSMutableDictionary *fontStyles = nil;
+        if (fontStyles == nil) {
+            fontStyles = [@{@"headline":    UIFontTextStyleHeadline,
+                            @"subheadline": UIFontTextStyleSubheadline,
+                            @"caption1":    UIFontTextStyleCaption1,
+                            @"caption2":    UIFontTextStyleCaption2,
+                            @"body":        UIFontTextStyleBody,
+                            @"footnote":    UIFontTextStyleFootnote} mutableCopy];
+            
+            if (SL_SYSTEM_VERSION_HIGHER_EQUAL(9)) {// iOS9新增系统字体
+                // 消除警告
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored"-Wunguarded-availability"
+                [fontStyles setObject:UIFontTextStyleCallout forKey:@"callout"];
+                [fontStyles setObject:UIFontTextStyleTitle1 forKey:@"title1"];
+                [fontStyles setObject:UIFontTextStyleTitle2 forKey:@"title2"];
+                [fontStyles setObject:UIFontTextStyleTitle3 forKey:@"title3"];
+    #pragma clang diagnostic pop
+            }
+        }
+        // 将字符串转化为小写
+        NSString *fontString_ = [object lowercaseString];
+        NSString *fontStyle_ = [fontStyles objectForKey:fontString_];
+        
+        if (fontStyle_ != nil) {
+            // 返回对应的字体
+            return [UIFont preferredFontForTextStyle:fontStyle_];
+        }
+        
+        NSArray *fontElements_ = [object componentsSeparatedByString:@","];
+        if (fontElements_.count == 2) {
+            // 包含字体名和字号
+            NSString *fontName_ = fontElements_[0];
+            CGFloat fontSize_ = [fontElements_[1] floatValue];
+            return [UIFont fontWithName:fontName_ size:fontSize_];
+        }
+        CGFloat fontSize_ = [fontString_ floatValue];
+        if (fontSize_ > 0) {
+            return [UIFont systemFontOfSize:fontSize_];
+        }
     }
     return nil;
 }

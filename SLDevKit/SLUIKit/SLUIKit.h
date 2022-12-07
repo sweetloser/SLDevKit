@@ -12,5 +12,6 @@
 #import "SLUIKitUtils.h"
 #import "UIColor+SLChainable.h"
 #import "SLAntiScreenShotView.h"
+#import "UIFont+SLChainable.h"
 
 #endif /* SLUIKit_h */

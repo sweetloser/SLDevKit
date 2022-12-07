@@ -42,6 +42,8 @@ __attribute__((always_inline)) CGFloat _tabBarFullHeight(void);
 ///                              UIImage对象
 +(UIColor *)_colorWithColorObject:(id)object;
 
++(UIFont *)_fontWithFontObject:(id)object;
+
 @end
 
 

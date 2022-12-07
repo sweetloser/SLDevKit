@@ -37,7 +37,7 @@ _61,_62,_63,N,...)    N
 #define SL_NUMBER_OF_VA_ARGS_(...)      SL_ARG_N(__VA_ARGS__)
 #define SL_NUMBER_OF_VA_ARGS(...)       SL_NUMBER_OF_VA_ARGS_(__VA_ARGS__, SL_RESQ_N())
 
-
+#pragma mark - block property设置 - 宏定义
 /// `readonly` 属性前缀
 #define SL_READONLY             @property(nonatomic, readonly)
 
@@ -45,7 +45,8 @@ _61,_62,_63,N,...)    N
 /// eg:SL_PROP(NSString, Empty) str   ==>@property(nonatomic, readonly)SLChainedNSStringEmptyBlock str
 #define SL_PROP(T, D)           SL_READONLY SLChainable##T##D##Block
 
-/// 重定义链式block的前半部分(未包含参数部分)
+#pragma mark - block property 类型 - typedef
+/// typedef链式block的前半部分(未包含参数部分)
 /// eg:SL_CHAINABLE_TYPE(NSString, Empty)   ==> typedef NSString *(^SLChainedNSStringEmptyBlock)
 #define SL_CHAINABLE_TYPE(T, D)       typedef T *_Nonnull(^SLChainable##T##D##Block)
 
@@ -59,6 +60,7 @@ SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                     \
 SL_CHAINABLE_TYPE(T, Float)(CGFloat);                       \
 SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);
 
+#pragma mark - 链式block的实现 - typedef
 //
 #define SL_CHAINABLE_BLOCK(T, ...) return ^(T value) {__VA_ARGS__; return self;}
 
@@ -83,11 +85,21 @@ SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);
 ///   - _ts: 类型的encode字符串 eg "i","d"
 ///   - _t: 给定类型 eg.int,double
 #define SL_IS_TYPE_OF(_ts, _t)          (strcmp(_ts,@encode(_t))==0)
-
-#define SL_IS_OBJECT(x)         (strchr("@#",SL_TYPE_FIRST_LETTER(x)) != NULL)
-
+/// 判断 x 是否为 NSString 类（或子类）
 #define SL_IS_STRING_CLASS(x)    SLObjectIsKindOfClass(@"NSString", x)
-#define SL_IS_STRING(x)         (SL_IS_OBJECT(x) && SL_IS_STRING_CLASS(x))
 
+#define SL_CHECK_IS_INT(x)          (strchr("liBLIcsqCSQ", x) != NULL)
+#define SL_CHECK_IS_FLOAT(x)        (strchr("df", x) != NULL)
+#define SL_CHECK_IS_PRIMITIVE(x)    (strchr("liBdfLIcsqCSQ", x) != NULL)
+
+/// 判断 x 是否为OC对象
+#define SL_IS_OBJECT(x)         (strchr("@#",SL_TYPE_FIRST_LETTER(x)) != NULL)
+/// 判断 x 是否为NSString对象
+#define SL_IS_STRING(x)         (SL_IS_OBJECT(x) && SL_IS_STRING_CLASS(x))
+#define SL_IS_INT(x)            SL_CHECK_IS_INT(SL_TYPE_FIRST_LETTER(x))
+
+#pragma mark - 系统判断
+// 系统是否高于 n 。eg.    SL_SYSTEM_VERSION_HIGHER_EQUAL(8) ===> 判断手机系统是否为iOS 8 及以上。
+#define SL_SYSTEM_VERSION_HIGHER_EQUAL(n)  ([[[UIDevice currentDevice] systemVersion] floatValue] >= n)
 
 #endif /* SLDefs_h */
