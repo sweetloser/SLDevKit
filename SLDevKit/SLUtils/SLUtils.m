@@ -15,9 +15,11 @@ id _slConvertValueToString(const char *type, ...) {
     va_start(argList, type);
     
     if (SL_CHECK_IS_INT(type[0])) {
+        // 判断参数是否为整型【所有整型：包含int、long、bool、short等】
         NSInteger n = va_arg(argList, NSInteger);
         return [@(n) description];
     } else if (SL_CHECK_IS_FLOAT(type[0])) {
+        // 判断参数是否为浮点型【float、double】
         double d = va_arg(argList, double);
         return [@(d) description];
     } else {

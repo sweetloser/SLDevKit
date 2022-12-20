@@ -42,6 +42,12 @@ __attribute__((always_inline)) CGFloat _tabBarFullHeight(void);
 ///                              UIImage对象
 +(UIColor *)_colorWithColorObject:(id)object;
 
+/// 从一个obj中创建一个UIFont对象
+/// - Parameter object: 参数可以是：@"body"   固定的系统字体
+///                               @15       指定字号的加粗字体
+///                               @"15"     指定字号的系统字体
+///                               @"PingFang SC, 16"    指定字体名+字号
+///                               UIFont对象 返回参数本身
 +(UIFont *)_fontWithFontObject:(id)object;
 
 @end
