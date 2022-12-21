@@ -16,4 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIView (SLUIKitPrivate)
+
+@property(nonatomic,assign)UIEdgeInsets slTouchInsets;
+
+@end
+
 NS_ASSUME_NONNULL_END

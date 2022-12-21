@@ -10,6 +10,39 @@
 #import <objc/objc.h>
 #import <objc/runtime.h>
 
+#pragma mark - typedef
+typedef struct SLFloatList {
+    CGFloat f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
+    CGFloat validCount;
+} SLFloatList;
+
+typedef void(^SLObjectBlock)(id);
+
+#pragma mark - 将float参数列表转化为SLFloatList结构体类型
+/**
+ {
+    SLFloatList _floatList = (SLFloatList){__VA_ARGS__};
+    // 设置 validCount 最多可以传10个参数
+    _floatList.validCount = MIN(10, SL_NUMBER_OF_VA_ARGS(__VA_ARGS__));
+    // 返回 _floatList
+    _floatList;
+ }
+ */
+#define SL_MAKE_FLOAT_LIST(...)     ({SLFloatList _floatList = (SLFloatList){__VA_ARGS__};  \
+_floatList.validCount = MIN(10,SL_NUMBER_OF_VA_ARGS(__VA_ARGS__));    \
+_floatList;})
+
+#pragma mark - 获取可变参数列表中【参数都为id类型】的参数，存储在数组(arguments)中
+#define SL_GET_VARIABLE_OBJECT_ARGUMENTS(start) \
+NSMutableArray *arguments = [NSMutableArray array];\
+va_list argList;\
+va_start(argList, start);\
+id argument = 0;\
+while ((argument = va_arg(argList, id))) {\
+    [arguments addObject:argument];\
+}\
+va_end(argList);
+
 #pragma mark - 获取变参的参数个数
 // eg:SL_NUMBER_OF_VA_ARGS(a,b,c,d,e,f) ===> 6
 //  SL_NUMBER_OF_VA_ARGS(a,b,c,d,e,f)  宏展开为:SL_NUMBER_OF_VA_ARGS_(a,b,c,d,e,f,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0)    // 原参数后又加了64个参数
@@ -50,15 +83,20 @@ _61,_62,_63,N,...)    N
 /// eg:SL_CHAINABLE_TYPE(NSString, Empty)   ==> typedef NSString *(^SLChainedNSStringEmptyBlock)
 #define SL_CHAINABLE_TYPE(T, D)       typedef T *_Nonnull(^SLChainable##T##D##Block)
 
-#define SL_DEFINE_CHAINABLE_BLOCKS(T)                       \
-SL_CHAINABLE_TYPE(T, Empty)(void);                          \
-SL_CHAINABLE_TYPE(T, Object)(id);                           \
-SL_CHAINABLE_TYPE(T, TwoObject)(id, id);                    \
-SL_CHAINABLE_TYPE(T, ObjectList)(id, ...);                  \
-SL_CHAINABLE_TYPE(T, Int)(NSInteger);                       \
-SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                     \
-SL_CHAINABLE_TYPE(T, Float)(CGFloat);                       \
-SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);
+#define SL_DEFINE_CHAINABLE_BLOCKS(T)                               \
+SL_CHAINABLE_TYPE(T, Empty)(void);                                  \
+SL_CHAINABLE_TYPE(T, Object)(id);                                   \
+SL_CHAINABLE_TYPE(T, TwoObject)(id, id);                            \
+SL_CHAINABLE_TYPE(T, ObjectList)(id, ...);                          \
+SL_CHAINABLE_TYPE(T, Int)(NSInteger);                               \
+SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                             \
+SL_CHAINABLE_TYPE(T, Float)(CGFloat);                               \
+SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);                    \
+SL_CHAINABLE_TYPE(T, FourFloat)(CGFloat,CGFloat,CGFloat,CGFloat);   \
+SL_CHAINABLE_TYPE(T, FloatList)(SLFloatList);                       \
+SL_CHAINABLE_TYPE(T, FloatObjectList)(CGFloat, ...);                \
+SL_CHAINABLE_TYPE(T, Insets)(UIEdgeInsets);                         \
+SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 
 #pragma mark - 链式block的实现 - typedef
 //
@@ -74,6 +112,14 @@ SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);
 #define SL_CHAINABLE_INT_BLOCK(...)     SL_CHAINABLE_BLOCK(NSInteger, __VA_ARGS__)
 // 一个CGFloat参数
 #define SL_CHAINABLE_FLOAT_BLOCK(...)   SL_CHAINABLE_BLOCK(CGFloat, __VA_ARGS__)
+// 多个CGFloat参数
+#define SL_CHAINABLE_FLOAT_LIST_BLOCK(...)  SL_CHAINABLE_BLOCK(SLFloatList, __VA_ARGS__)
+// 一个CGFloat参数+多个【可能是0个】Object参数
+#define SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(...)    return ^(CGFloat value, ...) {SL_GET_VARIABLE_OBJECT_ARGUMENTS(value); __VA_ARGS__; return self;}
+// 一个UIEdgeInsets参数
+#define SL_CHAINABLE_INSETS_BLOCK(...)     SL_CHAINABLE_BLOCK(UIEdgeInsets, __VA_ARGS__)
+// 两个id参数
+#define SL_CHAINABLE_CALLBACK_BLOCK(...)    return ^(id target, id object) {__weak id weakTarget = target; __weak id weakSelf = self; __VA_ARGS__; weakTarget = nil; weakSelf = nil; return self;}
 
 #pragma mark - 类型判断
 // 获取 x 的type encode(类型编码)
@@ -97,9 +143,21 @@ SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);
 /// 判断 x 是否为NSString对象
 #define SL_IS_STRING(x)         (SL_IS_OBJECT(x) && SL_IS_STRING_CLASS(x))
 #define SL_IS_INT(x)            SL_CHECK_IS_INT(SL_TYPE_FIRST_LETTER(x))
+/// 判断 x 是否为block对象
+#define SL_IS_BLOCK(x)          (x && [NSStringFromClass([x class]) rangeOfString:@"__NS.+Block__" options:NSRegularExpressionSearch].location != NSNotFound)
 
 #pragma mark - 系统判断
 // 系统是否高于 n 。eg.    SL_SYSTEM_VERSION_HIGHER_EQUAL(8) ===> 判断手机系统是否为iOS 8 及以上。
 #define SL_SYSTEM_VERSION_HIGHER_EQUAL(n)  ([[[UIDevice currentDevice] systemVersion] floatValue] >= n)
+
+#pragma mark - 自动生成setter 和 getter方法
+#define SL_SYNTHESIZE_STRUCT(getter, setter, type, ...) \
+- (type)getter {\
+return [objc_getAssociatedObject(self, _cmd) type##Value];\
+}\
+- (void)setter:(type)getter {\
+objc_setAssociatedObject(self, @selector(getter), [NSValue valueWith##type:getter], OBJC_ASSOCIATION_RETAIN);\
+__VA_ARGS__;\
+}
 
 #endif /* SLDefs_h */

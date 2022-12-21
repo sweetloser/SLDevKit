@@ -6,6 +6,32 @@
 //
 
 #import "SLUIKitPrivate.h"
+#import <objc/runtime.h>
+#import "SLDefs.h"
+
+@implementation NSObject (SLUIKitPrivate)
+
++(BOOL)_sl_swizzleMethod:(SEL)selector1 withMethod:(SEL)selector2 {
+    Method m1 = class_getInstanceMethod(self, selector1);
+    Method m2 = class_getInstanceMethod(self, selector2);
+    if (m1 == NULL || m2 == NULL) {
+        return NO;
+    }
+    class_addMethod(self, selector1, method_getImplementation(m1), method_getTypeEncoding(m1));
+    class_addMethod(self, selector2, method_getImplementation(m2), method_getTypeEncoding(m2));
+    
+    m1 = class_getInstanceMethod(self, selector1);
+    m2 = class_getInstanceMethod(self, selector2);
+    method_exchangeImplementations(m1, m2);
+    
+    return YES;
+}
+
++(BOOL)_sl_swizzleClassMethod:(SEL)selector1 withMethod:(SEL)selector2 {
+    return [object_getClass(self) _sl_swizzleMethod:selector1 withMethod:selector2];
+}
+
+@end
 
 @implementation UIColor(SLUIKitPrivate)
 
@@ -30,4 +56,18 @@
 
 @end
 
+@implementation UIView (SLUIKitPrivate)
 
+SL_SYNTHESIZE_STRUCT(slTouchInsets, setSlTouchInsets, UIEdgeInsets)
+
++ (void)load {
+    [self _sl_swizzleMethod:@selector(pointInside:withEvent:) withMethod:@selector(_sl_pointInside:withEvent:)];
+}
+
+- (BOOL)_sl_pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    UIEdgeInsets touchInsets = self.slTouchInsets;
+    CGRect rect = UIEdgeInsetsInsetRect(self.bounds, touchInsets);
+    return CGRectContainsPoint(rect, point);
+}
+
+@end
