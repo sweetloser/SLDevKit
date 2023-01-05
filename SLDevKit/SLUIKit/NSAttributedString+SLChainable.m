@@ -6,7 +6,7 @@
 //
 
 #import "NSAttributedString+SLChainable.h"
-#import "SLFoundationPrivate.h"
+#import "SLUIKitPrivate.h"
 #import "UIFont+SLChainable.h"
 
 @implementation NSAttributedString (SLChainable)
