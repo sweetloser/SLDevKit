@@ -6,7 +6,6 @@
 //
 
 #import "SLFoundationPrivate.h"
-#import "SLUIKitPrivate.h"
 
 BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
     return [obj isKindOfClass:NSClassFromString(className)];
