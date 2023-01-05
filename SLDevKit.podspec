@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec "SLUtils" do |su|
+    su.dependency 'SLDevKit/SLDefs'
     su.source_files = 'SLDevKit/SLUtils/*.{h,m}'
   end
   
