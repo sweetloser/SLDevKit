@@ -39,6 +39,13 @@ SL_SYNTHESIZE_BOOL(slAddAttributeIfNotExists,setSlAddAttributeIfNotExists);
 SL_SYNTHESIZE_BOOL(slIsJustSettingEffectedRanges, setSlIsJustSettingEffectedRanges);
 SL_SYNTHESIZE_OBJECT(slEffectedRanges, setSlEffectedRanges);
 
+- (void)sl_applyAttribute:(NSString *)name withValue:(id)value {
+    if (self.slEffectedRanges) {
+        
+    }
+    [self addAttribute:name value:value range:NSMakeRange(0, self.length)];
+}
+
 @end
 
 @implementation UIColor(SLUIKitPrivate)
@@ -95,17 +102,6 @@ SL_SYNTHESIZE_STRUCT(slTouchInsets, setSlTouchInsets, UIEdgeInsets)
     } else {
         @throw @"Invalid child";
     }
-}
-
-@end
-
-@implementation NSMutableAttributedString (SLPrivate)
-
-- (void)sl_applyAttribute:(NSString *)name withValue:(id)value {
-    if (self.slEffectedRanges) {
-        
-    }
-    [self addAttribute:name value:value range:NSMakeRange(0, self.length)];
 }
 
 @end

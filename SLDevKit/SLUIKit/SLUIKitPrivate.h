@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL slIsJustSettingEffectedRanges;
 @property (nonatomic, strong) NSMutableIndexSet *slEffectedRanges;
 
+-(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
+
 @end
 
 @interface UIColor(SLUIKitPrivate)
@@ -29,12 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)UIEdgeInsets slTouchInsets;
 
 - (void)_sl_addChild:(id)value;
-
-@end
-
-@interface NSMutableAttributedString (SLPrivate)
-
--(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
 
 @end
 
