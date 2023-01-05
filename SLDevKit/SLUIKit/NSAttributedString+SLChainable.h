@@ -22,7 +22,7 @@ SL_DEFINE_CHAINABLE_BLOCKS(NSMutableAttributedString)
 @interface NSMutableAttributedString (SLChainable)
 
 /// 设置字体。(NSFontAttributeName)
-/// 参数为一个
+/// font 内部使用的是Font宏，因此font能且仅能接受Font能接受的参数。
 SL_ATTRISTR_PROP(Object)font;
 
 @end

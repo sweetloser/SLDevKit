@@ -33,6 +33,14 @@
 
 @end
 
+@implementation NSMutableAttributedString (SLUIKitPrivate)
+
+SL_SYNTHESIZE_BOOL(slAddAttributeIfNotExists,setSlAddAttributeIfNotExists);
+SL_SYNTHESIZE_BOOL(slIsJustSettingEffectedRanges, setSlIsJustSettingEffectedRanges);
+SL_SYNTHESIZE_OBJECT(slEffectedRanges, setSlEffectedRanges);
+
+@end
+
 @implementation UIColor(SLUIKitPrivate)
 
 - (UIColor *)_colorWithHueOffset:(CGFloat)ho saturationOffset:(CGFloat)so brightnessOffset:(CGFloat)bo {
@@ -68,6 +76,25 @@ SL_SYNTHESIZE_STRUCT(slTouchInsets, setSlTouchInsets, UIEdgeInsets)
     UIEdgeInsets touchInsets = self.slTouchInsets;
     CGRect rect = UIEdgeInsetsInsetRect(self.bounds, touchInsets);
     return CGRectContainsPoint(rect, point);
+}
+
+- (void)_sl_addChild:(id)value {
+    UIView *parent = self;
+    if ([parent isKindOfClass:UIVisualEffectView.class]) {
+        parent = ((UIVisualEffectView *)parent).contentView;
+    }
+    
+    if ([value isKindOfClass:[UIView class]]) {
+        [parent addSubview:value];
+        
+    } else if ([value isKindOfClass:[NSArray class]]) {
+        for (id view in value) {
+            [parent addSubview:view];
+        }
+        
+    } else {
+        @throw @"Invalid child";
+    }
 }
 
 @end

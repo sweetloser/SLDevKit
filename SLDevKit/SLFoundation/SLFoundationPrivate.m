@@ -6,6 +6,7 @@
 //
 
 #import "SLFoundationPrivate.h"
+#import "SLUIKitPrivate.h"
 
 BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
     return [obj isKindOfClass:NSClassFromString(className)];
@@ -26,6 +27,9 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
 @implementation NSMutableAttributedString (SLPrivate)
 
 - (void)sl_applyAttribute:(NSString *)name withValue:(id)value {
+    if (self.slEffectedRanges) {
+        
+    }
     [self addAttribute:name value:value range:NSMakeRange(0, self.length)];
 }
 

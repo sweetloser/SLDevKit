@@ -64,6 +64,15 @@
         [self _sl_view_addClickHandler:target action:_action];
     });
 }
+
+- (SLChainableUIViewObjectBlock)addTo {
+    SL_CHAINABLE_OBJECT_BLOCK([value isKindOfClass:UIVisualEffectView.class]?
+                              [((UIVisualEffectView *)value).contentView addSubview:self]:
+                              [value addSubview:self];);
+}
+- (SLChainableUIViewObjectBlock)addChild {
+    SL_CHAINABLE_OBJECT_BLOCK([self _sl_addChild:value]);
+}
 - (void)_sl_view_addClickHandler:(id)target action:(SEL)action {
     self.userInteractionEnabled = YES;
     

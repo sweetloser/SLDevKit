@@ -6,7 +6,6 @@
 //
 
 #import "SLUIKitUtils.h"
-#import "SLDefs.h"
 
 @implementation SLUIKitUtils
 
@@ -203,4 +202,23 @@ CGFloat _tabBarHeight(void) {
 /// 底部导航栏高度（包括安全区）
 CGFloat _tabBarFullHeight(void) {
     return _tabBarHeight() + _safeDistanceBottom();
+}
+
+UIEdgeInsets SLConvertSLEdgeInsetsToUIEdgeInsets(SLEdgeInsets insets, NSInteger number) {
+    UIEdgeInsets newInsets;
+    CGFloat a = insets.value.top;
+    CGFloat b = insets.value.left;
+    CGFloat c = insets.value.bottom;
+    CGFloat d = insets.value.right;
+    
+    if (number == 1) {
+        newInsets = UIEdgeInsetsMake(a, a, a, a);
+    } else if (number == 2) {
+        newInsets = UIEdgeInsetsMake(a, b, a, b);
+    } else if (number == 3) {
+        newInsets = UIEdgeInsetsMake(a, b, c, b);
+    } else {
+        newInsets = UIEdgeInsetsMake(a, b, c, d);
+    }
+    return newInsets;
 }

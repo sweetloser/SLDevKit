@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "default_subspecs": "SLFoundation",
+  "default_subspecs": "SLUIKit",
   "source_files": "SLDevKit/SLDevKit.h",
   "subspecs": [
     {
@@ -40,6 +40,15 @@
         ]
       },
       "source_files": "SLDevKit/SLFoundation/*.{h,m}"
+    },
+    {
+      "name": "SLUIKit",
+      "dependencies": {
+        "SLDevKit/SLFoundation": [
+
+        ]
+      },
+      "source_files": "SLDevKit/SLUIKit/*.{h,m}"
     }
   ]
 }

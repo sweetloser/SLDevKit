@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface NSMutableAttributedString (SLUIKitPrivate)
+
+@property (nonatomic, assign) BOOL slAddAttributeIfNotExists;
+@property (nonatomic, assign) BOOL slIsJustSettingEffectedRanges;
+@property (nonatomic, strong) NSMutableIndexSet *slEffectedRanges;
+
+@end
+
 @interface UIColor(SLUIKitPrivate)
 
 -(UIColor *)_colorWithHueOffset:(CGFloat)ho saturationOffset:(CGFloat)so brightnessOffset:(CGFloat)bo;
@@ -19,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (SLUIKitPrivate)
 
 @property(nonatomic,assign)UIEdgeInsets slTouchInsets;
+
+- (void)_sl_addChild:(id)value;
 
 @end
 

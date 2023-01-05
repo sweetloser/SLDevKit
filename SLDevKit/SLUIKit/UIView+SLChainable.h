@@ -70,8 +70,20 @@ SL_VIEW_PROP(Insets)touchInsets;
 ///            2、selector 字符串【用于：NSSelectorWithString()】
 SL_VIEW_PROP(CallBack)onClick;
 
+/// 将self添加到父视图
+/// 用法：.addTo(`父视图`)
+SL_VIEW_PROP(Object)addTo;
+
+/// 添加子视图
+/// 用法：.addChild(subView1,subView2,...)
+SL_VIEW_PROP(Object)addChild;
+
 @end
 
 #define onClick(x)      onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
+#define border(...)             border(__VA_ARGS__, nil)
+#define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
+#define touchInsets(...)        touchInsets(SL_NORMALIZE_INSETS(__VA_ARGS__))
+#define addChild(...)           addChild(@[__VA_ARGS__])
 
 NS_ASSUME_NONNULL_END

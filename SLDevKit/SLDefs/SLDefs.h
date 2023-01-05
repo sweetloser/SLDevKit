@@ -11,6 +11,10 @@
 #import <objc/runtime.h>
 
 #pragma mark - typedef
+typedef struct SLEdgeInsets {
+    UIEdgeInsets value;
+} SLEdgeInsets;
+
 typedef struct SLFloatList {
     CGFloat f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
     CGFloat validCount;
@@ -31,6 +35,9 @@ typedef void(^SLObjectBlock)(id);
 #define SL_MAKE_FLOAT_LIST(...)     ({SLFloatList _floatList = (SLFloatList){__VA_ARGS__};  \
 _floatList.validCount = MIN(10,SL_NUMBER_OF_VA_ARGS(__VA_ARGS__));    \
 _floatList;})
+
+#define SL_NORMALIZE_INSETS(...)       SLConvertSLEdgeInsetsToUIEdgeInsets((SLEdgeInsets){__VA_ARGS__}, SL_NUMBER_OF_VA_ARGS(__VA_ARGS__))
+
 
 #pragma mark - 获取可变参数列表中【参数都为id类型】的参数，存储在数组(arguments)中
 #define SL_GET_VARIABLE_OBJECT_ARGUMENTS(start) \
@@ -55,6 +62,7 @@ _1, _2, _3, _4, _5, _6, _7, _8, _9, _10,    \
 _11,_12,_13,_14,_15,_16,_17,_18,_19,_20,    \
 _21,_22,_23,_24,_25,_26,_27,_28,_29,_30,   \
 _31,_32,_33,_34,_35,_36,_37,_38,_39,_40,    \
+_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,    \
 _51,_52,_53,_54,_55,_56,_57,_58,_59,_60,    \
 _61,_62,_63,N,...)    N
 
@@ -151,6 +159,25 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_SYSTEM_VERSION_HIGHER_EQUAL(n)  ([[[UIDevice currentDevice] systemVersion] floatValue] >= n)
 
 #pragma mark - 自动生成setter 和 getter方法
+
+#define SL_SYNTHESIZE_BOOL(getter, setter, ...) \
+- (BOOL)getter {\
+return [objc_getAssociatedObject(self, _cmd) boolValue];\
+}\
+- (void)setter:(BOOL)getter {\
+objc_setAssociatedObject(self, @selector(getter), @(getter), OBJC_ASSOCIATION_RETAIN);\
+__VA_ARGS__;\
+}
+
+#define SL_SYNTHESIZE_OBJECT(getter, setter, ...) \
+- (id)getter {\
+return objc_getAssociatedObject(self, _cmd);\
+}\
+- (void)setter:(id)getter {\
+objc_setAssociatedObject(self, @selector(getter), getter, OBJC_ASSOCIATION_RETAIN);\
+__VA_ARGS__;\
+}
+
 #define SL_SYNTHESIZE_STRUCT(getter, setter, type, ...) \
 - (type)getter {\
 return [objc_getAssociatedObject(self, _cmd) type##Value];\

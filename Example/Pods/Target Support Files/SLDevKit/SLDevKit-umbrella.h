@@ -12,9 +12,18 @@
 
 #import "SLDevKit.h"
 #import "SLDefs.h"
-#import "NSAttributedString+SLChainable.h"
 #import "NSString+SLChainable.h"
 #import "SLFoundationPrivate.h"
+#import "NSAttributedString+SLChainable.h"
+#import "SLAntiScreenShotView.h"
+#import "SLUIKit.h"
+#import "SLUIKitMacros.h"
+#import "SLUIKitPrivate.h"
+#import "SLUIKitUtils.h"
+#import "UIColor+SLChainable.h"
+#import "UIFont+SLChainable.h"
+#import "UIView+SLChainable.h"
+#import "SLUtils.h"
 
 FOUNDATION_EXPORT double SLDevKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char SLDevKitVersionString[];

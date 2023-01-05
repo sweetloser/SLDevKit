@@ -23,6 +23,10 @@
     self.testFontLabel.text = @"测试";
     self.testFontLabel.font = [UIFont fontWithName:UIFontTextStyleFootnote size:16];
     
+    self.testFontLabel.backgroundColor = Color(@"#A8A8A8");
+    self.testFontLabel.touchInsets(5, 0, 5, 0).onClick(^(){
+        NSLog(@"点击");
+    });
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SLDefs.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +31,16 @@ __attribute__((always_inline)) CGFloat _tabBarHeight(void);
 
 /// 底部导航栏高度（包括安全区）
 __attribute__((always_inline)) CGFloat _tabBarFullHeight(void);
+
+/// 将inset标准化
+/// eg.{1}=>{1,1,1,1}
+///    {1,2}=>{1,2,1,2}
+///    {1,2,3}=>{1,2,2,3}
+///    {1,2,3,4}=>{1,2,3,4}
+/// - Parameters:
+///   - insets:
+///   - number:
+UIEdgeInsets SLConvertSLEdgeInsetsToUIEdgeInsets(SLEdgeInsets insets, NSInteger number);
 
 @interface SLUIKitUtils : NSObject
 
