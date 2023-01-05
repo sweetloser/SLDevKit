@@ -42,7 +42,10 @@ TODO: Add long description of the pod here.
   end
 
   s.subspec "SLUIKit" do |suk|
+    suk.dependency 'SLDevKit/SLDefs'
+    suk.dependency 'SLDevKit/SLUtils'
     suk.dependency 'SLDevKit/SLFoundation'
+    
     suk.source_files = 'SLDevKit/SLUIKit/*.{h,m}'
   end
   
