@@ -32,4 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface NSMutableAttributedString (SLPrivate)
+
+-(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
+
+@end
+
 NS_ASSUME_NONNULL_END

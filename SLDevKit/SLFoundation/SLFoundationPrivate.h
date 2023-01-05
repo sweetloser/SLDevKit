@@ -22,10 +22,4 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 @end
 
-@interface NSMutableAttributedString (SLPrivate)
-
--(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
-
-@end
-
 NS_ASSUME_NONNULL_END
