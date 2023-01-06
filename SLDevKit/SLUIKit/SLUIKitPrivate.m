@@ -8,6 +8,7 @@
 #import "SLUIKitPrivate.h"
 #import <objc/runtime.h>
 #import "SLDefs.h"
+#import "SLFoundationPrivate.h"
 
 @implementation NSObject (SLUIKitPrivate)
 
@@ -37,13 +38,53 @@
 
 SL_SYNTHESIZE_BOOL(slAddAttributeIfNotExists,setSlAddAttributeIfNotExists);
 SL_SYNTHESIZE_BOOL(slIsJustSettingEffectedRanges, setSlIsJustSettingEffectedRanges);
-SL_SYNTHESIZE_OBJECT(slEffectedRanges, setSlEffectedRanges);
+
+// 重写setter、getter方法
+- (void)setSlEffectedRanges:(NSMutableIndexSet *)slEffectedRanges {
+    objc_setAssociatedObject(self, @selector(slEffectedRanges), slEffectedRanges, OBJC_ASSOCIATION_RETAIN);
+}
+- (NSMutableIndexSet *)slEffectedRanges {
+    NSMutableIndexSet *_ranges = objc_getAssociatedObject(self, @selector(slEffectedRanges));
+    if (!_ranges) {
+        _ranges = [[NSMutableIndexSet alloc] init];
+        [self setSlEffectedRanges:_ranges];
+    }
+    return _ranges;
+}
+
 
 - (void)sl_applyAttribute:(NSString *)name withValue:(id)value {
-    if (self.slEffectedRanges) {
-        
+    if (self.slEffectedRanges.count) {
+        [self.slEffectedRanges enumerateRangesUsingBlock:^(NSRange range, BOOL * _Nonnull stop) {
+            [self addAttribute:name value:value range:range];
+        }];
+    }else {
+        [self addAttribute:name value:value range:[self.string sl_fullRange]];
     }
-    [self addAttribute:name value:value range:NSMakeRange(0, self.length)];
+}
+
+- (void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key {
+    [self sl_setParagraphStyleValue:value forKey:key range:[self.string sl_fullRange]];
+}
+- (void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key range:(NSRange)range {
+    NSParagraphStyle *style = nil;
+    
+    if (NSEqualRanges(range, [self.string sl_fullRange])) {
+        style = [self attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:NULL];
+    } else {
+        style = [self attribute:NSParagraphStyleAttributeName atIndex:range.location longestEffectiveRange:NULL inRange:range];
+    }
+    
+    NSMutableParagraphStyle *mutableStyle = nil;
+    if (style) {
+        mutableStyle = [style mutableCopy];
+    } else {
+        mutableStyle = [NSMutableParagraphStyle new];
+        mutableStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    }
+    
+    [mutableStyle setValue:value forKey:key];
+    [self addAttribute:NSParagraphStyleAttributeName value:mutableStyle range:range];
 }
 
 @end

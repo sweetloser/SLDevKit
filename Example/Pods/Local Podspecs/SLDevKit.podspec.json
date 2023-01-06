@@ -1,6 +1,6 @@
 {
   "name": "SLDevKit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "A short description of SLDevKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sweetloser/SLDevKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sweetloser/SLDevKit.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -27,6 +27,11 @@
     },
     {
       "name": "SLUtils",
+      "dependencies": {
+        "SLDevKit/SLDefs": [
+
+        ]
+      },
       "source_files": "SLDevKit/SLUtils/*.{h,m}"
     },
     {
@@ -44,6 +49,12 @@
     {
       "name": "SLUIKit",
       "dependencies": {
+        "SLDevKit/SLDefs": [
+
+        ],
+        "SLDevKit/SLUtils": [
+
+        ],
         "SLDevKit/SLFoundation": [
 
         ]

@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableIndexSet *slEffectedRanges;
 
 -(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
-
+-(void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key;
+-(void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key range:(NSRange)range;
 @end
 
 @interface UIColor(SLUIKitPrivate)

@@ -11,7 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Usages: Color([UIColor redColor]),
+/// 注：如果使用十六机制色值，请务必加上前缀#或0x或0X
+/// 用法: Color([UIColor redColor]),
 ///         Color(@"red"),
 ///         Color(@"red,0.5"),
 ///         Color(@"255,0,0,1"),

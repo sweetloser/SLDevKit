@@ -97,6 +97,8 @@ SL_CHAINABLE_TYPE(T, Object)(id);                                   \
 SL_CHAINABLE_TYPE(T, TwoObject)(id, id);                            \
 SL_CHAINABLE_TYPE(T, ObjectList)(id, ...);                          \
 SL_CHAINABLE_TYPE(T, Int)(NSInteger);                               \
+SL_CHAINABLE_TYPE(T, TwoInt)(NSInteger,NSInteger);                  \
+SL_CHAINABLE_TYPE(T, IntObjectList)(NSInteger, ...);                \
 SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                             \
 SL_CHAINABLE_TYPE(T, Float)(CGFloat);                               \
 SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);                    \
@@ -118,6 +120,10 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_CHAINABLE_UINT_BLOCK(...)     SL_CHAINABLE_BLOCK(NSUInteger, __VA_ARGS__)
 // 一个NSInteger参数
 #define SL_CHAINABLE_INT_BLOCK(...)     SL_CHAINABLE_BLOCK(NSInteger, __VA_ARGS__)
+// 两个NSInteger参数
+#define SL_CHAINABLE_TWO_INT_BLOCK(...)     return ^(NSInteger value1, NSInteger value2){__VA_ARGS__; return self;}
+// 一个NSInteger参数+多个【可能是0个】Object参数
+#define SL_CHAINABLE_INT_OBJECT_LIST_BLOCK(...)     return ^(NSInteger value, ...) {SL_GET_VARIABLE_OBJECT_ARGUMENTS(value); __VA_ARGS__; return self;}
 // 一个CGFloat参数
 #define SL_CHAINABLE_FLOAT_BLOCK(...)   SL_CHAINABLE_BLOCK(CGFloat, __VA_ARGS__)
 // 多个CGFloat参数
