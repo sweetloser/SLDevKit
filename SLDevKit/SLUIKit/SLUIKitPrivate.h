@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL slIsJustSettingEffectedRanges;
 @property (nonatomic, strong) NSMutableIndexSet *slEffectedRanges;
 
++ (instancetype)sl_attributedStringWithSubstrings:(NSArray *)substrings;
 -(void)sl_applyAttribute:(NSString *)name withValue:(id)value;
 -(void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key;
 -(void)sl_setParagraphStyleValue:(id)value forKey:(NSString *)key range:(NSRange)range;

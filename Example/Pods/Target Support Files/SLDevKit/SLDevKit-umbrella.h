@@ -12,7 +12,10 @@
 
 #import "SLDevKit.h"
 #import "SLDefs.h"
+#import "NSArray+SLChainable.h"
 #import "NSString+SLChainable.h"
+#import "SLBlockInfo.h"
+#import "SLFoundation.h"
 #import "SLFoundationPrivate.h"
 #import "NSAttributedString+SLChainable.h"
 #import "SLAntiScreenShotView.h"

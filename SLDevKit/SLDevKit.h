@@ -10,7 +10,7 @@
 
 #import "SLDefs.h"
 #import "SLFoundationPrivate.h"
-#import "NSString+SLChainable.h"
+#import "SLFoundation.h"
 #import "SLUIKitMacros.h"
 #import "SLUIKit.h"
 

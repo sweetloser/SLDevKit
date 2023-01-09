@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#define AttStr(...) [NSMutableAttributedString sl_attributedStringWithSubstrings:@[__VA_ARGS__]]
+
+
 /// 定义对应的block类型
 SL_DEFINE_CHAINABLE_BLOCKS(NSMutableAttributedString)
 
@@ -65,7 +68,7 @@ SL_ATTRISTR_PROP(Float)baselineOffset;
 SL_ATTRISTR_PROP(Float)lineSpacing;
 
 /// 设置下划线。(NSUnderlineStyleAttributeName)
-/// 参数类型：第一个参数为：NSUnderlineStyle枚举值
+/// 参数类型：NSUnderlineStyle枚举值
 /// 用法：.underline(NSUnderlineStyleSingle)
 SL_ATTRISTR_PROP(Int)underline;
 
@@ -73,6 +76,11 @@ SL_ATTRISTR_PROP(Int)underline;
 /// 参数类型：NSUnderlineStyle枚举值
 /// 用法：.strikethrough(NSUnderlineStyleSingle)
 SL_ATTRISTR_PROP(Int)strikethrough;
+
+/// 设置对齐方式。(ParagraphStyle.alignment)
+/// 参数类型：NSTextAlignment枚举值
+/// 用法：.alignment(NSTextAlignmentCenter)
+SL_ATTRISTR_PROP(Int)alignment;
 
 /// 清空所有range，设置当前range为唯一range；
 /// 默认情况下，对`NSMutableAttributedString`设置的属性作用于整个字符串；
@@ -113,6 +121,10 @@ SL_ATTRISTR_PROP(Object)addMatch;
 /// 清除所有range；
 /// 清除range后，设置的属性将作用于整个字符串；
 SL_ATTRISTR_PROP(Empty)cleanRange;
+
+/// 设置结束。且不返回self。【某些情况下，并不需要返回self，以End()结尾，可以消除 unused 警告⚠️】
+/// 用法：.End();
+-(void(^)(void))End;
 
 @end
 

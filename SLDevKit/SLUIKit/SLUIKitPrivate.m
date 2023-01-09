@@ -52,6 +52,35 @@ SL_SYNTHESIZE_BOOL(slIsJustSettingEffectedRanges, setSlIsJustSettingEffectedRang
     return _ranges;
 }
 
++ (instancetype)sl_attributedStringWithSubstrings:(NSArray *)substrings {
+    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] init];
+    
+    for (id sub in substrings) {
+        id subAtt = nil;
+        
+        if ([sub isKindOfClass:NSAttributedString.class]) {
+            subAtt = sub;
+            
+        } else if ([sub isKindOfClass:NSString.class]) {
+            subAtt = [[NSAttributedString alloc] initWithString:sub];
+            
+        } else if ([sub isKindOfClass:UIImage.class]) {
+            NSTextAttachment *attachment = [NSTextAttachment new];
+            attachment.image = sub;
+            subAtt = [NSAttributedString attributedStringWithAttachment:attachment];
+            
+        } else if ([sub isKindOfClass:NSData.class]) {
+            id options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                           NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)};
+            subAtt = [[NSAttributedString alloc] initWithData:sub options:options documentAttributes:nil error:nil];
+        }
+        
+        if (subAtt) {
+            [att appendAttributedString:subAtt];
+        }
+    }
+    return att;
+}
 
 - (void)sl_applyAttribute:(NSString *)name withValue:(id)value {
     if (self.slEffectedRanges.count) {

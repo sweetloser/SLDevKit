@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 格式化创建字符串
 /// 参数:格式化字符串以及对应参数
-#define SLFormatStr(...)    ({SLFormatStringWithArgumentsCount(SL_NUMBER_OF_VA_ARGS(__VA_ARGS__), __VA_ARGS__);})
+#define FormatStr(...)    ({SLFormatStringWithArgumentsCount(SL_NUMBER_OF_VA_ARGS(__VA_ARGS__), __VA_ARGS__);})
 
 /// 从一个值中创建字符串
 /// 支持:int,float,double,unsign int, 等基本数据类型
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 5) SEL
 /// 6) Class
 /// 7) 格式化字符串
-#define SLStr(...)      (SL_IS_STRING_ARGS(__VA_ARGS__)?SLFormatStr(__VA_ARGS__):SLStrFromValueArgs(__VA_ARGS__))
+#define Str(...)      (SL_IS_STRING_ARGS(__VA_ARGS__)?SLFormatStr(__VA_ARGS__):SLStrFromValueArgs(__VA_ARGS__))
 
 
 #define SL_STRING_PROP(D)   SL_PROP(NSString, D)

@@ -64,6 +64,10 @@
     SL_CHAINABLE_INT_BLOCK([self sl_applyAttribute:NSStrikethroughStyleAttributeName withValue:@(value)]);
 }
 
+- (SLChainableNSMutableAttributedStringIntBlock)alignment {
+    SL_CHAINABLE_INT_BLOCK([self sl_setParagraphStyleValue:@(value) forKey:@"alignment"]);
+}
+
 - (SLChainableNSMutableAttributedStringTwoIntBlock)range {
     SL_CHAINABLE_TWO_INT_BLOCK([self.slEffectedRanges removeAllIndexes];self.addRange(value1, value2));
 }
@@ -92,6 +96,10 @@
 
 - (SLChainableNSMutableAttributedStringEmptyBlock)cleanRange {
     SL_CHAINABLE_EMPTY_BLOCK([self.slEffectedRanges removeAllIndexes]);
+}
+
+- (void (^)(void))End {
+    return ^{};
 }
 
 @end

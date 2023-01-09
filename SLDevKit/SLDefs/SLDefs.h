@@ -151,6 +151,7 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_CHECK_IS_INT(x)          (strchr("liBLIcsqCSQ", x) != NULL)
 #define SL_CHECK_IS_FLOAT(x)        (strchr("df", x) != NULL)
 #define SL_CHECK_IS_PRIMITIVE(x)    (strchr("liBdfLIcsqCSQ", x) != NULL)
+#define SL_CHECK_IS_OBJECT(x)      (strchr("@#", x) != NULL)
 
 /// 判断 x 是否为OC对象
 #define SL_IS_OBJECT(x)         (strchr("@#",SL_TYPE_FIRST_LETTER(x)) != NULL)
