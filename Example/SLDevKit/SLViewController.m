@@ -40,6 +40,10 @@
     array.forEach(^(NSString *str) {
         NSLog(@"%@====",str);
     });
+    NSString *s = array.reduce(@"开始：",^(NSString *accumulator,NSString *str) {
+        return [NSString stringWithFormat:@"%@%@",accumulator,str];
+    });
+    NSLog(@"%@",s);
 }
 
 - (void)didReceiveMemoryWarning {

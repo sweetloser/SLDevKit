@@ -22,4 +22,10 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 @end
 
+@interface NSArray(SLPrivate)
+
+-(id)_sl_safe_objectAtIndexedSubscript:(NSUInteger)idx;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -23,3 +23,13 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
 
 @end
 
+@implementation NSArray (SLPrivate)
+
+-(id)_sl_safe_objectAtIndexedSubscript:(NSUInteger)idx {
+    if (idx < self.count) {
+        return [self objectAtIndexedSubscript:idx];
+    }
+    return nil;
+}
+
+@end

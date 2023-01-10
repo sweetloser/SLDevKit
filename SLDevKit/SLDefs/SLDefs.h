@@ -22,6 +22,8 @@ typedef struct SLFloatList {
 
 typedef void(^SLObjectBlock)(id);
 
+#define Exp(x)              ({x;})
+
 #pragma mark - 将float参数列表转化为SLFloatList结构体类型
 /**
  {
@@ -160,6 +162,15 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_IS_INT(x)            SL_CHECK_IS_INT(SL_TYPE_FIRST_LETTER(x))
 /// 判断 x 是否为block对象
 #define SL_IS_BLOCK(x)          (x && [NSStringFromClass([x class]) rangeOfString:@"__NS.+Block__" options:NSRegularExpressionSearch].location != NSNotFound)
+
+#pragma mark - 获取可变参数中的第一个参数
+#define SL_FIRAT_VA_ARGS(start, type)   \
+Exp(                                    \
+va_list argList;                        \
+va_start(argList, start);               \
+type value = va_arg(argList, type);     \
+va_end(argList);                        \
+value)
 
 #pragma mark - 系统判断
 // 系统是否高于 n 。eg.    SL_SYSTEM_VERSION_HIGHER_EQUAL(8) ===> 判断手机系统是否为iOS 8 及以上。
