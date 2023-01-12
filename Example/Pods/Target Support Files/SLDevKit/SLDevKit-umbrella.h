@@ -24,6 +24,7 @@
 #import "SLUIKitMacros.h"
 #import "SLUIKitPrivate.h"
 #import "SLUIKitUtils.h"
+#import "UIButton+SLChainable.h"
 #import "UIColor+SLChainable.h"
 #import "UIFont+SLChainable.h"
 #import "UIImage+SLChainable.h"

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C622DC87020B9EBB454B185737AB9845"
-               BuildableName = "SLDevKit.framework"
+               BuildableName = "libSLDevKit.a"
                BlueprintName = "SLDevKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

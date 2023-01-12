@@ -87,6 +87,9 @@ SL_VIEW_PROP(Object)addChild;
 #define touchInsets(...)        touchInsets(SL_NORMALIZE_INSETS(__VA_ARGS__))
 #define addChild(...)           addChild(@[__VA_ARGS__])
 
+/// 判断参数是否为NSAttributedString对象；
+/// 1）YES————获取NSAttributedString对象
+/// 2） NO————格式化参数为NSString对象
 #define str(...)        str(SL_IS_ATTSTRING_ARGS(__VA_ARGS__)? SL_RETURN_OBJECT(__VA_ARGS__): Str(__VA_ARGS__))
 
 NS_ASSUME_NONNULL_END
