@@ -11,12 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Usages: Font([UIFont systemFontOfSize:15]),
-///         Font(@"body"),
-///         Font(@"PingFang SC,15"),
-///         Font(@"15"),
-///         Font(@15),
-#define Font(f)     [SLUIKitUtils _fontWithFontObject:SL_CONVERT_VALUE_TO_STRING(f)]
+/// Usages: Fnt([UIFont systemFontOfSize:15]),
+///         Fnt(@"body"),
+///         Fnt(@"PingFang SC,15"),
+///         Fnt(@"15"),
+///         Fnt(@15),
+#define Fnt(f)     [SLUIKitUtils _fontWithFontObject:SL_CONVERT_VALUE_TO_STRING(f)]
 
 @interface UIFont (SLChainable)
 

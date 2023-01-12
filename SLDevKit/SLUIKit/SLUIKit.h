@@ -10,10 +10,12 @@
 
 #import "SLUIKitMacros.h"
 #import "SLUIKitUtils.h"
-#import "UIColor+SLChainable.h"
 #import "SLAntiScreenShotView.h"
 #import "UIFont+SLChainable.h"
+#import "UIColor+SLChainable.h"
+#import "UIImage+SLChainable.h"
 #import "UIView+SLChainable.h"
+#import "UILabel+SLChainable.h"
 #import "NSAttributedString+SLChainable.h"
 
 #endif /* SLUIKit_h */

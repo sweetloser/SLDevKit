@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SLDefs.h"
+#import "SLFoundationUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -85,5 +86,7 @@ SL_VIEW_PROP(Object)addChild;
 #define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
 #define touchInsets(...)        touchInsets(SL_NORMALIZE_INSETS(__VA_ARGS__))
 #define addChild(...)           addChild(@[__VA_ARGS__])
+
+#define str(...)        str(SL_IS_ATTSTRING_ARGS(__VA_ARGS__)? SL_RETURN_OBJECT(__VA_ARGS__): Str(__VA_ARGS__))
 
 NS_ASSUME_NONNULL_END

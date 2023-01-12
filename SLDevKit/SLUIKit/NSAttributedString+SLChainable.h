@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define AttStr(...) [NSMutableAttributedString sl_attributedStringWithSubstrings:@[__VA_ARGS__]]
 
+#define SL_IS_ATTSTRING_ARGS(x,...)   SL_IS_ATTSTRING(x)
+
 
 /// 定义对应的block类型
 SL_DEFINE_CHAINABLE_BLOCKS(NSMutableAttributedString)

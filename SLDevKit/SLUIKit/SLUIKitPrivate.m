@@ -141,6 +141,19 @@ SL_SYNTHESIZE_BOOL(slIsJustSettingEffectedRanges, setSlIsJustSettingEffectedRang
 
 @end
 
+@implementation UIImage (SLUIKitPrivate)
+
+-(UIImage *)_stretchableImage {
+    CGFloat right = floorf(self.size.width / 2);
+    CGFloat left = right - 1;
+    CGFloat bottom = floorf(self.size.height / 2);
+    CGFloat top = bottom - 1;
+    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+    return [self resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+}
+
+@end
+
 @implementation UIView (SLUIKitPrivate)
 
 SL_SYNTHESIZE_STRUCT(slTouchInsets, setSlTouchInsets, UIEdgeInsets)

@@ -61,6 +61,23 @@ UIEdgeInsets SLConvertSLEdgeInsetsToUIEdgeInsets(SLEdgeInsets insets, NSInteger 
 ///                               UIFont对象 返回参数本身
 +(UIFont *)_fontWithFontObject:(id)object;
 
+/// 创建一个UIImage对象
+/// - Parameter object: 支持的参数类型：1）UIImage对象
+///                                  2）@"图片名"
+///                                  3）@"#图片名"  【以#为标识，创建可拉伸的图片】
+///                                  4）Color宏支持的类型  【从指定颜色中创建一个UIImage对象】
++(UIImage *)_imageWithImageObject:(id)object;
+
+/// 从一个UIColor对象中创建一个大小为1像素的UIImage对象
+/// - Parameter color: color对象
++ (UIImage *)_onePointImageWithColor:(UIColor *)color;
+
+/// 为控件设置text
+/// - Parameters:
+///   - stringObject: text对象【如果是NSString/NSAttributedString，则直接设置，否则将调用【NSObject description】将对象转化为NSString对象】
+///   - view: 控件
++ (void)_setTextWithStringObject:(id)stringObject forView:(UIView *)view;
+
 @end
 
 

@@ -15,6 +15,10 @@ typedef struct SLEdgeInsets {
     UIEdgeInsets value;
 } SLEdgeInsets;
 
+typedef struct SLRect {
+    CGRect value;
+} SLRect;
+
 typedef struct SLFloatList {
     CGFloat f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
     CGFloat validCount;
@@ -108,6 +112,7 @@ SL_CHAINABLE_TYPE(T, FourFloat)(CGFloat,CGFloat,CGFloat,CGFloat);   \
 SL_CHAINABLE_TYPE(T, FloatList)(SLFloatList);                       \
 SL_CHAINABLE_TYPE(T, FloatObjectList)(CGFloat, ...);                \
 SL_CHAINABLE_TYPE(T, Insets)(UIEdgeInsets);                         \
+SL_CHAINABLE_TYPE(T, Rect)(SLRect);                                 \
 SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 
 #pragma mark - 链式block的实现 - typedef
@@ -134,6 +139,8 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(...)    return ^(CGFloat value, ...) {SL_GET_VARIABLE_OBJECT_ARGUMENTS(value); __VA_ARGS__; return self;}
 // 一个UIEdgeInsets参数
 #define SL_CHAINABLE_INSETS_BLOCK(...)     SL_CHAINABLE_BLOCK(UIEdgeInsets, __VA_ARGS__)
+// 一个CGRect参数
+#define SL_CHAINABLE_RECT_BLOCK(...)     SL_CHAINABLE_BLOCK(SLRect, __VA_ARGS__)
 // 两个id参数
 #define SL_CHAINABLE_CALLBACK_BLOCK(...)    return ^(id target, id object) {__weak id weakTarget = target; __weak id weakSelf = self; __VA_ARGS__; weakTarget = nil; weakSelf = nil; return self;}
 
@@ -150,6 +157,9 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 /// 判断 x 是否为 NSString 类（或子类）
 #define SL_IS_STRING_CLASS(x)    SLObjectIsKindOfClass(@"NSString", x)
 
+/// 判断 x 是否为 NSAttributedString 类（或子类）
+#define SL_IS_ATT_CLASS(x)    SLObjectIsKindOfClass(@"NSAttributedString", x)
+
 #define SL_CHECK_IS_INT(x)          (strchr("liBLIcsqCSQ", x) != NULL)
 #define SL_CHECK_IS_FLOAT(x)        (strchr("df", x) != NULL)
 #define SL_CHECK_IS_PRIMITIVE(x)    (strchr("liBdfLIcsqCSQ", x) != NULL)
@@ -159,6 +169,8 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 #define SL_IS_OBJECT(x)         (strchr("@#",SL_TYPE_FIRST_LETTER(x)) != NULL)
 /// 判断 x 是否为NSString对象
 #define SL_IS_STRING(x)         (SL_IS_OBJECT(x) && SL_IS_STRING_CLASS(x))
+/// 判断 x 是否为NSAttributedString对象
+#define SL_IS_ATTSTRING(x)         (SL_IS_OBJECT(x) && SL_IS_ATT_CLASS(x))
 #define SL_IS_INT(x)            SL_CHECK_IS_INT(SL_TYPE_FIRST_LETTER(x))
 /// 判断 x 是否为block对象
 #define SL_IS_BLOCK(x)          (x && [NSStringFromClass([x class]) rangeOfString:@"__NS.+Block__" options:NSRegularExpressionSearch].location != NSNotFound)

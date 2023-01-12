@@ -6,6 +6,7 @@
 //
 
 #import "SLUIKitUtils.h"
+#import "SLUIKitPrivate.h"
 
 @implementation SLUIKitUtils
 
@@ -87,6 +88,10 @@
     return nil;
 }
 
++ (BOOL)_colorHasAlphaChannel:(UIColor *)color {
+    return CGColorGetAlpha(color.CGColor) < 1;
+}
+
 + (UIFont *)_fontWithFontObject:(id)object {
     if ([object isKindOfClass:[UIFont class]]) {
         // 参数是 UIFont 类型，直接返回 object
@@ -139,6 +144,83 @@
         }
     }
     return nil;
+}
+
++ (UIImage *)_imageWithImageObject:(id)object {
+    return [self _imageWithImageObject:object allowColorImage:YES];
+}
+
++ (UIImage *)_imageWithImageObject:(id)object allowColorImage:(BOOL)allowColorImage {
+    if ([object isKindOfClass:[UIImage class]]) {
+        // object是一个`UIImage对象`，直接返回
+        return object;
+    } else if ([object isKindOfClass:[NSString class]]) {
+        // object是一个字符串
+        
+        // 判断是否有`#`标识
+        BOOL stretchImage = [object hasPrefix:@"#"];
+        
+        NSString *imageName = stretchImage? [object substringFromIndex:1]: object;
+        UIImage *image = [UIImage imageNamed:imageName];
+        
+        if (stretchImage) {
+            if (!image) {
+                // #并非为拉伸图片标识，而是图片名的一部分
+                image = [UIImage imageNamed:object];
+                
+            } else {
+                return [image _stretchableImage];
+            }
+        }
+        
+        if (allowColorImage && !image) {
+            image = [self _onePointImageWithColor:[self _colorWithColorObject:object]];
+        }
+
+        return image;
+    }
+    
+    return nil;
+}
+
++ (UIImage *)_onePointImageWithColor:(UIColor *)color {
+    if (!color) return nil;
+    
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    BOOL hasAlpha = [self _colorHasAlphaChannel:color];
+    UIGraphicsBeginImageContextWithOptions(rect.size, !hasAlpha, [UIScreen mainScreen].scale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
++ (void)_setTextWithStringObject:(id)stringObject forView:(UIView *)view {
+    if ([view isKindOfClass:[UIButton class]]) {
+        UIButton *button = (UIButton *)view;
+        
+        if ([stringObject isKindOfClass:[NSAttributedString class]]) {
+            [button setAttributedTitle:stringObject forState:UIControlStateNormal];
+        } else {
+            [button setTitle:[stringObject description] forState:UIControlStateNormal];
+        }
+        
+    } else {
+        if ([stringObject isKindOfClass:[NSAttributedString class]]) {
+            if ([view respondsToSelector:@selector(setAttributedText:)]) {
+                [view performSelector:@selector(setAttributedText:) withObject:stringObject];
+            }
+        } else {
+            if ([view respondsToSelector:@selector(setText:)]) {
+                [view performSelector:@selector(setText:) withObject:[stringObject description]];
+            }
+        }
+    }
 }
 
 @end

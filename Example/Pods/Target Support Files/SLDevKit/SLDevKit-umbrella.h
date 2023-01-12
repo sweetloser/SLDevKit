@@ -17,6 +17,7 @@
 #import "SLBlockInfo.h"
 #import "SLFoundation.h"
 #import "SLFoundationPrivate.h"
+#import "SLFoundationUtils.h"
 #import "NSAttributedString+SLChainable.h"
 #import "SLAntiScreenShotView.h"
 #import "SLUIKit.h"
@@ -25,6 +26,8 @@
 #import "SLUIKitUtils.h"
 #import "UIColor+SLChainable.h"
 #import "UIFont+SLChainable.h"
+#import "UIImage+SLChainable.h"
+#import "UILabel+SLChainable.h"
 #import "UIView+SLChainable.h"
 #import "SLUtils.h"
 

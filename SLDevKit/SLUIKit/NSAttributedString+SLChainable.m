@@ -18,7 +18,7 @@
 @implementation NSMutableAttributedString (SLChainable)
 
 - (SLChainableNSMutableAttributedStringObjectBlock)font {
-    SL_CHAINABLE_OBJECT_BLOCK([self sl_applyAttribute:NSFontAttributeName withValue:Font(value)]);
+    SL_CHAINABLE_OBJECT_BLOCK([self sl_applyAttribute:NSFontAttributeName withValue:Fnt(value)]);
 }
 
 - (SLChainableNSMutableAttributedStringObjectBlock)color {

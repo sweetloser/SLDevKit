@@ -28,6 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIImage(SLUIKitPrivate)
+
+/// 以图片中心的一像素作为可拉伸区域，创建拉伸图片
+-(UIImage *)_stretchableImage;
+
+@end
+
 @interface UIView (SLUIKitPrivate)
 
 @property(nonatomic,assign)UIEdgeInsets slTouchInsets;
