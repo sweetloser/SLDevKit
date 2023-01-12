@@ -18,7 +18,6 @@
   "platforms": {
     "ios": "8.0"
   },
-  "default_subspecs": "SLUIKit",
   "source_files": "SLDevKit/SLDevKit.h",
   "subspecs": [
     {
@@ -60,6 +59,18 @@
         ]
       },
       "source_files": "SLDevKit/SLUIKit/*.{h,m}"
+    },
+    {
+      "name": "SLAutoLayout",
+      "dependencies": {
+        "SLDevKit/SLUIKit": [
+
+        ],
+        "SLDevKit/SLDefs": [
+
+        ]
+      },
+      "source_files": "SLDevKit/SLAutoLayout/*.{h,m}"
     }
   ]
 }

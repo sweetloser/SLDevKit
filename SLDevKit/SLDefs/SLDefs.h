@@ -142,7 +142,7 @@ SL_CHAINABLE_TYPE(T, CallBack)(id, id);
 // 一个CGRect参数
 #define SL_CHAINABLE_RECT_BLOCK(...)     SL_CHAINABLE_BLOCK(SLRect, __VA_ARGS__)
 // 两个id参数
-#define SL_CHAINABLE_CALLBACK_BLOCK(...)    return ^(id target, id object) {__weak id weakTarget = target; __weak id weakSelf = self; __VA_ARGS__; weakTarget = nil; weakSelf = nil; return self;}
+#define SL_CHAINABLE_2OBJECT_BLOCK(...)    return ^(id target, id object) {__weak id weakTarget = target; __weak id weakSelf = self; __VA_ARGS__; weakTarget = nil; weakSelf = nil; return self;}
 
 #pragma mark - 类型判断
 // 获取 x 的type encode(类型编码)

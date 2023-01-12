@@ -21,9 +21,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/sweetloser/SLDevKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-
-  s.default_subspecs = "SLUIKit"
-
+  
   s.source_files = 'SLDevKit/SLDevKit.h'
 
   s.subspec "SLDefs" do |sd|
@@ -49,5 +47,12 @@ TODO: Add long description of the pod here.
     suk.source_files = 'SLDevKit/SLUIKit/*.{h,m}'
   end
   
+  s.subspec "SLAutoLayout" do |sal|
+    sal.dependency 'SLDevKit/SLUIKit'
+    sal.dependency 'SLDevKit/SLDefs'
+
+    sal.source_files = 'SLDevKit/SLAutoLayout/*.{h,m}'
+    
+  end
   
 end

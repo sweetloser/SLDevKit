@@ -55,7 +55,7 @@
 }
 
 - (SLChainableUIViewCallBackBlock)onClick {
-    SL_CHAINABLE_CALLBACK_BLOCK(if (SL_IS_BLOCK(object)) {
+    SL_CHAINABLE_2OBJECT_BLOCK(if (SL_IS_BLOCK(object)) {
         SEL _action = @selector(_sl_view_onClickHandler);
         objc_setAssociatedObject(self, _action, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self _sl_view_addClickHandler:self action:_action];
