@@ -47,7 +47,7 @@ SL_DEFINE_CHAINABLE_BLOCKS(NSString)
 /// 字符串拼接.  eg:str.a(@"append");    ==>str+"append"
 SL_STRING_PROP(Object)a;
 
-#define a(...) a(SLStr(__VA_ARGS__))
+#define a(...) a(Str(__VA_ARGS__))
 
 /// 路径拼接.   eg:str.a(@"root");      ==>str+"/root"
 SL_STRING_PROP(Object)ap;

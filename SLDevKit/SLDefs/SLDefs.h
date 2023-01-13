@@ -97,23 +97,23 @@ _61,_62,_63,N,...)    N
 /// eg:SL_CHAINABLE_TYPE(NSString, Empty)   ==> typedef NSString *(^SLChainedNSStringEmptyBlock)
 #define SL_CHAINABLE_TYPE(T, D)       typedef T *_Nonnull(^SLChainable##T##D##Block)
 
-#define SL_DEFINE_CHAINABLE_BLOCKS(T)                               \
-SL_CHAINABLE_TYPE(T, Empty)(void);                                  \
-SL_CHAINABLE_TYPE(T, Object)(id);                                   \
-SL_CHAINABLE_TYPE(T, TwoObject)(id, id);                            \
-SL_CHAINABLE_TYPE(T, ObjectList)(id, ...);                          \
-SL_CHAINABLE_TYPE(T, Int)(NSInteger);                               \
-SL_CHAINABLE_TYPE(T, TwoInt)(NSInteger,NSInteger);                  \
-SL_CHAINABLE_TYPE(T, IntObjectList)(NSInteger, ...);                \
-SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                             \
-SL_CHAINABLE_TYPE(T, Float)(CGFloat);                               \
-SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);                    \
-SL_CHAINABLE_TYPE(T, FourFloat)(CGFloat,CGFloat,CGFloat,CGFloat);   \
-SL_CHAINABLE_TYPE(T, FloatList)(SLFloatList);                       \
-SL_CHAINABLE_TYPE(T, FloatObjectList)(CGFloat, ...);                \
-SL_CHAINABLE_TYPE(T, Insets)(UIEdgeInsets);                         \
-SL_CHAINABLE_TYPE(T, Rect)(SLRect);                                 \
-SL_CHAINABLE_TYPE(T, CallBack)(id, id);
+#define SL_DEFINE_CHAINABLE_BLOCKS(T)                                       \
+SL_CHAINABLE_TYPE(T, Empty)(void);                                          \
+SL_CHAINABLE_TYPE(T, Object)(_Nullable id);                                 \
+SL_CHAINABLE_TYPE(T, TwoObject)(_Nullable id, _Nullable id);                \
+SL_CHAINABLE_TYPE(T, ObjectList)(_Nullable id, ...);                        \
+SL_CHAINABLE_TYPE(T, Int)(NSInteger);                                       \
+SL_CHAINABLE_TYPE(T, TwoInt)(NSInteger,NSInteger);                          \
+SL_CHAINABLE_TYPE(T, IntObjectList)(NSInteger, ...);                        \
+SL_CHAINABLE_TYPE(T, UInt)(NSUInteger);                                     \
+SL_CHAINABLE_TYPE(T, Float)(CGFloat);                                       \
+SL_CHAINABLE_TYPE(T, TwoFloat)(CGFloat,CGFloat);                            \
+SL_CHAINABLE_TYPE(T, FourFloat)(CGFloat,CGFloat,CGFloat,CGFloat);           \
+SL_CHAINABLE_TYPE(T, FloatList)(SLFloatList);                               \
+SL_CHAINABLE_TYPE(T, FloatObjectList)(CGFloat, ...);                        \
+SL_CHAINABLE_TYPE(T, Insets)(UIEdgeInsets);                                 \
+SL_CHAINABLE_TYPE(T, Rect)(SLRect);                                         \
+SL_CHAINABLE_TYPE(T, CallBack)(_Nullable id, _Nullable id);
 
 #pragma mark - 链式block的实现 - typedef
 //

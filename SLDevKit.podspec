@@ -50,6 +50,7 @@ TODO: Add long description of the pod here.
   s.subspec "SLAutoLayout" do |sal|
     sal.dependency 'SLDevKit/SLUIKit'
     sal.dependency 'SLDevKit/SLDefs'
+    sal.dependency 'SLDevKit/SLFoundation'
 
     sal.source_files = 'SLDevKit/SLAutoLayout/*.{h,m}'
     

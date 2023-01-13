@@ -12,17 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 
-@interface NSObject (SLPrivate)
+@interface NSObject (SLFoundationPrivate)
+
++(void)_sl_exchengeMethods:(NSArray<NSString *> *)selectorStingArr prefix:(NSString *)prefix;
 
 @end
 
-@interface NSString (SLPrivate)
+@interface NSString (SLFoundationPrivate)
 
 -(NSRange)sl_fullRange;
 
 @end
 
-@interface NSArray(SLPrivate)
+@interface NSArray(SLFoundationPrivate)
 
 -(id)_sl_safe_objectAtIndexedSubscript:(NSUInteger)idx;
 

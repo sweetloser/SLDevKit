@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 
 @interface SLAutoLayoutModel : NSObject
+
+@property(nonatomic,strong)SLAutoLayoutModelItem *height;
+@property(nonatomic,strong)SLAutoLayoutModelItem *width;
+@property(nonatomic,strong)SLAutoLayoutModelItem *left;
+@property(nonatomic,strong)SLAutoLayoutModelItem *right;
+@property(nonatomic,strong)SLAutoLayoutModelItem *top;
+@property(nonatomic,strong)SLAutoLayoutModelItem *bottom;
+
 /// 需要布局的view
 @property(nonatomic,weak)UIView *needsAutoResizeView;
 

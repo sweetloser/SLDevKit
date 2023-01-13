@@ -43,6 +43,28 @@
         return [NSString stringWithFormat:@"%@%@",accumulator,str];
     });
     NSLog(@"%@",s);
+    
+    Class _selfClass = [self class];
+    Method aM = class_getInstanceMethod(_selfClass, @selector(funcA));
+    Method bM = class_getInstanceMethod(_selfClass, @selector(funcB));
+    
+    IMP aI = method_getImplementation(aM);
+    IMP bI = method_getImplementation(bM);
+    
+    const char *tE = method_getTypeEncoding(bM);
+    
+    class_replaceMethod(_selfClass, @selector(funcA), bI, tE);
+    
+    [self funcA];
+    [self funcB];
+    
+}
+
+-(void)funcA {
+    NSLog(@"%s",__func__);
+}
+-(void)funcB {
+    NSLog(@"%s",__func__);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,13 +10,6 @@
 
 @interface SLAutoLayoutModel ()
 
-@property(nonatomic,strong)SLAutoLayoutModelItem *height;
-@property(nonatomic,strong)SLAutoLayoutModelItem *width;
-@property(nonatomic,strong)SLAutoLayoutModelItem *left;
-@property(nonatomic,strong)SLAutoLayoutModelItem *right;
-@property(nonatomic,strong)SLAutoLayoutModelItem *top;
-@property(nonatomic,strong)SLAutoLayoutModelItem *bottom;
-
 @property(nonatomic,copy)NSNumber *centerX;
 @property(nonatomic,copy)NSNumber *centerY;
 
