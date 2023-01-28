@@ -7,6 +7,7 @@ PODS:
     - SLDevKit/SLUtils (= 0.0.6)
   - SLDevKit/SLAutoLayout (0.0.6):
     - SLDevKit/SLDefs
+    - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
   - SLDevKit/SLDefs (0.0.6)
   - SLDevKit/SLFoundation (0.0.6):
@@ -27,7 +28,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLDevKit: d1a83ed6b97132ad83606f550c01c7c075c83a6f
+  SLDevKit: c1f09467a99a985111ffc1f3d879880e84e4ac26
 
 PODFILE CHECKSUM: 34a3af21e17f26cfb98775493e24ee6fe0609f39
 

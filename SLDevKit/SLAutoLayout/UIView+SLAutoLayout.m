@@ -62,12 +62,16 @@
 
 - (void)_sl_layoutWidthWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
     if (layoutModel.width) {
-        
+        view.width_sl(layoutModel.width.value.floatValue);
+        view.fixedWidth = @(view.widthValue);
     }
 }
 
 - (void)_sl_layoutHeightWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
-    
+    if (layoutModel.height) {
+        view.height_sl(layoutModel.height.value.floatValue);
+        view.fixedHeight = @(view.heightValue);
+    }
 }
 
 - (void)_sl_layoutLeftWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -107,6 +111,13 @@
                     leftMin = refView.leftValue;
                 }
             }
+            
+            if (!view.fixedWidth) {
+                // 没有设置宽度（根据左右布局，计算宽度）
+                view.width_sl(leftMin-rightItem.value.floatValue-view.leftValue);
+            }
+            // 设置右布局（实际上设置origin.x）
+            view.right_sl(leftMin-rightItem.value.floatValue);
         }
     }
 }

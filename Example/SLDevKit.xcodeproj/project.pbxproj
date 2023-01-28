@@ -24,6 +24,9 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BF21341E2970F29A00857450 /* SLTestRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21341D2970F29A00857450 /* SLTestRuntime.m */; };
+		BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538829850F0A0030B2D5 /* SLTestItemCell.m */; };
+		BF35538B29850F0A0030B2D5 /* SLTestItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */; };
+		BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */; };
 		D0762EC629150F31002C9F84 /* SLTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = D0762EC529150F31002C9F84 /* SLTestString.m */; };
 		DEEEE8946A48E7F89978AC3F /* libPods-SLDevKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,11 @@
 		97CC7156AD58933711F1BC06 /* Pods-SLDevKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLDevKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SLDevKit_Tests/Pods-SLDevKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEA1D9A1DFB3BC60DBF9A69 /* SLDevKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SLDevKit.podspec; path = ../SLDevKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF21341D2970F29A00857450 /* SLTestRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestRuntime.m; sourceTree = "<group>"; };
+		BF35538729850F0A0030B2D5 /* SLTestItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTestItemCell.h; sourceTree = "<group>"; };
+		BF35538829850F0A0030B2D5 /* SLTestItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestItemCell.m; sourceTree = "<group>"; };
+		BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLTestItemCell.xib; sourceTree = "<group>"; };
+		BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAutoLayoutVC.h; sourceTree = "<group>"; };
+		BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAutoLayoutVC.m; sourceTree = "<group>"; };
 		CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0762EC529150F31002C9F84 /* SLTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestString.m; sourceTree = "<group>"; };
 		D58A9CE59B598FD6DFE6B12A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -152,6 +160,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* SLViewController.h */,
 				6003F5A6195388D20070C39A /* SLViewController.m */,
+				BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */,
+				BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */,
+				BF35538729850F0A0030B2D5 /* SLTestItemCell.h */,
+				BF35538829850F0A0030B2D5 /* SLTestItemCell.m */,
+				BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -288,6 +301,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				BF35538B29850F0A0030B2D5 /* SLTestItemCell.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
+				BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */,
+				BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

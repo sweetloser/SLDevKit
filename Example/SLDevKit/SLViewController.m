@@ -8,9 +8,11 @@
 
 #import "SLViewController.h"
 #import <SLDevKit/SLDevKit.h>
+#import "SLTestItemCell.h"
 
-@interface SLViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *testFontLabel;
+@interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,53 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"aaa===%@",self.testFontLabel);
-    self.testFontLabel.font = [UIFont fontWithName:UIFontTextStyleFootnote size:16];
-    
-    self.testFontLabel.fnt(@16).str(@"%d+%d=%d",1,1,1+1).bgColor(@"0xA0A0A0").touchInsets(5, 0, 5, 0).onClick(^(){
-        NSLog(@"点击");
-    });
-    
-//    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:@"测试富文本AAABBBCCC11111111111222222222222333333333333334444444444444"];
-//    attri.range(1,3).color(@"#FF9900").bgColor(@"#AAAAAA").obliqueness(0.6f).expansion(0.8).baselineOffset(-5).lineSpacing(8).underline(NSUnderlineStyleDouble).strikethrough(NSUnderlineStyleDouble).match(@"[a-zA-Z]+").addMatch(@"[1-9]+").color(@"#FF0000");
-//    self.testFontLabel.attributedText = attri;
-    
-    NSArray *array = @[@"aaa",@"bbb",@"ccc"];
-//
-//    array.forEach(^(NSString *str){
-//        NSLog(@"+++%@++++",str);
-//    });
-    array.forEach(^(NSString *str) {
-        NSLog(@"%@====",str);
-        
-    });
-    NSString *s = array.reduce(@"开始：",^(NSString *accumulator,NSString *str) {
-        return [NSString stringWithFormat:@"%@%@",accumulator,str];
-    });
-    NSLog(@"%@",s);
-    
-    Class _selfClass = [self class];
-    Method aM = class_getInstanceMethod(_selfClass, @selector(funcA));
-    Method bM = class_getInstanceMethod(_selfClass, @selector(funcB));
-    
-    IMP aI = method_getImplementation(aM);
-    IMP bI = method_getImplementation(bM);
-    
-    const char *tE = method_getTypeEncoding(bM);
-    
-    class_replaceMethod(_selfClass, @selector(funcA), bI, tE);
-    
-    [self funcA];
-    [self funcB];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
 }
 
--(void)funcA {
-    NSLog(@"%s",__func__);
+#pragma mark - tableview代理方法
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SLTestItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testItemCell"];
+    if (indexPath.row == 0) {
+        cell.itemTitleLabel.text = @"链式调用";
+    } else if (indexPath.row == 1){
+        cell.itemTitleLabel.text = @"自动布局";
+    }
+    return cell;
 }
--(void)funcB {
-    NSLog(@"%s",__func__);
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 45;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 - (void)didReceiveMemoryWarning {

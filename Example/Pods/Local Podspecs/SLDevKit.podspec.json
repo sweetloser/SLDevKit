@@ -68,6 +68,9 @@
         ],
         "SLDevKit/SLDefs": [
 
+        ],
+        "SLDevKit/SLFoundation": [
+
         ]
       },
       "source_files": "SLDevKit/SLAutoLayout/*.{h,m}"
