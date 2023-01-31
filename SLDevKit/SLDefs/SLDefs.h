@@ -217,4 +217,14 @@ objc_setAssociatedObject(self, @selector(getter), [NSValue valueWith##type:gette
 __VA_ARGS__;\
 }
 
+
+#pragma mark - ===========================内联函数声明===========================
+#if !defined(SL_INLINE)
+#if (defined (__GNUC__) && (__GNUC__ == 4)) || defined (__clang__)
+#define SL_INLINE static __inline__ __attribute__((always_inline))
+#else
+#define SL_INLINE static __inline__
+#endif
+#endif
+
 #endif /* SLDefs_h */

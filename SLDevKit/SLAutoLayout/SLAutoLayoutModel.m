@@ -45,6 +45,22 @@
                              self.height = item;);
 }
 
+- (SLChainableSLAutoLayoutModelObjectBlock)leftEqualToView {
+    SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalLeft"]);
+}
+
+- (SLChainableSLAutoLayoutModelObjectBlock)topEqualToView {
+    SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalTop"]);
+}
+
+- (SLChainableSLAutoLayoutModelObjectBlock)rightEqualToView {
+    SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalRight"]);
+}
+
+- (SLChainableSLAutoLayoutModelObjectBlock)bottomEqualToView {
+    SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalBottom"]);
+}
+
 #pragma mark - private
 -(void)_marginToView:(NSArray *)views value:(CGFloat)value key:(NSString *)key {
     SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
@@ -56,7 +72,12 @@
     } else {
         item.refViewsArray = [views copy];
     }
-    [self setValue:@(value) forKey:key];
+    [self setValue:item forKey:key];
+}
+-(void)_equalToView:(UIView *)view key:(NSString *)key {
+    SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
+    item.refView = view;
+    [self setValue:item forKey:key];
 }
 
 @end

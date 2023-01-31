@@ -22,8 +22,13 @@
 
 - (SLChainableSLAutoLayoutModelEmptyBlock)slLayout {
     return ^{
-        SLAutoLayoutModel *layoutModel = [[SLAutoLayoutModel alloc] init];
-        layoutModel.needsAutoResizeView = self;
+        SLAutoLayoutModel *layoutModel = [self ownLayoutModel];
+        if (!layoutModel) {
+            layoutModel = [[SLAutoLayoutModel alloc] init];
+            layoutModel.needsAutoResizeView = self;
+            [self setOwnLayoutModel:layoutModel];
+            [self.superview.autoLayoutModelsArray addObject:layoutModel];
+        }
         return layoutModel;
     };
 }
@@ -58,6 +63,11 @@
     [self _sl_layoutLeftWithView:view layoutModel:layoutModel];
     // 右布局
     [self _sl_layoutRightWithView:view layoutModel:layoutModel];
+    // 上布局
+    [self _sl_layoutTopWithView:view layoutModel:layoutModel];
+    // 下布局
+    [self _sl_layoutBottomWithView:view layoutModel:layoutModel];
+    
 }
 
 - (void)_sl_layoutWidthWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -81,16 +91,21 @@
             // 根据父视图进行左布局
             view.left_sl([leftItem.value floatValue]);
         } else {
-            CGFloat rightMax = INTMAX_MIN;
-            // 寻找左边视图的最右值
-            for (UIView *refView in leftItem.refViewsArray) {
-                if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.rightValue > rightMax) {
-                    leftItem.refView = refView;
-                    rightMax = refView.rightValue;
+            if (leftItem.refViewsArray.count) {
+                CGFloat rightMax = INTMAX_MIN;
+                // 寻找左边视图的最右值
+                for (UIView *refView in leftItem.refViewsArray) {
+                    if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.rightValue > rightMax) {
+                        leftItem.refView = refView;
+                        rightMax = refView.rightValue;
+                    }
                 }
             }
             view.left_sl(leftItem.refView.rightValue+[leftItem.value floatValue]);
         }
+    } else if (layoutModel.equalLeft) {
+        SLAutoLayoutModelItem *equalLeftItem = layoutModel.equalLeft;
+        view.left_sl(equalLeftItem.refView.leftValue);
     }
 }
 - (void)_sl_layoutRightWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -99,29 +114,74 @@
         if (rightItem.refView == view.superview) {
             // 根据父视图进行右布局
             if (view.fixedWidth == nil) {
-                // 没有设置固定宽度
+                // 没有设置固定宽度，根据左右布局计算宽度
+                view.width_sl(rightItem.refView.widthValue-rightItem.value.floatValue-view.leftValue);
             }
             view.right_sl(rightItem.refView.widthValue - [rightItem.value floatValue]);
         } else {
-            CGFloat leftMin = INT_MAX;
-            // 寻找右视图的最左边
-            for (UIView *refView in rightItem.refViewsArray) {
-                if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.leftValue < leftMin) {
-                    rightItem.refView = refView;
-                    leftMin = refView.leftValue;
+            if (rightItem.refViewsArray.count) {
+                // 寻找右视图的最左边
+                CGFloat leftMin = INT_MAX;
+                for (UIView *refView in rightItem.refViewsArray) {
+                    if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.leftValue < leftMin) {
+                        rightItem.refView = refView;
+                        leftMin = refView.leftValue;
+                    }
                 }
             }
             
             if (!view.fixedWidth) {
                 // 没有设置宽度（根据左右布局，计算宽度）
-                view.width_sl(leftMin-rightItem.value.floatValue-view.leftValue);
+                view.width_sl(rightItem.refView.leftValue-rightItem.value.floatValue-view.leftValue);
             }
             // 设置右布局（实际上设置origin.x）
-            view.right_sl(leftMin-rightItem.value.floatValue);
+            view.right_sl(rightItem.refView.leftValue-rightItem.value.floatValue);
         }
+    } else if (layoutModel.equalRight) {
+        SLAutoLayoutModelItem *equalRightItem = layoutModel.equalRight;
+        view.right_sl(equalRightItem.refView.rightValue);
+    }
+}
+- (void)_sl_layoutTopWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
+    if (layoutModel.top) {
+        SLAutoLayoutModelItem *topItem = layoutModel.top;
+        if (topItem.refView == view.superview) {
+            // 根据父视图布局
+            view.top_sl(topItem.value.floatValue);
+        } else {
+            if (topItem.refViewsArray.count) {
+                // 寻找上视图的最下边
+                CGFloat topMin = INT_MIN;
+                for (UIView *refView in topItem.refViewsArray) {
+                    if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.bottomValue > topMin) {
+                        topItem.refView = refView;
+                        topMin = refView.bottomValue;
+                    }
+                }
+            }
+            
+            view.top_sl(topItem.refView.bottomValue+topItem.value.floatValue);
+            
+        }
+    } else if (layoutModel.equalTop) {
+        
     }
 }
 
+- (void)_sl_layoutBottomWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
+    if (layoutModel.bottom) {
+        SLAutoLayoutModelItem *bottomItem = layoutModel.bottom;
+        if (bottomItem.refView == view.superview) {
+            // 根据父视图布局
+            if (view.fixedHeight == nil) {
+                view.height_sl(bottomItem.refView.heightValue-bottomItem.value.floatValue-view.topValue);
+            }
+            view.bottom_sl(bottomItem.refView.heightValue-bottomItem.value.floatValue);
+        } else {
+            // 寻找下视图的最上边
+        }
+    }
+}
 
 #pragma mark - setter&getter
 - (void)setOwnLayoutModel:(SLAutoLayoutModel *)ownLayoutModel {

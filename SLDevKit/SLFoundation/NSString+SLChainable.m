@@ -183,4 +183,15 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
         return [tmpPath stringByAppendingPathComponent:self];
     };
 }
+
+- (SLChainableNSStringEmptyBlock)base64Encode {
+    SL_CHAINABLE_EMPTY_BLOCK(NSData *_srcData = [self dataUsingEncoding:NSUTF8StringEncoding];
+                             NSData *_encodeData = [_srcData _base64Encode];
+                             return [[NSString alloc] initWithData:_encodeData encoding:NSUTF8StringEncoding];);
+}
+- (SLChainableNSStringEmptyBlock)base64Decode {
+    SL_CHAINABLE_EMPTY_BLOCK(NSData *_encodeData = [self dataUsingEncoding:NSUTF8StringEncoding];
+                             NSData *_decodeData = [_encodeData _base64Decode];
+                             return [[NSString alloc] initWithData:_decodeData encoding:NSUTF8StringEncoding];);
+}
 @end

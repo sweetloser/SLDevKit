@@ -9,6 +9,7 @@
 #import "SLViewController.h"
 #import <SLDevKit/SLDevKit.h>
 #import "SLTestItemCell.h"
+#import "SLAutoLayoutVC.h"
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -40,7 +41,12 @@
     return 45;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.row == 1) {
+        SLAutoLayoutVC *autoLayoutVc = [[SLAutoLayoutVC alloc] init];
+        [self.navigationController pushViewController:autoLayoutVc animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

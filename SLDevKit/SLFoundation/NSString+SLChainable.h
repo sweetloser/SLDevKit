@@ -49,7 +49,7 @@ SL_STRING_PROP(Object)a;
 
 #define a(...) a(Str(__VA_ARGS__))
 
-/// 路径拼接.   eg:str.a(@"root");      ==>str+"/root"
+/// 路径拼接.   eg:str.ap(@"root");      ==>str+"/root"
 SL_STRING_PROP(Object)ap;
 
 /// 获取子字符串. eg:str:@"ABCDEFG"   str.subFromIndex(3) ==> @"DEFG"
@@ -78,6 +78,11 @@ SL_STRING_PROP(Empty)inCaches;
 /// eg:@"x.png".inTmp() ===> ${tmp path}/x.png
 SL_STRING_PROP(Empty)inTmp;
 
+/// base64编码
+SL_STRING_PROP(Empty)base64Encode;
+
+/// base64解码
+SL_STRING_PROP(Empty)base64Decode;
 
 @end
 

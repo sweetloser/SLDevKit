@@ -7,8 +7,6 @@
 
 #import "SLFoundationUtils.h"
 
-@implementation SLFoundationUtils
-
 id _sl_ObjectFromVariadicFunction(NSString *placeholder, ...) {
     va_list argList;
     va_start(argList, placeholder);
@@ -16,5 +14,7 @@ id _sl_ObjectFromVariadicFunction(NSString *placeholder, ...) {
     va_end(argList);
     return result;
 }
+
+@implementation SLFoundationUtils
 
 @end

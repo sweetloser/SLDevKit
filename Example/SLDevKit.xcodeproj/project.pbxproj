@@ -27,6 +27,7 @@
 		BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538829850F0A0030B2D5 /* SLTestItemCell.m */; };
 		BF35538B29850F0A0030B2D5 /* SLTestItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */; };
 		BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */; };
+		BF7C02882987A95400E9C05E /* SLTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7C02872987A95300E9C05E /* SLTestData.m */; };
 		D0762EC629150F31002C9F84 /* SLTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = D0762EC529150F31002C9F84 /* SLTestString.m */; };
 		DEEEE8946A48E7F89978AC3F /* libPods-SLDevKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLTestItemCell.xib; sourceTree = "<group>"; };
 		BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAutoLayoutVC.h; sourceTree = "<group>"; };
 		BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAutoLayoutVC.m; sourceTree = "<group>"; };
+		BF7C02872987A95300E9C05E /* SLTestData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestData.m; sourceTree = "<group>"; };
 		CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0762EC529150F31002C9F84 /* SLTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestString.m; sourceTree = "<group>"; };
 		D58A9CE59B598FD6DFE6B12A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -187,10 +189,11 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
-				6003F5B6195388D20070C39A /* Supporting Files */,
+				BF7C02872987A95300E9C05E /* SLTestData.m */,
 				D0762EC529150F31002C9F84 /* SLTestString.m */,
 				BF21341D2970F29A00857450 /* SLTestRuntime.m */,
+				6003F5BB195388D20070C39A /* Tests.m */,
+				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7C02882987A95400E9C05E /* SLTestData.m in Sources */,
 				BF21341E2970F29A00857450 /* SLTestRuntime.m in Sources */,
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
 				D0762EC629150F31002C9F84 /* SLTestString.m in Sources */,

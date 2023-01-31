@@ -13,5 +13,6 @@
 #import "SLFoundation.h"
 #import "SLUIKitMacros.h"
 #import "SLUIKit.h"
+#import "SLAutoLayout.h"
 
 #endif /* SLDevKit_h */

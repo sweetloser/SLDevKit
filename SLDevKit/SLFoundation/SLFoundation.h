@@ -10,5 +10,6 @@
 
 #import "NSArray+SLChainable.h"
 #import "NSString+SLChainable.h"
+#import "NSData+SLChainable.h"
 
 #endif /* SLFoundation_h */

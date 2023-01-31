@@ -72,12 +72,19 @@
 }
 
 -(void)testReplaceStr {
-    NSString *testStr = @"hello word";
+    NSString *testStr = @"hello world";
     NSRegularExpression *rep = [[NSRegularExpression alloc] initWithPattern:@"(\\w+) (\\w+)" options:0 error:nil];
     NSString *testR = [rep stringByReplacingMatchesInString:testStr options:0 range:NSMakeRange(0, testStr.length) withTemplate:@"$2 $1"];
     NSLog(@"test result:%@",testR);
     NSString *slTestR = testStr.replaceStr(@"(\\w+) (\\w+)", @"$2 $1");
     NSLog(@"sl_test result:%@",slTestR);
+}
+
+-(void)testBase64 {
+    NSString *testStr = @"Hello world";
+    NSString *encodeStr = testStr.base64Encode();
+    NSLog(@"%@",encodeStr);
+    NSLog(@"%@",encodeStr.base64Decode());
 }
 
 - (void)testPerformanceExample {

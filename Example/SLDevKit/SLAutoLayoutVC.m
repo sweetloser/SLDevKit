@@ -7,6 +7,7 @@
 //
 
 #import "SLAutoLayoutVC.h"
+#import <SLDevKit/SLDevKit.h>
 
 @interface SLAutoLayoutVC ()
 
@@ -16,7 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.bgColor(@"#FFFFFF");
+    self.title = @"自动布局";
+    [self layoutToSuperView];
+    
+}
+
+-(void)layoutToSuperView {
+    UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(12, 100, 200, 120)];
+    v1.addTo(self.view).bgColor(@"blue").border(3,@"#eeeeee");
+    
+    UIView *v2 = [[UIView alloc] init];
+    v2.addTo(v1).bgColor(@"red").slLayout().leftToView(15,v1).rightToView(15, v1).topToView(10, v1).bottomToView(10,v1);
 }
 
 /*

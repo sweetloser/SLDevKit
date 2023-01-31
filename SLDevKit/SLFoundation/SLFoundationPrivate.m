@@ -7,6 +7,7 @@
 
 #import "SLFoundationPrivate.h"
 #import <objc/runtime.h>
+#import "SLDefs.h"
 
 BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
     return [obj isKindOfClass:NSClassFromString(className)];
@@ -19,7 +20,7 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
         prefix = @"sl_";
     }
     [selectorStingArr enumerateObjectsUsingBlock:^(NSString * _Nonnull origSelectorStr, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *newSelectorStr = [origSelectorStr stringByAppendingString:prefix];
+        NSString *newSelectorStr = [prefix stringByAppendingString:origSelectorStr];
         Method origMethod = class_getInstanceMethod(self, NSSelectorFromString(origSelectorStr));
         Method newMethod = class_getInstanceMethod(self, NSSelectorFromString(newSelectorStr));
         
@@ -51,6 +52,144 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
         return [self objectAtIndexedSubscript:idx];
     }
     return nil;
+}
+
+@end
+
+static const char *_kBase64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+static const char _kBase64DecodeChars[] = {
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      62/*+*/, 99,      99,      99,      63/*/ */,
+    52/*0*/, 53/*1*/, 54/*2*/, 55/*3*/, 56/*4*/, 57/*5*/, 58/*6*/, 59/*7*/,
+    60/*8*/, 61/*9*/, 99,      99,      99,      99,      99,      99,
+    99,       0/*A*/,  1/*B*/,  2/*C*/,  3/*D*/,  4/*E*/,  5/*F*/,  6/*G*/,
+    7/*H*/,  8/*I*/,  9/*J*/, 10/*K*/, 11/*L*/, 12/*M*/, 13/*N*/, 14/*O*/,
+    15/*P*/, 16/*Q*/, 17/*R*/, 18/*S*/, 19/*T*/, 20/*U*/, 21/*V*/, 22/*W*/,
+    23/*X*/, 24/*Y*/, 25/*Z*/, 99,      99,      99,      99,      99,
+    99,      26/*a*/, 27/*b*/, 28/*c*/, 29/*d*/, 30/*e*/, 31/*f*/, 32/*g*/,
+    33/*h*/, 34/*i*/, 35/*j*/, 36/*k*/, 37/*l*/, 38/*m*/, 39/*n*/, 40/*o*/,
+    41/*p*/, 42/*q*/, 43/*r*/, 44/*s*/, 45/*t*/, 46/*u*/, 47/*v*/, 48/*w*/,
+    49/*x*/, 50/*y*/, 51/*z*/, 99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99,
+    99,      99,      99,      99,      99,      99,      99,      99
+};
+
+static const char _kBase64PaddingChar = '=';
+
+SL_INLINE NSUInteger _calcEncodedLength(NSUInteger srcLen) {
+    // 原数据的bit位
+    NSUInteger srcBitLen = srcLen * 8;
+    // 编码后需要的bit位(填充后)
+    NSUInteger encodedBitLen = ((srcBitLen + 23) / 24) * 24;
+    // 每6bit转换为一个长
+    return encodedBitLen / 6;
+}
+
+SL_INLINE NSUInteger _maxDecodeLength(NSUInteger encodeLen) {
+    return ((encodeLen +3) / 4) * 3;
+}
+
+@implementation NSData (SLFoundationPrivate)
+
+- (NSData *)_base64Encode {
+    NSMutableData *_result = [NSMutableData new];
+    NSUInteger _resultLen = _calcEncodedLength(self.length);
+    [_result setLength:_resultLen];
+    NSUInteger unEncodedLen = self.length;
+    BytePtr _resultBytes = [_result mutableBytes];
+    BytePtr _selfBytes = (BytePtr)[self bytes];
+    while (unEncodedLen > 2) {
+        // 取第一Byte的高6bit作为索引
+        _resultBytes[0] = _kBase64EncodeChars[(_selfBytes[0]>>2) & 0b00111111];
+        // 取第一Byte的低2bit和第二Byte的高4bit作为索引
+        _resultBytes[1] = _kBase64EncodeChars[((_selfBytes[0]<<4) & 0b00110000) | ((_selfBytes[1]>>4) & 0b00001111)];
+        // 取第二Byte的低4bit和第三Byte的高2bit作为索引
+        _resultBytes[2] = _kBase64EncodeChars[((_selfBytes[1]<<2) & 0b00111100) | ((_selfBytes[2]>>6) & 0b00000011)];
+        // 取第三Byte的低6bit
+        _resultBytes[3] = _kBase64EncodeChars[_selfBytes[2] & 0b00111111];
+        
+        _resultBytes += 4;
+        _selfBytes += 3;
+        unEncodedLen -= 3;
+    }
+    if (unEncodedLen == 1) {
+        // 剩余1Byte未编码
+        _resultBytes[0] = _kBase64EncodeChars[(_selfBytes[0]>>2) & 0b00111111];
+        _resultBytes[1] = _kBase64EncodeChars[(_selfBytes[0]<<4) & 0b00110000];
+        _resultBytes[2] = _kBase64PaddingChar;
+        _resultBytes[3] = _kBase64PaddingChar;
+    } else if (unEncodedLen == 2) {
+        // 剩余2Byte未编码
+        _resultBytes[0] = _kBase64EncodeChars[(_selfBytes[0]>>2) & 0b00111111];
+        _resultBytes[1] = _kBase64EncodeChars[((_selfBytes[0]<<4) & 0b00110000) | ((_selfBytes[1]>>4) & 0b00001111)];
+        _resultBytes[2] = _kBase64EncodeChars[((_selfBytes[1]<<2) & 0b00111100)];
+        _resultBytes[3] = _kBase64PaddingChar;
+    }
+    return _result;
+}
+
+- (NSData *)_base64Decode {
+    NSMutableData *_result = [NSMutableData new];
+    NSUInteger _maxResultLen = _maxDecodeLength(self.length);
+    [_result setLength:_maxResultLen];
+    
+    NSUInteger _unDecodeLen = self.length;
+    BytePtr _selfBytes = (BytePtr)[self bytes];
+    BytePtr _resultBytes = [_result mutableBytes];
+    
+    // 将'='的长度忽略
+    while (*(_selfBytes+_unDecodeLen-1) == '=') {
+        _unDecodeLen--;
+    }
+    
+    while (_unDecodeLen > 3) {
+        // 第一Byte：取第1个字符下标的低6bit和第2个字符下标的高2bit
+        _resultBytes[0] = ((_kBase64DecodeChars[_selfBytes[0]] << 2) & 0b11111100) | ((_kBase64DecodeChars[_selfBytes[1]] >> 4) & 0b00000011);
+        // 第二Byte：取第2个字符下标的低4bit和第3个字符下标的高4bit
+        _resultBytes[1] = ((_kBase64DecodeChars[_selfBytes[1]] << 4) & 0b11110000) | ((_kBase64DecodeChars[_selfBytes[2]] >> 2) & 0b00001111);
+        // 第三Byte：取第3个字符下标的低2bit和第4个字符下标的低6bit
+        _resultBytes[2] = ((_kBase64DecodeChars[_selfBytes[2]] << 6) & 0b11000000) | ((_kBase64DecodeChars[_selfBytes[3]]) & 0b00111111);
+        
+        _resultBytes += 3;
+        _selfBytes += 4;
+        _unDecodeLen -= 4;
+    }
+    
+    if (_unDecodeLen == 1) {
+        // 不会出现这种情况
+    } else if (_unDecodeLen == 2) {
+        // 还有1Byte
+        _resultBytes[0] = ((_kBase64DecodeChars[_selfBytes[0]] << 2) & 0b11111100) | ((_kBase64DecodeChars[_selfBytes[1]] >> 4) & 0b00000011);
+        // 预估的长度多了2Byte
+        [_result setLength:_maxResultLen-2];
+    } else if (_unDecodeLen == 3) {
+        // 还有2Byte
+        _resultBytes[0] = ((_kBase64DecodeChars[_selfBytes[0]] << 2) & 0b11111100) | ((_kBase64DecodeChars[_selfBytes[1]] >> 4) & 0b00000011);
+        _resultBytes[1] = ((_kBase64DecodeChars[_selfBytes[1]] << 4) & 0b11110000) | ((_kBase64DecodeChars[_selfBytes[2]] >> 2) & 0b00001111);
+        // 预估的长度多了1Byte
+        [_result setLength:_maxResultLen-1];
+    }
+    
+    return _result;
 }
 
 @end

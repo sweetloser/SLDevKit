@@ -24,6 +24,11 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 @property(nonatomic,strong)SLAutoLayoutModelItem *top;
 @property(nonatomic,strong)SLAutoLayoutModelItem *bottom;
 
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalLeft;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalTop;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalRight;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalBottom;
+
 /// 需要布局的view
 @property(nonatomic,weak)UIView *needsAutoResizeView;
 
@@ -39,6 +44,19 @@ SL_LAYOUT_MODEL_PROP(Float)widthIs;
 
 SL_LAYOUT_MODEL_PROP(Float)heightIs;
 
+SL_LAYOUT_MODEL_PROP(Object)leftEqualToView;
+
+SL_LAYOUT_MODEL_PROP(Object)topEqualToView;
+
+SL_LAYOUT_MODEL_PROP(Object)rightEqualToView;
+
+SL_LAYOUT_MODEL_PROP(Object)bottomEqualToView;
+
 @end
+
+#define leftToView(...)         leftToView(__VA_ARGS__, nil)
+#define rightToView(...)        rightToView(__VA_ARGS__, nil)
+#define topToView(...)          topToView(__VA_ARGS__, nil)
+#define bottomToView(...)       bottomToView(__VA_ARGS__, nil)
 
 NS_ASSUME_NONNULL_END
