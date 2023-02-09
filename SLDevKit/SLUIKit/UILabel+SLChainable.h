@@ -7,11 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SLDefs.h"
+#import "UIView+SLChainable.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-/// 定义对应的block类型
-SL_DEFINE_CHAINABLE_BLOCKS(UILabel)
 
 #define SL_LABEL_PROP(D)   SL_PROP(UILabel, D)
 
@@ -33,12 +31,12 @@ SL_LABEL_PROP(Object)str;
 SL_LABEL_PROP(Object)fnt;
 
 /// 设置UILabel的textColor
-/// color 属性内部使用的是 Color 宏，因此它可以接受所有 Color 宏能接受的参数；
-/// 用法：.color(@"0xFFF")
-///      .color(UIColor对象)
-///      .color(@"red")
-///      .color(@"255,40,40,0.5")
-SL_LABEL_PROP(Object)color;
+/// tColor 属性内部使用的是 Color 宏，因此它可以接受所有 Color 宏能接受的参数；
+/// 用法：.tColor(@"0xFFF")
+///      .tColor(UIColor对象)
+///      .tColor(@"red")
+///      .tColor(@"255,40,40,0.5")
+SL_LABEL_PROP(Object)tColor;
 
 /// 设置UILabel的numberOfLines；
 /// 用法：.lines(2)

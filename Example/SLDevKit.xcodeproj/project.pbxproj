@@ -28,6 +28,7 @@
 		BF35538B29850F0A0030B2D5 /* SLTestItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */; };
 		BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */; };
 		BF7C02882987A95400E9C05E /* SLTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7C02872987A95300E9C05E /* SLTestData.m */; };
+		BFEBB32C2993B1B200FFA1D2 /* SLChainableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */; };
 		D0762EC629150F31002C9F84 /* SLTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = D0762EC529150F31002C9F84 /* SLTestString.m */; };
 		DEEEE8946A48E7F89978AC3F /* libPods-SLDevKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,8 @@
 		BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAutoLayoutVC.h; sourceTree = "<group>"; };
 		BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAutoLayoutVC.m; sourceTree = "<group>"; };
 		BF7C02872987A95300E9C05E /* SLTestData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestData.m; sourceTree = "<group>"; };
+		BFEBB32A2993B1B200FFA1D2 /* SLChainableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLChainableVC.h; sourceTree = "<group>"; };
+		BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLChainableVC.m; sourceTree = "<group>"; };
 		CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0762EC529150F31002C9F84 /* SLTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestString.m; sourceTree = "<group>"; };
 		D58A9CE59B598FD6DFE6B12A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				6003F5A6195388D20070C39A /* SLViewController.m */,
 				BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */,
 				BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */,
+				BFEBB32A2993B1B200FFA1D2 /* SLChainableVC.h */,
+				BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */,
 				BF35538729850F0A0030B2D5 /* SLTestItemCell.h */,
 				BF35538829850F0A0030B2D5 /* SLTestItemCell.m */,
 				BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */,
@@ -374,6 +379,7 @@
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
 				BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */,
 				BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */,
+				BFEBB32C2993B1B200FFA1D2 /* SLChainableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

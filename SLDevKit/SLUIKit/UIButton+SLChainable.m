@@ -10,6 +10,8 @@
 #import "UIFont+SLChainable.h"
 #import "UIColor+SLChainable.h"
 #import "UIImage+SLChainable.h"
+#import "UIView+SLChainable.h"
+#import "SLFoundationPrivate.h"
 
 @implementation UIButton (SLChainable)
 
@@ -55,6 +57,22 @@
 
 - (SLChainableUIButtonObjectBlock)highBgImg {
     SL_CHAINABLE_OBJECT_BLOCK([self setBackgroundImage:Img(value) forState:UIControlStateHighlighted]);
+}
+
+- (SLChainableUIButtonCallBackBlock)onClick {
+    SL_CHAINABLE_2OBJECT_BLOCK(if (SL_IS_BLOCK(object)) {
+        SEL _action = @selector(_sl_button_onClickHandler);
+        objc_setAssociatedObject(self, _action, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self addTarget:self action:_action forControlEvents:UIControlEventTouchUpInside];
+    }else if (SL_IS_STRING(object)) {
+        SEL _action = NSSelectorFromString(object);
+        [self addTarget:target action:_action forControlEvents:UIControlEventTouchUpInside];
+    });
+}
+
+-(void)_sl_button_onClickHandler {
+    id block = objc_getAssociatedObject(self, _cmd);
+    if (block) ((SLObjectBlock)block)(self);
 }
 
 @end

@@ -10,6 +10,7 @@
 #import <SLDevKit/SLDevKit.h>
 #import "SLTestItemCell.h"
 #import "SLAutoLayoutVC.h"
+#import "SLChainableVC.h"
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -42,7 +43,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        
+        SLChainableVC *chaimableVc = [[SLChainableVC alloc] init];
+        [self.navigationController pushViewController:chaimableVc animated:YES];
     }else if (indexPath.row == 1) {
         SLAutoLayoutVC *autoLayoutVc = [[SLAutoLayoutVC alloc] init];
         [self.navigationController pushViewController:autoLayoutVc animated:YES];

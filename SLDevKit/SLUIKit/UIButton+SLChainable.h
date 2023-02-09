@@ -7,11 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SLDefs.h"
+#import "UIView+SLChainable.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-/// 定义对应的block类型
-SL_DEFINE_CHAINABLE_BLOCKS(UIButton)
 
 #define SL_BUTTON_PROP(D)   SL_PROP(UIButton, D)
 
@@ -100,6 +98,8 @@ SL_BUTTON_PROP(Object)selectedBgImg;
 ///      .highBgImg(UIImage对象)
 ///      .highBgImg(@"#icon")   // 拉伸图
 SL_BUTTON_PROP(Object)highBgImg;
+
+SL_BUTTON_PROP(CallBack)onClick;
 
 @end
 

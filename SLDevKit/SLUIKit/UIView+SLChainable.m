@@ -75,14 +75,8 @@
 }
 - (void)_sl_view_addClickHandler:(id)target action:(SEL)action {
     self.userInteractionEnabled = YES;
-    
-    if ([self isKindOfClass:[UIButton class]]) {
-        UIButton *button = (UIButton *)self;
-        [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    } else {
-        id reg = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
-        [self addGestureRecognizer:reg];
-    }
+    id reg = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
+    [self addGestureRecognizer:reg];
 }
 -(void)_sl_view_onClickHandler {
     id _block = objc_getAssociatedObject(self, _cmd);

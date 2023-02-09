@@ -22,7 +22,7 @@
     SL_CHAINABLE_OBJECT_BLOCK(self.font = Fnt(value));
 }
 
-- (SLChainableUILabelObjectBlock)color {
+- (SLChainableUILabelObjectBlock)tColor {
     SL_CHAINABLE_OBJECT_BLOCK(self.textColor = Color(value));
 }
 
