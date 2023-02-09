@@ -117,6 +117,13 @@ SL_DEFINE_CHAINABLE_BLOCKS(UIButton)
 SL_VIEW_SUPER_PROPS(UIButton);
 @end
 
+/// 定义对应的block类型
+SL_DEFINE_CHAINABLE_BLOCKS(UIImageView)
+@interface UIImageView (UIView_Chainable)
+SL_VIEW_SUPER_PROPS(UIImageView);
+@end
+
+
 #define onClick(x)      onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
 #define border(...)             border(__VA_ARGS__, nil)
 #define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
