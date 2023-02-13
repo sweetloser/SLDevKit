@@ -37,6 +37,7 @@
 #define SL_APPLICATION_TOOL_BAR_HEIGHT_49  49.0f
 /// 状态栏高度
 #define SL_APPLICATION_STATUS_BAR_HEIGHT (_statusBarHeight())
-
+/// 底部安全距离
+#define SL_APPLICATION_BOTTOM_SAFE_HEIGHT (_safeDistanceBottom())
 
 #endif /* SLUIKitMacros_h */

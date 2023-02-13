@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SLDefs.h"
+#import "SLUIKitPrivate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,7 +29,7 @@ SL_DEFINE_CHAINABLE_BLOCKS(NSMutableAttributedString)
 
 /// 设置字体。(NSFontAttributeName)
 /// font 内部使用的是Font宏，因此font能且仅能接受Font能接受的参数。
-SL_ATTRISTR_PROP(Object)font;
+SL_ATTRISTR_PROP(Object)fnt;
 
 /// 设置颜色。(NSForegroundColorAttributeName)
 /// color 内部使用的是Color宏，因此color能且仅能接受Color能接受的参数。

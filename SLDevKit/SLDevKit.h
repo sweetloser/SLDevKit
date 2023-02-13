@@ -9,6 +9,7 @@
 #define SLDevKit_h
 
 #import "SLDefs.h"
+#import "SLUtils.h"
 #import "SLFoundationPrivate.h"
 #import "SLFoundation.h"
 #import "SLUIKitMacros.h"

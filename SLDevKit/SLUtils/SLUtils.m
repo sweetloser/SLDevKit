@@ -32,4 +32,11 @@ id _slConvertValueToString(const char *type, ...) {
 
 @implementation SLUtils
 
++ (BOOL)matchNumLetterAndEnglishSymbol:(NSString *)matchString {
+    NSString *pattern = @"^[!-~]+$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",pattern];
+    BOOL isMatch = [pred evaluateWithObject:matchString];
+    return isMatch;
+}
+
 @end

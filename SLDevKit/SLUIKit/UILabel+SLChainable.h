@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// str 属性内部使用的是 Str 宏，因此，可以接受所有 Str 宏能接受的参数；同时，str 也接受一个NSAttributedString对象的参数。
 /// 用法：.str(3.14)
 ///      .str(@"%d+%d=%d",1,2,1+2)
-///      .str(AttStr(@"hello").font(16))
+///      .str(AttStr(@"hello").fnt(16))
 SL_LABEL_PROP(Object)str;
 
 /// 设置UILabel的font；

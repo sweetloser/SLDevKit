@@ -123,8 +123,13 @@ SL_DEFINE_CHAINABLE_BLOCKS(UIImageView)
 SL_VIEW_SUPER_PROPS(UIImageView);
 @end
 
+/// 定义对应的block类型
+SL_DEFINE_CHAINABLE_BLOCKS(UITextField)
+@interface UITextField (UIView_Chainable)
+SL_VIEW_SUPER_PROPS(UITextField);
+@end
 
-#define onClick(x)      onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
+#define onClick(x)              onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
 #define border(...)             border(__VA_ARGS__, nil)
 #define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
 #define touchInsets(...)        touchInsets(SL_NORMALIZE_INSETS(__VA_ARGS__))
@@ -133,6 +138,6 @@ SL_VIEW_SUPER_PROPS(UIImageView);
 /// 判断参数是否为NSAttributedString对象；
 /// 1）YES————获取NSAttributedString对象
 /// 2） NO————格式化参数为NSString对象
-#define str(...)        str(SL_IS_ATTSTRING_ARGS(__VA_ARGS__)? SL_RETURN_OBJECT(__VA_ARGS__): Str(__VA_ARGS__))
+#define str(...)                str(SL_IS_ATTSTRING_ARGS(__VA_ARGS__)? SL_RETURN_OBJECT(__VA_ARGS__): Str(__VA_ARGS__))
 
 NS_ASSUME_NONNULL_END

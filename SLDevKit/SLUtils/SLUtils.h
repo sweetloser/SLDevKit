@@ -16,6 +16,10 @@ id _slConvertValueToString(const char *type, ...);
 
 @interface SLUtils : NSObject
 
+/// 判断待匹配字符串是否仅包含数字、字母和英文字符
+/// - Parameter matchString: 待匹配字符串
++(BOOL)matchNumLetterAndEnglishSymbol:(NSString *)matchString;
+
 @end
 
 

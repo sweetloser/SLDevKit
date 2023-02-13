@@ -17,6 +17,7 @@
 #import "UIView+SLChainable.h"
 #import "UILabel+SLChainable.h"
 #import "UIButton+SLChainable.h"
+#import "UITextField+SLChainable.h"
 #import "NSAttributedString+SLChainable.h"
 
 #endif /* SLUIKit_h */
