@@ -7,6 +7,7 @@
 
 #import "SLUtils.h"
 #import "SLDefs.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 id _slConvertValueToString(const char *type, ...) {
     id result = nil;
@@ -37,6 +38,55 @@ id _slConvertValueToString(const char *type, ...) {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",pattern];
     BOOL isMatch = [pred evaluateWithObject:matchString];
     return isMatch;
+}
+
+
++ (NSString *)wiFiName {
+NSArray *wiFiName = CFBridgingRelease(CNCopySupportedInterfaces());
+id info1 = nil;
+for (NSString *wfName in wiFiName) {
+    info1 = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) wfName);
+        if (info1 && [info1 count]) {
+            break;
+        }
+    }
+    NSDictionary *dic = (NSDictionary *)info1;
+
+    NSString *ssidName = [[dic objectForKey:@"SSID"] lowercaseString];
+
+    return ssidName;
+}
+
++ (BOOL)isVPNOn {
+   BOOL flag = NO;
+   NSString *version = [UIDevice currentDevice].systemVersion;
+   // need two ways to judge this.
+   if (version.doubleValue >= 9.0) {
+       NSDictionary *dict = CFBridgingRelease(CFNetworkCopySystemProxySettings());
+       NSArray *keys = [dict[@"__SCOPED__"] allKeys];
+       for (NSString *key in keys) {
+           if ([key rangeOfString:@"tap"].location != NSNotFound ||
+               [key rangeOfString:@"tun"].location != NSNotFound ||
+               [key rangeOfString:@"ipsec"].location != NSNotFound ||
+               [key rangeOfString:@"ppp"].location != NSNotFound){
+               flag = YES;
+               break;
+           }
+       }
+   }
+
+   return flag;
+}
+
++ (BOOL)isOpenTheProxy {
+    NSDictionary *proxySettings = (__bridge NSDictionary *)(CFNetworkCopySystemProxySettings());
+    NSArray *proxies = (__bridge NSArray *)(CFNetworkCopyProxiesForURL((__bridge CFURLRef _Nonnull)([NSURL URLWithString:@"https://www.baidu.com"]), (__bridge CFDictionaryRef _Nonnull)(proxySettings)));
+    NSDictionary *settings = proxies[0];
+    if ([[settings objectForKey:(NSString *)kCFProxyTypeKey] isEqualToString:@"kCFProxyTypeNone"]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 @end

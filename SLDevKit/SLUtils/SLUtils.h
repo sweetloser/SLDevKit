@@ -20,6 +20,15 @@ id _slConvertValueToString(const char *type, ...);
 /// - Parameter matchString: 待匹配字符串
 +(BOOL)matchNumLetterAndEnglishSymbol:(NSString *)matchString;
 
+/// 获取当前连接的wifi的名称
++ (NSString *)wiFiName;
+
+/// 判断是否连接VPN
++ (BOOL)isVPNOn;
+
+/// 判断网络是否设置了代理
++ (BOOL)isOpenTheProxy;
+
 @end
 
 
