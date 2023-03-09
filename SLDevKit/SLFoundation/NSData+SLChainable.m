@@ -150,7 +150,7 @@ void _sm4_one_round(const uint32_t sk[32], const uint8_t input[16], uint8_t outp
         _setSm4Key((const uint8_t *)keyData.bytes, sk);
         // 计算填充位数
         uint8_t padding = 16-(self.length%16);
-        // 填充 【填充规则-】
+        // 填充 【填充规则-PKCS7】
         NSMutableData *paddingData = [[NSMutableData alloc] initWithLength:self.length+padding];
         memcpy(paddingData.mutableBytes, self.bytes, self.length);
         for (int i=0; i<padding; i++) {
@@ -203,10 +203,83 @@ void _sm4_one_round(const uint32_t sk[32], const uint8_t input[16], uint8_t outp
 
 - (SLChainableNSDataTwoObjectBlock)sm4CbcEncrypt {
     return ^(NSData *keyData, NSData *ivData) {
-        uint8_t *keyBytes = (uint8_t *)keyData.bytes;
+        // 设置key
+        uint32_t sk[32];
+        _setSm4Key((const uint8_t *)keyData.bytes, sk);
         
-        return [NSData new];
+        /*==============填充=================*/
+        // 计算填充位数
+        uint8_t padding = 16-(self.length%16);
+        // 填充 【填充规则-PKCS7】
+        NSMutableData *paddingData = [[NSMutableData alloc] initWithLength:self.length+padding];
+        memcpy(paddingData.mutableBytes, self.bytes, self.length);
+        for (int i=0; i<padding; i++) {
+            ((uint8_t *)paddingData.mutableBytes)[self.length+i] = padding;
+        }
+        
+        /*==============加密=================*/
+        NSMutableData *retData = [[NSMutableData alloc] initWithLength:paddingData.length];
+        uint8_t *input = (uint8_t *)paddingData.bytes;
+        uint8_t *output = (uint8_t *)retData.mutableBytes;
+        
+        uint8_t tempIn[16], tempIv[16];
+        memcpy(tempIv, ivData.bytes, 16);
+        
+        long dataLen = paddingData.length;
+
+        while (dataLen > 0) {
+            for (int i=0; i<16; i++) {
+                tempIn[i] = input[i] ^ tempIv[i];
+            }
+            
+            _sm4_one_round(sk, tempIn, output);
+            memcpy(tempIv, output, 16);
+            
+            input += 16;
+            output += 16;
+            dataLen -= 16;
+            
+        }
+        return [retData copy];
     };
 }
 
+- (SLChainableNSDataTwoObjectBlock)sm4CbcDecrypt {
+    return ^(NSData *keyData, NSData *ivData){
+        // 设置key
+        uint32_t sk[32];
+        _setSm4Key((const uint8_t *)keyData.bytes, sk);
+        for(int i = 0; i < 16; i ++ ) {
+            SWAP( sk[i], sk[31-i]);
+        }
+
+        uint8_t tempIn[16], tempIv[16];
+        memcpy(tempIv, ivData.bytes, 16);
+        
+        long dataLen = (long)self.length;
+        NSMutableData *retData = [[NSMutableData alloc] initWithLength:dataLen];
+        uint8_t *input = (uint8_t *)self.bytes;
+        uint8_t *output = (uint8_t *)retData.mutableBytes;
+        uint8_t iv[16];
+        memcpy(iv, ivData.bytes, 16);
+        while (dataLen > 0) {
+            memcpy(tempIn, input, 16);
+            _sm4_one_round(sk, input, output);
+            
+            for (int j=0; j<16; j++) {
+                output[j] = output[j] ^ iv[j];
+            }
+            
+            memcpy(iv, tempIn, 16);
+            
+            input += 16;
+            output += 16;
+            dataLen -= 16;
+        }
+        
+        // 查找补位数
+        uint8_t padding = ((uint8_t *)retData.bytes)[self.length-1];
+        return [NSData dataWithBytes:retData.bytes length:self.length-padding];
+    };
+}
 @end

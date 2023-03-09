@@ -25,21 +25,30 @@ SL_DATA_PROP(Empty)base64Decode;
 
 /**
  * sm4 ecb加密
+ * 注意：返回的NSData 并不等于 `self`。
  * 用法：.sm4EcbEncrypt(keyData)
  */
 SL_DATA_PROP(Object)sm4EcbEncrypt;
 
 /**
  * sm4 ecb解密
+ * 注意：返回的NSData 并不等于 `self`。
  */
 SL_DATA_PROP(Object)sm4EcbDecrypt;
 
 /**
  * sm4 cbc加密
+ * 注意：返回的NSData 并不等于 `self`。
  * 用法：.sm4CbcEncrypt(keyData, ivData)
  */
-//SL_DATA_PROP(TwoObject)sm4CbcEncrypt;
+SL_DATA_PROP(TwoObject)sm4CbcEncrypt;
 
+/**
+ * sm4 cbc解密
+ * 注意：返回的NSData 并不等于 `self`。
+ * 用法：.sm4CbcDecrypt(keyData, ivData)
+ */
+SL_DATA_PROP(TwoObject)sm4CbcDecrypt;
 
 @end
 

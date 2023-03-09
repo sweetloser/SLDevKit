@@ -4,10 +4,10 @@ platform :ios, '10.0'
 
 target 'SLDevKit_Example' do
   pod 'SLDevKit', :path => '../'
-
+#  pod 'NerdyUI'
   target 'SLDevKit_Tests' do
     inherit! :search_paths
-
+    
     
   end
 end

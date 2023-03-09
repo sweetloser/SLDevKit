@@ -26,6 +26,10 @@
     SL_CHAINABLE_OBJECT_BLOCK(self.textColor = Color(value));
 }
 
+- (SLChainableUILabelObjectBlock)color {
+    SL_CHAINABLE_OBJECT_BLOCK(self.textColor = Color(value));
+}
+
 - (SLChainableUILabelIntBlock)lines {
     SL_CHAINABLE_INT_BLOCK(self.numberOfLines = value);
 }

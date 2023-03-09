@@ -1,23 +1,23 @@
 PODS:
-  - SLDevKit (0.0.6):
-    - SLDevKit/SLAutoLayout (= 0.0.6)
-    - SLDevKit/SLDefs (= 0.0.6)
-    - SLDevKit/SLFoundation (= 0.0.6)
-    - SLDevKit/SLUIKit (= 0.0.6)
-    - SLDevKit/SLUtils (= 0.0.6)
-  - SLDevKit/SLAutoLayout (0.0.6):
+  - SLDevKit (0.0.8):
+    - SLDevKit/SLAutoLayout (= 0.0.8)
+    - SLDevKit/SLDefs (= 0.0.8)
+    - SLDevKit/SLFoundation (= 0.0.8)
+    - SLDevKit/SLUIKit (= 0.0.8)
+    - SLDevKit/SLUtils (= 0.0.8)
+  - SLDevKit/SLAutoLayout (0.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLDefs (0.0.6)
-  - SLDevKit/SLFoundation (0.0.6):
+  - SLDevKit/SLDefs (0.0.8)
+  - SLDevKit/SLFoundation (0.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLUIKit (0.0.6):
+  - SLDevKit/SLUIKit (0.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUtils (0.0.6):
+  - SLDevKit/SLUtils (0.0.8):
     - SLDevKit/SLDefs
 
 DEPENDENCIES:
@@ -28,8 +28,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLDevKit: c1f09467a99a985111ffc1f3d879880e84e4ac26
+  SLDevKit: d7336b3750b5689024730da40d61d7bcdea7ace2
 
-PODFILE CHECKSUM: 34a3af21e17f26cfb98775493e24ee6fe0609f39
+PODFILE CHECKSUM: 2fb2e992bbf9ed02752c745e824861bfef629c44
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
