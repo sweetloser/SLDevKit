@@ -44,6 +44,20 @@
     self.frame = frame;
 }
 
+- (CGFloat)centerXValue {
+    return self.leftValue + self.widthValue * 0.5;
+}
+- (void)setCenterXValue:(CGFloat)centerXValue {
+    self.left_sl(centerXValue-self.widthValue * 0.5f);
+}
+- (CGFloat)centerYValue {
+    return self.topValue + self.heightValue * 0.5;
+}
+- (void)setCenterYValue:(CGFloat)centerYValue {
+    self.top_sl(centerYValue-self.heightValue*0.5);
+}
+
+
 - (CGFloat)widthValue {
     return self.frame.size.width;
 }
@@ -104,6 +118,20 @@
 - (SLAutoLayoutFloatBlock)bottom_sl {
     return ^(CGFloat bottom){
         self.bottomValue = bottom;
+        return self;
+    };
+}
+
+- (SLAutoLayoutFloatBlock)centerX_sl {
+    return ^(CGFloat centerX) {
+        self.centerXValue = centerX;
+        return self;
+    };
+}
+
+- (SLAutoLayoutFloatBlock)centerY_sl {
+    return ^(CGFloat centerY) {
+        self.centerYValue = centerY;
         return self;
     };
 }

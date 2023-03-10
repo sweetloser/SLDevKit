@@ -104,8 +104,27 @@
             view.left_sl(leftItem.refView.rightValue+[leftItem.value floatValue]);
         }
     } else if (layoutModel.equalLeft) {
-        SLAutoLayoutModelItem *equalLeftItem = layoutModel.equalLeft;
-        view.left_sl(equalLeftItem.refView.leftValue);
+        if (!view.fixedWidth) {
+            if (layoutModel.needsAutoResizeView == view.superview) {
+                view.width_sl(view.rightValue - (0+layoutModel.equalLeft.offset));
+            } else {
+                view.width_sl(view.rightValue - (layoutModel.equalLeft.refView.leftValue + layoutModel.equalLeft.offset));
+            }
+        }
+        
+        if (view.superview == layoutModel.equalLeft.refView) {
+            view.left_sl(0+layoutModel.equalLeft.offset);
+        } else {
+            view.left_sl(layoutModel.equalLeft.refView.leftValue + layoutModel.equalLeft.offset);
+        }
+    } else if (layoutModel.equalCenterX) {
+        if (view.superview == layoutModel.equalCenterX.refView) {
+            view.centerX_sl(layoutModel.equalCenterX.refView.widthValue*0.5 + layoutModel.equalCenterX.offset);
+        } else {
+            view.centerX_sl(layoutModel.equalCenterX.refView.centerXValue + layoutModel.equalCenterX.offset);
+        }
+    } else if (layoutModel.centerX) {
+        view.centerX_sl(layoutModel.centerX.floatValue);
     }
 }
 - (void)_sl_layoutRightWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -138,8 +157,18 @@
             view.right_sl(rightItem.refView.leftValue-rightItem.value.floatValue);
         }
     } else if (layoutModel.equalRight) {
-        SLAutoLayoutModelItem *equalRightItem = layoutModel.equalRight;
-        view.right_sl(equalRightItem.refView.rightValue);
+        if (!view.fixedWidth) {
+            if (layoutModel.equalRight.refView == view.superview) {
+                view.width_sl(layoutModel.equalRight.refView.widthValue - view.leftValue + layoutModel.equalRight.offset);
+            } else {
+                view.width_sl(layoutModel.equalRight.refView.rightValue - view.leftValue + layoutModel.equalRight.offset);
+            }
+        }
+        
+        view.right_sl(layoutModel.equalRight.refView.rightValue + layoutModel.equalRight.offset);
+        if (view.superview == layoutModel.equalRight.refView) {
+            view.right_sl(layoutModel.equalRight.refView.widthValue + layoutModel.equalRight.offset);
+        }
     }
 }
 - (void)_sl_layoutTopWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -164,7 +193,25 @@
             
         }
     } else if (layoutModel.equalTop) {
-        
+        if (view.superview == layoutModel.equalTop.refView) {
+            if (!view.fixedHeight) {
+                view.height_sl(view.bottomValue - layoutModel.equalTop.offset);
+            }
+            view.top_sl(0 + layoutModel.equalTop.offset);
+        } else {
+            if (!view.fixedHeight) {
+                view.height_sl(view.bottomValue - (layoutModel.equalTop.refView.topValue + layoutModel.equalTop.offset));
+            }
+            view.top_sl(layoutModel.equalTop.refView.topValue + layoutModel.equalTop.offset);
+        }
+    } else if (layoutModel.equalCenterY) {
+        if (view.superview == layoutModel.equalCenterY.refView) {
+            view.centerY_sl(layoutModel.equalCenterY.refView.heightValue * 0.5 + layoutModel.equalCenterY.offset);
+        } else {
+            view.centerY_sl(layoutModel.equalCenterY.refView.centerYValue + layoutModel.equalCenterY.offset);
+        }
+    } else if (layoutModel.centerY) {
+        view.centerY_sl([layoutModel.centerY floatValue]);
     }
 }
 
@@ -179,8 +226,33 @@
             view.bottom_sl(bottomItem.refView.heightValue-bottomItem.value.floatValue);
         } else {
             // 寻找下视图的最上边
+            CGFloat bottomMax = INT_MAX;
+            for (UIView *refView in bottomItem.refViewsArray) {
+                if ([refView isKindOfClass:[UIView class]] && refView != view.superview && refView.topValue < bottomMax) {
+                    bottomItem.refView = refView;
+                    bottomMax = refView.topValue;
+                }
+            }
+        }
+        view.bottom_sl(bottomItem.refView.topValue - bottomItem.value.floatValue);
+    }else if (layoutModel.equalBottom) {
+        if (view.superview == layoutModel.equalBottom.refView) {
+            if (!view.fixedHeight) {
+                view.height_sl(view.superview.heightValue - view.topValue + layoutModel.equalBottom.offset);
+            }
+            view.bottom_sl(layoutModel.equalBottom.refView.heightValue + layoutModel.equalBottom.offset);
+        } else {
+            if (!view.fixedHeight) {
+                view.height_sl(layoutModel.equalBottom.refView.bottomValue - view.topValue + layoutModel.equalBottom.offset);
+            }
+            view.bottom_sl(layoutModel.equalBottom.refView.bottomValue + layoutModel.equalBottom.offset);
         }
     }
+    
+    if (layoutModel.widthEqualHeight && !view.fixedHeight) {
+        [self _sl_layoutRightWithView:view layoutModel:layoutModel];
+    }
+    
 }
 
 #pragma mark - setter&getter

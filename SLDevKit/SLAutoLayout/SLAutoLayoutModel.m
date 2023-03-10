@@ -7,11 +7,9 @@
 
 #import "SLAutoLayoutModel.h"
 #import "SLAutoLayoutModelItem.h"
+#import "SLAutoLayoutPrivate.h"
 
 @interface SLAutoLayoutModel ()
-
-@property(nonatomic,copy)NSNumber *centerX;
-@property(nonatomic,copy)NSNumber *centerY;
 
 @end
 
@@ -31,6 +29,22 @@
 
 - (SLChainableSLAutoLayoutModelFloatObjectListBlock)bottomToView {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"bottom"]);
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)xIs {
+    SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"x"]);
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)yIs {
+    SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"y"]);
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)centerXIs {
+    SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"centerX"]);
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)centerYIs {
+    SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"centerY"]);
 }
 
 - (SLChainableSLAutoLayoutModelFloatBlock)widthIs {
@@ -61,7 +75,35 @@
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalBottom"]);
 }
 
+- (SLChainableSLAutoLayoutModelEmptyBlock)widthEqualToHeight {
+    SL_CHAINABLE_EMPTY_BLOCK(
+                             self.widthEqualHeight = [SLAutoLayoutModelItem new];
+                             self.lastModelItem = self.widthEqualHeight;
+                             );
+}
+
+- (SLChainableSLAutoLayoutModelEmptyBlock)heightEqualToWidth {
+    SL_CHAINABLE_EMPTY_BLOCK(
+                             self.heightEqualWidth = [SLAutoLayoutModelItem new];
+                             self.lastModelItem = self.heightEqualWidth;);
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)offset {
+    SL_CHAINABLE_FLOAT_BLOCK(self.lastModelItem.offset = value;);
+}
+
 #pragma mark - private
+-(void)_frameWithValue:(CGFloat)value key:(NSString *)key {
+    if ([key isEqualToString:@"x"]) {
+        self.needsAutoResizeView.left_sl(value);
+    } else if ([key isEqualToString:@"y"]) {
+        self.needsAutoResizeView.top_sl(value);
+    } else if ([key isEqualToString:@"centerX"]) {
+        self.centerX = @(value);
+    } else if ([key isEqualToString:@"centerY"]) {
+        self.centerY = @(value);
+    }
+}
 -(void)_marginToView:(NSArray *)views value:(CGFloat)value key:(NSString *)key {
     SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
     item.value = @(value);
@@ -78,6 +120,7 @@
     SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
     item.refView = view;
     [self setValue:item forKey:key];
+    self.lastModelItem = item;
 }
 
 @end

@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat topValue;
 @property(nonatomic,assign)CGFloat bottomValue;
 
+@property(nonatomic,assign)CGFloat centerXValue;
+@property(nonatomic,assign)CGFloat centerYValue;
+
 @property(nonatomic,assign)CGFloat widthValue;
 @property(nonatomic,assign)CGFloat heightValue;
 
@@ -38,6 +41,9 @@ typedef UIView *_Nonnull(^SLAutoLayoutSizeBlock)(CGSize);
 @property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock right_sl;
 @property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock top_sl;
 @property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock bottom_sl;
+
+@property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock centerX_sl;
+@property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock centerY_sl;
 
 @property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock width_sl;
 @property(nonatomic,copy,readonly)SLAutoLayoutFloatBlock height_sl;

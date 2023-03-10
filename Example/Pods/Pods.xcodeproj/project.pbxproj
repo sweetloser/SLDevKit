@@ -7,154 +7,158 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006C1768DAAAAA9818F154F99D0E64A3 /* NSData+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 563D26DFD6D25E5A3337F9C0EB72E49C /* NSData+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		012AE10BF6ED819328F019D8E2076B51 /* SLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 678EBDA9B15BC37A2526E7493CC6337A /* SLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		063B3190F2838345171B9854DE7D3056 /* SLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E97EABC902DE58E7941B9557D2DDB710 /* SLUtils.m */; };
-		089355C04B91926776F7FD3B26583FEE /* UIImageView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = F045FB9608D5F79400B9B87A6C45EED5 /* UIImageView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0B478966E681C8DD7B28D471CC86F410 /* SLAutoLayoutPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229743D2EFDA84C29E8A2F81C0977BD8 /* SLAutoLayoutPrivate.m */; };
-		107876389F0D9C82F4801EB13C349C11 /* SLBlockInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 12A7832049833BD75C404A3FD22348AD /* SLBlockInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		20515DE5707EA7918D2A40447B7A6A7D /* UIView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9116F28229AC89B8760B543904398B07 /* UIView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2AE7AD44B59A0F4EE7C742E6C17688BD /* NSAttributedString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB69C42A8BF26064406820824970280 /* NSAttributedString+SLChainable.m */; };
-		2FEFBB8401AB3FB4FC84C2DBE72EEA17 /* SLAutoLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF5CF7EF6A55624BD666F8FA45AB04 /* SLAutoLayoutModel.m */; };
-		3007FB3DC0E008C1A072F9393CC0AE87 /* NSData+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 303DC516C1456F47282938600299EA7A /* NSData+SLChainable.m */; };
-		3E5DC46E849B47C2E5ECD4EBF38AD6E6 /* SLAutoLayoutModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F5FEDF183379F8E5087D6ACE6C5435 /* SLAutoLayoutModelItem.m */; };
-		494A0FA46F3EEDF4746269B3E50C6227 /* SLFoundationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 149F2669B234A4839BD3CE01739BAE9F /* SLFoundationUtils.m */; };
-		4E57C8F5BE4C7B567A5AC6CD040BAFC6 /* SLDevKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31ACB857FDA141938CB93F5886381D /* SLDevKit-dummy.m */; };
-		4E81647F45B68B6FAF17E8828727F1A3 /* UIButton+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6CDB64599A2362A576589AD008D6F /* UIButton+SLChainable.m */; };
-		50F41EEF401D573C4FBC15B521698939 /* SLAutoLayoutModelItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA9D759BFEE3075FEC520E9089ED2F /* SLAutoLayoutModelItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		51270EF5D6D677737766A900B42532D3 /* UILabel+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8040220AE57A75BB3F5730954F3B9D /* UILabel+SLChainable.m */; };
-		5246071164CA31BA53DBC768F41CFE84 /* UIColor+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = E32D9C0E12583588EBF7A4EA36D147CA /* UIColor+SLChainable.m */; };
-		5977895F3A65026281B60988DD92F13F /* SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D10BA6F2077CA4A249D5E7D4096178 /* SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5AF6F3E4B7B92FE973B697E143409A92 /* SLAutoLayoutPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 12694683FB88ECA5B8325F8021D6E788 /* SLAutoLayoutPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5D70765692DCA0ED84C54A06121C4C07 /* SLUIKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FAA94C0B1FCD11B25274811F6823E52 /* SLUIKitMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		012CD4E06C8A6537E6E127E66C079A29 /* UIView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = FE78BD8D4A2CA22C835D507738CBFF6F /* UIView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0C595865D5DDC078516CC6FF9D663885 /* SLUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE95F780DA9573CC286B669202BA9D /* SLUIKitUtils.m */; };
+		25B48D0465E6424881C3BB4D731F1B0D /* SLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7D9189E1CC0C35CB64BF1AD49EE44 /* SLUtils.m */; };
+		2AF4D407013BD2BAC38C7275B67447CB /* UILabel+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D96329DA5126F79E3DBF58F233460A9 /* UILabel+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2BF74EB319D2DE7431D0C1FB23DD8759 /* UIColor+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = FE42A009F95FAFBA1F2A291A24F129ED /* UIColor+SLChainable.m */; };
+		2FAB793D0AEC93E01BC0D7DA34C6E50C /* UISwitch+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A4C951A38CE7F2EB49D810FD66E9FC /* UISwitch+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		32DF5C216A92780D68747B509E743B52 /* SLUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E4DA52BC570A488B86F13A5A01372D52 /* SLUIKitUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		33E5C90AE6B841935AC25B0967D2CAF3 /* SLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 538A62FF6FF22B1628AC18957D38EE31 /* SLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		389860FD986B13C4416CA87718DEF7CA /* NSData+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D16FAD645061EF1B866ADCC8C84F05 /* NSData+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3CA19D8AEBF741D81ECCDFEAE1D6839D /* NSString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EFB75C2C901546E92B964260B0CF20 /* NSString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3D36A1ED9402D3878C9846750E4A7951 /* SLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = AA2AED7B29CAFF4186DA202AF49CF5F5 /* SLFoundation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E6EC9CD929AEA36249E61C091ABC7CC /* UIImageView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 31E026E6882A73860E31797893B22443 /* UIImageView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		486B8C84C313C0567DDA8DE4C83FE3AD /* SLAutoLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5065E092A943E80CA0D31654A21D532 /* SLAutoLayoutModel.m */; };
+		48D557293994AA577CE577A9E03254C7 /* UIFont+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 355A2117B85B51070E2F86490D8663CF /* UIFont+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4CBF66330687F7B0A08E55C2ECEBDDCF /* UIFont+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF97056B0C05F7F78AC0379ABD69213 /* UIFont+SLChainable.m */; };
+		50A38D544266BEC1763F6B7E40DB50B5 /* NSArray+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C6D48EB3984EA4FDF493DEADED3333 /* NSArray+SLChainable.m */; };
+		54CD333F700398F0C3849894105B78FF /* UILabel+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE9B4FE2847FCE5BD01744643AF41CC /* UILabel+SLChainable.m */; };
+		5612D1B7B7AB6A1C97867048A7F9E0C7 /* SLFoundationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F3DF8ED6687FA2B7F9DF22BE746651A0 /* SLFoundationUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		58BEDA51603A2AA15F534651DECD760A /* UIView+SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EEEFFDC31B4D8A3EBF376B93608A5D1 /* UIView+SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5C666CA8A0231517D0A4F9F8452194A6 /* UIButton+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B763F021D3EAAFEC9A054CD11C8BADD /* UIButton+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		659F100B8A770433608368B3F0DB3D70 /* Pods-SLDevKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E539D017E40A44432743171AD75B5 /* Pods-SLDevKit_Tests-dummy.m */; };
-		698D70FC40862EBF06FF79A585B57A2A /* UIView+SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE39A6DE1DD57C654DEF9BD646D43BB /* UIView+SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6A567D90DCDB18AB26B0A5F16E6B92B4 /* SLFoundationPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77021FC1D82ECDF96AE4C37A4E35473E /* SLFoundationPrivate.m */; };
-		6BBD3334AB23DC3064A08E24A41A3275 /* UITextField+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C90FD0CF6243E58D2A8155C950CE93 /* UITextField+SLChainable.m */; };
-		703F7479E2FC566D6954689C4BF5FB68 /* UITextField+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F948517E31BFF3EE2B1BD249A4A8605 /* UITextField+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		74A889CBE92210301756187E7B34651E /* UIView+SLAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D1AC3A37075E89CF20AE65579AA89C /* UIView+SLAutoLayout.m */; };
-		7C18B4AD9B43D09746E6F0D4DBBD24AA /* SLUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DE8A5A8A6653BF2B8F76340583E1AF /* SLUIKitUtils.m */; };
-		7C2DEEEC3BFDCF42968D5C18297AF9A1 /* SLUIKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A839BE4F2931BC00B11996436709733 /* SLUIKitPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7D81FDB1C74D67F792D405EB232CA820 /* SLUIKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B80EEE97B97B66965A6CD8A1966BD3F /* SLUIKitPrivate.m */; };
-		85762DEA28069F86E2FEECDAEDC0AC8A /* UIImageView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EBF3AB21E37B77E97FADEBB5AA827F /* UIImageView+SLChainable.m */; };
+		6E938ED1177E4693340CC77678F6D6EC /* SLUIKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 39030ED71F36B9C44B534B08F2D0D56F /* SLUIKitMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7514B2C77BE89C7CF67B2728DD253141 /* SLAutoLayoutPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C8AA9DCB7A0877A1A676FD739452FE /* SLAutoLayoutPrivate.m */; };
+		7A180AC89013486249D7F7B20F277382 /* SLAutoLayoutModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 331189B11E449859841B8F7FD866F38A /* SLAutoLayoutModelItem.m */; };
+		7D5BA507742D2EAA043FAB4C46FAA4CE /* SLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 87847958BBC435E47D5ECF3DDF824AE0 /* SLUIKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88565DD5AAD964D46F49BE096DCAFC76 /* NSAttributedString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = EB06A909CF461FB2B9A903C293C7DA5F /* NSAttributedString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		899E2F2BA882BDFFE8921FE7CA4CDF54 /* UITextField+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = A19AC91AD24B24932F6A1FB4984DDC75 /* UITextField+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8A3E40FFD84106C36A5F73ADD11A01F8 /* SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D837D97A4B467CCD2EFE8A05287AC4B1 /* SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8B0DBDDC8C4FA6FE8DC2EEE8D3321EC3 /* SLUIKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = DA48077BFB90349FA01B8A7D3F780C3E /* SLUIKitPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8DCD5FF335D018859D9760625F677309 /* UIImage+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = FDED2EB008569F19757BD6854B7E79EB /* UIImage+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		90418EFEEAC5FFEC04A17A82BE1D1D7C /* Pods-SLDevKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604768ABA42DE04E84954263765780F /* Pods-SLDevKit_Example-dummy.m */; };
-		912F7398650932D4C0B1EA6EDD8A1CC8 /* SLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B35B786D4E2AC886627C6DFDF8FD20BA /* SLUIKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		930E10F3B805030A8AA2EF243C8A9C4F /* UIColor+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 328EBA629AAB60F88016D35FC4000D62 /* UIColor+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		96D85A88A8F5FCEB7E06892ADC946E32 /* SLFoundationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B655C5405F955260A93C00074BECC820 /* SLFoundationUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9B763C44D23DD5853A9FF13EA45B92AF /* UILabel+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 689797E14C05FFC96B363D40FDCDB9CC /* UILabel+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9CA613F19D5BE80FE3337C5E22126410 /* UIImage+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4A3F44E797BC84F17ECF0F3CAB2946 /* UIImage+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9FD486BDFDF87111ED5F282D1D6520F6 /* SLAntiScreenShotView.h in Headers */ = {isa = PBXBuildFile; fileRef = 975E0452D0C8397BE74356148087741F /* SLAntiScreenShotView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A8EB652AF565DAB34D195AD2045F8BE0 /* SLAntiScreenShotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B1DD4A99482889CC1B5487C0B73448 /* SLAntiScreenShotView.m */; };
-		A8FFF27F5FE037A6C966AF51E8997A4F /* NSArray+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = A067FFB878B8BBAD485ACF6F32CF8A97 /* NSArray+SLChainable.m */; };
-		A900A69B6FCA4846031AE0772C568BE0 /* UIImage+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BA89B797936010841E48BBDF3E264C /* UIImage+SLChainable.m */; };
-		AB1F98C26EEC485B267EFB693FAE6B26 /* SLBlockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 986E1EDDFB1C1CD990ABA6C305706DE7 /* SLBlockInfo.m */; };
-		AB3E763122E314E0AABA7F4EE75348F0 /* UIView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D970C32567AFA90E0F2D53E69F3CA6 /* UIView+SLChainable.m */; };
-		AFAB9C40BD636E00F0120933DACD7728 /* SLAutoLayoutModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DF7B358AA2424191BEE13E1152795F /* SLAutoLayoutModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BBDF1ABF445E7D5AD83E389E769BDBBC /* NSString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D363D7B40A6368D8A89D7649BE31E65 /* NSString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BCFB5CDCA474AA92072995E694CEDD51 /* SLUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DCC3D7CFBEB7BA565F47B188E2A90E7 /* SLUIKitUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C83CAD5504D8DB263FA16029D5566418 /* NSAttributedString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EBC1C0A20E71C320A0DBAD0A712F511 /* NSAttributedString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D9BE3246A8725FF8478052ED98E1CF6A /* UIFont+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = B52CD3B186F1B94AC3718ECC46BF0F9B /* UIFont+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2062C93B1C18C12497845E5C1B63B40 /* NSString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0DE8CF0744B31A955A6D2CEF61EA77 /* NSString+SLChainable.m */; };
-		E26F506684E92E9281B69595449A4E3E /* UIFont+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D0F38D8FC4D5DEF8D2F52C9272EBFC /* UIFont+SLChainable.m */; };
-		E8074376ACA0F480FB8423D5A866010D /* UIButton+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = A90FEF4F5DDB868267EE198FBC8A512D /* UIButton+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		ECB50D68AE9E21E66F517E4F0A4F6E2A /* SLFoundationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCD80755C169EB158F423AC297386FE /* SLFoundationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F1092A5A77F30DE11EB3FB9025958E26 /* NSArray+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E18E765AFCD009B63D43555E53FF6F /* NSArray+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F3613AD94D124E38F83CEF4CC33D7D8E /* SLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 437A9820871AF43191A39EB9949267F2 /* SLFoundation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F545733FBEC76740DC4C553D100E90B8 /* SLDevKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5B66B0D124C4B1CF0E6C8E00D5597C /* SLDevKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F81A19BF00A9D8FEB7EF38312DC79918 /* SLDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 03249A444EB4F0BBBEB0915A64D59B1B /* SLDefs.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9399448100FB5E47FDA19F4D9FAC744C /* UITextField+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB0C7121BEBF55BBF4091AD8A64934A /* UITextField+SLChainable.m */; };
+		988B533AEEFE0F8130701AFB43EEAE71 /* SLDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A20061A60264AB574DD8B5629D02299 /* SLDefs.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A08871C427F2B28B68630FE34F5ADCAA /* SLDevKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDF1D2B7B0E7C91CCEB1A2C0F50876 /* SLDevKit-dummy.m */; };
+		A0E4FBFC9426700BD88D2E381198E150 /* SLBlockInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 684CF3690C14BCCC5328DFEB89BA33F8 /* SLBlockInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A319B6F7C2443E840E3F140C0EA2B91A /* SLBlockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D898BAB6B0F9ED8CBD7B63EC7E7C33 /* SLBlockInfo.m */; };
+		A6875758222DEBD1A5EDA2523333A940 /* NSAttributedString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = B314F3E2AF8EAB27E1673E901E3F6B5D /* NSAttributedString+SLChainable.m */; };
+		B6CE6ED3742C70D0953598EE01D82BFC /* NSArray+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1944F08B56A3FD8D52B81F75482337AC /* NSArray+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B807E30FD1E60539FEC5AE16D2A87BB0 /* UIView+SLAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9EB61672666C6AFF0A6BF3BF33280 /* UIView+SLAutoLayout.m */; };
+		BBA608EB3E1E4C80505D886673727FDE /* SLAutoLayoutModelItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 19E4293DDC33EA04FC279A1BD41FC238 /* SLAutoLayoutModelItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C0C01E6D49C283CD20BF215E2607498F /* UIImageView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E897788BFFC27BE75CD300C47C73C29 /* UIImageView+SLChainable.m */; };
+		C25C1E920887BE4FDD080713DD27FD2D /* UISwitch+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 739EE5762CCC8A81255768A8B14AC65A /* UISwitch+SLChainable.m */; };
+		C680CD8745EE60E9FF5E0FB739C2400B /* SLFoundationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D56B0842F47839D050A2382BB2AE8FA /* SLFoundationUtils.m */; };
+		C7646798D6826AA73DBAF037B68AE5F5 /* SLFoundationPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 407BBF31DAE0D31196173C0D30DEF6FE /* SLFoundationPrivate.m */; };
+		C767827C178B105F601224EF5068FCA8 /* SLAutoLayoutModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 538358EB268929A3E936B78A4A4F8AAA /* SLAutoLayoutModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C77BE063E1E62776553905844D09F6AB /* SLAutoLayoutPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D8583B5B76E10EB43D1330A83081C75 /* SLAutoLayoutPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CF09684E9C9E2EDAACD4E377D8DE2EA9 /* UIImage+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AC5463AB283D5F206955EBBBA90F6 /* UIImage+SLChainable.m */; };
+		D76562DA8FFDD98C56149182924E0300 /* SLUIKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0698B8AD61AAC3598D767BCFC40AA48 /* SLUIKitPrivate.m */; };
+		DA8D9C0388A9AE41D6DE425E3FDE4EEC /* NSString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C531EA1CBF809395D76FAB4EDFDE40 /* NSString+SLChainable.m */; };
+		DC308DD4688CE8D8B1D2E3BFA148CEC9 /* UIButton+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC4D9F6D283A25283851076BA268338 /* UIButton+SLChainable.m */; };
+		DD3CAEBA79A75F7197441200E7379D24 /* UIView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1D99723CC31E5A9D17D4499D2E2CF9 /* UIView+SLChainable.m */; };
+		DE28926B146DEB1AD38B34F64EAF5C92 /* SLDevKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 31EB04A39C6B850470C9BDEF5962A2E3 /* SLDevKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E25CB5A96D7F6899F167819821BAA338 /* SLAntiScreenShotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CFD1D5E787D1D062A8B6644F5A6F61 /* SLAntiScreenShotView.m */; };
+		EAFA9ED7C1484914B32620C58E3CAB22 /* SLAntiScreenShotView.h in Headers */ = {isa = PBXBuildFile; fileRef = 925BFAF37F7ABB60CDC7D57C2C70D671 /* SLAntiScreenShotView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EBF1D4B9D128C35F7B0CF917A46FA920 /* SLFoundationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1C6EB0DBA9F5D01B80E1C9C20D5C9C /* SLFoundationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EC2DAC98F22FB6C9E51C37C90DE4418A /* UIColor+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFA5021715B4F8784A443CB7E5E5EFB /* UIColor+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EFE3A7FAB4BD7D137A5535A03951101A /* NSData+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 836CE89A29E04B93232D76902EC67728 /* NSData+SLChainable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B88EA4DCB1DBA4EECEA35E71C9300DC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C622DC87020B9EBB454B185737AB9845;
-			remoteInfo = SLDevKit;
-		};
-		F0E03CB43924ED9E5CA648637A5B7772 /* PBXContainerItemProxy */ = {
+		593F3603E6BD1D43284D9D961559A182 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F07E4B2E891E5B115FF8842176BC1057;
 			remoteInfo = "Pods-SLDevKit_Example";
 		};
+		D960895BDD96C755FBDC96BBCAA9467A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C622DC87020B9EBB454B185737AB9845;
+			remoteInfo = SLDevKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03249A444EB4F0BBBEB0915A64D59B1B /* SLDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDefs.h; path = SLDevKit/SLDefs/SLDefs.h; sourceTree = "<group>"; };
-		05F5FEDF183379F8E5087D6ACE6C5435 /* SLAutoLayoutModelItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModelItem.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.m; sourceTree = "<group>"; };
-		06DE8A5A8A6653BF2B8F76340583E1AF /* SLUIKitUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitUtils.m; path = SLDevKit/SLUIKit/SLUIKitUtils.m; sourceTree = "<group>"; };
-		084142CDDDD6837EBFC3B9B0F2564E5A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		0B80EEE97B97B66965A6CD8A1966BD3F /* SLUIKitPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitPrivate.m; path = SLDevKit/SLUIKit/SLUIKitPrivate.m; sourceTree = "<group>"; };
-		0DCC3D7CFBEB7BA565F47B188E2A90E7 /* SLUIKitUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitUtils.h; path = SLDevKit/SLUIKit/SLUIKitUtils.h; sourceTree = "<group>"; };
-		0EB2F3C49DA3D4626C9BFEA390B5EFCF /* SLDevKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.release.xcconfig; sourceTree = "<group>"; };
-		12694683FB88ECA5B8325F8021D6E788 /* SLAutoLayoutPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutPrivate.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.h; sourceTree = "<group>"; };
-		12A7832049833BD75C404A3FD22348AD /* SLBlockInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLBlockInfo.h; path = SLDevKit/SLFoundation/SLBlockInfo.h; sourceTree = "<group>"; };
-		149F2669B234A4839BD3CE01739BAE9F /* SLFoundationUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationUtils.m; path = SLDevKit/SLFoundation/SLFoundationUtils.m; sourceTree = "<group>"; };
-		1B4A3F44E797BC84F17ECF0F3CAB2946 /* UIImage+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.h"; sourceTree = "<group>"; };
-		1C0FECF5020CD81B1A960D6A008869A1 /* SLDevKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLDevKit-prefix.pch"; sourceTree = "<group>"; };
-		1CCD80755C169EB158F423AC297386FE /* SLFoundationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationPrivate.h; path = SLDevKit/SLFoundation/SLFoundationPrivate.h; sourceTree = "<group>"; };
-		1EBC1C0A20E71C320A0DBAD0A712F511 /* NSAttributedString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+SLChainable.h"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.h"; sourceTree = "<group>"; };
-		229743D2EFDA84C29E8A2F81C0977BD8 /* SLAutoLayoutPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutPrivate.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.m; sourceTree = "<group>"; };
-		22DF7B358AA2424191BEE13E1152795F /* SLAutoLayoutModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModel.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.h; sourceTree = "<group>"; };
-		23E18E765AFCD009B63D43555E53FF6F /* NSArray+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+SLChainable.h"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.h"; sourceTree = "<group>"; };
-		24C90FD0CF6243E58D2A8155C950CE93 /* UITextField+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.m"; sourceTree = "<group>"; };
+		0BFA5021715B4F8784A443CB7E5E5EFB /* UIColor+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLChainable.h"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.h"; sourceTree = "<group>"; };
+		0FC4D9F6D283A25283851076BA268338 /* UIButton+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SLChainable.m"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.m"; sourceTree = "<group>"; };
+		12D16FAD645061EF1B866ADCC8C84F05 /* NSData+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SLChainable.h"; path = "SLDevKit/SLFoundation/NSData+SLChainable.h"; sourceTree = "<group>"; };
+		1944F08B56A3FD8D52B81F75482337AC /* NSArray+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+SLChainable.h"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.h"; sourceTree = "<group>"; };
+		19E4293DDC33EA04FC279A1BD41FC238 /* SLAutoLayoutModelItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModelItem.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.h; sourceTree = "<group>"; };
+		1B1C6EB0DBA9F5D01B80E1C9C20D5C9C /* SLFoundationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationPrivate.h; path = SLDevKit/SLFoundation/SLFoundationPrivate.h; sourceTree = "<group>"; };
+		1D228FEC3DCFB699E37B55F7EC659774 /* SLDevKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLDevKit-prefix.pch"; sourceTree = "<group>"; };
+		22CFD1D5E787D1D062A8B6644F5A6F61 /* SLAntiScreenShotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAntiScreenShotView.m; path = SLDevKit/SLUIKit/SLAntiScreenShotView.m; sourceTree = "<group>"; };
 		2604768ABA42DE04E84954263765780F /* Pods-SLDevKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLDevKit_Example-dummy.m"; sourceTree = "<group>"; };
 		266FD5E0B798A9FD42652BC43776A394 /* Pods-SLDevKit_Example */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SLDevKit_Example"; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D31ACB857FDA141938CB93F5886381D /* SLDevKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLDevKit-dummy.m"; sourceTree = "<group>"; };
-		2D363D7B40A6368D8A89D7649BE31E65 /* NSString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SLChainable.h"; path = "SLDevKit/SLFoundation/NSString+SLChainable.h"; sourceTree = "<group>"; };
-		303DC516C1456F47282938600299EA7A /* NSData+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SLChainable.m"; path = "SLDevKit/SLFoundation/NSData+SLChainable.m"; sourceTree = "<group>"; };
-		328EBA629AAB60F88016D35FC4000D62 /* UIColor+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLChainable.h"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.h"; sourceTree = "<group>"; };
-		437A9820871AF43191A39EB9949267F2 /* SLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundation.h; path = SLDevKit/SLFoundation/SLFoundation.h; sourceTree = "<group>"; };
-		45AB857847291155712ECE6F26C53648 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		4CC6CDB64599A2362A576589AD008D6F /* UIButton+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SLChainable.m"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.m"; sourceTree = "<group>"; };
-		50D10BA6F2077CA4A249D5E7D4096178 /* SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayout.h; path = SLDevKit/SLAutoLayout/SLAutoLayout.h; sourceTree = "<group>"; };
-		563D26DFD6D25E5A3337F9C0EB72E49C /* NSData+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SLChainable.h"; path = "SLDevKit/SLFoundation/NSData+SLChainable.h"; sourceTree = "<group>"; };
-		5CB69C42A8BF26064406820824970280 /* NSAttributedString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SLChainable.m"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.m"; sourceTree = "<group>"; };
-		5D0DE8CF0744B31A955A6D2CEF61EA77 /* NSString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLChainable.m"; path = "SLDevKit/SLFoundation/NSString+SLChainable.m"; sourceTree = "<group>"; };
-		678EBDA9B15BC37A2526E7493CC6337A /* SLUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUtils.h; path = SLDevKit/SLUtils/SLUtils.h; sourceTree = "<group>"; };
-		689797E14C05FFC96B363D40FDCDB9CC /* UILabel+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+SLChainable.h"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.h"; sourceTree = "<group>"; };
-		69D1AC3A37075E89CF20AE65579AA89C /* UIView+SLAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLAutoLayout.m"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.m"; sourceTree = "<group>"; };
+		30EFB75C2C901546E92B964260B0CF20 /* NSString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SLChainable.h"; path = "SLDevKit/SLFoundation/NSString+SLChainable.h"; sourceTree = "<group>"; };
+		31E026E6882A73860E31797893B22443 /* UIImageView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.h"; sourceTree = "<group>"; };
+		31EB04A39C6B850470C9BDEF5962A2E3 /* SLDevKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDevKit.h; path = SLDevKit/SLDevKit.h; sourceTree = "<group>"; };
+		331189B11E449859841B8F7FD866F38A /* SLAutoLayoutModelItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModelItem.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.m; sourceTree = "<group>"; };
+		355A2117B85B51070E2F86490D8663CF /* UIFont+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLChainable.h"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.h"; sourceTree = "<group>"; };
+		38A7B74C2B176952AA6EFE54691BD88D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		39030ED71F36B9C44B534B08F2D0D56F /* SLUIKitMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitMacros.h; path = SLDevKit/SLUIKit/SLUIKitMacros.h; sourceTree = "<group>"; };
+		407BBF31DAE0D31196173C0D30DEF6FE /* SLFoundationPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationPrivate.m; path = SLDevKit/SLFoundation/SLFoundationPrivate.m; sourceTree = "<group>"; };
+		45D9EB61672666C6AFF0A6BF3BF33280 /* UIView+SLAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLAutoLayout.m"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.m"; sourceTree = "<group>"; };
+		4D8583B5B76E10EB43D1330A83081C75 /* SLAutoLayoutPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutPrivate.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.h; sourceTree = "<group>"; };
+		5334914EEE68DB6801F6901718EF1BBE /* SLDevKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SLDevKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		538358EB268929A3E936B78A4A4F8AAA /* SLAutoLayoutModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModel.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.h; sourceTree = "<group>"; };
+		538A62FF6FF22B1628AC18957D38EE31 /* SLUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUtils.h; path = SLDevKit/SLUtils/SLUtils.h; sourceTree = "<group>"; };
+		5E897788BFFC27BE75CD300C47C73C29 /* UIImageView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.m"; sourceTree = "<group>"; };
+		5EEEFFDC31B4D8A3EBF376B93608A5D1 /* UIView+SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLAutoLayout.h"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.h"; sourceTree = "<group>"; };
+		67CE982E6FCEC9F82A38A4D858CB5431 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		684CF3690C14BCCC5328DFEB89BA33F8 /* SLBlockInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLBlockInfo.h; path = SLDevKit/SLFoundation/SLBlockInfo.h; sourceTree = "<group>"; };
+		68C531EA1CBF809395D76FAB4EDFDE40 /* NSString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLChainable.m"; path = "SLDevKit/SLFoundation/NSString+SLChainable.m"; sourceTree = "<group>"; };
+		6B763F021D3EAAFEC9A054CD11C8BADD /* UIButton+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+SLChainable.h"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.h"; sourceTree = "<group>"; };
 		6C03BD6A4F958E0608FA80BA7EDB78B1 /* Pods-SLDevKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6FAA94C0B1FCD11B25274811F6823E52 /* SLUIKitMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitMacros.h; path = SLDevKit/SLUIKit/SLUIKitMacros.h; sourceTree = "<group>"; };
-		77021FC1D82ECDF96AE4C37A4E35473E /* SLFoundationPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationPrivate.m; path = SLDevKit/SLFoundation/SLFoundationPrivate.m; sourceTree = "<group>"; };
-		7FAAAF905A4C2B5B653452FB038172CC /* SLDevKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SLDevKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		83AA9D759BFEE3075FEC520E9089ED2F /* SLAutoLayoutModelItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModelItem.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.h; sourceTree = "<group>"; };
-		83D970C32567AFA90E0F2D53E69F3CA6 /* UIView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIView+SLChainable.m"; sourceTree = "<group>"; };
-		87BA89B797936010841E48BBDF3E264C /* UIImage+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.m"; sourceTree = "<group>"; };
-		8A8040220AE57A75BB3F5730954F3B9D /* UILabel+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+SLChainable.m"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.m"; sourceTree = "<group>"; };
-		9116F28229AC89B8760B543904398B07 /* UIView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIView+SLChainable.h"; sourceTree = "<group>"; };
+		6CB0C7121BEBF55BBF4091AD8A64934A /* UITextField+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.m"; sourceTree = "<group>"; };
+		739EE5762CCC8A81255768A8B14AC65A /* UISwitch+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISwitch+SLChainable.m"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.m"; sourceTree = "<group>"; };
+		7D56B0842F47839D050A2382BB2AE8FA /* SLFoundationUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationUtils.m; path = SLDevKit/SLFoundation/SLFoundationUtils.m; sourceTree = "<group>"; };
+		836CE89A29E04B93232D76902EC67728 /* NSData+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SLChainable.m"; path = "SLDevKit/SLFoundation/NSData+SLChainable.m"; sourceTree = "<group>"; };
+		86D2BA459050FD3B41535AE5BF3AD44A /* SLDevKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.debug.xcconfig; sourceTree = "<group>"; };
+		87847958BBC435E47D5ECF3DDF824AE0 /* SLUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKit.h; path = SLDevKit/SLUIKit/SLUIKit.h; sourceTree = "<group>"; };
+		8A1AC5463AB283D5F206955EBBBA90F6 /* UIImage+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.m"; sourceTree = "<group>"; };
+		8A20061A60264AB574DD8B5629D02299 /* SLDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDefs.h; path = SLDevKit/SLDefs/SLDefs.h; sourceTree = "<group>"; };
+		8D96329DA5126F79E3DBF58F233460A9 /* UILabel+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+SLChainable.h"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.h"; sourceTree = "<group>"; };
+		8FDDF1D2B7B0E7C91CCEB1A2C0F50876 /* SLDevKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLDevKit-dummy.m"; sourceTree = "<group>"; };
+		925BFAF37F7ABB60CDC7D57C2C70D671 /* SLAntiScreenShotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAntiScreenShotView.h; path = SLDevKit/SLUIKit/SLAntiScreenShotView.h; sourceTree = "<group>"; };
+		93D898BAB6B0F9ED8CBD7B63EC7E7C33 /* SLBlockInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLBlockInfo.m; path = SLDevKit/SLFoundation/SLBlockInfo.m; sourceTree = "<group>"; };
 		940861DE73AEAFC86CEC0E60B822AC6F /* Pods-SLDevKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		975E0452D0C8397BE74356148087741F /* SLAntiScreenShotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAntiScreenShotView.h; path = SLDevKit/SLUIKit/SLAntiScreenShotView.h; sourceTree = "<group>"; };
-		986E1EDDFB1C1CD990ABA6C305706DE7 /* SLBlockInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLBlockInfo.m; path = SLDevKit/SLFoundation/SLBlockInfo.m; sourceTree = "<group>"; };
-		9A839BE4F2931BC00B11996436709733 /* SLUIKitPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitPrivate.h; path = SLDevKit/SLUIKit/SLUIKitPrivate.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F948517E31BFF3EE2B1BD249A4A8605 /* UITextField+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.h"; sourceTree = "<group>"; };
-		A067FFB878B8BBAD485ACF6F32CF8A97 /* NSArray+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SLChainable.m"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.m"; sourceTree = "<group>"; };
-		A90FEF4F5DDB868267EE198FBC8A512D /* UIButton+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+SLChainable.h"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.h"; sourceTree = "<group>"; };
+		A19AC91AD24B24932F6A1FB4984DDC75 /* UITextField+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.h"; sourceTree = "<group>"; };
+		A3B7D9189E1CC0C35CB64BF1AD49EE44 /* SLUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUtils.m; path = SLDevKit/SLUtils/SLUtils.m; sourceTree = "<group>"; };
+		A6C8AA9DCB7A0877A1A676FD739452FE /* SLAutoLayoutPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutPrivate.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.m; sourceTree = "<group>"; };
+		A9A4C951A38CE7F2EB49D810FD66E9FC /* UISwitch+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISwitch+SLChainable.h"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.h"; sourceTree = "<group>"; };
+		AA2AED7B29CAFF4186DA202AF49CF5F5 /* SLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundation.h; path = SLDevKit/SLFoundation/SLFoundation.h; sourceTree = "<group>"; };
 		AF1EB8C8ED2764F93FFBE956ADD3FBAD /* SLDevKit */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = SLDevKit; path = libSLDevKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B35B786D4E2AC886627C6DFDF8FD20BA /* SLUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKit.h; path = SLDevKit/SLUIKit/SLUIKit.h; sourceTree = "<group>"; };
-		B4B1DD4A99482889CC1B5487C0B73448 /* SLAntiScreenShotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAntiScreenShotView.m; path = SLDevKit/SLUIKit/SLAntiScreenShotView.m; sourceTree = "<group>"; };
-		B52CD3B186F1B94AC3718ECC46BF0F9B /* UIFont+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLChainable.h"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.h"; sourceTree = "<group>"; };
-		B655C5405F955260A93C00074BECC820 /* SLFoundationUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationUtils.h; path = SLDevKit/SLFoundation/SLFoundationUtils.h; sourceTree = "<group>"; };
+		B314F3E2AF8EAB27E1673E901E3F6B5D /* NSAttributedString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SLChainable.m"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.m"; sourceTree = "<group>"; };
 		B8D6E92EEF1EE681D92F8DAAD011717E /* Pods-SLDevKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BCD7DFC832E25A4E11E8A6DC892801AA /* Pods-SLDevKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLDevKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C148D9ED769AEB688D7A1F5F6B76A6A9 /* Pods-SLDevKit_Tests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SLDevKit_Tests"; path = "libPods-SLDevKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5065E092A943E80CA0D31654A21D532 /* SLAutoLayoutModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModel.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.m; sourceTree = "<group>"; };
+		C596CBD369344A0A4B042F433B29A415 /* SLDevKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.release.xcconfig; sourceTree = "<group>"; };
+		C5C6D48EB3984EA4FDF493DEADED3333 /* NSArray+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SLChainable.m"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.m"; sourceTree = "<group>"; };
 		C660319CBBF4885A88FA466ECA7A4B4F /* Pods-SLDevKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLDevKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C73B1090777EEAEE801AC1A3C9155723 /* SLDevKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.debug.xcconfig; sourceTree = "<group>"; };
-		CF5B66B0D124C4B1CF0E6C8E00D5597C /* SLDevKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDevKit.h; path = SLDevKit/SLDevKit.h; sourceTree = "<group>"; };
+		CEFE95F780DA9573CC286B669202BA9D /* SLUIKitUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitUtils.m; path = SLDevKit/SLUIKit/SLUIKitUtils.m; sourceTree = "<group>"; };
 		D04E628F9EA9CAFECD4E37A611D0FF9E /* Pods-SLDevKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLDevKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D0EBF3AB21E37B77E97FADEBB5AA827F /* UIImageView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.m"; sourceTree = "<group>"; };
+		D837D97A4B467CCD2EFE8A05287AC4B1 /* SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayout.h; path = SLDevKit/SLAutoLayout/SLAutoLayout.h; sourceTree = "<group>"; };
+		DA48077BFB90349FA01B8A7D3F780C3E /* SLUIKitPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitPrivate.h; path = SLDevKit/SLUIKit/SLUIKitPrivate.h; sourceTree = "<group>"; };
+		DC1D99723CC31E5A9D17D4499D2E2CF9 /* UIView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIView+SLChainable.m"; sourceTree = "<group>"; };
 		DC4E539D017E40A44432743171AD75B5 /* Pods-SLDevKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLDevKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		E32D9C0E12583588EBF7A4EA36D147CA /* UIColor+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLChainable.m"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.m"; sourceTree = "<group>"; };
+		DFE9B4FE2847FCE5BD01744643AF41CC /* UILabel+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+SLChainable.m"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.m"; sourceTree = "<group>"; };
+		E0698B8AD61AAC3598D767BCFC40AA48 /* SLUIKitPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitPrivate.m; path = SLDevKit/SLUIKit/SLUIKitPrivate.m; sourceTree = "<group>"; };
+		E4DA52BC570A488B86F13A5A01372D52 /* SLUIKitUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitUtils.h; path = SLDevKit/SLUIKit/SLUIKitUtils.h; sourceTree = "<group>"; };
 		E613F4B85A1B69B668A004382B597404 /* Pods-SLDevKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E97EABC902DE58E7941B9557D2DDB710 /* SLUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUtils.m; path = SLDevKit/SLUtils/SLUtils.m; sourceTree = "<group>"; };
+		EB06A909CF461FB2B9A903C293C7DA5F /* NSAttributedString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+SLChainable.h"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.h"; sourceTree = "<group>"; };
 		EB9F87685BE0F4C36C6483CF0ADD0033 /* Pods-SLDevKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLDevKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F045FB9608D5F79400B9B87A6C45EED5 /* UIImageView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.h"; sourceTree = "<group>"; };
-		F7D0F38D8FC4D5DEF8D2F52C9272EBFC /* UIFont+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLChainable.m"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.m"; sourceTree = "<group>"; };
-		FEBF5CF7EF6A55624BD666F8FA45AB04 /* SLAutoLayoutModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModel.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.m; sourceTree = "<group>"; };
-		FEE39A6DE1DD57C654DEF9BD646D43BB /* UIView+SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLAutoLayout.h"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.h"; sourceTree = "<group>"; };
+		F3DF8ED6687FA2B7F9DF22BE746651A0 /* SLFoundationUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationUtils.h; path = SLDevKit/SLFoundation/SLFoundationUtils.h; sourceTree = "<group>"; };
+		FAF97056B0C05F7F78AC0379ABD69213 /* UIFont+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLChainable.m"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.m"; sourceTree = "<group>"; };
+		FDED2EB008569F19757BD6854B7E79EB /* UIImage+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.h"; sourceTree = "<group>"; };
+		FE42A009F95FAFBA1F2A291A24F129ED /* UIColor+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLChainable.m"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.m"; sourceTree = "<group>"; };
+		FE78BD8D4A2CA22C835D507738CBFF6F /* UIView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIView+SLChainable.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FF343768BBECC03EF1E5FCF993607C9 /* Frameworks */ = {
+		D68ECE08EA1B39C08C95D10A62946060 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,6 +186,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0103979C43F88610B39770CCA0424837 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				67CE982E6FCEC9F82A38A4D858CB5431 /* LICENSE */,
+				38A7B74C2B176952AA6EFE54691BD88D /* README.md */,
+				5334914EEE68DB6801F6901718EF1BBE /* SLDevKit.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		09C93D9F547AD025D79F1B2C973FA4C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,120 +219,120 @@
 			path = "Target Support Files/Pods-SLDevKit_Tests";
 			sourceTree = "<group>";
 		};
-		2C07185EE99A4C985DD9D7E2007247CC /* SLUIKit */ = {
+		2CAA40B1AA5F2DFCC76F03D558C7914D /* SLAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				1EBC1C0A20E71C320A0DBAD0A712F511 /* NSAttributedString+SLChainable.h */,
-				5CB69C42A8BF26064406820824970280 /* NSAttributedString+SLChainable.m */,
-				975E0452D0C8397BE74356148087741F /* SLAntiScreenShotView.h */,
-				B4B1DD4A99482889CC1B5487C0B73448 /* SLAntiScreenShotView.m */,
-				B35B786D4E2AC886627C6DFDF8FD20BA /* SLUIKit.h */,
-				6FAA94C0B1FCD11B25274811F6823E52 /* SLUIKitMacros.h */,
-				9A839BE4F2931BC00B11996436709733 /* SLUIKitPrivate.h */,
-				0B80EEE97B97B66965A6CD8A1966BD3F /* SLUIKitPrivate.m */,
-				0DCC3D7CFBEB7BA565F47B188E2A90E7 /* SLUIKitUtils.h */,
-				06DE8A5A8A6653BF2B8F76340583E1AF /* SLUIKitUtils.m */,
-				A90FEF4F5DDB868267EE198FBC8A512D /* UIButton+SLChainable.h */,
-				4CC6CDB64599A2362A576589AD008D6F /* UIButton+SLChainable.m */,
-				328EBA629AAB60F88016D35FC4000D62 /* UIColor+SLChainable.h */,
-				E32D9C0E12583588EBF7A4EA36D147CA /* UIColor+SLChainable.m */,
-				B52CD3B186F1B94AC3718ECC46BF0F9B /* UIFont+SLChainable.h */,
-				F7D0F38D8FC4D5DEF8D2F52C9272EBFC /* UIFont+SLChainable.m */,
-				1B4A3F44E797BC84F17ECF0F3CAB2946 /* UIImage+SLChainable.h */,
-				87BA89B797936010841E48BBDF3E264C /* UIImage+SLChainable.m */,
-				F045FB9608D5F79400B9B87A6C45EED5 /* UIImageView+SLChainable.h */,
-				D0EBF3AB21E37B77E97FADEBB5AA827F /* UIImageView+SLChainable.m */,
-				689797E14C05FFC96B363D40FDCDB9CC /* UILabel+SLChainable.h */,
-				8A8040220AE57A75BB3F5730954F3B9D /* UILabel+SLChainable.m */,
-				9F948517E31BFF3EE2B1BD249A4A8605 /* UITextField+SLChainable.h */,
-				24C90FD0CF6243E58D2A8155C950CE93 /* UITextField+SLChainable.m */,
-				9116F28229AC89B8760B543904398B07 /* UIView+SLChainable.h */,
-				83D970C32567AFA90E0F2D53E69F3CA6 /* UIView+SLChainable.m */,
+				D837D97A4B467CCD2EFE8A05287AC4B1 /* SLAutoLayout.h */,
+				538358EB268929A3E936B78A4A4F8AAA /* SLAutoLayoutModel.h */,
+				C5065E092A943E80CA0D31654A21D532 /* SLAutoLayoutModel.m */,
+				19E4293DDC33EA04FC279A1BD41FC238 /* SLAutoLayoutModelItem.h */,
+				331189B11E449859841B8F7FD866F38A /* SLAutoLayoutModelItem.m */,
+				4D8583B5B76E10EB43D1330A83081C75 /* SLAutoLayoutPrivate.h */,
+				A6C8AA9DCB7A0877A1A676FD739452FE /* SLAutoLayoutPrivate.m */,
+				5EEEFFDC31B4D8A3EBF376B93608A5D1 /* UIView+SLAutoLayout.h */,
+				45D9EB61672666C6AFF0A6BF3BF33280 /* UIView+SLAutoLayout.m */,
+			);
+			name = SLAutoLayout;
+			sourceTree = "<group>";
+		};
+		3B683F36DF3A74A23330BE2D959FDD22 /* SLUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB06A909CF461FB2B9A903C293C7DA5F /* NSAttributedString+SLChainable.h */,
+				B314F3E2AF8EAB27E1673E901E3F6B5D /* NSAttributedString+SLChainable.m */,
+				925BFAF37F7ABB60CDC7D57C2C70D671 /* SLAntiScreenShotView.h */,
+				22CFD1D5E787D1D062A8B6644F5A6F61 /* SLAntiScreenShotView.m */,
+				87847958BBC435E47D5ECF3DDF824AE0 /* SLUIKit.h */,
+				39030ED71F36B9C44B534B08F2D0D56F /* SLUIKitMacros.h */,
+				DA48077BFB90349FA01B8A7D3F780C3E /* SLUIKitPrivate.h */,
+				E0698B8AD61AAC3598D767BCFC40AA48 /* SLUIKitPrivate.m */,
+				E4DA52BC570A488B86F13A5A01372D52 /* SLUIKitUtils.h */,
+				CEFE95F780DA9573CC286B669202BA9D /* SLUIKitUtils.m */,
+				6B763F021D3EAAFEC9A054CD11C8BADD /* UIButton+SLChainable.h */,
+				0FC4D9F6D283A25283851076BA268338 /* UIButton+SLChainable.m */,
+				0BFA5021715B4F8784A443CB7E5E5EFB /* UIColor+SLChainable.h */,
+				FE42A009F95FAFBA1F2A291A24F129ED /* UIColor+SLChainable.m */,
+				355A2117B85B51070E2F86490D8663CF /* UIFont+SLChainable.h */,
+				FAF97056B0C05F7F78AC0379ABD69213 /* UIFont+SLChainable.m */,
+				FDED2EB008569F19757BD6854B7E79EB /* UIImage+SLChainable.h */,
+				8A1AC5463AB283D5F206955EBBBA90F6 /* UIImage+SLChainable.m */,
+				31E026E6882A73860E31797893B22443 /* UIImageView+SLChainable.h */,
+				5E897788BFFC27BE75CD300C47C73C29 /* UIImageView+SLChainable.m */,
+				8D96329DA5126F79E3DBF58F233460A9 /* UILabel+SLChainable.h */,
+				DFE9B4FE2847FCE5BD01744643AF41CC /* UILabel+SLChainable.m */,
+				A9A4C951A38CE7F2EB49D810FD66E9FC /* UISwitch+SLChainable.h */,
+				739EE5762CCC8A81255768A8B14AC65A /* UISwitch+SLChainable.m */,
+				A19AC91AD24B24932F6A1FB4984DDC75 /* UITextField+SLChainable.h */,
+				6CB0C7121BEBF55BBF4091AD8A64934A /* UITextField+SLChainable.m */,
+				FE78BD8D4A2CA22C835D507738CBFF6F /* UIView+SLChainable.h */,
+				DC1D99723CC31E5A9D17D4499D2E2CF9 /* UIView+SLChainable.m */,
 			);
 			name = SLUIKit;
 			sourceTree = "<group>";
 		};
-		32930C2ED70D493E374269C562819053 /* SLFoundation */ = {
+		45262C1E3F6751FD3497A26D3CA09E13 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				23E18E765AFCD009B63D43555E53FF6F /* NSArray+SLChainable.h */,
-				A067FFB878B8BBAD485ACF6F32CF8A97 /* NSArray+SLChainable.m */,
-				563D26DFD6D25E5A3337F9C0EB72E49C /* NSData+SLChainable.h */,
-				303DC516C1456F47282938600299EA7A /* NSData+SLChainable.m */,
-				2D363D7B40A6368D8A89D7649BE31E65 /* NSString+SLChainable.h */,
-				5D0DE8CF0744B31A955A6D2CEF61EA77 /* NSString+SLChainable.m */,
-				12A7832049833BD75C404A3FD22348AD /* SLBlockInfo.h */,
-				986E1EDDFB1C1CD990ABA6C305706DE7 /* SLBlockInfo.m */,
-				437A9820871AF43191A39EB9949267F2 /* SLFoundation.h */,
-				1CCD80755C169EB158F423AC297386FE /* SLFoundationPrivate.h */,
-				77021FC1D82ECDF96AE4C37A4E35473E /* SLFoundationPrivate.m */,
-				B655C5405F955260A93C00074BECC820 /* SLFoundationUtils.h */,
-				149F2669B234A4839BD3CE01739BAE9F /* SLFoundationUtils.m */,
+				8FDDF1D2B7B0E7C91CCEB1A2C0F50876 /* SLDevKit-dummy.m */,
+				1D228FEC3DCFB699E37B55F7EC659774 /* SLDevKit-prefix.pch */,
+				86D2BA459050FD3B41535AE5BF3AD44A /* SLDevKit.debug.xcconfig */,
+				C596CBD369344A0A4B042F433B29A415 /* SLDevKit.release.xcconfig */,
 			);
-			name = SLFoundation;
-			sourceTree = "<group>";
-		};
-		498E7710FA65E2BB51FC0ABC7F41933C /* SLUtils */ = {
-			isa = PBXGroup;
-			children = (
-				678EBDA9B15BC37A2526E7493CC6337A /* SLUtils.h */,
-				E97EABC902DE58E7941B9557D2DDB710 /* SLUtils.m */,
-			);
-			name = SLUtils;
-			sourceTree = "<group>";
-		};
-		51880B5B9E0E88B2382E93FEF5EF9B4D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				45AB857847291155712ECE6F26C53648 /* LICENSE */,
-				084142CDDDD6837EBFC3B9B0F2564E5A /* README.md */,
-				7FAAAF905A4C2B5B653452FB038172CC /* SLDevKit.podspec */,
-			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SLDevKit";
 			sourceTree = "<group>";
 		};
 		555DA325482B005690DF2891BDCD401D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F38EA7F0EA7FF8A6F8F0541E011CD4F5 /* SLDevKit */,
+				75F396E660BB6A286F96E88ED371EDBF /* SLDevKit */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		89D509E5CB63F6282CF92FE2BFA9628B /* SLAutoLayout */ = {
+		75F396E660BB6A286F96E88ED371EDBF /* SLDevKit */ = {
 			isa = PBXGroup;
 			children = (
-				50D10BA6F2077CA4A249D5E7D4096178 /* SLAutoLayout.h */,
-				22DF7B358AA2424191BEE13E1152795F /* SLAutoLayoutModel.h */,
-				FEBF5CF7EF6A55624BD666F8FA45AB04 /* SLAutoLayoutModel.m */,
-				83AA9D759BFEE3075FEC520E9089ED2F /* SLAutoLayoutModelItem.h */,
-				05F5FEDF183379F8E5087D6ACE6C5435 /* SLAutoLayoutModelItem.m */,
-				12694683FB88ECA5B8325F8021D6E788 /* SLAutoLayoutPrivate.h */,
-				229743D2EFDA84C29E8A2F81C0977BD8 /* SLAutoLayoutPrivate.m */,
-				FEE39A6DE1DD57C654DEF9BD646D43BB /* UIView+SLAutoLayout.h */,
-				69D1AC3A37075E89CF20AE65579AA89C /* UIView+SLAutoLayout.m */,
+				31EB04A39C6B850470C9BDEF5962A2E3 /* SLDevKit.h */,
+				0103979C43F88610B39770CCA0424837 /* Pod */,
+				2CAA40B1AA5F2DFCC76F03D558C7914D /* SLAutoLayout */,
+				F5CE5B9C30B790D10FD3EE4E9B321A1A /* SLDefs */,
+				C05DBE9121715291F168D5F3B757F815 /* SLFoundation */,
+				3B683F36DF3A74A23330BE2D959FDD22 /* SLUIKit */,
+				8BCD12C737D05C52B9EAA28105FF4F9E /* SLUtils */,
+				45262C1E3F6751FD3497A26D3CA09E13 /* Support Files */,
 			);
-			name = SLAutoLayout;
+			name = SLDevKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		A1EDDFA1631050D995C9BFCF843D1C5C /* SLDefs */ = {
+		8BCD12C737D05C52B9EAA28105FF4F9E /* SLUtils */ = {
 			isa = PBXGroup;
 			children = (
-				03249A444EB4F0BBBEB0915A64D59B1B /* SLDefs.h */,
+				538A62FF6FF22B1628AC18957D38EE31 /* SLUtils.h */,
+				A3B7D9189E1CC0C35CB64BF1AD49EE44 /* SLUtils.m */,
 			);
-			name = SLDefs;
+			name = SLUtils;
 			sourceTree = "<group>";
 		};
-		B32058149099DB5CA5E76214D2B9B79E /* Support Files */ = {
+		C05DBE9121715291F168D5F3B757F815 /* SLFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				2D31ACB857FDA141938CB93F5886381D /* SLDevKit-dummy.m */,
-				1C0FECF5020CD81B1A960D6A008869A1 /* SLDevKit-prefix.pch */,
-				C73B1090777EEAEE801AC1A3C9155723 /* SLDevKit.debug.xcconfig */,
-				0EB2F3C49DA3D4626C9BFEA390B5EFCF /* SLDevKit.release.xcconfig */,
+				1944F08B56A3FD8D52B81F75482337AC /* NSArray+SLChainable.h */,
+				C5C6D48EB3984EA4FDF493DEADED3333 /* NSArray+SLChainable.m */,
+				12D16FAD645061EF1B866ADCC8C84F05 /* NSData+SLChainable.h */,
+				836CE89A29E04B93232D76902EC67728 /* NSData+SLChainable.m */,
+				30EFB75C2C901546E92B964260B0CF20 /* NSString+SLChainable.h */,
+				68C531EA1CBF809395D76FAB4EDFDE40 /* NSString+SLChainable.m */,
+				684CF3690C14BCCC5328DFEB89BA33F8 /* SLBlockInfo.h */,
+				93D898BAB6B0F9ED8CBD7B63EC7E7C33 /* SLBlockInfo.m */,
+				AA2AED7B29CAFF4186DA202AF49CF5F5 /* SLFoundation.h */,
+				1B1C6EB0DBA9F5D01B80E1C9C20D5C9C /* SLFoundationPrivate.h */,
+				407BBF31DAE0D31196173C0D30DEF6FE /* SLFoundationPrivate.m */,
+				F3DF8ED6687FA2B7F9DF22BE746651A0 /* SLFoundationUtils.h */,
+				7D56B0842F47839D050A2382BB2AE8FA /* SLFoundationUtils.m */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SLDevKit";
+			name = SLFoundation;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -348,20 +362,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F38EA7F0EA7FF8A6F8F0541E011CD4F5 /* SLDevKit */ = {
+		F5CE5B9C30B790D10FD3EE4E9B321A1A /* SLDefs */ = {
 			isa = PBXGroup;
 			children = (
-				CF5B66B0D124C4B1CF0E6C8E00D5597C /* SLDevKit.h */,
-				51880B5B9E0E88B2382E93FEF5EF9B4D /* Pod */,
-				89D509E5CB63F6282CF92FE2BFA9628B /* SLAutoLayout */,
-				A1EDDFA1631050D995C9BFCF843D1C5C /* SLDefs */,
-				32930C2ED70D493E374269C562819053 /* SLFoundation */,
-				2C07185EE99A4C985DD9D7E2007247CC /* SLUIKit */,
-				498E7710FA65E2BB51FC0ABC7F41933C /* SLUtils */,
-				B32058149099DB5CA5E76214D2B9B79E /* Support Files */,
+				8A20061A60264AB574DD8B5629D02299 /* SLDefs.h */,
 			);
-			name = SLDevKit;
-			path = ../..;
+			name = SLDefs;
 			sourceTree = "<group>";
 		};
 		F7C11651FDF7CA7D9C47CC1ED8E36FF2 /* Pods-SLDevKit_Example */ = {
@@ -380,39 +386,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A05352DC39E2CE547634378BFC73FCB8 /* Headers */ = {
+		661920F368EF9D37727CC959BD1D7E53 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1092A5A77F30DE11EB3FB9025958E26 /* NSArray+SLChainable.h in Headers */,
-				C83CAD5504D8DB263FA16029D5566418 /* NSAttributedString+SLChainable.h in Headers */,
-				006C1768DAAAAA9818F154F99D0E64A3 /* NSData+SLChainable.h in Headers */,
-				BBDF1ABF445E7D5AD83E389E769BDBBC /* NSString+SLChainable.h in Headers */,
-				9FD486BDFDF87111ED5F282D1D6520F6 /* SLAntiScreenShotView.h in Headers */,
-				5977895F3A65026281B60988DD92F13F /* SLAutoLayout.h in Headers */,
-				AFAB9C40BD636E00F0120933DACD7728 /* SLAutoLayoutModel.h in Headers */,
-				50F41EEF401D573C4FBC15B521698939 /* SLAutoLayoutModelItem.h in Headers */,
-				5AF6F3E4B7B92FE973B697E143409A92 /* SLAutoLayoutPrivate.h in Headers */,
-				107876389F0D9C82F4801EB13C349C11 /* SLBlockInfo.h in Headers */,
-				F81A19BF00A9D8FEB7EF38312DC79918 /* SLDefs.h in Headers */,
-				F545733FBEC76740DC4C553D100E90B8 /* SLDevKit.h in Headers */,
-				F3613AD94D124E38F83CEF4CC33D7D8E /* SLFoundation.h in Headers */,
-				ECB50D68AE9E21E66F517E4F0A4F6E2A /* SLFoundationPrivate.h in Headers */,
-				96D85A88A8F5FCEB7E06892ADC946E32 /* SLFoundationUtils.h in Headers */,
-				912F7398650932D4C0B1EA6EDD8A1CC8 /* SLUIKit.h in Headers */,
-				5D70765692DCA0ED84C54A06121C4C07 /* SLUIKitMacros.h in Headers */,
-				7C2DEEEC3BFDCF42968D5C18297AF9A1 /* SLUIKitPrivate.h in Headers */,
-				BCFB5CDCA474AA92072995E694CEDD51 /* SLUIKitUtils.h in Headers */,
-				012AE10BF6ED819328F019D8E2076B51 /* SLUtils.h in Headers */,
-				E8074376ACA0F480FB8423D5A866010D /* UIButton+SLChainable.h in Headers */,
-				930E10F3B805030A8AA2EF243C8A9C4F /* UIColor+SLChainable.h in Headers */,
-				D9BE3246A8725FF8478052ED98E1CF6A /* UIFont+SLChainable.h in Headers */,
-				9CA613F19D5BE80FE3337C5E22126410 /* UIImage+SLChainable.h in Headers */,
-				089355C04B91926776F7FD3B26583FEE /* UIImageView+SLChainable.h in Headers */,
-				9B763C44D23DD5853A9FF13EA45B92AF /* UILabel+SLChainable.h in Headers */,
-				703F7479E2FC566D6954689C4BF5FB68 /* UITextField+SLChainable.h in Headers */,
-				698D70FC40862EBF06FF79A585B57A2A /* UIView+SLAutoLayout.h in Headers */,
-				20515DE5707EA7918D2A40447B7A6A7D /* UIView+SLChainable.h in Headers */,
+				B6CE6ED3742C70D0953598EE01D82BFC /* NSArray+SLChainable.h in Headers */,
+				88565DD5AAD964D46F49BE096DCAFC76 /* NSAttributedString+SLChainable.h in Headers */,
+				389860FD986B13C4416CA87718DEF7CA /* NSData+SLChainable.h in Headers */,
+				3CA19D8AEBF741D81ECCDFEAE1D6839D /* NSString+SLChainable.h in Headers */,
+				EAFA9ED7C1484914B32620C58E3CAB22 /* SLAntiScreenShotView.h in Headers */,
+				8A3E40FFD84106C36A5F73ADD11A01F8 /* SLAutoLayout.h in Headers */,
+				C767827C178B105F601224EF5068FCA8 /* SLAutoLayoutModel.h in Headers */,
+				BBA608EB3E1E4C80505D886673727FDE /* SLAutoLayoutModelItem.h in Headers */,
+				C77BE063E1E62776553905844D09F6AB /* SLAutoLayoutPrivate.h in Headers */,
+				A0E4FBFC9426700BD88D2E381198E150 /* SLBlockInfo.h in Headers */,
+				988B533AEEFE0F8130701AFB43EEAE71 /* SLDefs.h in Headers */,
+				DE28926B146DEB1AD38B34F64EAF5C92 /* SLDevKit.h in Headers */,
+				3D36A1ED9402D3878C9846750E4A7951 /* SLFoundation.h in Headers */,
+				EBF1D4B9D128C35F7B0CF917A46FA920 /* SLFoundationPrivate.h in Headers */,
+				5612D1B7B7AB6A1C97867048A7F9E0C7 /* SLFoundationUtils.h in Headers */,
+				7D5BA507742D2EAA043FAB4C46FAA4CE /* SLUIKit.h in Headers */,
+				6E938ED1177E4693340CC77678F6D6EC /* SLUIKitMacros.h in Headers */,
+				8B0DBDDC8C4FA6FE8DC2EEE8D3321EC3 /* SLUIKitPrivate.h in Headers */,
+				32DF5C216A92780D68747B509E743B52 /* SLUIKitUtils.h in Headers */,
+				33E5C90AE6B841935AC25B0967D2CAF3 /* SLUtils.h in Headers */,
+				5C666CA8A0231517D0A4F9F8452194A6 /* UIButton+SLChainable.h in Headers */,
+				EC2DAC98F22FB6C9E51C37C90DE4418A /* UIColor+SLChainable.h in Headers */,
+				48D557293994AA577CE577A9E03254C7 /* UIFont+SLChainable.h in Headers */,
+				8DCD5FF335D018859D9760625F677309 /* UIImage+SLChainable.h in Headers */,
+				3E6EC9CD929AEA36249E61C091ABC7CC /* UIImageView+SLChainable.h in Headers */,
+				2AF4D407013BD2BAC38C7275B67447CB /* UILabel+SLChainable.h in Headers */,
+				2FAB793D0AEC93E01BC0D7DA34C6E50C /* UISwitch+SLChainable.h in Headers */,
+				899E2F2BA882BDFFE8921FE7CA4CDF54 /* UITextField+SLChainable.h in Headers */,
+				58BEDA51603A2AA15F534651DECD760A /* UIView+SLAutoLayout.h in Headers */,
+				012CD4E06C8A6537E6E127E66C079A29 /* UIView+SLChainable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +451,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF83831AE91E07E4206F14A60A826A35 /* PBXTargetDependency */,
+				58CC7FEAA4BC53C09FD252442B2DBC56 /* PBXTargetDependency */,
 			);
 			name = "Pods-SLDevKit_Tests";
 			productName = "Pods-SLDevKit_Tests";
@@ -453,11 +460,11 @@
 		};
 		C622DC87020B9EBB454B185737AB9845 /* SLDevKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 431C40E03E93B29DB33BC565AA597EFD /* Build configuration list for PBXNativeTarget "SLDevKit" */;
+			buildConfigurationList = 94159A51AC7A6603AD9F1AA32F9E98FF /* Build configuration list for PBXNativeTarget "SLDevKit" */;
 			buildPhases = (
-				A05352DC39E2CE547634378BFC73FCB8 /* Headers */,
-				F1D46C69321D34E836AF0AA7ADD23D5E /* Sources */,
-				8FF343768BBECC03EF1E5FCF993607C9 /* Frameworks */,
+				661920F368EF9D37727CC959BD1D7E53 /* Headers */,
+				D2BBED5A97B783717CD63716F8BEA444 /* Sources */,
+				D68ECE08EA1B39C08C95D10A62946060 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,7 +486,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2486CBD7ECA2A9F5E3085D69D9B2F364 /* PBXTargetDependency */,
+				D106BB47F8C1365D333344A760014EF4 /* PBXTargetDependency */,
 			);
 			name = "Pods-SLDevKit_Example";
 			productName = "Pods-SLDevKit_Example";
@@ -524,6 +531,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2BBED5A97B783717CD63716F8BEA444 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50A38D544266BEC1763F6B7E40DB50B5 /* NSArray+SLChainable.m in Sources */,
+				A6875758222DEBD1A5EDA2523333A940 /* NSAttributedString+SLChainable.m in Sources */,
+				EFE3A7FAB4BD7D137A5535A03951101A /* NSData+SLChainable.m in Sources */,
+				DA8D9C0388A9AE41D6DE425E3FDE4EEC /* NSString+SLChainable.m in Sources */,
+				E25CB5A96D7F6899F167819821BAA338 /* SLAntiScreenShotView.m in Sources */,
+				486B8C84C313C0567DDA8DE4C83FE3AD /* SLAutoLayoutModel.m in Sources */,
+				7A180AC89013486249D7F7B20F277382 /* SLAutoLayoutModelItem.m in Sources */,
+				7514B2C77BE89C7CF67B2728DD253141 /* SLAutoLayoutPrivate.m in Sources */,
+				A319B6F7C2443E840E3F140C0EA2B91A /* SLBlockInfo.m in Sources */,
+				A08871C427F2B28B68630FE34F5ADCAA /* SLDevKit-dummy.m in Sources */,
+				C7646798D6826AA73DBAF037B68AE5F5 /* SLFoundationPrivate.m in Sources */,
+				C680CD8745EE60E9FF5E0FB739C2400B /* SLFoundationUtils.m in Sources */,
+				D76562DA8FFDD98C56149182924E0300 /* SLUIKitPrivate.m in Sources */,
+				0C595865D5DDC078516CC6FF9D663885 /* SLUIKitUtils.m in Sources */,
+				25B48D0465E6424881C3BB4D731F1B0D /* SLUtils.m in Sources */,
+				DC308DD4688CE8D8B1D2E3BFA148CEC9 /* UIButton+SLChainable.m in Sources */,
+				2BF74EB319D2DE7431D0C1FB23DD8759 /* UIColor+SLChainable.m in Sources */,
+				4CBF66330687F7B0A08E55C2ECEBDDCF /* UIFont+SLChainable.m in Sources */,
+				CF09684E9C9E2EDAACD4E377D8DE2EA9 /* UIImage+SLChainable.m in Sources */,
+				C0C01E6D49C283CD20BF215E2607498F /* UIImageView+SLChainable.m in Sources */,
+				54CD333F700398F0C3849894105B78FF /* UILabel+SLChainable.m in Sources */,
+				C25C1E920887BE4FDD080713DD27FD2D /* UISwitch+SLChainable.m in Sources */,
+				9399448100FB5E47FDA19F4D9FAC744C /* UITextField+SLChainable.m in Sources */,
+				B807E30FD1E60539FEC5AE16D2A87BB0 /* UIView+SLAutoLayout.m in Sources */,
+				DD3CAEBA79A75F7197441200E7379D24 /* UIView+SLChainable.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA45515D091CE1E8DDEB6B53D450CEAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,102 +571,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1D46C69321D34E836AF0AA7ADD23D5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8FFF27F5FE037A6C966AF51E8997A4F /* NSArray+SLChainable.m in Sources */,
-				2AE7AD44B59A0F4EE7C742E6C17688BD /* NSAttributedString+SLChainable.m in Sources */,
-				3007FB3DC0E008C1A072F9393CC0AE87 /* NSData+SLChainable.m in Sources */,
-				E2062C93B1C18C12497845E5C1B63B40 /* NSString+SLChainable.m in Sources */,
-				A8EB652AF565DAB34D195AD2045F8BE0 /* SLAntiScreenShotView.m in Sources */,
-				2FEFBB8401AB3FB4FC84C2DBE72EEA17 /* SLAutoLayoutModel.m in Sources */,
-				3E5DC46E849B47C2E5ECD4EBF38AD6E6 /* SLAutoLayoutModelItem.m in Sources */,
-				0B478966E681C8DD7B28D471CC86F410 /* SLAutoLayoutPrivate.m in Sources */,
-				AB1F98C26EEC485B267EFB693FAE6B26 /* SLBlockInfo.m in Sources */,
-				4E57C8F5BE4C7B567A5AC6CD040BAFC6 /* SLDevKit-dummy.m in Sources */,
-				6A567D90DCDB18AB26B0A5F16E6B92B4 /* SLFoundationPrivate.m in Sources */,
-				494A0FA46F3EEDF4746269B3E50C6227 /* SLFoundationUtils.m in Sources */,
-				7D81FDB1C74D67F792D405EB232CA820 /* SLUIKitPrivate.m in Sources */,
-				7C18B4AD9B43D09746E6F0D4DBBD24AA /* SLUIKitUtils.m in Sources */,
-				063B3190F2838345171B9854DE7D3056 /* SLUtils.m in Sources */,
-				4E81647F45B68B6FAF17E8828727F1A3 /* UIButton+SLChainable.m in Sources */,
-				5246071164CA31BA53DBC768F41CFE84 /* UIColor+SLChainable.m in Sources */,
-				E26F506684E92E9281B69595449A4E3E /* UIFont+SLChainable.m in Sources */,
-				A900A69B6FCA4846031AE0772C568BE0 /* UIImage+SLChainable.m in Sources */,
-				85762DEA28069F86E2FEECDAEDC0AC8A /* UIImageView+SLChainable.m in Sources */,
-				51270EF5D6D677737766A900B42532D3 /* UILabel+SLChainable.m in Sources */,
-				6BBD3334AB23DC3064A08E24A41A3275 /* UITextField+SLChainable.m in Sources */,
-				74A889CBE92210301756187E7B34651E /* UIView+SLAutoLayout.m in Sources */,
-				AB3E763122E314E0AABA7F4EE75348F0 /* UIView+SLChainable.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2486CBD7ECA2A9F5E3085D69D9B2F364 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SLDevKit;
-			target = C622DC87020B9EBB454B185737AB9845 /* SLDevKit */;
-			targetProxy = B88EA4DCB1DBA4EECEA35E71C9300DC5 /* PBXContainerItemProxy */;
-		};
-		BF83831AE91E07E4206F14A60A826A35 /* PBXTargetDependency */ = {
+		58CC7FEAA4BC53C09FD252442B2DBC56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SLDevKit_Example";
 			target = F07E4B2E891E5B115FF8842176BC1057 /* Pods-SLDevKit_Example */;
-			targetProxy = F0E03CB43924ED9E5CA648637A5B7772 /* PBXContainerItemProxy */;
+			targetProxy = 593F3603E6BD1D43284D9D961559A182 /* PBXContainerItemProxy */;
+		};
+		D106BB47F8C1365D333344A760014EF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SLDevKit;
+			target = C622DC87020B9EBB454B185737AB9845 /* SLDevKit */;
+			targetProxy = D960895BDD96C755FBDC96BBCAA9467A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		330D2D959F93DAB24D0B71223CECEFDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EB2F3C49DA3D4626C9BFEA390B5EFCF /* SLDevKit.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SLDevKit;
-				PRODUCT_NAME = SLDevKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3E3226673E4DF7A29A9A777E56D0C21F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C73B1090777EEAEE801AC1A3C9155723 /* SLDevKit.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SLDevKit;
-				PRODUCT_NAME = SLDevKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		40356653080584C7BBBA556DD3D97837 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C03BD6A4F958E0608FA80BA7EDB78B1 /* Pods-SLDevKit_Tests.release.xcconfig */;
@@ -733,6 +694,30 @@
 			};
 			name = Release;
 		};
+		9570A39256132C2D684A01C5EA63717C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C596CBD369344A0A4B042F433B29A415 /* SLDevKit.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SLDevKit;
+				PRODUCT_NAME = SLDevKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		C66113E6719FC807C94EEDF6B748A941 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E613F4B85A1B69B668A004382B597404 /* Pods-SLDevKit_Example.release.xcconfig */;
@@ -821,6 +806,29 @@
 			};
 			name = Debug;
 		};
+		DC9A82B75BEAF9FB4A210BCC52B84C57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D2BA459050FD3B41535AE5BF3AD44A /* SLDevKit.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SLDevKit;
+				PRODUCT_NAME = SLDevKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		E29282C595A5F1690A196FE5022BF8DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8D6E92EEF1EE681D92F8DAAD011717E /* Pods-SLDevKit_Example.debug.xcconfig */;
@@ -845,15 +853,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		431C40E03E93B29DB33BC565AA597EFD /* Build configuration list for PBXNativeTarget "SLDevKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E3226673E4DF7A29A9A777E56D0C21F /* Debug */,
-				330D2D959F93DAB24D0B71223CECEFDB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -868,6 +867,15 @@
 			buildConfigurations = (
 				E29282C595A5F1690A196FE5022BF8DB /* Debug */,
 				C66113E6719FC807C94EEDF6B748A941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94159A51AC7A6603AD9F1AA32F9E98FF /* Build configuration list for PBXNativeTarget "SLDevKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9A82B75BEAF9FB4A210BCC52B84C57 /* Debug */,
+				9570A39256132C2D684A01C5EA63717C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

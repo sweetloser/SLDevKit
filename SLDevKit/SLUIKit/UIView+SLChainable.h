@@ -129,6 +129,7 @@ SL_DEFINE_CHAINABLE_BLOCKS(UITextField)
 SL_VIEW_SUPER_PROPS(UITextField);
 @end
 
+
 #define onClick(x)              onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
 #define border(...)             border(__VA_ARGS__, nil)
 #define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
