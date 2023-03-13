@@ -88,6 +88,20 @@
                              self.lastModelItem = self.heightEqualWidth;);
 }
 
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)widthRatioToView {
+    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
+                                         self.ratio_width = [[SLAutoLayoutModelItem alloc] init];
+                                         self.ratio_width.value = @(value);
+                                         self.ratio_width.refView = arguments.firstObject;);
+}
+
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)heightRatioToView {
+    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
+                                         self.ratio_height = [[SLAutoLayoutModelItem alloc] init];
+                                         self.ratio_height.value = @(value);
+                                         self.ratio_height.refView = arguments.firstObject;);
+}
+
 - (SLChainableSLAutoLayoutModelFloatBlock)offset {
     SL_CHAINABLE_FLOAT_BLOCK(self.lastModelItem.offset = value;);
 }

@@ -38,6 +38,9 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 @property(nonatomic,strong)SLAutoLayoutModelItem *widthEqualHeight;
 @property(nonatomic,strong)SLAutoLayoutModelItem *heightEqualWidth;
 
+@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_width;
+@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_height;
+
 // 用来记录offset作用于哪个item；
 @property(nonatomic,strong)SLAutoLayoutModelItem *lastModelItem;
 
@@ -76,6 +79,10 @@ SL_LAYOUT_MODEL_PROP(Object)bottomEqualToView;
 SL_LAYOUT_MODEL_PROP(Empty)widthEqualToHeight;
 
 SL_LAYOUT_MODEL_PROP(Empty)heightEqualToWidth;
+
+SL_LAYOUT_MODEL_PROP(FloatObjectList)widthRatioToView;
+
+SL_LAYOUT_MODEL_PROP(FloatObjectList)heightRatioToView;
 
 SL_LAYOUT_MODEL_PROP(Float)offset;
 

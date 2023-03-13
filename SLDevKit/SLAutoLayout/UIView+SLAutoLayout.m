@@ -74,6 +74,8 @@
     if (layoutModel.width) {
         view.width_sl(layoutModel.width.value.floatValue);
         view.fixedWidth = @(view.widthValue);
+    } else if (layoutModel.ratio_width) {
+        view.width_sl(layoutModel.ratio_width.refView.widthValue*layoutModel.ratio_width.value.floatValue);
     }
 }
 
@@ -81,6 +83,8 @@
     if (layoutModel.height) {
         view.height_sl(layoutModel.height.value.floatValue);
         view.fixedHeight = @(view.heightValue);
+    }else if (layoutModel.ratio_height) {
+        view.height_sl(layoutModel.ratio_height.refView.heightValue*layoutModel.ratio_height.value.floatValue);
     }
 }
 
