@@ -48,13 +48,13 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 /// 需要布局的view
 @property(nonatomic,weak)UIView *needsAutoResizeView;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)leftToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)leftSpaceToView;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)rightToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)rightSpaceToView;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)topToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)topSpaceToView;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)bottomToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)bottomSpaceToView;
 
 SL_LAYOUT_MODEL_PROP(Float)xIs;
 

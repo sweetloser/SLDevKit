@@ -15,19 +15,19 @@
 
 @implementation SLAutoLayoutModel
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)leftToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)leftSpaceToView {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"left"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)rightToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)rightSpaceToView {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"right"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)topToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)topSpaceToView {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"top"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)bottomToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)bottomSpaceToView {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"bottom"]);
 }
 
