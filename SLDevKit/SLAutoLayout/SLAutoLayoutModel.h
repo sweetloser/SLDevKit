@@ -88,9 +88,12 @@ SL_LAYOUT_MODEL_PROP(Float)offset;
 
 @end
 
-#define leftToView(...)         leftToView(__VA_ARGS__, nil)
-#define rightToView(...)        rightToView(__VA_ARGS__, nil)
-#define topToView(...)          topToView(__VA_ARGS__, nil)
-#define bottomToView(...)       bottomToView(__VA_ARGS__, nil)
+#define leftSpaceToView(...)         leftSpaceToView(__VA_ARGS__, nil)
+#define rightSpaceToView(...)        rightSpaceToView(__VA_ARGS__, nil)
+#define topSpaceToView(...)          topSpaceToView(__VA_ARGS__, nil)
+#define bottomSpaceToView(...)       bottomSpaceToView(__VA_ARGS__, nil)
+
+#define widthRatioToView(...)        widthRatioToView(__VA_ARGS__, nil)
+#define heightRatioToView(...)       heightRatioToView(__VA_ARGS__, nil)
 
 NS_ASSUME_NONNULL_END
