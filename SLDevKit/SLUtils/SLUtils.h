@@ -29,6 +29,9 @@ id _slConvertValueToString(const char *type, ...);
 /// 判断网络是否设置了代理
 + (BOOL)isOpenTheProxy;
 
+/// 判断设备是否越狱
++ (BOOL)isJailBroken;
+
 @end
 
 

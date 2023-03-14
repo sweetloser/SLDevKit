@@ -14,6 +14,7 @@
 #import "UIFont+SLChainable.h"
 #import "UIColor+SLChainable.h"
 #import "UIImage+SLChainable.h"
+#import "UIImageView+SLChainable.h"
 #import "UIView+SLChainable.h"
 #import "UILabel+SLChainable.h"
 #import "UIButton+SLChainable.h"

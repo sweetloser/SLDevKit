@@ -89,4 +89,30 @@ for (NSString *wfName in wiFiName) {
     }
 }
 
++ (BOOL)isJailBroken {
+#if TARGET_OS_SIMULATOR
+    return NO;
+#endif
+    // 判断 Cydia 是否安装
+    BOOL isCydiaInstalled = [[NSFileManager defaultManager] fileExistsAtPath:@"/Applications/Cydia.app"] || [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://"]];
+
+    // 判断是否有越狱工具的安装目录
+    BOOL isJailbreakTool = [[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/MobileSubstrate.dylib"] ||
+                       [[NSFileManager defaultManager] fileExistsAtPath:@"/bin/bash"] ||
+                       [[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/sshd"] ||
+                       [[NSFileManager defaultManager] fileExistsAtPath:@"/etc/apt"];
+
+    // 判断是否有越狱工具的文件
+    BOOL isJailbreakToolExist = [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/lib/apt"] ||
+                                [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/lib/cydia"] ||
+                                [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/mobile/Library/SBSettings/Themes"] ||
+                                [[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/stash"] ||
+                                [[NSFileManager defaultManager] fileExistsAtPath:@"/usr/libexec/cydia/cydo"];
+
+    // 判断是否安装了 MobileSubstrate 应用程序
+    BOOL isMobileSubstrateInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/mobilesubstrate"]];
+    
+    return isCydiaInstalled || isJailbreakTool || isJailbreakToolExist || isMobileSubstrateInstalled;
+}
+
 @end
