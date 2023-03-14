@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define SLLabel ([UILabel new])
+
 #define SL_LABEL_PROP(D)   SL_PROP(UILabel, D)
 
 @interface UILabel (SLChainable)

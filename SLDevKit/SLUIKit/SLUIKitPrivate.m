@@ -188,3 +188,18 @@ SL_SYNTHESIZE_STRUCT(slTouchInsets, setSlTouchInsets, UIEdgeInsets)
 }
 
 @end
+
+@implementation UIButton (SLUIKitPrivate)
+
++(instancetype)_sl_littleHigherHuggingAndResistanceButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    [button setContentHuggingPriority:251 forAxis:UILayoutConstraintAxisHorizontal];
+    [button setContentHuggingPriority:251 forAxis:UILayoutConstraintAxisVertical];
+    [button setContentCompressionResistancePriority:751 forAxis:UILayoutConstraintAxisHorizontal];
+    [button setContentCompressionResistancePriority:751 forAxis:UILayoutConstraintAxisVertical];
+    return button;
+}
+
+@end

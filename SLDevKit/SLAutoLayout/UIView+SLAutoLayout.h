@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (SLAutoLayout)
 
-@property(nonatomic,strong)SLAutoLayoutModel *_Nullable ownLayoutModel;
+@property(nonatomic,strong)SLAutoLayoutModel *_Nullable sl_ownLayoutModel;
 
-@property(nonatomic,strong,readonly)NSMutableArray *autoLayoutModelsArray;
+@property(nonatomic,strong,readonly)NSMutableArray *sl_autoLayoutModelsArray;
 
 
 /// 设置固定宽度【设置了之后，宽度就不会在自动布局中被修改】

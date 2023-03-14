@@ -48,13 +48,13 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 /// 需要布局的view
 @property(nonatomic,weak)UIView *needsAutoResizeView;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)leftSpaceToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)leftSpaceToView_sl;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)rightSpaceToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)rightSpaceToView_sl;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)topSpaceToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)topSpaceToView_sl;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)bottomSpaceToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)bottomSpaceToView_sl;
 
 SL_LAYOUT_MODEL_PROP(Float)xIs;
 
@@ -80,20 +80,23 @@ SL_LAYOUT_MODEL_PROP(Empty)widthEqualToHeight;
 
 SL_LAYOUT_MODEL_PROP(Empty)heightEqualToWidth;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)widthRatioToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)widthRatioToView_sl;
 
-SL_LAYOUT_MODEL_PROP(FloatObjectList)heightRatioToView;
+SL_LAYOUT_MODEL_PROP(FloatObjectList)heightRatioToView_sl;
 
 SL_LAYOUT_MODEL_PROP(Float)offset;
 
+SL_LAYOUT_MODEL_PROP(Insets)spaceToSuperview_sl;
+
 @end
 
-#define leftSpaceToView(...)         leftSpaceToView(__VA_ARGS__, nil)
-#define rightSpaceToView(...)        rightSpaceToView(__VA_ARGS__, nil)
-#define topSpaceToView(...)          topSpaceToView(__VA_ARGS__, nil)
-#define bottomSpaceToView(...)       bottomSpaceToView(__VA_ARGS__, nil)
+#define leftSpaceToView_sl(...)         leftSpaceToView_sl(__VA_ARGS__, nil)
+#define rightSpaceToView_sl(...)        rightSpaceToView_sl(__VA_ARGS__, nil)
+#define topSpaceToView_sl(...)          topSpaceToView_sl(__VA_ARGS__, nil)
+#define bottomSpaceToView_sl(...)       bottomSpaceToView_sl(__VA_ARGS__, nil)
 
-#define widthRatioToView(...)        widthRatioToView(__VA_ARGS__, nil)
-#define heightRatioToView(...)       heightRatioToView(__VA_ARGS__, nil)
+#define widthRatioToView_sl(...)        widthRatioToView_sl(__VA_ARGS__, nil)
+#define heightRatioToView_sl(...)       heightRatioToView_sl(__VA_ARGS__, nil)
 
+#define spaceToSuperview_sl(...)        spaceToSuperview_sl(SL_NORMALIZE_INSETS(__VA_ARGS__))
 NS_ASSUME_NONNULL_END

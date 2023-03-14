@@ -8,6 +8,7 @@
 #import "SLAutoLayoutModel.h"
 #import "SLAutoLayoutModelItem.h"
 #import "SLAutoLayoutPrivate.h"
+#import "UIView+SLAutoLayout.h"
 
 @interface SLAutoLayoutModel ()
 
@@ -15,19 +16,19 @@
 
 @implementation SLAutoLayoutModel
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)leftSpaceToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)leftSpaceToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"left"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)rightSpaceToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)rightSpaceToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"right"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)topSpaceToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)topSpaceToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"top"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)bottomSpaceToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)bottomSpaceToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"bottom"]);
 }
 
@@ -88,14 +89,14 @@
                              self.lastModelItem = self.heightEqualWidth;);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)widthRatioToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)widthRatioToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
                                          self.ratio_width = [[SLAutoLayoutModelItem alloc] init];
                                          self.ratio_width.value = @(value);
                                          self.ratio_width.refView = arguments.firstObject;);
 }
 
-- (SLChainableSLAutoLayoutModelFloatObjectListBlock)heightRatioToView {
+- (SLChainableSLAutoLayoutModelFloatObjectListBlock)heightRatioToView_sl {
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
                                          self.ratio_height = [[SLAutoLayoutModelItem alloc] init];
                                          self.ratio_height.value = @(value);
@@ -104,6 +105,14 @@
 
 - (SLChainableSLAutoLayoutModelFloatBlock)offset {
     SL_CHAINABLE_FLOAT_BLOCK(self.lastModelItem.offset = value;);
+}
+
+- (SLChainableSLAutoLayoutModelInsetsBlock)spaceToSuperview_sl {
+    SL_CHAINABLE_INSETS_BLOCK(UIView *superview = self.needsAutoResizeView.superview;
+                              NSLog(@"superview:%@",superview);
+                              NSLog(@"%@",self.needsAutoResizeView);
+                              NSLog(@"%@",NSStringFromUIEdgeInsets(value));
+                              self.needsAutoResizeView.slLayout().leftSpaceToView_sl(value.left, superview).rightSpaceToView_sl(value.right, superview).bottomSpaceToView_sl(value.bottom, superview).topSpaceToView_sl(value.top, superview));
 }
 
 #pragma mark - private

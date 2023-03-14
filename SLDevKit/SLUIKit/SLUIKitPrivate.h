@@ -43,4 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIButton (SLUIKitPrivate)
+
++(instancetype)_sl_littleHigherHuggingAndResistanceButton;
+
+@end
+
 NS_ASSUME_NONNULL_END

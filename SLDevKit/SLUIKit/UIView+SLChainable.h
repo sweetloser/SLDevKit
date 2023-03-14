@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define SLView ([UIView new])
+
 #define SL_VIEW_PROP(D)     (UIView, D)
 
 #define SL_VIEW_SUPER_PROPS(T)      \
@@ -71,7 +73,7 @@ SL_PROP(T ,FloatObjectList)border;   \
 SL_PROP(T ,FloatList)shadow;        \
                                     \
 /**
- * 在原有的响应范围内，扩展可交互范围【当数值为负数时，收缩可交互范围】
+ * 在原有的响应范围内，扩展可交互范围【当数值为正数时，收缩可交互范围】
  * 用法：.touchInsets(10)                 top/left/bottom/right = 10
  *      .touchInsets(10, 20)             top/bottom = 10, left/right = 20
  *      .touchInsets(10, 20, 30)         top = 10, left/right = 20, bottom = 30
@@ -129,11 +131,17 @@ SL_DEFINE_CHAINABLE_BLOCKS(UITextField)
 SL_VIEW_SUPER_PROPS(UITextField);
 @end
 
+/// 定义对应的block类型
+SL_DEFINE_CHAINABLE_BLOCKS(UITextView)
+@interface UITextView (UIView_Chainable)
+SL_VIEW_SUPER_PROPS(UITextView);
+@end
 
 #define onClick(x)              onClick(self, ({ id __self = self; __weak typeof(self) self = __self; __self = self; x; }) )
 #define border(...)             border(__VA_ARGS__, nil)
 #define shadow(...)             shadow(SL_MAKE_FLOAT_LIST(__VA_ARGS__))
 #define touchInsets(...)        touchInsets(SL_NORMALIZE_INSETS(__VA_ARGS__))
+#define insets(...)             insets(SL_NORMALIZE_INSETS(__VA_ARGS__))
 #define addChild(...)           addChild(@[__VA_ARGS__])
 
 /// 判断参数是否为NSAttributedString对象；

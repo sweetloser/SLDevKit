@@ -22,12 +22,12 @@
 
 - (SLChainableSLAutoLayoutModelEmptyBlock)slLayout {
     return ^{
-        SLAutoLayoutModel *layoutModel = [self ownLayoutModel];
+        SLAutoLayoutModel *layoutModel = [self sl_ownLayoutModel];
         if (!layoutModel) {
             layoutModel = [[SLAutoLayoutModel alloc] init];
             layoutModel.needsAutoResizeView = self;
-            [self setOwnLayoutModel:layoutModel];
-            [self.superview.autoLayoutModelsArray addObject:layoutModel];
+            [self setSl_ownLayoutModel:layoutModel];
+            [self.superview.sl_autoLayoutModelsArray addObject:layoutModel];
         }
         return layoutModel;
     };
@@ -42,8 +42,8 @@
 
 #pragma mark - private
 - (void)_sl_layoutSubviewsHandle {
-    if (self.autoLayoutModelsArray.count) {
-        [self.autoLayoutModelsArray enumerateObjectsUsingBlock:^(SLAutoLayoutModel * _Nonnull layoutModel, NSUInteger idx, BOOL * _Nonnull stop) {
+    if (self.sl_autoLayoutModelsArray.count) {
+        [self.sl_autoLayoutModelsArray enumerateObjectsUsingBlock:^(SLAutoLayoutModel * _Nonnull layoutModel, NSUInteger idx, BOOL * _Nonnull stop) {
             [self _sl_resizeWithLayoutModel:layoutModel];
         }];
     }
@@ -76,6 +76,7 @@
         view.fixedWidth = @(view.widthValue);
     } else if (layoutModel.ratio_width) {
         view.width_sl(layoutModel.ratio_width.refView.widthValue*layoutModel.ratio_width.value.floatValue);
+        view.fixedWidth = @(view.widthValue);
     }
 }
 
@@ -228,6 +229,7 @@
                 view.height_sl(bottomItem.refView.heightValue-bottomItem.value.floatValue-view.topValue);
             }
             view.bottom_sl(bottomItem.refView.heightValue-bottomItem.value.floatValue);
+            
         } else {
             // 寻找下视图的最上边
             CGFloat bottomMax = INT_MAX;
@@ -237,8 +239,8 @@
                     bottomMax = refView.topValue;
                 }
             }
+            view.bottom_sl(bottomItem.refView.topValue - bottomItem.value.floatValue);
         }
-        view.bottom_sl(bottomItem.refView.topValue - bottomItem.value.floatValue);
     }else if (layoutModel.equalBottom) {
         if (view.superview == layoutModel.equalBottom.refView) {
             if (!view.fixedHeight) {
@@ -260,19 +262,19 @@
 }
 
 #pragma mark - setter&getter
-- (void)setOwnLayoutModel:(SLAutoLayoutModel *)ownLayoutModel {
-    objc_setAssociatedObject(self, @selector(ownLayoutModel), ownLayoutModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setSl_ownLayoutModel:(SLAutoLayoutModel *)sl_ownLayoutModel {
+    objc_setAssociatedObject(self, @selector(sl_ownLayoutModel), sl_ownLayoutModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-- (SLAutoLayoutModel *)ownLayoutModel {
-    return objc_getAssociatedObject(self, @selector(ownLayoutModel));
+- (SLAutoLayoutModel *)sl_ownLayoutModel {
+    return objc_getAssociatedObject(self, @selector(sl_ownLayoutModel));
 }
-- (NSMutableArray *)autoLayoutModelsArray {
-    NSMutableArray *_autoLayoutModelsArray = objc_getAssociatedObject(self, _cmd);
-    if (!_autoLayoutModelsArray) {
-        _autoLayoutModelsArray = [NSMutableArray new];
-        objc_setAssociatedObject(self, _cmd, _autoLayoutModelsArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (NSMutableArray *)sl_autoLayoutModelsArray {
+    NSMutableArray *_sl_autoLayoutModelsArray = objc_getAssociatedObject(self, _cmd);
+    if (!_sl_autoLayoutModelsArray) {
+        _sl_autoLayoutModelsArray = [NSMutableArray new];
+        objc_setAssociatedObject(self, _cmd, _sl_autoLayoutModelsArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return _autoLayoutModelsArray;
+    return _sl_autoLayoutModelsArray;
 }
 
 - (NSNumber *)fixedWidth {

@@ -10,5 +10,6 @@
 
 #import "SLAutoLayoutModel.h"
 #import "UIView+SLAutoLayout.h"
+#import "SLAutoLayoutPrivate.h"
 
 #endif /* SLAutoLayout_h */

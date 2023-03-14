@@ -8,8 +8,11 @@
 #import <UIKit/UIKit.h>
 #import "SLDefs.h"
 #import "UIView+SLChainable.h"
+#import "SLUIKitPrivate.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+#define SLButton ([UIButton _sl_littleHigherHuggingAndResistanceButton])
 
 #define SL_BUTTON_PROP(D)   SL_PROP(UIButton, D)
 
@@ -39,7 +42,7 @@ SL_BUTTON_PROP(Object)fnt;
 ///      .color(UIColor对象)
 ///      .color(@"red")
 ///      .color(@"255,40,40,0.5")
-SL_BUTTON_PROP(Object)color;
+SL_BUTTON_PROP(Object)tColor;
 
 /// 设置UIButton的textColor【UIControlStateSelected】
 /// selectedColor 属性内部使用的是 Color 宏，因此它可以接受所有 Color 宏能接受的参数；

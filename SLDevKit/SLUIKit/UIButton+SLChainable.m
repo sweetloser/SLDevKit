@@ -23,7 +23,7 @@
     SL_CHAINABLE_OBJECT_BLOCK(self.titleLabel.font = Fnt(value));
 }
 
-- (SLChainableUIButtonObjectBlock)color {
+- (SLChainableUIButtonObjectBlock)tColor {
     SL_CHAINABLE_OBJECT_BLOCK([self setTitleColor:Color(value) forState:UIControlStateNormal]);
 }
 
