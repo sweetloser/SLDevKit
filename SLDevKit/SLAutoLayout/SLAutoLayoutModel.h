@@ -17,36 +17,6 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLAutoLayoutModel)
 
 @interface SLAutoLayoutModel : NSObject
 
-@property(nonatomic,strong)SLAutoLayoutModelItem *height;
-@property(nonatomic,strong)SLAutoLayoutModelItem *width;
-@property(nonatomic,strong)SLAutoLayoutModelItem *left;
-@property(nonatomic,strong)SLAutoLayoutModelItem *right;
-@property(nonatomic,strong)SLAutoLayoutModelItem *top;
-@property(nonatomic,strong)SLAutoLayoutModelItem *bottom;
-
-@property(nonatomic,strong) NSNumber *centerX;
-@property(nonatomic,strong) NSNumber *centerY;
-
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalLeft;
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalTop;
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalRight;
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalBottom;
-
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalCenterX;
-@property(nonatomic,strong)SLAutoLayoutModelItem *equalCenterY;
-
-@property(nonatomic,strong)SLAutoLayoutModelItem *widthEqualHeight;
-@property(nonatomic,strong)SLAutoLayoutModelItem *heightEqualWidth;
-
-@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_width;
-@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_height;
-
-// 用来记录offset作用于哪个item；
-@property(nonatomic,strong)SLAutoLayoutModelItem *lastModelItem;
-
-
-/// 需要布局的view
-@property(nonatomic,weak)UIView *needsAutoResizeView;
 
 SL_LAYOUT_MODEL_PROP(FloatObjectList)leftSpaceToView_sl;
 
@@ -75,6 +45,10 @@ SL_LAYOUT_MODEL_PROP(Object)topEqualToView;
 SL_LAYOUT_MODEL_PROP(Object)rightEqualToView;
 
 SL_LAYOUT_MODEL_PROP(Object)bottomEqualToView;
+
+SL_LAYOUT_MODEL_PROP(Object)centerXEqualToView;
+
+SL_LAYOUT_MODEL_PROP(Object)centerYEqualToView;
 
 SL_LAYOUT_MODEL_PROP(Empty)widthEqualToHeight;
 

@@ -10,6 +10,40 @@
 #import "SLFoundationPrivate.h"
 #import "SLAutoLayoutModelItem.h"
 
+@interface SLAutoLayoutModel ()
+
+@property(nonatomic,strong)SLAutoLayoutModelItem *height;
+@property(nonatomic,strong)SLAutoLayoutModelItem *width;
+@property(nonatomic,strong)SLAutoLayoutModelItem *left;
+@property(nonatomic,strong)SLAutoLayoutModelItem *right;
+@property(nonatomic,strong)SLAutoLayoutModelItem *top;
+@property(nonatomic,strong)SLAutoLayoutModelItem *bottom;
+
+@property(nonatomic,strong) NSNumber *centerX;
+@property(nonatomic,strong) NSNumber *centerY;
+
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalLeft;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalTop;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalRight;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalBottom;
+
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalCenterX;
+@property(nonatomic,strong)SLAutoLayoutModelItem *equalCenterY;
+
+@property(nonatomic,strong)SLAutoLayoutModelItem *widthEqualHeight;
+@property(nonatomic,strong)SLAutoLayoutModelItem *heightEqualWidth;
+
+@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_width;
+@property (nonatomic, strong) SLAutoLayoutModelItem *ratio_height;
+
+// 用来记录offset作用于哪个item；
+@property(nonatomic,strong)SLAutoLayoutModelItem *lastModelItem;
+
+/// 需要布局的view
+@property(nonatomic,weak)UIView *needsAutoResizeView;
+
+@end
+
 @implementation UIView (SLAutoLayout)
 + (void)load {
     if (self == [UIView class]) {
@@ -68,6 +102,8 @@
     // 下布局
     [self _sl_layoutBottomWithView:view layoutModel:layoutModel];
     
+    // 中心布局
+    [self _sl_layoutCenterWithView:view layoutModel:layoutModel];
 }
 
 - (void)_sl_layoutWidthWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -122,14 +158,6 @@
         } else {
             view.left_sl(layoutModel.equalLeft.refView.leftValue + layoutModel.equalLeft.offset);
         }
-    } else if (layoutModel.equalCenterX) {
-        if (view.superview == layoutModel.equalCenterX.refView) {
-            view.centerX_sl(layoutModel.equalCenterX.refView.widthValue*0.5 + layoutModel.equalCenterX.offset);
-        } else {
-            view.centerX_sl(layoutModel.equalCenterX.refView.centerXValue + layoutModel.equalCenterX.offset);
-        }
-    } else if (layoutModel.centerX) {
-        view.centerX_sl(layoutModel.centerX.floatValue);
     }
 }
 - (void)_sl_layoutRightWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -209,14 +237,6 @@
             }
             view.top_sl(layoutModel.equalTop.refView.topValue + layoutModel.equalTop.offset);
         }
-    } else if (layoutModel.equalCenterY) {
-        if (view.superview == layoutModel.equalCenterY.refView) {
-            view.centerY_sl(layoutModel.equalCenterY.refView.heightValue * 0.5 + layoutModel.equalCenterY.offset);
-        } else {
-            view.centerY_sl(layoutModel.equalCenterY.refView.centerYValue + layoutModel.equalCenterY.offset);
-        }
-    } else if (layoutModel.centerY) {
-        view.centerY_sl([layoutModel.centerY floatValue]);
     }
 }
 
@@ -257,6 +277,62 @@
     
     if (layoutModel.widthEqualHeight && !view.fixedHeight) {
         [self _sl_layoutRightWithView:view layoutModel:layoutModel];
+    }
+    
+}
+
+- (void)_sl_layoutCenterWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
+    
+    // 计算宽度【如果没有指定的话】
+    NSNumber *_tempLeft = nil;
+    if ((!view.fixedWidth) && (layoutModel.equalCenterX || layoutModel.centerX)) { // 根据 左|右 + centerx 确定宽度
+        _tempLeft = @(view.leftValue);
+    }
+    
+    // center x
+    CGFloat centerXValue;
+    if (layoutModel.equalCenterX) {
+        if (view.superview == layoutModel.equalCenterX.refView) {
+            centerXValue = layoutModel.equalCenterX.refView.widthValue*0.5 + layoutModel.equalCenterX.offset;
+        } else {
+            centerXValue = layoutModel.equalCenterX.refView.centerXValue + layoutModel.equalCenterX.offset;
+        }
+        if (_tempLeft) {
+            view.width_sl(fabs(centerXValue-_tempLeft.floatValue)*2);
+        }
+        view.centerX_sl(centerXValue);
+    } else if (layoutModel.centerX) {
+        centerXValue = layoutModel.centerX.floatValue;
+        if (_tempLeft) {
+            view.width_sl(fabs(centerXValue-_tempLeft.floatValue)*2);
+        }
+        view.centerX_sl(centerXValue);
+    }
+    
+    
+    // 计算高度【如果没有指定的话】
+    NSNumber *_tempTop = nil;
+    if ((!view.fixedWidth) && (layoutModel.equalCenterY || layoutModel.centerY)) { // 根据 上|下 + centery 确定高度
+        _tempTop = @(view.topValue);
+    }
+    // center y
+    CGFloat centerYValue;
+    if (layoutModel.equalCenterY) {
+        if (view.superview == layoutModel.equalCenterY.refView) {
+            centerYValue = layoutModel.equalCenterY.refView.heightValue * 0.5 + layoutModel.equalCenterY.offset;
+        } else {
+            centerYValue = layoutModel.equalCenterY.refView.centerYValue + layoutModel.equalCenterY.offset;
+        }
+        if (_tempTop) {
+            view.height_sl(fabs(centerYValue-_tempTop.floatValue)*2);
+        }
+        view.centerY_sl(centerYValue);
+    } else if (layoutModel.centerY) {
+        centerYValue = [layoutModel.centerY floatValue];
+        if (_tempTop) {
+            view.height_sl(fabs(centerYValue-_tempTop.floatValue)*2);
+        }
+        view.centerY_sl(centerYValue);
     }
     
 }
