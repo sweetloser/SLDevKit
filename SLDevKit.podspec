@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLDevKit'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'A short description of SLDevKit.'
 
   s.description      = <<-DESC
@@ -57,4 +57,10 @@ TODO: Add long description of the pod here.
     
   end
   
+#  s.subspec "SLCustomField" do |scf|
+#    scf.dependency 'SLDevKit/SLDefs'
+#    
+#    scf.source_files = 'SLDevKit/SLCustomField/*.{h,m}'
+#
+#  end
 end

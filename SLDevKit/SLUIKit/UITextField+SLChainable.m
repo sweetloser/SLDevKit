@@ -43,4 +43,12 @@
 - (SLChainableUITextFieldIntBlock)clearMode {
     SL_CHAINABLE_INT_BLOCK(self.clearButtonMode = value);
 }
+
+- (SLChainableUITextFieldIntBlock)keyboard {
+    SL_CHAINABLE_INT_BLOCK(self.keyboardType = value);
+}
+- (SLChainableUITextFieldIntBlock)returnKey {
+    SL_CHAINABLE_INT_BLOCK(self.returnKeyType = value);
+}
+
 @end

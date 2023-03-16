@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,copy)NSNumber *value;
 
-@property(nonatomic,strong)UIView *refView;
+@property(nonatomic,weak)UIView *refView;
 
 @property(nonatomic,strong)NSArray <UIView *>*refViewsArray;
 

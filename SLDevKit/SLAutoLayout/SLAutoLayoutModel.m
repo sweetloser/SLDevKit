@@ -147,10 +147,7 @@
 
 - (SLChainableSLAutoLayoutModelInsetsBlock)spaceToSuperview_sl {
     SL_CHAINABLE_INSETS_BLOCK(UIView *superview = self.needsAutoResizeView.superview;
-                              NSLog(@"superview:%@",superview);
-                              NSLog(@"%@",self.needsAutoResizeView);
-                              NSLog(@"%@",NSStringFromUIEdgeInsets(value));
-                              self.needsAutoResizeView.slLayout().leftSpaceToView_sl(value.left, superview).rightSpaceToView_sl(value.right, superview).bottomSpaceToView_sl(value.bottom, superview).topSpaceToView_sl(value.top, superview));
+                              self.leftSpaceToView_sl(value.left, superview).rightSpaceToView_sl(value.right, superview).bottomSpaceToView_sl(value.bottom, superview).topSpaceToView_sl(value.top, superview));
 }
 
 #pragma mark - private

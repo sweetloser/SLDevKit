@@ -56,6 +56,17 @@ SL_TEXTFIELD_PROP(Int)secure;
 ///      .clearMode(UITextFieldViewModeWhileEditing)
 SL_TEXTFIELD_PROP(Int)clearMode;
 
+/// 设置 UITextField 的 keyboardType 属性
+/// 参数为 UIKeyboardType 枚举值
+/// 用法：.keyboard(UIKeyboardTypeURL)
+///      .keyboade(UIKeyboardTypeNumberPad)
+SL_TEXTFIELD_PROP(Int)keyboard;
+
+/// 设置 UITextField 的 returnKeyType 属性
+/// 参数为 UIReturnKeyType 枚举值
+/// 用法：.returnKey(UIReturnKeyGo)
+///      .returnKey(UIReturnKeySearch)
+SL_TEXTFIELD_PROP(Int)returnKey;
 @end
 
 NS_ASSUME_NONNULL_END
