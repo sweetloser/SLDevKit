@@ -85,7 +85,8 @@
 }
 
 - (SLChainableSLAutoLayoutModelFloatBlock)heightIs {
-    SL_CHAINABLE_FLOAT_BLOCK(SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
+    SL_CHAINABLE_FLOAT_BLOCK(self.needsAutoResizeView.fixedHeight = @(value);
+                             SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
                              item.value = @(value);
                              self.height = item;);
 }

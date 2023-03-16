@@ -312,7 +312,7 @@
     
     // 计算高度【如果没有指定的话】
     NSNumber *_tempTop = nil;
-    if ((!view.fixedWidth) && (layoutModel.equalCenterY || layoutModel.centerY)) { // 根据 上|下 + centery 确定高度
+    if ((!view.fixedHeight) && (layoutModel.equalCenterY || layoutModel.centerY)) { // 根据 上|下 + centery 确定高度
         _tempTop = @(view.topValue);
     }
     // center y
