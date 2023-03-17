@@ -10,6 +10,16 @@
 #import "SLAutoLayoutPrivate.h"
 #import "UIView+SLAutoLayout.h"
 
+@interface UIView (SLAutoLayout)
+
+/// 设置固定宽度【设置了之后，宽度就不会在自动布局中被修改】
+@property(nonatomic,copy)NSNumber *fixedWidth;
+
+/// 设置固定高度【设置了之后，高度度就不会在自动布局中被修改】
+@property(nonatomic,copy)NSNumber *fixedHeight;
+
+@end
+
 @interface SLAutoLayoutModel ()
 
 @property(nonatomic,strong)SLAutoLayoutModelItem *height;
@@ -62,87 +72,130 @@
     SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK([self _marginToView:arguments value:value key:@"bottom"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)xIs {
+- (SLChainableSLAutoLayoutModelFloatBlock)xIs_sl {
     SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"x"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)yIs {
+- (SLChainableSLAutoLayoutModelFloatBlock)yIs_sl {
     SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"y"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)centerXIs {
+- (SLChainableSLAutoLayoutModelFloatListBlock)xyIs_sl {
+    SL_CHAINABLE_FLOAT_LIST_BLOCK(
+                                  if (value.validCount == 1) {
+                                      self.xIs_sl(value.f1).yIs_sl(value.f1);
+                                  } else if (value.validCount > 1) {
+                                      self.xIs_sl(value.f1).yIs_sl(value.f2);
+                                  });
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)cxIs_sl {
     SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"centerX"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)centerYIs {
+- (SLChainableSLAutoLayoutModelFloatBlock)cyIs_sl {
     SL_CHAINABLE_FLOAT_BLOCK([self _frameWithValue:value key:@"centerY"]);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)widthIs {
-    SL_CHAINABLE_FLOAT_BLOCK(SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
+- (SLChainableSLAutoLayoutModelFloatListBlock)cxyIs_sl {
+    SL_CHAINABLE_FLOAT_LIST_BLOCK(
+                                  if (value.validCount == 1) {
+                                      self.cxIs_sl(value.f1).cyIs_sl(value.f1);
+                                  } else if (value.validCount > 1) {
+                                      self.cxIs_sl(value.f1).cyIs_sl(value.f2);
+                                  });
+}
+
+- (SLChainableSLAutoLayoutModelFloatBlock)wIs_sl {
+    SL_CHAINABLE_FLOAT_BLOCK(self.needsAutoResizeView.fixedWidth = @(value);
+                             SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
                              item.value = @(value);
                              self.width = item;);
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)heightIs {
+- (SLChainableSLAutoLayoutModelFloatBlock)hIs_sl {
     SL_CHAINABLE_FLOAT_BLOCK(self.needsAutoResizeView.fixedHeight = @(value);
                              SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
                              item.value = @(value);
                              self.height = item;);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)leftEqualToView {
+- (SLChainableSLAutoLayoutModelFloatListBlock)whIs_sl {
+    SL_CHAINABLE_FLOAT_LIST_BLOCK(
+                                  if (value.validCount == 1) {
+                                      self.wIs_sl(value.f1).hIs_sl(value.f1);
+                                  } else if (value.validCount > 1) {
+                                      self.wIs_sl(value.f1).hIs_sl(value.f2);
+                                  });
+}
+
+- (SLChainableSLAutoLayoutModelRectBlock)xywhIs_sl {
+    SL_CHAINABLE_RECT_BLOCK(
+                            self.xyIs_sl(value.value.origin.x, value.value.origin.y);
+                            self.whIs_sl(value.value.size.width, value.value.size.height));
+}
+
+- (SLChainableSLAutoLayoutModelObjectBlock)leftEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalLeft"]);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)topEqualToView {
+- (SLChainableSLAutoLayoutModelObjectBlock)topEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalTop"]);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)rightEqualToView {
+- (SLChainableSLAutoLayoutModelObjectBlock)rightEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalRight"]);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)bottomEqualToView {
+- (SLChainableSLAutoLayoutModelObjectBlock)bottomEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalBottom"]);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)centerXEqualToView {
+- (SLChainableSLAutoLayoutModelObjectBlock)centerXEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalCenterX"]);
 }
 
-- (SLChainableSLAutoLayoutModelObjectBlock)centerYEqualToView {
+- (SLChainableSLAutoLayoutModelObjectBlock)centerYEqualToView_sl {
     SL_CHAINABLE_OBJECT_BLOCK([self _equalToView:value key:@"equalCenterY"]);
 }
 
-- (SLChainableSLAutoLayoutModelEmptyBlock)widthEqualToHeight {
+- (SLChainableSLAutoLayoutModelEmptyBlock)widthEqualToHeight_sl {
     SL_CHAINABLE_EMPTY_BLOCK(
                              self.widthEqualHeight = [SLAutoLayoutModelItem new];
                              self.lastModelItem = self.widthEqualHeight;
                              );
 }
 
-- (SLChainableSLAutoLayoutModelEmptyBlock)heightEqualToWidth {
+- (SLChainableSLAutoLayoutModelEmptyBlock)heightEqualToWidth_sl {
     SL_CHAINABLE_EMPTY_BLOCK(
                              self.heightEqualWidth = [SLAutoLayoutModelItem new];
                              self.lastModelItem = self.heightEqualWidth;);
 }
 
 - (SLChainableSLAutoLayoutModelFloatObjectListBlock)widthRatioToView_sl {
-    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
+    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(
                                          self.ratio_width = [[SLAutoLayoutModelItem alloc] init];
                                          self.ratio_width.value = @(value);
-                                         self.ratio_width.refView = arguments.firstObject;);
+                                         if (arguments.count == 0) {
+                                             self.ratio_width.refView = self.needsAutoResizeView.superview;
+                                         } else {
+                                             self.ratio_width.refView = arguments.firstObject;
+                                         });
 }
 
 - (SLChainableSLAutoLayoutModelFloatObjectListBlock)heightRatioToView_sl {
-    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(NSAssert(arguments.count == 1, @"参数格式为(CGFolat, UIView)");
+    SL_CHAINABLE_FLOAT_OBJECT_LIST_BLOCK(
                                          self.ratio_height = [[SLAutoLayoutModelItem alloc] init];
                                          self.ratio_height.value = @(value);
-                                         self.ratio_height.refView = arguments.firstObject;);
+                                         if (arguments.count == 0) {
+                                             self.ratio_height.refView = self.needsAutoResizeView.superview;
+                                             
+                                         } else {
+                                             self.ratio_height.refView = arguments.firstObject;
+                                         });
 }
 
-- (SLChainableSLAutoLayoutModelFloatBlock)offset {
+- (SLChainableSLAutoLayoutModelFloatBlock)offset_sl {
     SL_CHAINABLE_FLOAT_BLOCK(self.lastModelItem.offset = value;);
 }
 
@@ -166,7 +219,7 @@
 -(void)_marginToView:(NSArray *)views value:(CGFloat)value key:(NSString *)key {
     SLAutoLayoutModelItem *item = [SLAutoLayoutModelItem new];
     item.value = @(value);
-    if (views == 0) {
+    if (views.count == 0) {
         item.refView = self.needsAutoResizeView.superview;}
     else if (views.count == 1) {
         item.refView = views.firstObject;

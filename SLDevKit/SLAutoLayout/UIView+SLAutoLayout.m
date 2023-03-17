@@ -44,6 +44,20 @@
 
 @end
 
+@interface UIView (SLAutoLayout)
+
+@property(nonatomic,strong)SLAutoLayoutModel *_Nullable sl_ownLayoutModel;
+
+@property(nonatomic,strong)NSMutableArray *sl_autoLayoutModelsArray;
+
+/// 设置固定宽度【设置了之后，宽度就不会在自动布局中被修改】
+@property(nonatomic,copy)NSNumber *fixedWidth;
+
+/// 设置固定高度【设置了之后，高度度就不会在自动布局中被修改】
+@property(nonatomic,copy)NSNumber *fixedHeight;
+
+@end
+
 @implementation UIView (SLAutoLayout)
 + (void)load {
     if (self == [UIView class]) {
