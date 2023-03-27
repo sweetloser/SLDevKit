@@ -57,10 +57,19 @@ TODO: Add long description of the pod here.
     
   end
   
-#  s.subspec "SLCustomField" do |scf|
-#    scf.dependency 'SLDevKit/SLDefs'
-#    
-#    scf.source_files = 'SLDevKit/SLCustomField/*.{h,m}'
-#
-#  end
+  s.subspec "SLCustomField" do |scf|
+    scf.dependency 'SLDevKit/SLDefs'
+    
+    scf.source_files = 'SLDevKit/SLCustomField/*.{h,m}'
+
+  end
+
+  s.subspec "SLBackTrace" do |sbt|
+    sbt.dependency 'SLDevKit/SLDefs'
+    sbt.dependency 'SLDevKit/SLFoundation'
+
+    sbt.source_files = 'SLDevKit/SLBackTrace/*.{h,m}'
+
+  end
+
 end

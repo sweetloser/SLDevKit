@@ -122,11 +122,15 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
 }
 
 - (SLChainableNSStringUIntBlock)subFromIndex {
-    SL_CHAINABLE_UINT_BLOCK(NSAssert(self.length>=value, @"index value can not be greater than string length!");return[self substringFromIndex:value]);
+    SL_CHAINABLE_UINT_BLOCK(
+                            NSAssert(self.length>=value, @"index value can not be greater than string length!");
+                            return[self substringFromIndex:value]);
 }
 
 - (SLChainableNSStringUIntBlock)subToIndex {
-    SL_CHAINABLE_UINT_BLOCK(NSAssert(self.length>=value, @"index value can not be greater than string length!");return [self substringToIndex:value]);
+    SL_CHAINABLE_UINT_BLOCK(
+                            NSAssert(self.length>=value, @"index value can not be greater than string length!");
+                            return [self substringToIndex:value]);
 }
 
 - (SLChainableNSStringObjectBlock)subMatch {
@@ -194,4 +198,5 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
                              NSData *_decodeData = [_encodeData _base64Decode];
                              return [[NSString alloc] initWithData:_decodeData encoding:NSUTF8StringEncoding];);
 }
+
 @end
