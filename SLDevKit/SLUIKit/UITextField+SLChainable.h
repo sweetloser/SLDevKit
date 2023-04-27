@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "UIView+SLChainable.h"
 
+#define SLTextField ([UITextField new])
+
 #define SL_TEXTFIELD_PROP(D)   SL_PROP(UITextField, D)
 NS_ASSUME_NONNULL_BEGIN
 

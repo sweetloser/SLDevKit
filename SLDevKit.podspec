@@ -64,12 +64,21 @@ TODO: Add long description of the pod here.
 
   end
 
-  s.subspec "SLBackTrace" do |sbt|
-    sbt.dependency 'SLDevKit/SLDefs'
-    sbt.dependency 'SLDevKit/SLFoundation'
-
-    sbt.source_files = 'SLDevKit/SLBackTrace/*.{h,m}'
+  s.subspec "SLUpdateAlert" do |sua|
+    sua.dependency 'SLDevKit/SLDefs'
+    sua.dependency 'SLDevKit/SLUIKit'
+    sua.dependency 'SLDevKit/SLFoundation'
+    sua.dependency 'SLDevKit/SLAutoLayout'
+    sua.source_files = 'SLDevKit/SLUpdateAlert/*.{h,m}'
 
   end
+  
+#  s.subspec "SLBackTrace" do |sbt|
+#    sbt.dependency 'SLDevKit/SLDefs'
+#    sbt.dependency 'SLDevKit/SLFoundation'
+#
+#    sbt.source_files = 'SLDevKit/SLBackTrace/*.{h,m}'
+#
+#  end
 
 end

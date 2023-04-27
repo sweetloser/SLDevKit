@@ -118,6 +118,17 @@
     
     // 中心布局
     [self _sl_layoutCenterWithView:view layoutModel:layoutModel];
+    
+    // w == h
+    if (layoutModel.widthEqualHeight) {
+        view.width_sl(view.heightValue);
+    }
+    
+    // h == w
+    if (layoutModel.heightEqualWidth) {
+        view.height_sl(view.widthValue);
+    }
+    
 }
 
 - (void)_sl_layoutWidthWithView:(UIView *)view layoutModel:(SLAutoLayoutModel *)layoutModel {
@@ -136,6 +147,7 @@
         view.fixedHeight = @(view.heightValue);
     }else if (layoutModel.ratio_height) {
         view.height_sl(layoutModel.ratio_height.refView.heightValue*layoutModel.ratio_height.value.floatValue);
+        view.fixedHeight = @(view.heightValue);
     }
 }
 

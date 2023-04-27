@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define SLImageView ([UIImageView new])
+
 #define SL_IMGVIEW_PROP(D)   SL_PROP(UIImageView, D)
 
 @interface UIImageView (SLChainable)

@@ -15,6 +15,8 @@
 #import "SLUIKitMacros.h"
 #import "SLUIKit.h"
 #import "SLAutoLayout.h"
-#import "SLBackTrace.h"
+#import "SLUpdateAlertView.h"
+
+//#import "SLBackTrace.h"
 
 #endif /* SLDevKit_h */

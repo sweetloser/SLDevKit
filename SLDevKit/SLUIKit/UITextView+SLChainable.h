@@ -9,7 +9,7 @@
 #import "SLDefs.h"
 #import "UIView+SLChainable.h"
 
-#define SLTextView [UITextView new]
+#define SLTextView ([UITextView new])
 
 #define SL_TEXTVIEW_PROP(D)   SL_PROP(UITextView, D)
 

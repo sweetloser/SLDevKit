@@ -11,5 +11,6 @@
 #import "NSArray+SLChainable.h"
 #import "NSString+SLChainable.h"
 #import "NSData+SLChainable.h"
+#import "SLFoundationPrivate.h"
 
 #endif /* SLFoundation_h */

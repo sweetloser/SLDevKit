@@ -137,7 +137,6 @@ static uintptr_t segmentBaseOfImageIndex(const uint32_t idx) {
         }
         cmdPtr += loadCmd->cmdsize;
     }
-    
     return 0;
 }
 
@@ -225,8 +224,6 @@ void sl_symbolLicate(const uintptr_t *const backTraceBuffer, Dl_info *const symb
     }
 }
 
-
-
 @implementation SLBackTraceTools
 
 + (void)load {
@@ -253,14 +250,12 @@ void sl_symbolLicate(const uintptr_t *const backTraceBuffer, Dl_info *const symb
     uintptr_t pcAddr = _machineC.__ss.__pc;
     NSLog(@"pc寄存器的值：0x%lx", pcAddr);
     
-    backTraceBuffer[i] = pcAddr;
-    ++i;
-    
     // 获取lr寄存器的值
     uintptr_t lrAddr = _machineC.__ss.__lr;
     NSLog(@"lr寄存器的值：0x%lx", lrAddr);
     if (lrAddr) {
-        backTraceBuffer[i] = lrAddr;
+        backTraceBuffer[i] = lrAddr & 0xffffffff8;
+        i++;
     }
     
     // 获取fp寄存器的值
