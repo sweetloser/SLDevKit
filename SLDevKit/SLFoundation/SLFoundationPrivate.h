@@ -9,8 +9,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-BOOL SLObjectIsKindOfClass(NSString *className, id obj);
+typedef NS_OPTIONS(NSUInteger, SLPasswordLevelOptions) {
+    SLPasswordLevelOptionsLength = 0,                               // 用前5bit存储密码的长度【最长31】
+    SLPasswordLevelOptionsNUM = 1 << 5,                             // 是否包含数字
+    SLPasswordLevelOptionsLowercase = 1 << 6,                       // 是否包含小写字母
+    SLPasswordLevelOptionsUppercase = 1 << 7,                       // 是否包含大小字母
+    SLPasswordLevelOptionsSpecificSymbol = 1 << 8,                  // 是否包含特殊字符
+    SLPasswordLevelOptionsConsecutiveIdenticalCharacters = 1 << 9,  // 是否连续包含相同的字符【默认超过4个即记录】eg:aaaaaaaaabbb.
+};
 
+BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 @interface NSObject (SLFoundationPrivate)
 
@@ -20,7 +28,13 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 @interface NSString (SLFoundationPrivate)
 
+/// 获取字符串的full range
+/// eg:12345   => {0, 5}
 -(NSRange)sl_fullRange;
+
+
+/// 检测密码等级
+-(SLPasswordLevelOptions)sl_passwordLevel;
 
 @end
 

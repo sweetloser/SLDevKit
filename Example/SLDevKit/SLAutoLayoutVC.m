@@ -28,7 +28,7 @@
     v1.addTo(self.view).bgColor(@"blue").border(3,@"#eeeeee");
     
     UIView *v2 = [[UIView alloc] init];
-    v2.addTo(v1).bgColor(@"red").slLayout().leftToView(15,v1).rightToView(15, v1).topToView(10, v1).bottomToView(10,v1);
+    v2.addTo(v1).bgColor(@"red").slLayout().leftSpaceToView_sl(15,v1).rightSpaceToView_sl(15, v1).topSpaceToView_sl(10, v1).bottomSpaceToView_sl(10,v1);
 }
 
 /*

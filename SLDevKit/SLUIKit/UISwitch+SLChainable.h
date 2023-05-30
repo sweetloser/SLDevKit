@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define SLSwitch ([UISwitch new])
+
 #define SL_SWITCH_PROP(D)   SL_PROP(UISwitch, D)
 
 SL_DEFINE_CHAINABLE_BLOCKS(UISwitch)

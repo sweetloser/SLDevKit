@@ -1,30 +1,32 @@
 PODS:
-  - SLDevKit (1.0.7):
-    - SLDevKit/SLAutoLayout (= 1.0.7)
-    - SLDevKit/SLBackTrace (= 1.0.7)
-    - SLDevKit/SLCustomField (= 1.0.7)
-    - SLDevKit/SLDefs (= 1.0.7)
-    - SLDevKit/SLFoundation (= 1.0.7)
-    - SLDevKit/SLUIKit (= 1.0.7)
-    - SLDevKit/SLUtils (= 1.0.7)
-  - SLDevKit/SLAutoLayout (1.0.7):
+  - SLDevKit (1.0.8):
+    - SLDevKit/SLAutoLayout (= 1.0.8)
+    - SLDevKit/SLCustomField (= 1.0.8)
+    - SLDevKit/SLDefs (= 1.0.8)
+    - SLDevKit/SLFoundation (= 1.0.8)
+    - SLDevKit/SLUIKit (= 1.0.8)
+    - SLDevKit/SLUpdateAlert (= 1.0.8)
+    - SLDevKit/SLUtils (= 1.0.8)
+  - SLDevKit/SLAutoLayout (1.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLBackTrace (1.0.7):
+  - SLDevKit/SLCustomField (1.0.8):
     - SLDevKit/SLDefs
-    - SLDevKit/SLFoundation
-  - SLDevKit/SLCustomField (1.0.7):
-    - SLDevKit/SLDefs
-  - SLDevKit/SLDefs (1.0.7)
-  - SLDevKit/SLFoundation (1.0.7):
+  - SLDevKit/SLDefs (1.0.8)
+  - SLDevKit/SLFoundation (1.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLUIKit (1.0.7):
+  - SLDevKit/SLUIKit (1.0.8):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUtils (1.0.7):
+  - SLDevKit/SLUpdateAlert (1.0.8):
+    - SLDevKit/SLAutoLayout
+    - SLDevKit/SLDefs
+    - SLDevKit/SLFoundation
+    - SLDevKit/SLUIKit
+  - SLDevKit/SLUtils (1.0.8):
     - SLDevKit/SLDefs
 
 DEPENDENCIES:
@@ -35,7 +37,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLDevKit: 31530cd2fa214fac580c3a4af54b1facdaa3e756
+  SLDevKit: d906b28876711860e334d5f106efdefee3192c89
 
 PODFILE CHECKSUM: 2fb2e992bbf9ed02752c745e824861bfef629c44
 

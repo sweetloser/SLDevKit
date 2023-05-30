@@ -43,11 +43,8 @@ SL_DEFINE_CHAINABLE_BLOCKS(NSString)
 
 @interface NSString (SLChainable)
 
-
 /// 字符串拼接.  eg:str.a(@"append");    ==>str+"append"
 SL_STRING_PROP(Object)a;
-
-#define a(...) a(Str(__VA_ARGS__))
 
 /// 路径拼接.   eg:str.ap(@"root");      ==>str+"/root"
 SL_STRING_PROP(Object)ap;
@@ -63,7 +60,6 @@ SL_STRING_PROP(Object)subMatch;
 
 /// 替换字符串
 /// 基于`-[NSRegularExpression stringByReplacingMatchesInString:options:range:withTemplate:]`实现
-/// 
 SL_STRING_PROP(TwoObject)replaceStr;
 
 /// 将字符串转化为沙盒内document路径.
@@ -95,5 +91,7 @@ NSString *SLFormatStringWithArgumentsCount(NSInteger count, ...);
 ///   - type: 数据的 encode
 ///   - value: 数据
 NSString *SLStringFromTypeAndValue(const char *type, const void *value);
+
+#define a(...) a(Str(__VA_ARGS__))
 
 NS_ASSUME_NONNULL_END

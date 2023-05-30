@@ -10,16 +10,7 @@
 #import "SLAppDelegate.h"
 #import <SLDevKit/SLDevKit.h>
 
-int main(int argc, char * argv[])
-{
-    
-    NSString *str = @"1234567890";
-    NSData *key = [@"1234567890123456" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *iv = [@"1234567890123456" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"%@",[[NSString alloc] initWithData:data.sm4CbcEncrypt(key, iv) encoding:NSUTF8StringEncoding]);
-    NSLog(@"%@",[[NSString alloc] initWithData:data.sm4CbcEncrypt(key, iv).sm4CbcDecrypt(key, iv) encoding:NSUTF8StringEncoding]);
-    
+int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SLAppDelegate class]));
     }

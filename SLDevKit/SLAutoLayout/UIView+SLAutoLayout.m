@@ -393,3 +393,19 @@
     objc_setAssociatedObject(self, @selector(fixedHeight), fixedHeight, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 @end
+
+@implementation UIButton (SLAutoLayoutButton)
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self _sl_exchengeMethods:@[@"layoutSubviews"] prefix:@"sl_button_"];
+    });
+}
+
+- (void)sl_button_layoutSubviews {
+    [self sl_button_layoutSubviews];
+    [self _sl_layoutSubviewsHandle];
+}
+
+@end

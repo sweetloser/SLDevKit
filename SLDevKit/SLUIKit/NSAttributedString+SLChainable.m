@@ -69,7 +69,13 @@
 }
 
 - (SLChainableNSMutableAttributedStringTwoIntBlock)range {
-    SL_CHAINABLE_TWO_INT_BLOCK([self.slEffectedRanges removeAllIndexes];self.addRange(value1, value2));
+    SL_CHAINABLE_TWO_INT_BLOCK(
+                               [self.slEffectedRanges removeAllIndexes];
+                               if (value1 == -1) {
+                                   value1 = self.length - value2;
+                                   value1 = value1 > 0 ? value1 : 0;
+                               }
+                               self.addRange(value1, value2));
 }
 
 - (SLChainableNSMutableAttributedStringTwoIntBlock)addRange {

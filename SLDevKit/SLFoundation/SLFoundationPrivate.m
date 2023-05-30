@@ -42,6 +42,72 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj) {
 - (NSRange)sl_fullRange {
     return NSMakeRange(0, self.length);
 }
+SL_INLINE bool _isNum(const int c) {
+    return isdigit(c);
+}
+SL_INLINE bool _islower(const int c) {
+    return islower(c);
+}
+SL_INLINE bool _isupper(const int c) {
+    return isupper(c);
+}
+SL_INLINE bool _isspecial(const int c) {
+    return isspace(c);
+}
+
+- (SLPasswordLevelOptions)sl_passwordLevel {
+    
+    SLPasswordLevelOptions level = (self.length > 0b11111) ? 0b11111 : (self.length & 0b11111);
+    
+    // 判断有没有数字
+    for (int n=0; n<self.length; n++) {
+        int nChar = [self characterAtIndex:n];
+        if (_isNum(nChar)) {
+            level = level | SLPasswordLevelOptionsNUM;
+            break;
+        }
+    }
+    
+    // 判断有没有小写字母
+    for (int l=0; l<self.length; l++) {
+        char lChar = (char)[self characterAtIndex:l];
+        if (_islower(lChar)) {
+            level = level | SLPasswordLevelOptionsLowercase;
+            break;
+        }
+    }
+    
+    // 判断有没有大写字母
+    for (int u=0; u<self.length; u++) {
+        unichar uChar = [self characterAtIndex:u];
+        if (_isupper(uChar)) {
+            level = level | SLPasswordLevelOptionsUppercase;
+            break;
+        }
+    }
+    
+    // 判断有没有特殊符号【英文】
+    for (int s=0; s<self.length; s++) {
+        unichar sChar = [self characterAtIndex:s];
+        if (_isspecial(sChar)) {
+            level = level | SLPasswordLevelOptionsSpecificSymbol;
+            break;
+        }
+    }
+    
+    // 判断是否包含连续4个相同的字符
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.)\\1{3,}" options:0 error:nil];
+    NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:[self sl_fullRange]];
+    
+    if (!match) {
+        // 没有匹配到，即不存在，记录对应位
+        level = level | SLPasswordLevelOptionsConsecutiveIdenticalCharacters;
+    }
+    
+    // 判断是否有连续的数字或字母
+    
+    return level;
+}
 
 @end
 
