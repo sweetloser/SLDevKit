@@ -59,7 +59,10 @@ TODO: Add long description of the pod here.
   
   s.subspec "SLCustomField" do |scf|
     scf.dependency 'SLDevKit/SLDefs'
-    
+    scf.dependency 'SLDevKit/SLUIKit'
+    scf.dependency 'SLDevKit/SLFoundation'
+    scf.dependency 'SLDevKit/SLAutoLayout'
+
     scf.source_files = 'SLDevKit/SLCustomField/*.{h,m}'
 
   end
@@ -69,6 +72,7 @@ TODO: Add long description of the pod here.
     sua.dependency 'SLDevKit/SLUIKit'
     sua.dependency 'SLDevKit/SLFoundation'
     sua.dependency 'SLDevKit/SLAutoLayout'
+    
     sua.source_files = 'SLDevKit/SLUpdateAlert/*.{h,m}'
 
   end

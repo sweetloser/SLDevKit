@@ -99,6 +99,7 @@ _61,_62,_63,N,...)    N
 
 #define SL_DEFINE_CHAINABLE_BLOCKS(T)                                       \
 SL_CHAINABLE_TYPE(T, Empty)(void);                                          \
+SL_CHAINABLE_TYPE(T, Bool)(BOOL);                                           \
 SL_CHAINABLE_TYPE(T, Object)(_Nullable id);                                 \
 SL_CHAINABLE_TYPE(T, TwoObject)(_Nullable id, _Nullable id);                \
 SL_CHAINABLE_TYPE(T, ObjectList)(_Nullable id, ...);                        \

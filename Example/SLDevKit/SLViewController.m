@@ -11,6 +11,7 @@
 #import "SLTestItemCell.h"
 #import "SLAutoLayoutVC.h"
 #import "SLChainableVC.h"
+#import "SLCustomFieldVC.h"
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,11 +33,13 @@
         cell.itemTitleLabel.text = @"链式调用";
     } else if (indexPath.row == 1){
         cell.itemTitleLabel.text = @"自动布局";
+    }else if (indexPath.row == 2){
+        cell.itemTitleLabel.text = @"自定义验证码输入框";
     }
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 45;
@@ -48,6 +51,9 @@
     }else if (indexPath.row == 1) {
         SLAutoLayoutVC *autoLayoutVc = [[SLAutoLayoutVC alloc] init];
         [self.navigationController pushViewController:autoLayoutVc animated:YES];
+    }else if (indexPath.row == 2) {
+        SLCustomFieldVC *customFieldVc = [[SLCustomFieldVC alloc] init];
+        [self.navigationController pushViewController:customFieldVc animated:YES];
     }
 }
 

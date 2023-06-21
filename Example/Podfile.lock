@@ -12,7 +12,10 @@ PODS:
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
   - SLDevKit/SLCustomField (1.0.8):
+    - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
+    - SLDevKit/SLFoundation
+    - SLDevKit/SLUIKit
   - SLDevKit/SLDefs (1.0.8)
   - SLDevKit/SLFoundation (1.0.8):
     - SLDevKit/SLDefs
@@ -37,8 +40,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLDevKit: d906b28876711860e334d5f106efdefee3192c89
+  SLDevKit: 3a3e84f5ed620931837ef2185e49bd6019f3a2e5
 
 PODFILE CHECKSUM: 2fb2e992bbf9ed02752c745e824861bfef629c44
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1

@@ -81,6 +81,15 @@
       "dependencies": {
         "SLDevKit/SLDefs": [
 
+        ],
+        "SLDevKit/SLUIKit": [
+
+        ],
+        "SLDevKit/SLFoundation": [
+
+        ],
+        "SLDevKit/SLAutoLayout": [
+
         ]
       },
       "source_files": "SLDevKit/SLCustomField/*.{h,m}"

@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BF0EE7002A25E108003E5C1E /* SLCustomFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0EE6FF2A25E108003E5C1E /* SLCustomFieldVC.m */; };
 		BF21341E2970F29A00857450 /* SLTestRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21341D2970F29A00857450 /* SLTestRuntime.m */; };
 		BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538829850F0A0030B2D5 /* SLTestItemCell.m */; };
 		BF35538B29850F0A0030B2D5 /* SLTestItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */; };
@@ -70,6 +71,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97CC7156AD58933711F1BC06 /* Pods-SLDevKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLDevKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SLDevKit_Tests/Pods-SLDevKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEA1D9A1DFB3BC60DBF9A69 /* SLDevKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SLDevKit.podspec; path = ../SLDevKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF0EE6FE2A25E108003E5C1E /* SLCustomFieldVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCustomFieldVC.h; sourceTree = "<group>"; };
+		BF0EE6FF2A25E108003E5C1E /* SLCustomFieldVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCustomFieldVC.m; sourceTree = "<group>"; };
 		BF21341D2970F29A00857450 /* SLTestRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestRuntime.m; sourceTree = "<group>"; };
 		BF35538729850F0A0030B2D5 /* SLTestItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTestItemCell.h; sourceTree = "<group>"; };
 		BF35538829850F0A0030B2D5 /* SLTestItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestItemCell.m; sourceTree = "<group>"; };
@@ -164,10 +167,12 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* SLViewController.h */,
 				6003F5A6195388D20070C39A /* SLViewController.m */,
-				BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */,
-				BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */,
 				BFEBB32A2993B1B200FFA1D2 /* SLChainableVC.h */,
 				BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */,
+				BF35538C298528360030B2D5 /* SLAutoLayoutVC.h */,
+				BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */,
+				BF0EE6FE2A25E108003E5C1E /* SLCustomFieldVC.h */,
+				BF0EE6FF2A25E108003E5C1E /* SLCustomFieldVC.m */,
 				BF35538729850F0A0030B2D5 /* SLTestItemCell.h */,
 				BF35538829850F0A0030B2D5 /* SLTestItemCell.m */,
 				BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */,
@@ -272,7 +277,8 @@
 				ORGANIZATIONNAME = sweetloser;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = P4SDVKBS7C;
+						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -378,6 +384,7 @@
 				BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */,
 				BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */,
 				BFEBB32C2993B1B200FFA1D2 /* SLChainableVC.m in Sources */,
+				BF0EE7002A25E108003E5C1E /* SLCustomFieldVC.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -511,15 +518,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = P4SDVKBS7C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "SLDevKit/SLDevKit-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sweetloser.sldevkitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = sl_test;
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
@@ -532,17 +542,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = L28Y5F2E2C;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = P4SDVKBS7C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "SLDevKit/SLDevKit-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chinamobile.gz.MobileUShield;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sweetloser.sldevkitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = gzUShield20230113;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = sl_test;
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
