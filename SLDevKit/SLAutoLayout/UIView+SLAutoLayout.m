@@ -402,7 +402,7 @@
         [self _sl_exchengeMethods:@[@"layoutSubviews"] prefix:@"sl_button_"];
     });
 }
-
+/// hook UIButton的`layoutSubviews`方法
 - (void)sl_button_layoutSubviews {
     [self sl_button_layoutSubviews];
     [self _sl_layoutSubviewsHandle];
