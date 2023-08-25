@@ -16,6 +16,7 @@
 #import "SLUIKit.h"
 #import "SLAutoLayout.h"
 #import "SLUpdateAlertView.h"
+#import "SLMemoryCache.h"
 
 //#import "SLBackTrace.h"
 

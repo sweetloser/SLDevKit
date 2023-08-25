@@ -1,6 +1,6 @@
 {
   "name": "SLDevKit",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "summary": "A short description of SLDevKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sweetloser/SLDevKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sweetloser/SLDevKit.git",
-    "tag": "1.0.8"
+    "tag": "1.0.10"
   },
   "platforms": {
     "ios": "9.0"
@@ -111,6 +111,15 @@
         ]
       },
       "source_files": "SLDevKit/SLUpdateAlert/*.{h,m}"
+    },
+    {
+      "name": "SLCache",
+      "dependencies": {
+        "SLDevKit/SLDefs": [
+
+        ]
+      },
+      "source_files": "SLDevKit/SLCache/*.{h,m}"
     }
   ]
 }

@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *hint;
 /// 是否聚焦
 @property(nonatomic,assign)BOOL focus;
+/// 聚焦时是否显示光标
+@property(nonatomic,assign)BOOL cursor;
+/// 光标颜色
+@property(nonatomic,strong)UIColor *cursorColor;
 /// 边框宽度
 @property(nonatomic,assign)CGFloat borderWidth;
 /// 边框圆角

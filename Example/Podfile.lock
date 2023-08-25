@@ -1,47 +1,61 @@
 PODS:
-  - SLDevKit (1.0.8):
-    - SLDevKit/SLAutoLayout (= 1.0.8)
-    - SLDevKit/SLCustomField (= 1.0.8)
-    - SLDevKit/SLDefs (= 1.0.8)
-    - SLDevKit/SLFoundation (= 1.0.8)
-    - SLDevKit/SLUIKit (= 1.0.8)
-    - SLDevKit/SLUpdateAlert (= 1.0.8)
-    - SLDevKit/SLUtils (= 1.0.8)
-  - SLDevKit/SLAutoLayout (1.0.8):
+  - Aspects (1.4.1)
+  - SLDevKit (1.0.10):
+    - SLDevKit/SLAutoLayout (= 1.0.10)
+    - SLDevKit/SLCache (= 1.0.10)
+    - SLDevKit/SLCustomField (= 1.0.10)
+    - SLDevKit/SLDefs (= 1.0.10)
+    - SLDevKit/SLFoundation (= 1.0.10)
+    - SLDevKit/SLUIKit (= 1.0.10)
+    - SLDevKit/SLUpdateAlert (= 1.0.10)
+    - SLDevKit/SLUtils (= 1.0.10)
+  - SLDevKit/SLAutoLayout (1.0.10):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLCustomField (1.0.8):
+  - SLDevKit/SLCache (1.0.10):
+    - SLDevKit/SLDefs
+  - SLDevKit/SLCustomField (1.0.10):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLDefs (1.0.8)
-  - SLDevKit/SLFoundation (1.0.8):
+  - SLDevKit/SLDefs (1.0.10)
+  - SLDevKit/SLFoundation (1.0.10):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLUIKit (1.0.8):
+  - SLDevKit/SLUIKit (1.0.10):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUpdateAlert (1.0.8):
+  - SLDevKit/SLUpdateAlert (1.0.10):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLUtils (1.0.8):
+  - SLDevKit/SLUtils (1.0.10):
     - SLDevKit/SLDefs
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
+  - Aspects
   - SLDevKit (from `../`)
+  - YYCache
+
+SPEC REPOS:
+  trunk:
+    - Aspects
+    - YYCache
 
 EXTERNAL SOURCES:
   SLDevKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SLDevKit: 3a3e84f5ed620931837ef2185e49bd6019f3a2e5
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  SLDevKit: 5abd0918982100e46c0920de62f7b49962550fe6
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 2fb2e992bbf9ed02752c745e824861bfef629c44
+PODFILE CHECKSUM: bc8d1b7a238142bcb2529dfef75a715650096dc0
 
 COCOAPODS: 1.12.1

@@ -21,6 +21,9 @@ SL_DEFINE_CHAINABLE_BLOCKS(SLCustomField)
 /// 默认需要
 SL_CUSTOM_FIELD_PROP(Bool)cursor_sl;
 
+/// 光标颜色【聚焦】
+SL_CUSTOM_FIELD_PROP(Object)cursorColor_sl;
+
 /// 设置验证码长度
 SL_CUSTOM_FIELD_PROP(Int)coodLength_sl;
 

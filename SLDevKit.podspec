@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLDevKit'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'A short description of SLDevKit.'
 
   s.description      = <<-DESC
@@ -75,6 +75,11 @@ TODO: Add long description of the pod here.
     
     sua.source_files = 'SLDevKit/SLUpdateAlert/*.{h,m}'
 
+  end
+  
+  s.subspec "SLCache" do |scc|
+    scc.dependency 'SLDevKit/SLDefs'
+    scc.source_files = 'SLDevKit/SLCache/*.{h,m}'
   end
   
 #  s.subspec "SLBackTrace" do |sbt|

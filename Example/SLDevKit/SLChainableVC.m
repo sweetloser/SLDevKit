@@ -22,6 +22,13 @@
     l1.frame = CGRectMake(12, 100, self.view.frame.size.width-24, 30);
     self.view.addChild(l1);
     NSLog(@"%@",[UIDevice currentDevice].model);
+    NSArray *arr = @[@"1", @"2", @"3"];
+    
+    arr = arr.map(^(NSString *v){
+        return [NSNumber numberWithInteger:v.integerValue];
+    });
+    
+    NSLog(@"%@",arr);
 }
 
 /*

@@ -16,6 +16,9 @@
 #pragma mark - 配置属性
 /// 是否需要光标
 @property(nonatomic,assign)BOOL cursor;
+/// 光标颜色
+@property(nonatomic,strong)UIColor *cursorColor;
+
 /// 验证码长度
 @property(nonatomic,assign)NSInteger codeLength;
 /// 框大小
@@ -55,6 +58,7 @@
 -(void)_defaultValues {
     _lastValues = @"";
     _cursor = YES;
+    _cursorColor = Color(@"#FF0000");
     _codeLength = 4;
     _borderWidth = 0.5;
     _borderRadius = 2.5;
@@ -86,16 +90,33 @@
     }
     // 删除了最后一个字符
     if (self.lastValues.length > curValues.length) {
-        // 清空最后一个的value
+        // 清空最后一个的value，并将最后一个输入框置为聚焦状态
         SLCustomFieldItemModel *lastItemModel = self.itemModelArray[self.lastValues.length-1];
+        lastItemModel.focus = YES;
         lastItemModel.value = @"";
-        [self.contentCollectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.lastValues.length-1 inSection:0]]];
+                
+        // 清除上一个聚焦状态格子的光标
+        if (self.lastValues.length != self.codeLength) {
+            SLCustomFieldItemModel *lastCursorItemModel = self.itemModelArray[self.lastValues.length];
+            lastCursorItemModel.focus = NO;
+        }
+//        [self.contentCollectionView reloadItemsAtIndexPaths:reloadIndexs];
+        
     } else if (self.lastValues.length < curValues.length) {
         // 输入了一个新值
         SLCustomFieldItemModel *lastItemModel = self.itemModelArray[self.lastValues.length];
+        lastItemModel.focus = NO;
         lastItemModel.value = curValues.subFromIndex(self.lastValues.length);
-        [self.contentCollectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.lastValues.length inSection:0]]];
+        
+        // 将光标向后移一位
+        if (self.lastValues.length + 1 < self.codeLength) {
+            SLCustomFieldItemModel *lastCursorItemModel = self.itemModelArray[self.lastValues.length + 1];
+            lastCursorItemModel.focus = YES;
+        }
     }
+    
+    [self.contentCollectionView reloadData];
+    
     self.lastValues = curValues;
     
     if (self.lastValues.length == self.codeLength) {
@@ -111,6 +132,14 @@
         return self;
     };
 }
+
+- (SLChainableSLCustomFieldObjectBlock)cursorColor_sl {
+    return ^(id obj) {
+        self.cursorColor = Color(obj);
+        return self;
+    };
+}
+
 -(SLChainableSLCustomFieldIntBlock)codeLength_sl {
     return ^(NSInteger codeLength) {
         self.codeLength = codeLength;
@@ -124,9 +153,15 @@
             SLCustomFieldItemModel *itemModel = [[SLCustomFieldItemModel alloc] init];
             itemModel.borderWidth = self.borderWidth;
             itemModel.borderRadius = self.borderRadius;
+            itemModel.cursor = self.cursor;
+            if (n == 0) {
+                itemModel.focus = YES;
+            }
+            itemModel.cursorColor = self.cursorColor;
             itemModel.focusBorderColor = self.focusBorderColor;
             itemModel.emptyBorderColor = self.emptyBorderColor;
             itemModel.enteredBorderColor = self.enteredBorderColor;
+            
             [self.itemModelArray addObject:itemModel];
         }
         [self.contentCollectionView reloadData];

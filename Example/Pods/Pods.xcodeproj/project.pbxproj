@@ -7,182 +7,247 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00646D565B14CB44C4797F30883ED1F0 /* SLCustomFieldItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6875EF0BF5960549382B9425E636A9 /* SLCustomFieldItemModel.m */; };
-		0767C14258E7F764B1A162E6D7A51426 /* UIButton+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7DAF51ECD3223EDD345E5A4C174C8A /* UIButton+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		07B1740495FC37540A620CA17AE63993 /* SLFoundationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB97B17D975FE0C1D3896D0A94292E0 /* SLFoundationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		099A22279BC709367D817563F0015D04 /* UITextField+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DD18073DE4333FB1B3FC7F6304C197 /* UITextField+SLChainable.m */; };
-		0AC2FFC8B1D714181783EE45BBA6DEFD /* UILabel+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3452A07C0FF23A9A76D0C5E61F82BE84 /* UILabel+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		192A6C3654F987DB2904ED7BCCA91200 /* SLBlockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CFAE1C93421D6C39A6D408FCF8FC6 /* SLBlockInfo.m */; };
-		1CD27E882E29A37AC5CDD1393EB63117 /* NSData+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE241CFF8026A2E5873B981D2A7A0 /* NSData+SLChainable.m */; };
-		1E217139A0DE7B25E416A1AE390CD305 /* UIColor+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = F76804CB350AFBF7D7CE89582178F373 /* UIColor+SLChainable.m */; };
-		1EFA9651D878FA3E3CA788DD33DA1B0E /* NSAttributedString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E204068A6E6B06E4FBE17B5F5477864 /* NSAttributedString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2E24F58D4A747419F3B0EF81A936DE8E /* UIImage+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD8C24E7787673EE9AA81C9C863E91 /* UIImage+SLChainable.m */; };
-		30D7E726EAEEBA628634FACCBF888AA0 /* SLUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C587B3FA0BB4B315D154288706D158D0 /* SLUIKitUtils.m */; };
-		353C215BA9D7D8728E0EB5E6E8F81EF8 /* UITextField+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 719BC1926E805D7164377C93BD557D0F /* UITextField+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		369074A20ADB1D7C4AFEFD6F905202F6 /* SLUpdateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5376A4EB9258373B83FCCE2EBF23B600 /* SLUpdateAlertView.m */; };
-		40404B732B1ED69B6505B795745DA760 /* SLCustomFieldItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E5ED55D0B4566C96ADE1BD5F54821BFA /* SLCustomFieldItemCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		42E1BA5F71D9C65E6B5DB4C499D0AB69 /* UIFont+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D125912F1E66738C950219455F1A78F /* UIFont+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4AC3EB3C66A3565CF2996D55477BCADA /* UIView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AC318302BEB30917FB04C5411A801D /* UIView+SLChainable.m */; };
-		4C820A93A0D3F49CE26F557985D83B51 /* SLAntiScreenShotView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47BD4440711C80E2E199CF82241495 /* SLAntiScreenShotView.m */; };
-		4E55AE0ECF366A497BDA51FCF35CBB0B /* NSString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FA22A19409791CA8AB0575EDF6F54EB /* NSString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5331685DE287C9695B98C937E2D8D4EF /* UITextView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = FE4E71D1BAA4C52E011CB9CE9D12C284 /* UITextView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		54FB1D8453DFC693B680CEDD42D7B89F /* SLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1883D822F4ECD64DB96741AA6C2ECAB8 /* SLUtils.m */; };
-		557EB922A75C11310EF0B42C7833284E /* SLDevKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D23B1691522693982FBF988F3F642 /* SLDevKit-dummy.m */; };
-		58EED370AB80DEFD4B1E5F772D2186DF /* NSString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB18D5E10C20B18B309CB2613ED6B4 /* NSString+SLChainable.m */; };
-		5D6DE300235E5F8456BC8C48AEA0A65A /* SLBlockInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 39C8483E86208C810962ABAACD66542C /* SLBlockInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5FC984F607A6334BC22367F65C307328 /* SLAntiScreenShotView.h in Headers */ = {isa = PBXBuildFile; fileRef = D18ABC8352D9938599EC1A47E89C0D78 /* SLAntiScreenShotView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		615F3885F9BF13F74D219C4452E502ED /* NSArray+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D55383249B505A5F74EAF0FBA7D5025 /* NSArray+SLChainable.m */; };
-		617D9237145D3E744C52852ACEF281B9 /* SLFoundationPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F755E900A148CF96600640ED61D615B6 /* SLFoundationPrivate.m */; };
-		63170A767898F0F4142C087A71721B4E /* UIView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = AC767B31162112271512BC7739509FA7 /* UIView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		644E047C9DE2D43E419AB12D009DB5CC /* UISwitch+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ACDA66627B8E9F8DB659658295C546C /* UISwitch+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		006C5C39C527DA4194D64708C716C8B0 /* NSAttributedString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BC83DB1A3D78C6E2BEF4B79E3E81A /* NSAttributedString+SLChainable.m */; };
+		09D4D38717492F5B71E4AD11E4F95655 /* SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 739B8BFE1D8E00E38A2BECFFCA7F7522 /* SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		11F87AF4693F8E4CDF39F265E5E280EA /* YYMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 463CC71226A8B6BB099E9FB8D916B328 /* YYMemoryCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1AB0695DA27B268D43542929627FB87D /* UIView+SLAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 770E79E81BE39C91028A29EFB1A5AA8C /* UIView+SLAutoLayout.m */; };
+		1D70E71757D3C2CDD7A6BC996F054D26 /* SLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9F2E722B4A3A5141CADBF0494FE29D /* SLFoundation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		22F0A4C90C10F9DB15F6F94A33614777 /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 928AA28104D5938A0A31119400908865 /* Aspects.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		26C14A8E3B2CB41DD76A62C1177052A7 /* SLBlockInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A35BBE493F6040DD90E4732297E6B63D /* SLBlockInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2C61EC32F7D33B75B069D091856A1481 /* SLCustomFieldItemModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 39BAF7FA33236F64DBB619EB77580015 /* SLCustomFieldItemModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2F40B4CF05635337C06C9F80785335FE /* UISwitch+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 27CF6B27284A7A3328AA8C9C554962F2 /* UISwitch+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2FADF005CF8D861AE33536173877A662 /* NSArray+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = CC032D39F6480490756101B80A5A8A2C /* NSArray+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		308D0A42C27B35C1EDFABE16F2739A75 /* SLCustomFieldItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBD98914DBC7DBC052C360E916BFCDF /* SLCustomFieldItemCell.m */; };
+		3178D75A3B1E8A5C4A8A25F2C52CFBD0 /* SLUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D815BB789F0E7C26E6802900DD99B806 /* SLUIKitUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3C665C4B13C4E8176EE405038E2283EF /* NSString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2836C8CC4026D2BA063AE3FD9AB2103 /* NSString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3C97CD6E74DEE716275C7A7750838C98 /* SLAntiScreenShotView.h in Headers */ = {isa = PBXBuildFile; fileRef = B879000498184ED7F1AB961F2F30FC36 /* SLAntiScreenShotView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		432D8849B8B9ABB428F03CEC086AC840 /* SLLinkedMapNode.h in Headers */ = {isa = PBXBuildFile; fileRef = BC15861E484418F4931C1C358837B3CE /* SLLinkedMapNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		47DE110CE7E10AE77EA4B1C5138B941D /* SLAntiScreenShotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCEAC1FD9CE2F316175A5BB1868517 /* SLAntiScreenShotView.m */; };
+		4B67BC63CC1A556A3DB153ECEAED6856 /* UITextView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D30341B2B9425F1CDFCCC82F0C88CA3 /* UITextView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4BA4F0C0E7D2431BCB456053DD54C434 /* SLDevKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4088AE246518350294C6088064C53EE8 /* SLDevKit-dummy.m */; };
+		520843B60464C0662890D998C1F704E0 /* YYKVStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9BC0752381AADB8FED66CFC1E1584E /* YYKVStorage.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5248CF7B4EF8FAE1B2A096D71BC65140 /* SLAutoLayoutPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = B73FDEA1ED41B28E648C980A1B7C6655 /* SLAutoLayoutPrivate.m */; };
+		548DD70CEB21D2263D86EFABE490E34E /* SLCustomFieldItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBE368C5F1C4E1729D9DFF2E8D3F99B /* SLCustomFieldItemModel.m */; };
+		584E7310805BF16D616C28A06B518CEF /* SLMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0605BE4BDB86BBF24842E53D76622B32 /* SLMemoryCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		58E0B56BD5361FD819E2299062B26818 /* SLCustomFieldItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E94F2571B7F507CA6DC46BB22920D0 /* SLCustomFieldItemCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		592F2B2E0910EED300EE8ED0CC15EBF2 /* SLUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 361DD9AABCB2EEB45FC4D5FDC013380F /* SLUIKitUtils.m */; };
+		5C91AB6C99867498B6A19F002FB2BB80 /* UIColor+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5A2379B23B708D8BD38DA7FB52AB9C /* UIColor+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5EC54DF776E6BB455AF8779B00F7B18A /* UIImage+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = A09FE4693073E58C6260FA1BB4610E79 /* UIImage+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		608348906381BE526EFF38955F1CC903 /* UIImageView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5084EF2422035F544BDE635E9BAD04 /* UIImageView+SLChainable.m */; };
+		612949312447BAD28914D10EB4222448 /* SLLinkedMapNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4DCC3CDCBB3B2B10F6633388D06D7E /* SLLinkedMapNode.m */; };
 		659F100B8A770433608368B3F0DB3D70 /* Pods-SLDevKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E539D017E40A44432743171AD75B5 /* Pods-SLDevKit_Tests-dummy.m */; };
-		65BA7B18A44A57911686BF4E779503B6 /* UILabel+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 299ACE9945B6EF6AA1B68B326C83A59D /* UILabel+SLChainable.m */; };
-		65F6ABD8321431BC2CCFE347A60CA5FC /* SLCustomFieldItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F4B396E2D9F88F9C4B554BFB96F75 /* SLCustomFieldItemCell.m */; };
-		68CCC6BD496CF29E4408A416B01597D1 /* UIImageView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 837960A9EF19BDE54F844129B4884C77 /* UIImageView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6EA241FA40B684CE2309B4C8C4B57B5F /* SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 344AC1E4FB48D2CAD7D5E6A6A4DC27B7 /* SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		729C0F589F14D72842640EA289FF9C85 /* SLAutoLayoutPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DCAEFED462C62F477F71C7E2DF619 /* SLAutoLayoutPrivate.m */; };
-		72D159EE9DBCB4820AB2FF41B13E3BA5 /* SLFoundationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 14B400AE559D3A7C025A7E518980DA44 /* SLFoundationUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		73D8C5A4B7E9B0D53B2E912B68C9A119 /* UISwitch+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 665D85410219CECB7052303A588F4E11 /* UISwitch+SLChainable.m */; };
-		8007212C911401885878F5AB42898AC2 /* SLUIKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 626713E3DCD76AEE8B68002253064074 /* SLUIKitPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8442229248E4A0F92BCFFE8EF80DAA28 /* UITextView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F9833131D2021A8351369577631F0 /* UITextView+SLChainable.m */; };
-		86A95911C9C83C0E948873BAE3AA3BD3 /* UIFont+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC77A0BAFCB4A3BC5156EE2F2C1CAB /* UIFont+SLChainable.m */; };
-		8A5A85B19A0EEE8B5A4CA34D07400FD5 /* SLCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B7331BFBF59588B0AC48B0D050836D /* SLCustomField.m */; };
-		8EA85AFEBB9C6ED9E78C1FFD9004672B /* SLAutoLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE45CF59F5A137A9F0993DF1E27C497 /* SLAutoLayoutModel.m */; };
-		90418EFEEAC5FFEC04A17A82BE1D1D7C /* Pods-SLDevKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604768ABA42DE04E84954263765780F /* Pods-SLDevKit_Example-dummy.m */; };
-		9521984F28A5E630C628603C83995CA5 /* SLAutoLayoutModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 85587EA14FFE3A65CD20BD7773BB5788 /* SLAutoLayoutModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		99A4DDAA80AB9F663468C6AA8D030A11 /* SLDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E0797C3716E8BCB11003B0EE7C05F7B4 /* SLDefs.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9D9AA1D19758B39942563FDF98BD54F8 /* SLCustomFieldItemModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 44D2C4861ADCE5382E829584773307DF /* SLCustomFieldItemModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9F08B2120A28FA3B8EED01B478AFF029 /* SLAutoLayoutPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 39A02352F8C90E2F25F7619F10D12191 /* SLAutoLayoutPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A3D9F9511DE22EFDB03DD86336176216 /* UIView+SLAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0345342AFACF831993DAF1D3B07AB756 /* UIView+SLAutoLayout.m */; };
-		A4C4D538A09DDE4E5FA90122B2B7E56D /* SLAutoLayoutModelItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F8FDFBD00CFD6F47178D2CF2BBCA4D /* SLAutoLayoutModelItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A8AE3BCB1A02A1E6F6188528F3443CC7 /* UIButton+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA3402AB1D1799D6E4D2FF67EC5090 /* UIButton+SLChainable.m */; };
-		AD240942DF3C14240B475038C2169248 /* NSData+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 346466486CA1AA61B4E666B3F94AFD58 /* NSData+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B16CFD0F330D444A10479D29E7A05CE1 /* SLUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5FCEA97485412B6B600D1FA831A49F /* SLUIKitUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B428D21B936F6EF63E74BDD6F756F7FA /* SLAutoLayoutModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E5B1255F41E87BA15497112F033BEF /* SLAutoLayoutModelItem.m */; };
-		B4EDF859C9AE05B28367D05A6AB3863A /* UIColor+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = CB3A83F11A3ECC73EB288446C4612618 /* UIColor+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B55D3EF72E28CCA2602DFC864F9D8E99 /* SLUIKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 39EA4DE76F5E348456055D02D55B39B8 /* SLUIKitMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B8A8C1026F630D55CC73B4BA09CF35FF /* SLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA75113E5E19E36130CF39D70A39AB0 /* SLFoundation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C21E7D544397FCDD91A9C883B9872FAB /* NSArray+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = F43B2EE2335184D9C4E0ABE0763AF62E /* NSArray+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C54F7ED49E42E47FF71B6F5922128327 /* UIImageView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2928C2E1CFCC20387F80CE2E4DB697D6 /* UIImageView+SLChainable.m */; };
-		CC016BE4546D9A8AF3135D8C0642BCB2 /* SLCustomField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D245F75C4B5F043A1E99B2062A18430 /* SLCustomField.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CC0881B6328ACE27804F6C10CE0EDB1E /* UIView+SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 47E2EC2C73ADDD55170B663E53550FBA /* UIView+SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CEFA2666F386712A8BE5D32FACD5F072 /* SLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 829BE3F984A540F48CD88C6783159F70 /* SLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D0344DB6EE4EFBF79C34B8FE04FEC5C0 /* SLUIKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50A3679290C4BF96162B78D2E2164A /* SLUIKitPrivate.m */; };
-		D1BE50003E357796BA3B3AF5C83EC6A0 /* UIImage+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = FD957DC9A93A0C37C22409C2B2E5EC56 /* UIImage+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1F06D05483AA2C060A0C28CB64C03DF /* NSAttributedString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15284D81DFD3F2FE04A0D3AD4B2BCB /* NSAttributedString+SLChainable.m */; };
-		DAC228FF28C7E8DAF21BDE23E9448335 /* SLDevKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 67727ED0C0C7AE87652B06D39333FF4B /* SLDevKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DC4BAEBCCD23324B6AA20EC5593C1047 /* SLFoundationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB8214468FE124AE52ABA2C9508A955 /* SLFoundationUtils.m */; };
-		DDE0355F67BE15CDA66171E46EE867ED /* SLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DF4766DF79ADFE22BDB8240C225A377 /* SLUIKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E4D8A512CDBDF1109A201D30DEA94438 /* SLUpdateAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8EDBF793CA479DB32C693070EE9901 /* SLUpdateAlertView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		675E2E2E97F3785C49CDE131EF18B348 /* SLDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = E8E29F003A7A343CAAC4DEA3DDBEF956 /* SLDefs.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		69264E034E5F1F128782429391431DFF /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DA842C65C4C9E0486136C0F866768B /* Aspects.m */; };
+		6F103A210B4182820D879CDE4736A8A5 /* NSArray+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 484BD945738A1C8490CBE71D6D6B556E /* NSArray+SLChainable.m */; };
+		7144937763B21818067D6C2F236458C3 /* SLLinkedMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB1EE73057D0B396D94FE410C84268 /* SLLinkedMap.m */; };
+		73A23263E97CE7CA8DD4B31CD643B454 /* NSString+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = E1348371261F6C550BDB815448EBB8CD /* NSString+SLChainable.m */; };
+		78073C72EF47C3543D03DE6B3EE9AD0A /* UIFont+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC909DE227748B2FC94D80D8EBDA202 /* UIFont+SLChainable.m */; };
+		7A2FD6261B2242C829B8FB305517E2C6 /* SLAutoLayoutModelItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BA90858A2B7A383D00309DAA543F0F2 /* SLAutoLayoutModelItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7BA9CA0A7213ECB3738FD8D1A6148406 /* UIImage+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C05714209F53D69A47BE4F9A953DF1 /* UIImage+SLChainable.m */; };
+		818A7838B6D5516066FBDB26F074EE06 /* SLAutoLayoutModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2942C0BEC56292F67DD36640C3A4AE /* SLAutoLayoutModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		828B60FE48A44C49760B59BCA2035E1A /* UISwitch+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6B05802D711A0502E360375E3087E /* UISwitch+SLChainable.m */; };
+		8414C50B9BE40BA2604B119C3645FA89 /* UIView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B4929A92CCAD6B99D871D3CC37CC2A8 /* UIView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88CF99D7C273DFA3138A45AC60013F6A /* UIButton+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0824E89634434B41B486E461AA5405 /* UIButton+SLChainable.m */; };
+		898ADFF1008D36B66C72F5FB4BB367C8 /* SLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BAF10786C195CFED649B67099FE87B67 /* SLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8A19C0FA29D9A9A81A7DE7D1D2D3327D /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E967083D965EDF781FDDEB7420D4E /* YYDiskCache.m */; };
+		8AEEFC280C20BD1C47F5B3F3772724CB /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F0160685B46F7C4AE66988F91C70E0 /* YYKVStorage.m */; };
+		90914C1EB7DD70293A037829D4EA430F /* SLCustomField.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC2342318188804DF0BFD88C909A2 /* SLCustomField.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92A23E9C6D09789AAED446D45656469D /* SLLinkedMap.h in Headers */ = {isa = PBXBuildFile; fileRef = D898D11683EDAB6EDDCDC1077490D88E /* SLLinkedMap.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		942A2A9251B9446250F461CEB3122C6D /* NSData+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = E8B317BAFB38B5FB19FE5CBEFDBCBCD0 /* NSData+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		94B497E6BA04FA9A116E1D97154A53F9 /* NSAttributedString+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA2FBA46855DA47F236F9C423068F55 /* NSAttributedString+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9B714DAD55008D3305A376D9F30A49E8 /* SLUIKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F94A5408EFA190D44478016C28FC3F /* SLUIKitPrivate.m */; };
+		9D73554FCF73103187D97F9ACA3A3757 /* SLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EE21A22847514A3629BCF372C99902 /* SLUtils.m */; };
+		9EE6DB8392F9E90F169A680EB861A9A1 /* SLBlockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC8FE4573A4E444A1C14DB4096855A /* SLBlockInfo.m */; };
+		A4E4060F4ED659541CBDC31F311D3DB3 /* UITextView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B2A316455E93F5BE8817D5AF940BEB /* UITextView+SLChainable.m */; };
+		A8990D01DDFE2E1337571D716C9DC495 /* SLFoundationPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47F54731C1A7C31F04A9E76C75F74C5 /* SLFoundationPrivate.m */; };
+		AC8A1F9BC7DD74F24013AFD3C3CF743F /* Pods-SLDevKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604768ABA42DE04E84954263765780F /* Pods-SLDevKit_Example-dummy.m */; };
+		AD6C261987F3AF3207D4E01232B295CC /* UITextField+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = C55EEE1E6EDA3E2938F853A2B54E8CFC /* UITextField+SLChainable.m */; };
+		B19D338B7671D676617191DBF52ABFBD /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16371A66A1A17ACA98492520313ED437 /* YYCache.m */; };
+		B40051E9CFA610969F73DCB689C88E25 /* SLAutoLayoutPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BDE53885302CCC8A216FE6142F7BF2C5 /* SLAutoLayoutPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5BD55BEAFE1562C5FF0AFF7B1C9C8CB /* SLUIKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C57C2A483ADADF478276AD9E18B67143 /* SLUIKitMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B7714C8A0E33B0D06B1CB124D05FD8AF /* SLFoundationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D21ECD48684E21AD67E9A4AC3D1BB2F /* SLFoundationUtils.m */; };
+		B8353B18AC081A59F38ABF2F85B22A37 /* UIImageView+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D31C628AAFB76A732D8E871A90395A /* UIImageView+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B859C4FEA0C04884F936A6EE1BBE1178 /* SLAutoLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3C7A2803B7864BFC25306A0922EB0 /* SLAutoLayoutModel.m */; };
+		BB851E8D3F00295C33FDABAF54BB1A5F /* SLUpdateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261DDFFF23FB5293AC5012D70D148861 /* SLUpdateAlertView.m */; };
+		C38D3A6CC4BC728594558EC51BBD6612 /* Aspects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AC252CC5971D66DF84F8C3306106EC /* Aspects-dummy.m */; };
+		C54863ADCD6C3A846DAD606D94266139 /* YYCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B04499E945C8CF36FD0ECE3BCCBC9EB0 /* YYCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C74A166ABF25D6B6620480956B82AD34 /* UIButton+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD92E0F05170106A9922BABB8FEDC1 /* UIButton+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CAEDC4815FEF9AC32AA2ABE73DA44B27 /* UIView+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 686AE0983137061085CB5B1F0CE36B21 /* UIView+SLChainable.m */; };
+		CB0C7B445E267B7C20D0BEAB556AC5DD /* UIView+SLAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 93ED9F1F8350B347FB767B50019FA2A8 /* UIView+SLAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D2032615CF68547208736B3EA5E18DC4 /* SLCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = A53D13E2B581E813719E71E70E22FE4F /* SLCustomField.m */; };
+		D36E3BEC3A61E5B43583F2B873200E8D /* YYCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8C2522B1672044D6579E68511AB98 /* YYCache-dummy.m */; };
+		D3C4C3876EA0586B84C179B02AEB3F3E /* SLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 23546921DF291EE4EF1694EEB085B67B /* SLMemoryCache.m */; };
+		D562D9B8A38A6DC9F1A643139DBAC8CB /* NSData+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 13497ACFF8446A46DEEBD68B064BC4AD /* NSData+SLChainable.m */; };
+		D6CEC26C500DE079F20DAD66C08AFB69 /* UIFont+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A2591027F78E98225716D8554515B1 /* UIFont+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D8ACD342BAF0A95CC2AE6A9B56919C81 /* SLAutoLayoutModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0225008E7C1129A67413DE298D5A7DBE /* SLAutoLayoutModelItem.m */; };
+		DAD054D6CD76844DBA351B097F58ED79 /* YYDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = F60ED40B366384C1F9DC263CE33A4FB1 /* YYDiskCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DB5376576626A97F64064EC622F35292 /* SLDevKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C69C6D332EC910FF82B2E07365486087 /* SLDevKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DF4B9EC56457D049165FBCFE29F70E77 /* SLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D477FFC4F50DD8D0BF5C9578DCAB6A12 /* SLUIKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EC3947DBD3E2940B40D901D2C011A1D4 /* UILabel+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = FBD63A7E3478A3495B96F1C9712D4CAD /* UILabel+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EF05560B891D254E3805FBCB851871DB /* UILabel+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = FE259FE58FC0A2182A68467B2F6182C4 /* UILabel+SLChainable.m */; };
+		EF8C9A6BE137DCE5A01053752F096FC1 /* SLFoundationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F474D031C1FAE72BA167F08F4ADCE1 /* SLFoundationUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F2C4DC4520407B0319FC7A970BEE442B /* UIColor+SLChainable.m in Sources */ = {isa = PBXBuildFile; fileRef = 009C83765F66B2574B2770AAD1294C4F /* UIColor+SLChainable.m */; };
+		F2F8ECC81C123B2AE4FAFC793ADA2A03 /* SLUIKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B791D4FE60E08744ADDC8F8135162D /* SLUIKitPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F55227C09C40B232601AD701F571206F /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A875BDE42F60EB27E93E583CA80BB70 /* YYMemoryCache.m */; };
+		F6F109877434536763BE120A9CFE7A6B /* SLUpdateAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = A44223156BBD3196F8736303909C6BA4 /* SLUpdateAlertView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F9F5ABB9CF4C9CAAD50E224485F5C6BF /* UITextField+SLChainable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C145A0560EE62DF1174B7A66F737FBA /* UITextField+SLChainable.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FF450555AAFC609102668E5CFB93C83A /* SLFoundationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 293A16D1372C10A83EC0F0BEBA306980 /* SLFoundationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A5F89EDE7C14116F2D7216AF506CB5B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C622DC87020B9EBB454B185737AB9845;
-			remoteInfo = SLDevKit;
-		};
-		E07DCC6D9001A04A84C463E70BF0D32C /* PBXContainerItemProxy */ = {
+		2863E8AC6338D38291E467E6BEC41B9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F07E4B2E891E5B115FF8842176BC1057;
 			remoteInfo = "Pods-SLDevKit_Example";
 		};
+		339B01DDC14307557E674FC93C1A1EA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C622DC87020B9EBB454B185737AB9845;
+			remoteInfo = SLDevKit;
+		};
+		7923BAD0D712EA96BDD103AE2CDF19CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFDAE6EB02F58B9A37CADCF439AE6082;
+			remoteInfo = YYCache;
+		};
+		870787046AAA8A4906228A4D933978FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6539905C4D50932B36244650B93C79B;
+			remoteInfo = Aspects;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0345342AFACF831993DAF1D3B07AB756 /* UIView+SLAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLAutoLayout.m"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.m"; sourceTree = "<group>"; };
-		0ACDA66627B8E9F8DB659658295C546C /* UISwitch+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISwitch+SLChainable.h"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.h"; sourceTree = "<group>"; };
-		0B7DAF51ECD3223EDD345E5A4C174C8A /* UIButton+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+SLChainable.h"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.h"; sourceTree = "<group>"; };
-		0DB8214468FE124AE52ABA2C9508A955 /* SLFoundationUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationUtils.m; path = SLDevKit/SLFoundation/SLFoundationUtils.m; sourceTree = "<group>"; };
-		14B400AE559D3A7C025A7E518980DA44 /* SLFoundationUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationUtils.h; path = SLDevKit/SLFoundation/SLFoundationUtils.h; sourceTree = "<group>"; };
-		1883D822F4ECD64DB96741AA6C2ECAB8 /* SLUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUtils.m; path = SLDevKit/SLUtils/SLUtils.m; sourceTree = "<group>"; };
-		18DC77A0BAFCB4A3BC5156EE2F2C1CAB /* UIFont+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLChainable.m"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.m"; sourceTree = "<group>"; };
-		1C15284D81DFD3F2FE04A0D3AD4B2BCB /* NSAttributedString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SLChainable.m"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.m"; sourceTree = "<group>"; };
-		1C50A3679290C4BF96162B78D2E2164A /* SLUIKitPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitPrivate.m; path = SLDevKit/SLUIKit/SLUIKitPrivate.m; sourceTree = "<group>"; };
-		25468FB49BCCAB3CD82E14E73F6B1EF5 /* SLDevKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.debug.xcconfig; sourceTree = "<group>"; };
+		009C83765F66B2574B2770AAD1294C4F /* UIColor+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLChainable.m"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.m"; sourceTree = "<group>"; };
+		00F474D031C1FAE72BA167F08F4ADCE1 /* SLFoundationUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationUtils.h; path = SLDevKit/SLFoundation/SLFoundationUtils.h; sourceTree = "<group>"; };
+		0225008E7C1129A67413DE298D5A7DBE /* SLAutoLayoutModelItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModelItem.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.m; sourceTree = "<group>"; };
+		0605BE4BDB86BBF24842E53D76622B32 /* SLMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLMemoryCache.h; path = SLDevKit/SLCache/SLMemoryCache.h; sourceTree = "<group>"; };
+		07AF691CB7891CAA793628D0EF7441AC /* SLDevKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SLDevKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		08668074805FFD7CE873C0D92A9C54E4 /* SLDevKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.release.xcconfig; sourceTree = "<group>"; };
+		0BA90858A2B7A383D00309DAA543F0F2 /* SLAutoLayoutModelItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModelItem.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.h; sourceTree = "<group>"; };
+		0CA2FBA46855DA47F236F9C423068F55 /* NSAttributedString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+SLChainable.h"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.h"; sourceTree = "<group>"; };
+		0D9F2E722B4A3A5141CADBF0494FE29D /* SLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundation.h; path = SLDevKit/SLFoundation/SLFoundation.h; sourceTree = "<group>"; };
+		13497ACFF8446A46DEEBD68B064BC4AD /* NSData+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SLChainable.m"; path = "SLDevKit/SLFoundation/NSData+SLChainable.m"; sourceTree = "<group>"; };
+		16371A66A1A17ACA98492520313ED437 /* YYCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYCache.m; path = YYCache/YYCache.m; sourceTree = "<group>"; };
+		23546921DF291EE4EF1694EEB085B67B /* SLMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLMemoryCache.m; path = SLDevKit/SLCache/SLMemoryCache.m; sourceTree = "<group>"; };
 		2604768ABA42DE04E84954263765780F /* Pods-SLDevKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLDevKit_Example-dummy.m"; sourceTree = "<group>"; };
+		261DDFFF23FB5293AC5012D70D148861 /* SLUpdateAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUpdateAlertView.m; path = SLDevKit/SLUpdateAlert/SLUpdateAlertView.m; sourceTree = "<group>"; };
 		266FD5E0B798A9FD42652BC43776A394 /* Pods-SLDevKit_Example */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SLDevKit_Example"; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2928C2E1CFCC20387F80CE2E4DB697D6 /* UIImageView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.m"; sourceTree = "<group>"; };
-		299ACE9945B6EF6AA1B68B326C83A59D /* UILabel+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+SLChainable.m"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.m"; sourceTree = "<group>"; };
-		2AA75113E5E19E36130CF39D70A39AB0 /* SLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundation.h; path = SLDevKit/SLFoundation/SLFoundation.h; sourceTree = "<group>"; };
-		2D55383249B505A5F74EAF0FBA7D5025 /* NSArray+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SLChainable.m"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.m"; sourceTree = "<group>"; };
-		2EB2CF3F7198AFB4B08E6A518413BE34 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		2F8F9833131D2021A8351369577631F0 /* UITextView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextView+SLChainable.m"; sourceTree = "<group>"; };
-		30E5B1255F41E87BA15497112F033BEF /* SLAutoLayoutModelItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModelItem.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.m; sourceTree = "<group>"; };
-		344AC1E4FB48D2CAD7D5E6A6A4DC27B7 /* SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayout.h; path = SLDevKit/SLAutoLayout/SLAutoLayout.h; sourceTree = "<group>"; };
-		3452A07C0FF23A9A76D0C5E61F82BE84 /* UILabel+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+SLChainable.h"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.h"; sourceTree = "<group>"; };
-		346466486CA1AA61B4E666B3F94AFD58 /* NSData+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SLChainable.h"; path = "SLDevKit/SLFoundation/NSData+SLChainable.h"; sourceTree = "<group>"; };
-		346DE241CFF8026A2E5873B981D2A7A0 /* NSData+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SLChainable.m"; path = "SLDevKit/SLFoundation/NSData+SLChainable.m"; sourceTree = "<group>"; };
-		346F4B396E2D9F88F9C4B554BFB96F75 /* SLCustomFieldItemCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomFieldItemCell.m; path = SLDevKit/SLCustomField/SLCustomFieldItemCell.m; sourceTree = "<group>"; };
-		39A02352F8C90E2F25F7619F10D12191 /* SLAutoLayoutPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutPrivate.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.h; sourceTree = "<group>"; };
-		39C8483E86208C810962ABAACD66542C /* SLBlockInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLBlockInfo.h; path = SLDevKit/SLFoundation/SLBlockInfo.h; sourceTree = "<group>"; };
-		39EA4DE76F5E348456055D02D55B39B8 /* SLUIKitMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitMacros.h; path = SLDevKit/SLUIKit/SLUIKitMacros.h; sourceTree = "<group>"; };
-		3DFB18D5E10C20B18B309CB2613ED6B4 /* NSString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLChainable.m"; path = "SLDevKit/SLFoundation/NSString+SLChainable.m"; sourceTree = "<group>"; };
-		44D2C4861ADCE5382E829584773307DF /* SLCustomFieldItemModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomFieldItemModel.h; path = SLDevKit/SLCustomField/SLCustomFieldItemModel.h; sourceTree = "<group>"; };
-		45BD8C24E7787673EE9AA81C9C863E91 /* UIImage+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.m"; sourceTree = "<group>"; };
-		47E2EC2C73ADDD55170B663E53550FBA /* UIView+SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLAutoLayout.h"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.h"; sourceTree = "<group>"; };
-		4DF4766DF79ADFE22BDB8240C225A377 /* SLUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKit.h; path = SLDevKit/SLUIKit/SLUIKit.h; sourceTree = "<group>"; };
-		5376A4EB9258373B83FCCE2EBF23B600 /* SLUpdateAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUpdateAlertView.m; path = SLDevKit/SLUpdateAlert/SLUpdateAlertView.m; sourceTree = "<group>"; };
-		5DFA3402AB1D1799D6E4D2FF67EC5090 /* UIButton+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SLChainable.m"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.m"; sourceTree = "<group>"; };
-		624CFAE1C93421D6C39A6D408FCF8FC6 /* SLBlockInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLBlockInfo.m; path = SLDevKit/SLFoundation/SLBlockInfo.m; sourceTree = "<group>"; };
-		626713E3DCD76AEE8B68002253064074 /* SLUIKitPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitPrivate.h; path = SLDevKit/SLUIKit/SLUIKitPrivate.h; sourceTree = "<group>"; };
-		665D85410219CECB7052303A588F4E11 /* UISwitch+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISwitch+SLChainable.m"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.m"; sourceTree = "<group>"; };
-		67727ED0C0C7AE87652B06D39333FF4B /* SLDevKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDevKit.h; path = SLDevKit/SLDevKit.h; sourceTree = "<group>"; };
+		27CF6B27284A7A3328AA8C9C554962F2 /* UISwitch+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISwitch+SLChainable.h"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.h"; sourceTree = "<group>"; };
+		28F0160685B46F7C4AE66988F91C70E0 /* YYKVStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYKVStorage.m; path = YYCache/YYKVStorage.m; sourceTree = "<group>"; };
+		293A16D1372C10A83EC0F0BEBA306980 /* SLFoundationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationPrivate.h; path = SLDevKit/SLFoundation/SLFoundationPrivate.h; sourceTree = "<group>"; };
+		3045DB25FFBD4573FAF95F464850D883 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		32AC8FE4573A4E444A1C14DB4096855A /* SLBlockInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLBlockInfo.m; path = SLDevKit/SLFoundation/SLBlockInfo.m; sourceTree = "<group>"; };
+		361DD9AABCB2EEB45FC4D5FDC013380F /* SLUIKitUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitUtils.m; path = SLDevKit/SLUIKit/SLUIKitUtils.m; sourceTree = "<group>"; };
+		39BAF7FA33236F64DBB619EB77580015 /* SLCustomFieldItemModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomFieldItemModel.h; path = SLDevKit/SLCustomField/SLCustomFieldItemModel.h; sourceTree = "<group>"; };
+		3C145A0560EE62DF1174B7A66F737FBA /* UITextField+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.h"; sourceTree = "<group>"; };
+		4088AE246518350294C6088064C53EE8 /* SLDevKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLDevKit-dummy.m"; sourceTree = "<group>"; };
+		425AC2342318188804DF0BFD88C909A2 /* SLCustomField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomField.h; path = SLDevKit/SLCustomField/SLCustomField.h; sourceTree = "<group>"; };
+		43C05714209F53D69A47BE4F9A953DF1 /* UIImage+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.m"; sourceTree = "<group>"; };
+		463CC71226A8B6BB099E9FB8D916B328 /* YYMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYMemoryCache.h; path = YYCache/YYMemoryCache.h; sourceTree = "<group>"; };
+		47B2A316455E93F5BE8817D5AF940BEB /* UITextView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextView+SLChainable.m"; sourceTree = "<group>"; };
+		484BD945738A1C8490CBE71D6D6B556E /* NSArray+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SLChainable.m"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.m"; sourceTree = "<group>"; };
+		48AC252CC5971D66DF84F8C3306106EC /* Aspects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Aspects-dummy.m"; sourceTree = "<group>"; };
+		48ACF38225AF5129416A1F090F6D3286 /* YYCache */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = YYCache; path = libYYCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF4B61690EB6550C50BE49BF1E2A3AD /* YYCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCache.debug.xcconfig; sourceTree = "<group>"; };
+		4F2942C0BEC56292F67DD36640C3A4AE /* SLAutoLayoutModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModel.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.h; sourceTree = "<group>"; };
+		5A875BDE42F60EB27E93E583CA80BB70 /* YYMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYMemoryCache.m; path = YYCache/YYMemoryCache.m; sourceTree = "<group>"; };
+		5D30341B2B9425F1CDFCCC82F0C88CA3 /* UITextView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextView+SLChainable.h"; sourceTree = "<group>"; };
+		5F5A2379B23B708D8BD38DA7FB52AB9C /* UIColor+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLChainable.h"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.h"; sourceTree = "<group>"; };
+		5FA8C2522B1672044D6579E68511AB98 /* YYCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYCache-dummy.m"; sourceTree = "<group>"; };
+		61B791D4FE60E08744ADDC8F8135162D /* SLUIKitPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitPrivate.h; path = SLDevKit/SLUIKit/SLUIKitPrivate.h; sourceTree = "<group>"; };
+		63AD92E0F05170106A9922BABB8FEDC1 /* UIButton+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+SLChainable.h"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.h"; sourceTree = "<group>"; };
+		68251E37DD8D02F9311DA690B887D37F /* SLDevKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLDevKit-prefix.pch"; sourceTree = "<group>"; };
+		686AE0983137061085CB5B1F0CE36B21 /* UIView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIView+SLChainable.m"; sourceTree = "<group>"; };
 		6C03BD6A4F958E0608FA80BA7EDB78B1 /* Pods-SLDevKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6CE45CF59F5A137A9F0993DF1E27C497 /* SLAutoLayoutModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModel.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.m; sourceTree = "<group>"; };
-		6E204068A6E6B06E4FBE17B5F5477864 /* NSAttributedString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+SLChainable.h"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.h"; sourceTree = "<group>"; };
-		719BC1926E805D7164377C93BD557D0F /* UITextField+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.h"; sourceTree = "<group>"; };
-		7A7DCAEFED462C62F477F71C7E2DF619 /* SLAutoLayoutPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutPrivate.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.m; sourceTree = "<group>"; };
-		7D125912F1E66738C950219455F1A78F /* UIFont+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLChainable.h"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.h"; sourceTree = "<group>"; };
-		7D245F75C4B5F043A1E99B2062A18430 /* SLCustomField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomField.h; path = SLDevKit/SLCustomField/SLCustomField.h; sourceTree = "<group>"; };
-		7F6875EF0BF5960549382B9425E636A9 /* SLCustomFieldItemModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomFieldItemModel.m; path = SLDevKit/SLCustomField/SLCustomFieldItemModel.m; sourceTree = "<group>"; };
-		829BE3F984A540F48CD88C6783159F70 /* SLUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUtils.h; path = SLDevKit/SLUtils/SLUtils.h; sourceTree = "<group>"; };
-		837960A9EF19BDE54F844129B4884C77 /* UIImageView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.h"; sourceTree = "<group>"; };
-		85587EA14FFE3A65CD20BD7773BB5788 /* SLAutoLayoutModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModel.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.h; sourceTree = "<group>"; };
-		87F1B59AECD4A4F803FB8B275E5A7D3B /* SLDevKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLDevKit-prefix.pch"; sourceTree = "<group>"; };
-		8B5FCEA97485412B6B600D1FA831A49F /* SLUIKitUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitUtils.h; path = SLDevKit/SLUIKit/SLUIKitUtils.h; sourceTree = "<group>"; };
-		90AC318302BEB30917FB04C5411A801D /* UIView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIView+SLChainable.m"; sourceTree = "<group>"; };
+		739B8BFE1D8E00E38A2BECFFCA7F7522 /* SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayout.h; path = SLDevKit/SLAutoLayout/SLAutoLayout.h; sourceTree = "<group>"; };
+		770E79E81BE39C91028A29EFB1A5AA8C /* UIView+SLAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLAutoLayout.m"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.m"; sourceTree = "<group>"; };
+		7B4929A92CCAD6B99D871D3CC37CC2A8 /* UIView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIView+SLChainable.h"; sourceTree = "<group>"; };
+		86A2591027F78E98225716D8554515B1 /* UIFont+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLChainable.h"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.h"; sourceTree = "<group>"; };
+		87D31C628AAFB76A732D8E871A90395A /* UIImageView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.h"; sourceTree = "<group>"; };
+		8D21ECD48684E21AD67E9A4AC3D1BB2F /* SLFoundationUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationUtils.m; path = SLDevKit/SLFoundation/SLFoundationUtils.m; sourceTree = "<group>"; };
+		928AA28104D5938A0A31119400908865 /* Aspects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		93ED9F1F8350B347FB767B50019FA2A8 /* UIView+SLAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLAutoLayout.h"; path = "SLDevKit/SLAutoLayout/UIView+SLAutoLayout.h"; sourceTree = "<group>"; };
 		940861DE73AEAFC86CEC0E60B822AC6F /* Pods-SLDevKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		95B7331BFBF59588B0AC48B0D050836D /* SLCustomField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomField.m; path = SLDevKit/SLCustomField/SLCustomField.m; sourceTree = "<group>"; };
+		9808BF74538141204E4EB5B49809FE77 /* Aspects */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Aspects; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC8F18C34F17A9C97B9FF63761E0CF2 /* Aspects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Aspects.release.xcconfig; sourceTree = "<group>"; };
+		9BDB1EE73057D0B396D94FE410C84268 /* SLLinkedMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLLinkedMap.m; path = SLDevKit/SLCache/SLLinkedMap.m; sourceTree = "<group>"; };
+		9BF6B05802D711A0502E360375E3087E /* UISwitch+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISwitch+SLChainable.m"; path = "SLDevKit/SLUIKit/UISwitch+SLChainable.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FA22A19409791CA8AB0575EDF6F54EB /* NSString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SLChainable.h"; path = "SLDevKit/SLFoundation/NSString+SLChainable.h"; sourceTree = "<group>"; };
-		AC767B31162112271512BC7739509FA7 /* UIView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLChainable.h"; path = "SLDevKit/SLUIKit/UIView+SLChainable.h"; sourceTree = "<group>"; };
-		AC8EDBF793CA479DB32C693070EE9901 /* SLUpdateAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUpdateAlertView.h; path = SLDevKit/SLUpdateAlert/SLUpdateAlertView.h; sourceTree = "<group>"; };
+		A09FE4693073E58C6260FA1BB4610E79 /* UIImage+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.h"; sourceTree = "<group>"; };
+		A2F94A5408EFA190D44478016C28FC3F /* SLUIKitPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitPrivate.m; path = SLDevKit/SLUIKit/SLUIKitPrivate.m; sourceTree = "<group>"; };
+		A35BBE493F6040DD90E4732297E6B63D /* SLBlockInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLBlockInfo.h; path = SLDevKit/SLFoundation/SLBlockInfo.h; sourceTree = "<group>"; };
+		A44223156BBD3196F8736303909C6BA4 /* SLUpdateAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUpdateAlertView.h; path = SLDevKit/SLUpdateAlert/SLUpdateAlertView.h; sourceTree = "<group>"; };
+		A53D13E2B581E813719E71E70E22FE4F /* SLCustomField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomField.m; path = SLDevKit/SLCustomField/SLCustomField.m; sourceTree = "<group>"; };
+		AC0824E89634434B41B486E461AA5405 /* UIButton+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SLChainable.m"; path = "SLDevKit/SLUIKit/UIButton+SLChainable.m"; sourceTree = "<group>"; };
+		AD9BC0752381AADB8FED66CFC1E1584E /* YYKVStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYKVStorage.h; path = YYCache/YYKVStorage.h; sourceTree = "<group>"; };
+		ADFB2795AA1E521B026D0A41A6CB5734 /* Aspects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Aspects-prefix.pch"; sourceTree = "<group>"; };
 		AF1EB8C8ED2764F93FFBE956ADD3FBAD /* SLDevKit */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = SLDevKit; path = libSLDevKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04499E945C8CF36FD0ECE3BCCBC9EB0 /* YYCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYCache.h; path = YYCache/YYCache.h; sourceTree = "<group>"; };
+		B47F54731C1A7C31F04A9E76C75F74C5 /* SLFoundationPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationPrivate.m; path = SLDevKit/SLFoundation/SLFoundationPrivate.m; sourceTree = "<group>"; };
+		B73FDEA1ED41B28E648C980A1B7C6655 /* SLAutoLayoutPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutPrivate.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.m; sourceTree = "<group>"; };
+		B879000498184ED7F1AB961F2F30FC36 /* SLAntiScreenShotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAntiScreenShotView.h; path = SLDevKit/SLUIKit/SLAntiScreenShotView.h; sourceTree = "<group>"; };
 		B8D6E92EEF1EE681D92F8DAAD011717E /* Pods-SLDevKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF10786C195CFED649B67099FE87B67 /* SLUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUtils.h; path = SLDevKit/SLUtils/SLUtils.h; sourceTree = "<group>"; };
+		BC15861E484418F4931C1C358837B3CE /* SLLinkedMapNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLLinkedMapNode.h; path = SLDevKit/SLCache/SLLinkedMapNode.h; sourceTree = "<group>"; };
 		BCD7DFC832E25A4E11E8A6DC892801AA /* Pods-SLDevKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLDevKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BDE53885302CCC8A216FE6142F7BF2C5 /* SLAutoLayoutPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutPrivate.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutPrivate.h; sourceTree = "<group>"; };
 		C148D9ED769AEB688D7A1F5F6B76A6A9 /* Pods-SLDevKit_Tests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SLDevKit_Tests"; path = "libPods-SLDevKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C587B3FA0BB4B315D154288706D158D0 /* SLUIKitUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIKitUtils.m; path = SLDevKit/SLUIKit/SLUIKitUtils.m; sourceTree = "<group>"; };
+		C27E967083D965EDF781FDDEB7420D4E /* YYDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYDiskCache.m; path = YYCache/YYDiskCache.m; sourceTree = "<group>"; };
+		C2E94F2571B7F507CA6DC46BB22920D0 /* SLCustomFieldItemCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomFieldItemCell.h; path = SLDevKit/SLCustomField/SLCustomFieldItemCell.h; sourceTree = "<group>"; };
+		C3EE21A22847514A3629BCF372C99902 /* SLUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUtils.m; path = SLDevKit/SLUtils/SLUtils.m; sourceTree = "<group>"; };
+		C55EEE1E6EDA3E2938F853A2B54E8CFC /* UITextField+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.m"; sourceTree = "<group>"; };
+		C57C2A483ADADF478276AD9E18B67143 /* SLUIKitMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitMacros.h; path = SLDevKit/SLUIKit/SLUIKitMacros.h; sourceTree = "<group>"; };
 		C660319CBBF4885A88FA466ECA7A4B4F /* Pods-SLDevKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLDevKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C90D23B1691522693982FBF988F3F642 /* SLDevKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLDevKit-dummy.m"; sourceTree = "<group>"; };
-		C97665F5961148F8B8335E28886C310F /* SLDevKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SLDevKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CA58961DB2B3E0F7CC7A8B080E445619 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		CB3A83F11A3ECC73EB288446C4612618 /* UIColor+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLChainable.h"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.h"; sourceTree = "<group>"; };
-		CB47BD4440711C80E2E199CF82241495 /* SLAntiScreenShotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAntiScreenShotView.m; path = SLDevKit/SLUIKit/SLAntiScreenShotView.m; sourceTree = "<group>"; };
-		CEB97B17D975FE0C1D3896D0A94292E0 /* SLFoundationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLFoundationPrivate.h; path = SLDevKit/SLFoundation/SLFoundationPrivate.h; sourceTree = "<group>"; };
+		C69C6D332EC910FF82B2E07365486087 /* SLDevKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDevKit.h; path = SLDevKit/SLDevKit.h; sourceTree = "<group>"; };
+		CB5084EF2422035F544BDE635E9BAD04 /* UIImageView+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+SLChainable.m"; path = "SLDevKit/SLUIKit/UIImageView+SLChainable.m"; sourceTree = "<group>"; };
+		CC032D39F6480490756101B80A5A8A2C /* NSArray+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+SLChainable.h"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.h"; sourceTree = "<group>"; };
+		CE4BC83DB1A3D78C6E2BEF4B79E3E81A /* NSAttributedString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+SLChainable.m"; path = "SLDevKit/SLUIKit/NSAttributedString+SLChainable.m"; sourceTree = "<group>"; };
+		CFF3C7A2803B7864BFC25306A0922EB0 /* SLAutoLayoutModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAutoLayoutModel.m; path = SLDevKit/SLAutoLayout/SLAutoLayoutModel.m; sourceTree = "<group>"; };
+		D04A6122BEEEC0755B7258B242F8CDD9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		D04E628F9EA9CAFECD4E37A611D0FF9E /* Pods-SLDevKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLDevKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D18ABC8352D9938599EC1A47E89C0D78 /* SLAntiScreenShotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAntiScreenShotView.h; path = SLDevKit/SLUIKit/SLAntiScreenShotView.h; sourceTree = "<group>"; };
-		D4DD18073DE4333FB1B3FC7F6304C197 /* UITextField+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SLChainable.m"; path = "SLDevKit/SLUIKit/UITextField+SLChainable.m"; sourceTree = "<group>"; };
-		D4F8FDFBD00CFD6F47178D2CF2BBCA4D /* SLAutoLayoutModelItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAutoLayoutModelItem.h; path = SLDevKit/SLAutoLayout/SLAutoLayoutModelItem.h; sourceTree = "<group>"; };
+		D477FFC4F50DD8D0BF5C9578DCAB6A12 /* SLUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKit.h; path = SLDevKit/SLUIKit/SLUIKit.h; sourceTree = "<group>"; };
+		D7DA842C65C4C9E0486136C0F866768B /* Aspects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		D815BB789F0E7C26E6802900DD99B806 /* SLUIKitUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIKitUtils.h; path = SLDevKit/SLUIKit/SLUIKitUtils.h; sourceTree = "<group>"; };
+		D898D11683EDAB6EDDCDC1077490D88E /* SLLinkedMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLLinkedMap.h; path = SLDevKit/SLCache/SLLinkedMap.h; sourceTree = "<group>"; };
 		DC4E539D017E40A44432743171AD75B5 /* Pods-SLDevKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLDevKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		E0043D056DDA58CCC9229AD3D1086D80 /* SLDevKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.release.xcconfig; sourceTree = "<group>"; };
-		E0797C3716E8BCB11003B0EE7C05F7B4 /* SLDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDefs.h; path = SLDevKit/SLDefs/SLDefs.h; sourceTree = "<group>"; };
-		E5ED55D0B4566C96ADE1BD5F54821BFA /* SLCustomFieldItemCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCustomFieldItemCell.h; path = SLDevKit/SLCustomField/SLCustomFieldItemCell.h; sourceTree = "<group>"; };
+		DDBD98914DBC7DBC052C360E916BFCDF /* SLCustomFieldItemCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomFieldItemCell.m; path = SLDevKit/SLCustomField/SLCustomFieldItemCell.m; sourceTree = "<group>"; };
+		E1348371261F6C550BDB815448EBB8CD /* NSString+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLChainable.m"; path = "SLDevKit/SLFoundation/NSString+SLChainable.m"; sourceTree = "<group>"; };
+		E2836C8CC4026D2BA063AE3FD9AB2103 /* NSString+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SLChainable.h"; path = "SLDevKit/SLFoundation/NSString+SLChainable.h"; sourceTree = "<group>"; };
+		E4BCEAC1FD9CE2F316175A5BB1868517 /* SLAntiScreenShotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAntiScreenShotView.m; path = SLDevKit/SLUIKit/SLAntiScreenShotView.m; sourceTree = "<group>"; };
+		E581AA3273C07297E4D0CD0D6ED2483A /* Aspects.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Aspects.debug.xcconfig; sourceTree = "<group>"; };
 		E613F4B85A1B69B668A004382B597404 /* Pods-SLDevKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLDevKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E8B317BAFB38B5FB19FE5CBEFDBCBCD0 /* NSData+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SLChainable.h"; path = "SLDevKit/SLFoundation/NSData+SLChainable.h"; sourceTree = "<group>"; };
+		E8E29F003A7A343CAAC4DEA3DDBEF956 /* SLDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDefs.h; path = SLDevKit/SLDefs/SLDefs.h; sourceTree = "<group>"; };
 		EB9F87685BE0F4C36C6483CF0ADD0033 /* Pods-SLDevKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLDevKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F43B2EE2335184D9C4E0ABE0763AF62E /* NSArray+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+SLChainable.h"; path = "SLDevKit/SLFoundation/NSArray+SLChainable.h"; sourceTree = "<group>"; };
-		F755E900A148CF96600640ED61D615B6 /* SLFoundationPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLFoundationPrivate.m; path = SLDevKit/SLFoundation/SLFoundationPrivate.m; sourceTree = "<group>"; };
-		F76804CB350AFBF7D7CE89582178F373 /* UIColor+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLChainable.m"; path = "SLDevKit/SLUIKit/UIColor+SLChainable.m"; sourceTree = "<group>"; };
-		FD957DC9A93A0C37C22409C2B2E5EC56 /* UIImage+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLChainable.h"; path = "SLDevKit/SLUIKit/UIImage+SLChainable.h"; sourceTree = "<group>"; };
-		FE4E71D1BAA4C52E011CB9CE9D12C284 /* UITextView+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+SLChainable.h"; path = "SLDevKit/SLUIKit/UITextView+SLChainable.h"; sourceTree = "<group>"; };
+		ECC909DE227748B2FC94D80D8EBDA202 /* UIFont+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLChainable.m"; path = "SLDevKit/SLUIKit/UIFont+SLChainable.m"; sourceTree = "<group>"; };
+		F193EA8EA5C0F7D40C11C69E7C79BD15 /* YYCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCache.release.xcconfig; sourceTree = "<group>"; };
+		F1F45167889880EDDED2A1567A521033 /* SLDevKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLDevKit.debug.xcconfig; sourceTree = "<group>"; };
+		F60ED40B366384C1F9DC263CE33A4FB1 /* YYDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYDiskCache.h; path = YYCache/YYDiskCache.h; sourceTree = "<group>"; };
+		FBD63A7E3478A3495B96F1C9712D4CAD /* UILabel+SLChainable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+SLChainable.h"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.h"; sourceTree = "<group>"; };
+		FC6D611F3A8084A52287F471B9290256 /* YYCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCache-prefix.pch"; sourceTree = "<group>"; };
+		FE259FE58FC0A2182A68467B2F6182C4 /* UILabel+SLChainable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+SLChainable.m"; path = "SLDevKit/SLUIKit/UILabel+SLChainable.m"; sourceTree = "<group>"; };
+		FEBE368C5F1C4E1729D9DFF2E8D3F99B /* SLCustomFieldItemModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLCustomFieldItemModel.m; path = SLDevKit/SLCustomField/SLCustomFieldItemModel.m; sourceTree = "<group>"; };
+		FF4DCC3CDCBB3B2B10F6633388D06D7E /* SLLinkedMapNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLLinkedMapNode.m; path = SLDevKit/SLCache/SLLinkedMapNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41A2F7FD8292A053402E2EDEAD29FB5B /* Frameworks */ = {
+		058BCBAF3B5E1AD4BE71DE8A86F15882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D02EB1344415985D9FE854C78DAC121 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,7 +261,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDBC5C49149449F22F7D2AA4377D5DA3 /* Frameworks */ = {
+		63D6A9751DF03E561A8C6BD9711CE6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC2D79CAD438E7A8FB60E01511DF93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,26 +278,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04ABD1D95D8D674185E900EA97B38422 /* Support Files */ = {
+		0171FA2BA4F5BE7929CCF1987A998227 /* SLCache */ = {
 			isa = PBXGroup;
 			children = (
-				C90D23B1691522693982FBF988F3F642 /* SLDevKit-dummy.m */,
-				87F1B59AECD4A4F803FB8B275E5A7D3B /* SLDevKit-prefix.pch */,
-				25468FB49BCCAB3CD82E14E73F6B1EF5 /* SLDevKit.debug.xcconfig */,
-				E0043D056DDA58CCC9229AD3D1086D80 /* SLDevKit.release.xcconfig */,
+				D898D11683EDAB6EDDCDC1077490D88E /* SLLinkedMap.h */,
+				9BDB1EE73057D0B396D94FE410C84268 /* SLLinkedMap.m */,
+				BC15861E484418F4931C1C358837B3CE /* SLLinkedMapNode.h */,
+				FF4DCC3CDCBB3B2B10F6633388D06D7E /* SLLinkedMapNode.m */,
+				0605BE4BDB86BBF24842E53D76622B32 /* SLMemoryCache.h */,
+				23546921DF291EE4EF1694EEB085B67B /* SLMemoryCache.m */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SLDevKit";
+			name = SLCache;
 			sourceTree = "<group>";
 		};
-		09C93D9F547AD025D79F1B2C973FA4C5 /* Products */ = {
+		0A8704A518E9C5A36AF1EA6DDA69601F /* SLDevKit */ = {
 			isa = PBXGroup;
 			children = (
-				266FD5E0B798A9FD42652BC43776A394 /* Pods-SLDevKit_Example */,
-				C148D9ED769AEB688D7A1F5F6B76A6A9 /* Pods-SLDevKit_Tests */,
-				AF1EB8C8ED2764F93FFBE956ADD3FBAD /* SLDevKit */,
+				C69C6D332EC910FF82B2E07365486087 /* SLDevKit.h */,
+				172DEDE2BDDAE502A8605E0E8F458341 /* Pod */,
+				CD2900AB9D3F33E1FF4A95495C4F6915 /* SLAutoLayout */,
+				0171FA2BA4F5BE7929CCF1987A998227 /* SLCache */,
+				5410D958B5E21B2B1113254F8AAEAA78 /* SLCustomField */,
+				7844AAF485283957D25FE0CB2739D799 /* SLDefs */,
+				8DF9BB80ED42E16C68A38D3258D89F01 /* SLFoundation */,
+				60A2B657AF8AD5458A8B8EBD4A80E437 /* SLUIKit */,
+				25E3712AC4BD2A2FDD0725EE0A88246F /* SLUpdateAlert */,
+				C2159C92D98F244E8B36A97D57533171 /* SLUtils */,
+				B23F9D25440DAF07B7A7A239DFCB0F20 /* Support Files */,
 			);
-			name = Products;
+			name = SLDevKit;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		172DEDE2BDDAE502A8605E0E8F458341 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D04A6122BEEEC0755B7258B242F8CDD9 /* LICENSE */,
+				3045DB25FFBD4573FAF95F464850D883 /* README.md */,
+				07AF691CB7891CAA793628D0EF7441AC /* SLDevKit.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		1AF9B35AAE09659CF763443EC19700E6 /* Pods-SLDevKit_Tests */ = {
@@ -241,120 +333,211 @@
 			path = "Target Support Files/Pods-SLDevKit_Tests";
 			sourceTree = "<group>";
 		};
-		5E6F7CE735A98E96D5DF52A99A657893 /* SLDefs */ = {
+		25E3712AC4BD2A2FDD0725EE0A88246F /* SLUpdateAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E0797C3716E8BCB11003B0EE7C05F7B4 /* SLDefs.h */,
-			);
-			name = SLDefs;
-			sourceTree = "<group>";
-		};
-		6F87E6411659A3C703CDE5AB676B41A0 /* SLAutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				344AC1E4FB48D2CAD7D5E6A6A4DC27B7 /* SLAutoLayout.h */,
-				85587EA14FFE3A65CD20BD7773BB5788 /* SLAutoLayoutModel.h */,
-				6CE45CF59F5A137A9F0993DF1E27C497 /* SLAutoLayoutModel.m */,
-				D4F8FDFBD00CFD6F47178D2CF2BBCA4D /* SLAutoLayoutModelItem.h */,
-				30E5B1255F41E87BA15497112F033BEF /* SLAutoLayoutModelItem.m */,
-				39A02352F8C90E2F25F7619F10D12191 /* SLAutoLayoutPrivate.h */,
-				7A7DCAEFED462C62F477F71C7E2DF619 /* SLAutoLayoutPrivate.m */,
-				47E2EC2C73ADDD55170B663E53550FBA /* UIView+SLAutoLayout.h */,
-				0345342AFACF831993DAF1D3B07AB756 /* UIView+SLAutoLayout.m */,
-			);
-			name = SLAutoLayout;
-			sourceTree = "<group>";
-		};
-		77DFC9F763829384D6308C7C7FDB263F /* SLUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				6E204068A6E6B06E4FBE17B5F5477864 /* NSAttributedString+SLChainable.h */,
-				1C15284D81DFD3F2FE04A0D3AD4B2BCB /* NSAttributedString+SLChainable.m */,
-				D18ABC8352D9938599EC1A47E89C0D78 /* SLAntiScreenShotView.h */,
-				CB47BD4440711C80E2E199CF82241495 /* SLAntiScreenShotView.m */,
-				4DF4766DF79ADFE22BDB8240C225A377 /* SLUIKit.h */,
-				39EA4DE76F5E348456055D02D55B39B8 /* SLUIKitMacros.h */,
-				626713E3DCD76AEE8B68002253064074 /* SLUIKitPrivate.h */,
-				1C50A3679290C4BF96162B78D2E2164A /* SLUIKitPrivate.m */,
-				8B5FCEA97485412B6B600D1FA831A49F /* SLUIKitUtils.h */,
-				C587B3FA0BB4B315D154288706D158D0 /* SLUIKitUtils.m */,
-				0B7DAF51ECD3223EDD345E5A4C174C8A /* UIButton+SLChainable.h */,
-				5DFA3402AB1D1799D6E4D2FF67EC5090 /* UIButton+SLChainable.m */,
-				CB3A83F11A3ECC73EB288446C4612618 /* UIColor+SLChainable.h */,
-				F76804CB350AFBF7D7CE89582178F373 /* UIColor+SLChainable.m */,
-				7D125912F1E66738C950219455F1A78F /* UIFont+SLChainable.h */,
-				18DC77A0BAFCB4A3BC5156EE2F2C1CAB /* UIFont+SLChainable.m */,
-				FD957DC9A93A0C37C22409C2B2E5EC56 /* UIImage+SLChainable.h */,
-				45BD8C24E7787673EE9AA81C9C863E91 /* UIImage+SLChainable.m */,
-				837960A9EF19BDE54F844129B4884C77 /* UIImageView+SLChainable.h */,
-				2928C2E1CFCC20387F80CE2E4DB697D6 /* UIImageView+SLChainable.m */,
-				3452A07C0FF23A9A76D0C5E61F82BE84 /* UILabel+SLChainable.h */,
-				299ACE9945B6EF6AA1B68B326C83A59D /* UILabel+SLChainable.m */,
-				0ACDA66627B8E9F8DB659658295C546C /* UISwitch+SLChainable.h */,
-				665D85410219CECB7052303A588F4E11 /* UISwitch+SLChainable.m */,
-				719BC1926E805D7164377C93BD557D0F /* UITextField+SLChainable.h */,
-				D4DD18073DE4333FB1B3FC7F6304C197 /* UITextField+SLChainable.m */,
-				FE4E71D1BAA4C52E011CB9CE9D12C284 /* UITextView+SLChainable.h */,
-				2F8F9833131D2021A8351369577631F0 /* UITextView+SLChainable.m */,
-				AC767B31162112271512BC7739509FA7 /* UIView+SLChainable.h */,
-				90AC318302BEB30917FB04C5411A801D /* UIView+SLChainable.m */,
-			);
-			name = SLUIKit;
-			sourceTree = "<group>";
-		};
-		78520899AA15F3E81B58790D18DFFCEC /* SLUpdateAlert */ = {
-			isa = PBXGroup;
-			children = (
-				AC8EDBF793CA479DB32C693070EE9901 /* SLUpdateAlertView.h */,
-				5376A4EB9258373B83FCCE2EBF23B600 /* SLUpdateAlertView.m */,
+				A44223156BBD3196F8736303909C6BA4 /* SLUpdateAlertView.h */,
+				261DDFFF23FB5293AC5012D70D148861 /* SLUpdateAlertView.m */,
 			);
 			name = SLUpdateAlert;
 			sourceTree = "<group>";
 		};
-		7C97F1C33D8AF8700F7FC19DAB78F0BB /* SLDevKit */ = {
+		2694760CF72E82B584BC7F3A93D643CE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				67727ED0C0C7AE87652B06D39333FF4B /* SLDevKit.h */,
-				A48C7559988A1D0CA533032FA5275122 /* Pod */,
-				6F87E6411659A3C703CDE5AB676B41A0 /* SLAutoLayout */,
-				DE271513A39DA079523F2C7AEBF6AC40 /* SLCustomField */,
-				5E6F7CE735A98E96D5DF52A99A657893 /* SLDefs */,
-				E7067BBCE6DAE447F4CC0573E628DFAF /* SLFoundation */,
-				77DFC9F763829384D6308C7C7FDB263F /* SLUIKit */,
-				78520899AA15F3E81B58790D18DFFCEC /* SLUpdateAlert */,
-				887F157ED3034E30BD05D04C82911544 /* SLUtils */,
-				04ABD1D95D8D674185E900EA97B38422 /* Support Files */,
+				48AC252CC5971D66DF84F8C3306106EC /* Aspects-dummy.m */,
+				ADFB2795AA1E521B026D0A41A6CB5734 /* Aspects-prefix.pch */,
+				E581AA3273C07297E4D0CD0D6ED2483A /* Aspects.debug.xcconfig */,
+				9AC8F18C34F17A9C97B9FF63761E0CF2 /* Aspects.release.xcconfig */,
 			);
-			name = SLDevKit;
-			path = ../..;
+			name = "Support Files";
+			path = "../Target Support Files/Aspects";
 			sourceTree = "<group>";
 		};
-		887F157ED3034E30BD05D04C82911544 /* SLUtils */ = {
+		29B9B58B0730690D637561B05C31F887 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				829BE3F984A540F48CD88C6783159F70 /* SLUtils.h */,
-				1883D822F4ECD64DB96741AA6C2ECAB8 /* SLUtils.m */,
+				5FA8C2522B1672044D6579E68511AB98 /* YYCache-dummy.m */,
+				FC6D611F3A8084A52287F471B9290256 /* YYCache-prefix.pch */,
+				4AF4B61690EB6550C50BE49BF1E2A3AD /* YYCache.debug.xcconfig */,
+				F193EA8EA5C0F7D40C11C69E7C79BD15 /* YYCache.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YYCache";
+			sourceTree = "<group>";
+		};
+		3BBE4AD9FAC9D80A4606F077F1C441D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				613954840C38F085D644317470861A35 /* Aspects */,
+				646BF125F84491FA116D7CC742AAB7C6 /* YYCache */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5410D958B5E21B2B1113254F8AAEAA78 /* SLCustomField */ = {
+			isa = PBXGroup;
+			children = (
+				425AC2342318188804DF0BFD88C909A2 /* SLCustomField.h */,
+				A53D13E2B581E813719E71E70E22FE4F /* SLCustomField.m */,
+				C2E94F2571B7F507CA6DC46BB22920D0 /* SLCustomFieldItemCell.h */,
+				DDBD98914DBC7DBC052C360E916BFCDF /* SLCustomFieldItemCell.m */,
+				39BAF7FA33236F64DBB619EB77580015 /* SLCustomFieldItemModel.h */,
+				FEBE368C5F1C4E1729D9DFF2E8D3F99B /* SLCustomFieldItemModel.m */,
+			);
+			name = SLCustomField;
+			sourceTree = "<group>";
+		};
+		60A2B657AF8AD5458A8B8EBD4A80E437 /* SLUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0CA2FBA46855DA47F236F9C423068F55 /* NSAttributedString+SLChainable.h */,
+				CE4BC83DB1A3D78C6E2BEF4B79E3E81A /* NSAttributedString+SLChainable.m */,
+				B879000498184ED7F1AB961F2F30FC36 /* SLAntiScreenShotView.h */,
+				E4BCEAC1FD9CE2F316175A5BB1868517 /* SLAntiScreenShotView.m */,
+				D477FFC4F50DD8D0BF5C9578DCAB6A12 /* SLUIKit.h */,
+				C57C2A483ADADF478276AD9E18B67143 /* SLUIKitMacros.h */,
+				61B791D4FE60E08744ADDC8F8135162D /* SLUIKitPrivate.h */,
+				A2F94A5408EFA190D44478016C28FC3F /* SLUIKitPrivate.m */,
+				D815BB789F0E7C26E6802900DD99B806 /* SLUIKitUtils.h */,
+				361DD9AABCB2EEB45FC4D5FDC013380F /* SLUIKitUtils.m */,
+				63AD92E0F05170106A9922BABB8FEDC1 /* UIButton+SLChainable.h */,
+				AC0824E89634434B41B486E461AA5405 /* UIButton+SLChainable.m */,
+				5F5A2379B23B708D8BD38DA7FB52AB9C /* UIColor+SLChainable.h */,
+				009C83765F66B2574B2770AAD1294C4F /* UIColor+SLChainable.m */,
+				86A2591027F78E98225716D8554515B1 /* UIFont+SLChainable.h */,
+				ECC909DE227748B2FC94D80D8EBDA202 /* UIFont+SLChainable.m */,
+				A09FE4693073E58C6260FA1BB4610E79 /* UIImage+SLChainable.h */,
+				43C05714209F53D69A47BE4F9A953DF1 /* UIImage+SLChainable.m */,
+				87D31C628AAFB76A732D8E871A90395A /* UIImageView+SLChainable.h */,
+				CB5084EF2422035F544BDE635E9BAD04 /* UIImageView+SLChainable.m */,
+				FBD63A7E3478A3495B96F1C9712D4CAD /* UILabel+SLChainable.h */,
+				FE259FE58FC0A2182A68467B2F6182C4 /* UILabel+SLChainable.m */,
+				27CF6B27284A7A3328AA8C9C554962F2 /* UISwitch+SLChainable.h */,
+				9BF6B05802D711A0502E360375E3087E /* UISwitch+SLChainable.m */,
+				3C145A0560EE62DF1174B7A66F737FBA /* UITextField+SLChainable.h */,
+				C55EEE1E6EDA3E2938F853A2B54E8CFC /* UITextField+SLChainable.m */,
+				5D30341B2B9425F1CDFCCC82F0C88CA3 /* UITextView+SLChainable.h */,
+				47B2A316455E93F5BE8817D5AF940BEB /* UITextView+SLChainable.m */,
+				7B4929A92CCAD6B99D871D3CC37CC2A8 /* UIView+SLChainable.h */,
+				686AE0983137061085CB5B1F0CE36B21 /* UIView+SLChainable.m */,
+			);
+			name = SLUIKit;
+			sourceTree = "<group>";
+		};
+		613954840C38F085D644317470861A35 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				928AA28104D5938A0A31119400908865 /* Aspects.h */,
+				D7DA842C65C4C9E0486136C0F866768B /* Aspects.m */,
+				2694760CF72E82B584BC7F3A93D643CE /* Support Files */,
+			);
+			name = Aspects;
+			path = Aspects;
+			sourceTree = "<group>";
+		};
+		646BF125F84491FA116D7CC742AAB7C6 /* YYCache */ = {
+			isa = PBXGroup;
+			children = (
+				B04499E945C8CF36FD0ECE3BCCBC9EB0 /* YYCache.h */,
+				16371A66A1A17ACA98492520313ED437 /* YYCache.m */,
+				F60ED40B366384C1F9DC263CE33A4FB1 /* YYDiskCache.h */,
+				C27E967083D965EDF781FDDEB7420D4E /* YYDiskCache.m */,
+				AD9BC0752381AADB8FED66CFC1E1584E /* YYKVStorage.h */,
+				28F0160685B46F7C4AE66988F91C70E0 /* YYKVStorage.m */,
+				463CC71226A8B6BB099E9FB8D916B328 /* YYMemoryCache.h */,
+				5A875BDE42F60EB27E93E583CA80BB70 /* YYMemoryCache.m */,
+				29B9B58B0730690D637561B05C31F887 /* Support Files */,
+			);
+			name = YYCache;
+			path = YYCache;
+			sourceTree = "<group>";
+		};
+		7844AAF485283957D25FE0CB2739D799 /* SLDefs */ = {
+			isa = PBXGroup;
+			children = (
+				E8E29F003A7A343CAAC4DEA3DDBEF956 /* SLDefs.h */,
+			);
+			name = SLDefs;
+			sourceTree = "<group>";
+		};
+		8BDAD627A17A6167EFAFF7F2A24C0D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9808BF74538141204E4EB5B49809FE77 /* Aspects */,
+				266FD5E0B798A9FD42652BC43776A394 /* Pods-SLDevKit_Example */,
+				C148D9ED769AEB688D7A1F5F6B76A6A9 /* Pods-SLDevKit_Tests */,
+				AF1EB8C8ED2764F93FFBE956ADD3FBAD /* SLDevKit */,
+				48ACF38225AF5129416A1F090F6D3286 /* YYCache */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DF9BB80ED42E16C68A38D3258D89F01 /* SLFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				CC032D39F6480490756101B80A5A8A2C /* NSArray+SLChainable.h */,
+				484BD945738A1C8490CBE71D6D6B556E /* NSArray+SLChainable.m */,
+				E8B317BAFB38B5FB19FE5CBEFDBCBCD0 /* NSData+SLChainable.h */,
+				13497ACFF8446A46DEEBD68B064BC4AD /* NSData+SLChainable.m */,
+				E2836C8CC4026D2BA063AE3FD9AB2103 /* NSString+SLChainable.h */,
+				E1348371261F6C550BDB815448EBB8CD /* NSString+SLChainable.m */,
+				A35BBE493F6040DD90E4732297E6B63D /* SLBlockInfo.h */,
+				32AC8FE4573A4E444A1C14DB4096855A /* SLBlockInfo.m */,
+				0D9F2E722B4A3A5141CADBF0494FE29D /* SLFoundation.h */,
+				293A16D1372C10A83EC0F0BEBA306980 /* SLFoundationPrivate.h */,
+				B47F54731C1A7C31F04A9E76C75F74C5 /* SLFoundationPrivate.m */,
+				00F474D031C1FAE72BA167F08F4ADCE1 /* SLFoundationUtils.h */,
+				8D21ECD48684E21AD67E9A4AC3D1BB2F /* SLFoundationUtils.m */,
+			);
+			name = SLFoundation;
+			sourceTree = "<group>";
+		};
+		B23F9D25440DAF07B7A7A239DFCB0F20 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4088AE246518350294C6088064C53EE8 /* SLDevKit-dummy.m */,
+				68251E37DD8D02F9311DA690B887D37F /* SLDevKit-prefix.pch */,
+				F1F45167889880EDDED2A1567A521033 /* SLDevKit.debug.xcconfig */,
+				08668074805FFD7CE873C0D92A9C54E4 /* SLDevKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SLDevKit";
+			sourceTree = "<group>";
+		};
+		C2159C92D98F244E8B36A97D57533171 /* SLUtils */ = {
+			isa = PBXGroup;
+			children = (
+				BAF10786C195CFED649B67099FE87B67 /* SLUtils.h */,
+				C3EE21A22847514A3629BCF372C99902 /* SLUtils.m */,
 			);
 			name = SLUtils;
 			sourceTree = "<group>";
 		};
-		A48C7559988A1D0CA533032FA5275122 /* Pod */ = {
+		CD2900AB9D3F33E1FF4A95495C4F6915 /* SLAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				2EB2CF3F7198AFB4B08E6A518413BE34 /* LICENSE */,
-				CA58961DB2B3E0F7CC7A8B080E445619 /* README.md */,
-				C97665F5961148F8B8335E28886C310F /* SLDevKit.podspec */,
+				739B8BFE1D8E00E38A2BECFFCA7F7522 /* SLAutoLayout.h */,
+				4F2942C0BEC56292F67DD36640C3A4AE /* SLAutoLayoutModel.h */,
+				CFF3C7A2803B7864BFC25306A0922EB0 /* SLAutoLayoutModel.m */,
+				0BA90858A2B7A383D00309DAA543F0F2 /* SLAutoLayoutModelItem.h */,
+				0225008E7C1129A67413DE298D5A7DBE /* SLAutoLayoutModelItem.m */,
+				BDE53885302CCC8A216FE6142F7BF2C5 /* SLAutoLayoutPrivate.h */,
+				B73FDEA1ED41B28E648C980A1B7C6655 /* SLAutoLayoutPrivate.m */,
+				93ED9F1F8350B347FB767B50019FA2A8 /* UIView+SLAutoLayout.h */,
+				770E79E81BE39C91028A29EFB1A5AA8C /* UIView+SLAutoLayout.m */,
 			);
-			name = Pod;
+			name = SLAutoLayout;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				F38CEB9DB8997DA5DAB9E133D1BF4210 /* Development Pods */,
+				DAC3021B5DD7D1F5E3B4594BF5BFDCAA /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				09C93D9F547AD025D79F1B2C973FA4C5 /* Products */,
+				3BBE4AD9FAC9D80A4606F077F1C441D5 /* Pods */,
+				8BDAD627A17A6167EFAFF7F2A24C0D63 /* Products */,
 				E2A8428446587DCB7B9070BE553D6D3A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -366,17 +549,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE271513A39DA079523F2C7AEBF6AC40 /* SLCustomField */ = {
+		DAC3021B5DD7D1F5E3B4594BF5BFDCAA /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7D245F75C4B5F043A1E99B2062A18430 /* SLCustomField.h */,
-				95B7331BFBF59588B0AC48B0D050836D /* SLCustomField.m */,
-				E5ED55D0B4566C96ADE1BD5F54821BFA /* SLCustomFieldItemCell.h */,
-				346F4B396E2D9F88F9C4B554BFB96F75 /* SLCustomFieldItemCell.m */,
-				44D2C4861ADCE5382E829584773307DF /* SLCustomFieldItemModel.h */,
-				7F6875EF0BF5960549382B9425E636A9 /* SLCustomFieldItemModel.m */,
+				0A8704A518E9C5A36AF1EA6DDA69601F /* SLDevKit */,
 			);
-			name = SLCustomField;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		E2A8428446587DCB7B9070BE553D6D3A /* Targets Support Files */ = {
@@ -386,34 +564,6 @@
 				1AF9B35AAE09659CF763443EC19700E6 /* Pods-SLDevKit_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		E7067BBCE6DAE447F4CC0573E628DFAF /* SLFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				F43B2EE2335184D9C4E0ABE0763AF62E /* NSArray+SLChainable.h */,
-				2D55383249B505A5F74EAF0FBA7D5025 /* NSArray+SLChainable.m */,
-				346466486CA1AA61B4E666B3F94AFD58 /* NSData+SLChainable.h */,
-				346DE241CFF8026A2E5873B981D2A7A0 /* NSData+SLChainable.m */,
-				9FA22A19409791CA8AB0575EDF6F54EB /* NSString+SLChainable.h */,
-				3DFB18D5E10C20B18B309CB2613ED6B4 /* NSString+SLChainable.m */,
-				39C8483E86208C810962ABAACD66542C /* SLBlockInfo.h */,
-				624CFAE1C93421D6C39A6D408FCF8FC6 /* SLBlockInfo.m */,
-				2AA75113E5E19E36130CF39D70A39AB0 /* SLFoundation.h */,
-				CEB97B17D975FE0C1D3896D0A94292E0 /* SLFoundationPrivate.h */,
-				F755E900A148CF96600640ED61D615B6 /* SLFoundationPrivate.m */,
-				14B400AE559D3A7C025A7E518980DA44 /* SLFoundationUtils.h */,
-				0DB8214468FE124AE52ABA2C9508A955 /* SLFoundationUtils.m */,
-			);
-			name = SLFoundation;
-			sourceTree = "<group>";
-		};
-		F38CEB9DB8997DA5DAB9E133D1BF4210 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7C97F1C33D8AF8700F7FC19DAB78F0BB /* SLDevKit */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		F7C11651FDF7CA7D9C47CC1ED8E36FF2 /* Pods-SLDevKit_Example */ = {
@@ -432,45 +582,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		835DF584D3BB13E290EEC3F19F1C6DE8 /* Headers */ = {
+		1008B21A3411190BFF91F4C3144688B3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21E7D544397FCDD91A9C883B9872FAB /* NSArray+SLChainable.h in Headers */,
-				1EFA9651D878FA3E3CA788DD33DA1B0E /* NSAttributedString+SLChainable.h in Headers */,
-				AD240942DF3C14240B475038C2169248 /* NSData+SLChainable.h in Headers */,
-				4E55AE0ECF366A497BDA51FCF35CBB0B /* NSString+SLChainable.h in Headers */,
-				5FC984F607A6334BC22367F65C307328 /* SLAntiScreenShotView.h in Headers */,
-				6EA241FA40B684CE2309B4C8C4B57B5F /* SLAutoLayout.h in Headers */,
-				9521984F28A5E630C628603C83995CA5 /* SLAutoLayoutModel.h in Headers */,
-				A4C4D538A09DDE4E5FA90122B2B7E56D /* SLAutoLayoutModelItem.h in Headers */,
-				9F08B2120A28FA3B8EED01B478AFF029 /* SLAutoLayoutPrivate.h in Headers */,
-				5D6DE300235E5F8456BC8C48AEA0A65A /* SLBlockInfo.h in Headers */,
-				CC016BE4546D9A8AF3135D8C0642BCB2 /* SLCustomField.h in Headers */,
-				40404B732B1ED69B6505B795745DA760 /* SLCustomFieldItemCell.h in Headers */,
-				9D9AA1D19758B39942563FDF98BD54F8 /* SLCustomFieldItemModel.h in Headers */,
-				99A4DDAA80AB9F663468C6AA8D030A11 /* SLDefs.h in Headers */,
-				DAC228FF28C7E8DAF21BDE23E9448335 /* SLDevKit.h in Headers */,
-				B8A8C1026F630D55CC73B4BA09CF35FF /* SLFoundation.h in Headers */,
-				07B1740495FC37540A620CA17AE63993 /* SLFoundationPrivate.h in Headers */,
-				72D159EE9DBCB4820AB2FF41B13E3BA5 /* SLFoundationUtils.h in Headers */,
-				DDE0355F67BE15CDA66171E46EE867ED /* SLUIKit.h in Headers */,
-				B55D3EF72E28CCA2602DFC864F9D8E99 /* SLUIKitMacros.h in Headers */,
-				8007212C911401885878F5AB42898AC2 /* SLUIKitPrivate.h in Headers */,
-				B16CFD0F330D444A10479D29E7A05CE1 /* SLUIKitUtils.h in Headers */,
-				E4D8A512CDBDF1109A201D30DEA94438 /* SLUpdateAlertView.h in Headers */,
-				CEFA2666F386712A8BE5D32FACD5F072 /* SLUtils.h in Headers */,
-				0767C14258E7F764B1A162E6D7A51426 /* UIButton+SLChainable.h in Headers */,
-				B4EDF859C9AE05B28367D05A6AB3863A /* UIColor+SLChainable.h in Headers */,
-				42E1BA5F71D9C65E6B5DB4C499D0AB69 /* UIFont+SLChainable.h in Headers */,
-				D1BE50003E357796BA3B3AF5C83EC6A0 /* UIImage+SLChainable.h in Headers */,
-				68CCC6BD496CF29E4408A416B01597D1 /* UIImageView+SLChainable.h in Headers */,
-				0AC2FFC8B1D714181783EE45BBA6DEFD /* UILabel+SLChainable.h in Headers */,
-				644E047C9DE2D43E419AB12D009DB5CC /* UISwitch+SLChainable.h in Headers */,
-				353C215BA9D7D8728E0EB5E6E8F81EF8 /* UITextField+SLChainable.h in Headers */,
-				5331685DE287C9695B98C937E2D8D4EF /* UITextView+SLChainable.h in Headers */,
-				CC0881B6328ACE27804F6C10CE0EDB1E /* UIView+SLAutoLayout.h in Headers */,
-				63170A767898F0F4142C087A71721B4E /* UIView+SLChainable.h in Headers */,
+				C54863ADCD6C3A846DAD606D94266139 /* YYCache.h in Headers */,
+				DAD054D6CD76844DBA351B097F58ED79 /* YYDiskCache.h in Headers */,
+				520843B60464C0662890D998C1F704E0 /* YYKVStorage.h in Headers */,
+				11F87AF4693F8E4CDF39F265E5E280EA /* YYMemoryCache.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DA69205B2765629AA469F2E1DCF8B3E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		602FDBABC0EE1E1A56796425E235AB46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F0A4C90C10F9DB15F6F94A33614777 /* Aspects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,10 +615,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE32B9D8D55A684FB5CE9B4762124EDD /* Headers */ = {
+		D8BB558E954ED8AB678BDB4BCFF8F1D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FADF005CF8D861AE33536173877A662 /* NSArray+SLChainable.h in Headers */,
+				94B497E6BA04FA9A116E1D97154A53F9 /* NSAttributedString+SLChainable.h in Headers */,
+				942A2A9251B9446250F461CEB3122C6D /* NSData+SLChainable.h in Headers */,
+				3C665C4B13C4E8176EE405038E2283EF /* NSString+SLChainable.h in Headers */,
+				3C97CD6E74DEE716275C7A7750838C98 /* SLAntiScreenShotView.h in Headers */,
+				09D4D38717492F5B71E4AD11E4F95655 /* SLAutoLayout.h in Headers */,
+				818A7838B6D5516066FBDB26F074EE06 /* SLAutoLayoutModel.h in Headers */,
+				7A2FD6261B2242C829B8FB305517E2C6 /* SLAutoLayoutModelItem.h in Headers */,
+				B40051E9CFA610969F73DCB689C88E25 /* SLAutoLayoutPrivate.h in Headers */,
+				26C14A8E3B2CB41DD76A62C1177052A7 /* SLBlockInfo.h in Headers */,
+				90914C1EB7DD70293A037829D4EA430F /* SLCustomField.h in Headers */,
+				58E0B56BD5361FD819E2299062B26818 /* SLCustomFieldItemCell.h in Headers */,
+				2C61EC32F7D33B75B069D091856A1481 /* SLCustomFieldItemModel.h in Headers */,
+				675E2E2E97F3785C49CDE131EF18B348 /* SLDefs.h in Headers */,
+				DB5376576626A97F64064EC622F35292 /* SLDevKit.h in Headers */,
+				1D70E71757D3C2CDD7A6BC996F054D26 /* SLFoundation.h in Headers */,
+				FF450555AAFC609102668E5CFB93C83A /* SLFoundationPrivate.h in Headers */,
+				EF8C9A6BE137DCE5A01053752F096FC1 /* SLFoundationUtils.h in Headers */,
+				92A23E9C6D09789AAED446D45656469D /* SLLinkedMap.h in Headers */,
+				432D8849B8B9ABB428F03CEC086AC840 /* SLLinkedMapNode.h in Headers */,
+				584E7310805BF16D616C28A06B518CEF /* SLMemoryCache.h in Headers */,
+				DF4B9EC56457D049165FBCFE29F70E77 /* SLUIKit.h in Headers */,
+				B5BD55BEAFE1562C5FF0AFF7B1C9C8CB /* SLUIKitMacros.h in Headers */,
+				F2F8ECC81C123B2AE4FAFC793ADA2A03 /* SLUIKitPrivate.h in Headers */,
+				3178D75A3B1E8A5C4A8A25F2C52CFBD0 /* SLUIKitUtils.h in Headers */,
+				F6F109877434536763BE120A9CFE7A6B /* SLUpdateAlertView.h in Headers */,
+				898ADFF1008D36B66C72F5FB4BB367C8 /* SLUtils.h in Headers */,
+				C74A166ABF25D6B6620480956B82AD34 /* UIButton+SLChainable.h in Headers */,
+				5C91AB6C99867498B6A19F002FB2BB80 /* UIColor+SLChainable.h in Headers */,
+				D6CEC26C500DE079F20DAD66C08AFB69 /* UIFont+SLChainable.h in Headers */,
+				5EC54DF776E6BB455AF8779B00F7B18A /* UIImage+SLChainable.h in Headers */,
+				B8353B18AC081A59F38ABF2F85B22A37 /* UIImageView+SLChainable.h in Headers */,
+				EC3947DBD3E2940B40D901D2C011A1D4 /* UILabel+SLChainable.h in Headers */,
+				2F40B4CF05635337C06C9F80785335FE /* UISwitch+SLChainable.h in Headers */,
+				F9F5ABB9CF4C9CAAD50E224485F5C6BF /* UITextField+SLChainable.h in Headers */,
+				4B67BC63CC1A556A3DB153ECEAED6856 /* UITextView+SLChainable.h in Headers */,
+				CB0C7B445E267B7C20D0BEAB556AC5DD /* UIView+SLAutoLayout.h in Headers */,
+				8414C50B9BE40BA2604B119C3645FA89 /* UIView+SLChainable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +674,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A36C25F4A00CFF1D7FEE9F0D88014C0E /* PBXTargetDependency */,
+				5723F65F0559C5AC06743BBB3F8B1D23 /* PBXTargetDependency */,
 			);
 			name = "Pods-SLDevKit_Tests";
 			productName = "Pods-SLDevKit_Tests";
@@ -511,11 +683,11 @@
 		};
 		C622DC87020B9EBB454B185737AB9845 /* SLDevKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CAC2DA3712347BDAF85060C7AA8DE85 /* Build configuration list for PBXNativeTarget "SLDevKit" */;
+			buildConfigurationList = DB07408E3E86D57615C7A86452FEAD3F /* Build configuration list for PBXNativeTarget "SLDevKit" */;
 			buildPhases = (
-				835DF584D3BB13E290EEC3F19F1C6DE8 /* Headers */,
-				DD27CE53736DA5E27A24EA55C538C077 /* Sources */,
-				41A2F7FD8292A053402E2EDEAD29FB5B /* Frameworks */,
+				D8BB558E954ED8AB678BDB4BCFF8F1D6 /* Headers */,
+				1E7E28B80D78D2A2773C7A565E28AD64 /* Sources */,
+				058BCBAF3B5E1AD4BE71DE8A86F15882 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -526,18 +698,54 @@
 			productReference = AF1EB8C8ED2764F93FFBE956ADD3FBAD /* SLDevKit */;
 			productType = "com.apple.product-type.library.static";
 		};
-		F07E4B2E891E5B115FF8842176BC1057 /* Pods-SLDevKit_Example */ = {
+		C6539905C4D50932B36244650B93C79B /* Aspects */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FBD1A9E1C91F0D8F71BAC95917D7B5A /* Build configuration list for PBXNativeTarget "Pods-SLDevKit_Example" */;
+			buildConfigurationList = 85BEA5F3C86A567FA464829337DCDE9F /* Build configuration list for PBXNativeTarget "Aspects" */;
 			buildPhases = (
-				DE32B9D8D55A684FB5CE9B4762124EDD /* Headers */,
-				9191DA1DE71D601A69C7B57AAF12AB2C /* Sources */,
-				DDBC5C49149449F22F7D2AA4377D5DA3 /* Frameworks */,
+				602FDBABC0EE1E1A56796425E235AB46 /* Headers */,
+				71AB8005874A37F3CB8AD0B151A5BEF8 /* Sources */,
+				63D6A9751DF03E561A8C6BD9711CE6F7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B41A8E3E6A38412E6A6394F127203407 /* PBXTargetDependency */,
+			);
+			name = Aspects;
+			productName = Aspects;
+			productReference = 9808BF74538141204E4EB5B49809FE77 /* Aspects */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CFDAE6EB02F58B9A37CADCF439AE6082 /* YYCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042F8879162194B4E0A60D72F6C1AAE8 /* Build configuration list for PBXNativeTarget "YYCache" */;
+			buildPhases = (
+				1008B21A3411190BFF91F4C3144688B3 /* Headers */,
+				C7C6A84C0B633D221A1CA44955688F5F /* Sources */,
+				CECC2D79CAD438E7A8FB60E01511DF93 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YYCache;
+			productName = YYCache;
+			productReference = 48ACF38225AF5129416A1F090F6D3286 /* YYCache */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F07E4B2E891E5B115FF8842176BC1057 /* Pods-SLDevKit_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 972C4F8573E38FA9543D280B0CAAF104 /* Build configuration list for PBXNativeTarget "Pods-SLDevKit_Example" */;
+			buildPhases = (
+				2DA69205B2765629AA469F2E1DCF8B3E /* Headers */,
+				2A111079432673B24A7776F04278B4FB /* Sources */,
+				0D02EB1344415985D9FE854C78DAC121 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5227199384F626CADCBB1D29900566D /* PBXTargetDependency */,
+				FBDF0DDB17A1474FD4724D3DC38017AB /* PBXTargetDependency */,
+				0FC5FFAACFA6B80E96AE8D9A3888949E /* PBXTargetDependency */,
 			);
 			name = "Pods-SLDevKit_Example";
 			productName = "Pods-SLDevKit_Example";
@@ -562,60 +770,86 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 09C93D9F547AD025D79F1B2C973FA4C5 /* Products */;
+			productRefGroup = 8BDAD627A17A6167EFAFF7F2A24C0D63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				C6539905C4D50932B36244650B93C79B /* Aspects */,
 				F07E4B2E891E5B115FF8842176BC1057 /* Pods-SLDevKit_Example */,
 				46BE3E2B2DE2A07BED2AF7C07DE72E10 /* Pods-SLDevKit_Tests */,
 				C622DC87020B9EBB454B185737AB9845 /* SLDevKit */,
+				CFDAE6EB02F58B9A37CADCF439AE6082 /* YYCache */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9191DA1DE71D601A69C7B57AAF12AB2C /* Sources */ = {
+		1E7E28B80D78D2A2773C7A565E28AD64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90418EFEEAC5FFEC04A17A82BE1D1D7C /* Pods-SLDevKit_Example-dummy.m in Sources */,
+				6F103A210B4182820D879CDE4736A8A5 /* NSArray+SLChainable.m in Sources */,
+				006C5C39C527DA4194D64708C716C8B0 /* NSAttributedString+SLChainable.m in Sources */,
+				D562D9B8A38A6DC9F1A643139DBAC8CB /* NSData+SLChainable.m in Sources */,
+				73A23263E97CE7CA8DD4B31CD643B454 /* NSString+SLChainable.m in Sources */,
+				47DE110CE7E10AE77EA4B1C5138B941D /* SLAntiScreenShotView.m in Sources */,
+				B859C4FEA0C04884F936A6EE1BBE1178 /* SLAutoLayoutModel.m in Sources */,
+				D8ACD342BAF0A95CC2AE6A9B56919C81 /* SLAutoLayoutModelItem.m in Sources */,
+				5248CF7B4EF8FAE1B2A096D71BC65140 /* SLAutoLayoutPrivate.m in Sources */,
+				9EE6DB8392F9E90F169A680EB861A9A1 /* SLBlockInfo.m in Sources */,
+				D2032615CF68547208736B3EA5E18DC4 /* SLCustomField.m in Sources */,
+				308D0A42C27B35C1EDFABE16F2739A75 /* SLCustomFieldItemCell.m in Sources */,
+				548DD70CEB21D2263D86EFABE490E34E /* SLCustomFieldItemModel.m in Sources */,
+				4BA4F0C0E7D2431BCB456053DD54C434 /* SLDevKit-dummy.m in Sources */,
+				A8990D01DDFE2E1337571D716C9DC495 /* SLFoundationPrivate.m in Sources */,
+				B7714C8A0E33B0D06B1CB124D05FD8AF /* SLFoundationUtils.m in Sources */,
+				7144937763B21818067D6C2F236458C3 /* SLLinkedMap.m in Sources */,
+				612949312447BAD28914D10EB4222448 /* SLLinkedMapNode.m in Sources */,
+				D3C4C3876EA0586B84C179B02AEB3F3E /* SLMemoryCache.m in Sources */,
+				9B714DAD55008D3305A376D9F30A49E8 /* SLUIKitPrivate.m in Sources */,
+				592F2B2E0910EED300EE8ED0CC15EBF2 /* SLUIKitUtils.m in Sources */,
+				BB851E8D3F00295C33FDABAF54BB1A5F /* SLUpdateAlertView.m in Sources */,
+				9D73554FCF73103187D97F9ACA3A3757 /* SLUtils.m in Sources */,
+				88CF99D7C273DFA3138A45AC60013F6A /* UIButton+SLChainable.m in Sources */,
+				F2C4DC4520407B0319FC7A970BEE442B /* UIColor+SLChainable.m in Sources */,
+				78073C72EF47C3543D03DE6B3EE9AD0A /* UIFont+SLChainable.m in Sources */,
+				7BA9CA0A7213ECB3738FD8D1A6148406 /* UIImage+SLChainable.m in Sources */,
+				608348906381BE526EFF38955F1CC903 /* UIImageView+SLChainable.m in Sources */,
+				EF05560B891D254E3805FBCB851871DB /* UILabel+SLChainable.m in Sources */,
+				828B60FE48A44C49760B59BCA2035E1A /* UISwitch+SLChainable.m in Sources */,
+				AD6C261987F3AF3207D4E01232B295CC /* UITextField+SLChainable.m in Sources */,
+				A4E4060F4ED659541CBDC31F311D3DB3 /* UITextView+SLChainable.m in Sources */,
+				1AB0695DA27B268D43542929627FB87D /* UIView+SLAutoLayout.m in Sources */,
+				CAEDC4815FEF9AC32AA2ABE73DA44B27 /* UIView+SLChainable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD27CE53736DA5E27A24EA55C538C077 /* Sources */ = {
+		2A111079432673B24A7776F04278B4FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615F3885F9BF13F74D219C4452E502ED /* NSArray+SLChainable.m in Sources */,
-				D1F06D05483AA2C060A0C28CB64C03DF /* NSAttributedString+SLChainable.m in Sources */,
-				1CD27E882E29A37AC5CDD1393EB63117 /* NSData+SLChainable.m in Sources */,
-				58EED370AB80DEFD4B1E5F772D2186DF /* NSString+SLChainable.m in Sources */,
-				4C820A93A0D3F49CE26F557985D83B51 /* SLAntiScreenShotView.m in Sources */,
-				8EA85AFEBB9C6ED9E78C1FFD9004672B /* SLAutoLayoutModel.m in Sources */,
-				B428D21B936F6EF63E74BDD6F756F7FA /* SLAutoLayoutModelItem.m in Sources */,
-				729C0F589F14D72842640EA289FF9C85 /* SLAutoLayoutPrivate.m in Sources */,
-				192A6C3654F987DB2904ED7BCCA91200 /* SLBlockInfo.m in Sources */,
-				8A5A85B19A0EEE8B5A4CA34D07400FD5 /* SLCustomField.m in Sources */,
-				65F6ABD8321431BC2CCFE347A60CA5FC /* SLCustomFieldItemCell.m in Sources */,
-				00646D565B14CB44C4797F30883ED1F0 /* SLCustomFieldItemModel.m in Sources */,
-				557EB922A75C11310EF0B42C7833284E /* SLDevKit-dummy.m in Sources */,
-				617D9237145D3E744C52852ACEF281B9 /* SLFoundationPrivate.m in Sources */,
-				DC4BAEBCCD23324B6AA20EC5593C1047 /* SLFoundationUtils.m in Sources */,
-				D0344DB6EE4EFBF79C34B8FE04FEC5C0 /* SLUIKitPrivate.m in Sources */,
-				30D7E726EAEEBA628634FACCBF888AA0 /* SLUIKitUtils.m in Sources */,
-				369074A20ADB1D7C4AFEFD6F905202F6 /* SLUpdateAlertView.m in Sources */,
-				54FB1D8453DFC693B680CEDD42D7B89F /* SLUtils.m in Sources */,
-				A8AE3BCB1A02A1E6F6188528F3443CC7 /* UIButton+SLChainable.m in Sources */,
-				1E217139A0DE7B25E416A1AE390CD305 /* UIColor+SLChainable.m in Sources */,
-				86A95911C9C83C0E948873BAE3AA3BD3 /* UIFont+SLChainable.m in Sources */,
-				2E24F58D4A747419F3B0EF81A936DE8E /* UIImage+SLChainable.m in Sources */,
-				C54F7ED49E42E47FF71B6F5922128327 /* UIImageView+SLChainable.m in Sources */,
-				65BA7B18A44A57911686BF4E779503B6 /* UILabel+SLChainable.m in Sources */,
-				73D8C5A4B7E9B0D53B2E912B68C9A119 /* UISwitch+SLChainable.m in Sources */,
-				099A22279BC709367D817563F0015D04 /* UITextField+SLChainable.m in Sources */,
-				8442229248E4A0F92BCFFE8EF80DAA28 /* UITextView+SLChainable.m in Sources */,
-				A3D9F9511DE22EFDB03DD86336176216 /* UIView+SLAutoLayout.m in Sources */,
-				4AC3EB3C66A3565CF2996D55477BCADA /* UIView+SLChainable.m in Sources */,
+				AC8A1F9BC7DD74F24013AFD3C3CF743F /* Pods-SLDevKit_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71AB8005874A37F3CB8AD0B151A5BEF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69264E034E5F1F128782429391431DFF /* Aspects.m in Sources */,
+				C38D3A6CC4BC728594558EC51BBD6612 /* Aspects-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7C6A84C0B633D221A1CA44955688F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B19D338B7671D676617191DBF52ABFBD /* YYCache.m in Sources */,
+				D36E3BEC3A61E5B43583F2B873200E8D /* YYCache-dummy.m in Sources */,
+				8A19C0FA29D9A9A81A7DE7D1D2D3327D /* YYDiskCache.m in Sources */,
+				8AEEFC280C20BD1C47F5B3F3772724CB /* YYKVStorage.m in Sources */,
+				F55227C09C40B232601AD701F571206F /* YYMemoryCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,21 +864,125 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A36C25F4A00CFF1D7FEE9F0D88014C0E /* PBXTargetDependency */ = {
+		0FC5FFAACFA6B80E96AE8D9A3888949E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYCache;
+			target = CFDAE6EB02F58B9A37CADCF439AE6082 /* YYCache */;
+			targetProxy = 7923BAD0D712EA96BDD103AE2CDF19CB /* PBXContainerItemProxy */;
+		};
+		5723F65F0559C5AC06743BBB3F8B1D23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SLDevKit_Example";
 			target = F07E4B2E891E5B115FF8842176BC1057 /* Pods-SLDevKit_Example */;
-			targetProxy = E07DCC6D9001A04A84C463E70BF0D32C /* PBXContainerItemProxy */;
+			targetProxy = 2863E8AC6338D38291E467E6BEC41B9B /* PBXContainerItemProxy */;
 		};
-		B41A8E3E6A38412E6A6394F127203407 /* PBXTargetDependency */ = {
+		B5227199384F626CADCBB1D29900566D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Aspects;
+			target = C6539905C4D50932B36244650B93C79B /* Aspects */;
+			targetProxy = 870787046AAA8A4906228A4D933978FD /* PBXContainerItemProxy */;
+		};
+		FBDF0DDB17A1474FD4724D3DC38017AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SLDevKit;
 			target = C622DC87020B9EBB454B185737AB9845 /* SLDevKit */;
-			targetProxy = A5F89EDE7C14116F2D7216AF506CB5B0 /* PBXContainerItemProxy */;
+			targetProxy = 339B01DDC14307557E674FC93C1A1EA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		105D685F63B92A64DFDC3DC92C2A721F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F193EA8EA5C0F7D40C11C69E7C79BD15 /* YYCache.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YYCache/YYCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YYCache;
+				PRODUCT_NAME = YYCache;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16B15BD09C7C84F39DD082610CFD5313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D6E92EEF1EE681D92F8DAAD011717E /* Pods-SLDevKit_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2822ED9C556691445997CC451F4EBEC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E581AA3273C07297E4D0CD0D6ED2483A /* Aspects.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Aspects/Aspects-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Aspects;
+				PRODUCT_NAME = Aspects;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29B7E4A369C3742B41563D0C87A01972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08668074805FFD7CE873C0D92A9C54E4 /* SLDevKit.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SLDevKit;
+				PRODUCT_NAME = SLDevKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		40356653080584C7BBBA556DD3D97837 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C03BD6A4F958E0608FA80BA7EDB78B1 /* Pods-SLDevKit_Tests.release.xcconfig */;
@@ -667,28 +1005,51 @@
 			};
 			name = Release;
 		};
-		47D0620C6FB9796D7CC3C7FDFC2513E5 /* Debug */ = {
+		49270145543CF66E199044CEECF51C87 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25468FB49BCCAB3CD82E14E73F6B1EF5 /* SLDevKit.debug.xcconfig */;
+			baseConfigurationReference = E613F4B85A1B69B668A004382B597404 /* Pods-SLDevKit_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5337BC31E668014059CD2B8F73BD1188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC8F18C34F17A9C97B9FF63761E0CF2 /* Aspects.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SLDevKit/SLDevKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				GCC_PREFIX_HEADER = "Target Support Files/Aspects/Aspects-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SLDevKit;
-				PRODUCT_NAME = SLDevKit;
+				PRODUCT_MODULE_NAME = Aspects;
+				PRODUCT_NAME = Aspects;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		634969DE13AF78976F766CF99B06E1F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -773,31 +1134,9 @@
 			};
 			name = Release;
 		};
-		C66113E6719FC807C94EEDF6B748A941 /* Release */ = {
+		BD4F72DA49F3F5D0AA07E657E90DB885 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E613F4B85A1B69B668A004382B597404 /* Pods-SLDevKit_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D0066664043AF7D3D09C1DF24055F459 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0043D056DDA58CCC9229AD3D1086D80 /* SLDevKit.release.xcconfig */;
+			baseConfigurationReference = F1F45167889880EDDED2A1567A521033 /* SLDevKit.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -815,9 +1154,31 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		BDFD1F396029CF9F8953D7661FB2A815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AF4B61690EB6550C50BE49BF1E2A3AD /* YYCache.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YYCache/YYCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YYCache;
+				PRODUCT_NAME = YYCache;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -885,35 +1246,14 @@
 			};
 			name = Debug;
 		};
-		E29282C595A5F1690A196FE5022BF8DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8D6E92EEF1EE681D92F8DAAD011717E /* Pods-SLDevKit_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3CAC2DA3712347BDAF85060C7AA8DE85 /* Build configuration list for PBXNativeTarget "SLDevKit" */ = {
+		042F8879162194B4E0A60D72F6C1AAE8 /* Build configuration list for PBXNativeTarget "YYCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47D0620C6FB9796D7CC3C7FDFC2513E5 /* Debug */,
-				D0066664043AF7D3D09C1DF24055F459 /* Release */,
+				BDFD1F396029CF9F8953D7661FB2A815 /* Debug */,
+				105D685F63B92A64DFDC3DC92C2A721F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -927,11 +1267,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FBD1A9E1C91F0D8F71BAC95917D7B5A /* Build configuration list for PBXNativeTarget "Pods-SLDevKit_Example" */ = {
+		85BEA5F3C86A567FA464829337DCDE9F /* Build configuration list for PBXNativeTarget "Aspects" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E29282C595A5F1690A196FE5022BF8DB /* Debug */,
-				C66113E6719FC807C94EEDF6B748A941 /* Release */,
+				2822ED9C556691445997CC451F4EBEC4 /* Debug */,
+				5337BC31E668014059CD2B8F73BD1188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		972C4F8573E38FA9543D280B0CAAF104 /* Build configuration list for PBXNativeTarget "Pods-SLDevKit_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B15BD09C7C84F39DD082610CFD5313 /* Debug */,
+				49270145543CF66E199044CEECF51C87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -941,6 +1290,15 @@
 			buildConfigurations = (
 				634969DE13AF78976F766CF99B06E1F8 /* Debug */,
 				40356653080584C7BBBA556DD3D97837 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB07408E3E86D57615C7A86452FEAD3F /* Build configuration list for PBXNativeTarget "SLDevKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4F72DA49F3F5D0AA07E657E90DB885 /* Debug */,
+				29B7E4A369C3742B41563D0C87A01972 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
