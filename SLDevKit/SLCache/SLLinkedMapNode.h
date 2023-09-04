@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak)SLLinkedMapNode *nextNode;
 
 @property(nonatomic,assign)NSTimeInterval time;
+@property(nonatomic,assign)NSUInteger cost;
+
 @end
 
 NS_ASSUME_NONNULL_END

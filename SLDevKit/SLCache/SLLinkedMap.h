@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)BOOL releaseAsynchronously;
 @property(nonatomic,assign)BOOL releaseOnMainThread;
 
-@property(nonatomic,assign)NSInteger totalCount;
+@property(nonatomic,assign)NSUInteger totalCount;
+@property(nonatomic,assign)NSUInteger totalCost;
 
 @property(nonatomic,strong,readonly)SLLinkedMapNode *headNode;
 @property(nonatomic,strong,readonly)SLLinkedMapNode *tailNode;

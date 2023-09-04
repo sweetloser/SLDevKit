@@ -18,6 +18,9 @@
     NSUInteger _countLimit;
     NSTimeInterval _timeLimit;
     
+    NSUInteger _totalCount;
+    NSUInteger _totalCast;
+    
     NSTimeInterval _autoTrimInterval;
     
     BOOL _releaseAsynchronously;
@@ -113,13 +116,20 @@
 #pragma mark - 业务处理
 - (SLMemoryCache * _Nonnull (^)(id _Nonnull, id _Nonnull))cacheObjectWithKey_sl {
     return ^(id obj, id key) {
+        return self.cacheObjectWithKeyAndCost_sl(obj, key, 0);
+    };
+}
+
+- (SLMemoryCache * _Nonnull (^)(id _Nonnull, id _Nonnull, NSUInteger))cacheObjectWithKeyAndCost_sl {
+    return ^(id obj, id key, NSUInteger cost) {
         pthread_mutex_lock(&self->_threadLock);
         SLLinkedMapNode *node = [self->_linkedMap nodeForKey:key];
         NSTimeInterval nowTime = CACurrentMediaTime();
-        if (node) {
+        if(node) {
             // key对应的对象已经缓存过，需要更新
             node.value = obj;
             node.time = nowTime;
+            node.cost = cost;
             [self->_linkedMap bringNodeToHead:node];
         } else {
             // 第一次缓存该key
@@ -127,6 +137,7 @@
             node.key = key;
             node.value = obj;
             node.time = nowTime;
+            node.cost = cost;
             [self->_linkedMap insertNodeAtHead:node];
         }
         
@@ -146,9 +157,11 @@
             }
         }
         pthread_mutex_unlock(&self->_threadLock);
+        
         return self;
     };
 }
+
 
 - (id  _Nonnull (^)(id _Nonnull))objectForKey_sl {
     return ^(id key) {
@@ -208,7 +221,7 @@
         BOOL finish = NO;
         pthread_mutex_lock(&self->_threadLock);
         // 当前缓存数没有超过`count`
-        if (self->_totalCount < count) {
+        if (self->_linkedMap.totalCount < count) {
             finish = YES;
         }
         // 清空
@@ -318,5 +331,11 @@
         self.removeAllObjects_sl();
     }
 }
+
+#pragma mark - setter & getter
+- (NSUInteger)totalCount {
+    return _linkedMap.totalCount;
+}
+
 @end
 

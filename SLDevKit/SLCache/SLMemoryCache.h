@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign,readonly)NSUInteger totalCount;
 
 /**
+ * 总成本
+ */
+@property(nonatomic,assign,readonly)NSUInteger totalCost;
+
+/**
  * 设置释放对象的时机
  * releaseAsynchronously_sl - 是否异步释放 默认YES
  * releaseOnMainThread_sl - 是否在主线程释放 默认NO
@@ -64,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
  *      2) 缓存key
  */
 @property(nonatomic,copy,readonly)SLMemoryCache *(^cacheObjectWithKey_sl)(id obj, id key);
+
+@property(nonatomic,copy,readonly)SLMemoryCache *(^cacheObjectWithKeyAndCost_sl)(id obj, id key, NSUInteger cost);
 
 /**
  * 获取key对应的缓存对象

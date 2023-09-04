@@ -28,7 +28,8 @@
      */
     SLLinkedMapNode *_tailNode;
     
-    NSInteger _totalCount;
+    NSUInteger _totalCount;
+    NSUInteger _totalCost;
 }
 @end
 
@@ -45,6 +46,7 @@
         _releaseAsynchronously = YES;
         _releaseOnMainThread = NO;
         _totalCount = 0;
+        _totalCost = 0;
         
     }
     return self;
@@ -53,7 +55,6 @@
     pthread_mutex_destroy(&_threadLock);
     CFRelease(_dict);
 }
-
 
 -(void)insertNodeAtHead:(SLLinkedMapNode *)node {
     pthread_mutex_lock(&_threadLock);
