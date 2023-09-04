@@ -1,0 +1,35 @@
+//
+//  SLKVStorage.h
+//  SLDevKit
+//
+//  Created by zengxiangxiang on 2023/9/4.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+typedef enum : NSUInteger {
+    SLKVStorageTypeFile,
+    SLKVStorageTypeSQLite,
+    SLKVStorageTypeMixed,
+} SLKVStorageType;
+
+@interface SLKVStorage : NSObject
+
+@property(nonatomic,copy,readonly)NSString *path;
+@property(nonatomic,assign,readonly)SLKVStorageType type;
+
+
+- (instancetype)initWithPath:(NSString *)path type:(SLKVStorageType)type;
+
+
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
++ (instancetype)new UNAVAILABLE_ATTRIBUTE;
+
+- (BOOL)itemExistsForKey:(NSString *)key;
+- (BOOL)removeItemForKey:(NSString *)key;
+
+@end
+
+NS_ASSUME_NONNULL_END

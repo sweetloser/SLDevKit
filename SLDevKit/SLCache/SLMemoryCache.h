@@ -62,15 +62,28 @@ NS_ASSUME_NONNULL_BEGIN
  * 默认值为YES
  */
 @property(nonatomic,copy,readonly)SLMemoryCache *(^shouldRemoveAllObjectsWhenEnteringBackground_sl)(BOOL);
+
 /**
  * 缓存对象
  * 参数类型：
- *      1) 缓存对象
+ *      1) 待缓存对象
  *      2) 缓存key
  */
 @property(nonatomic,copy,readonly)SLMemoryCache *(^cacheObjectWithKey_sl)(id obj, id key);
 
+/**
+ * 缓存对象
+ * 参数类型：
+ *      1) 待缓存对象
+ *      2) 缓存key
+ *      3) 缓存对象的消耗量（成本）
+ */
 @property(nonatomic,copy,readonly)SLMemoryCache *(^cacheObjectWithKeyAndCost_sl)(id obj, id key, NSUInteger cost);
+
+/**
+ * 缓存中是否包含指定key
+ */
+@property(nonatomic,copy,readonly)BOOL(^containObjectForKey_sl)(NSString *key);
 
 /**
  * 获取key对应的缓存对象

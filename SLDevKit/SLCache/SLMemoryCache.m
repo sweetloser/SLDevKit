@@ -162,6 +162,14 @@
     };
 }
 
+- (BOOL (^)(NSString * _Nonnull))containObjectForKey_sl {
+    return ^(NSString *key) {
+        pthread_mutex_lock(&self->_threadLock);
+        BOOL contains = [self->_linkedMap containsObjectForKey:key];
+        pthread_mutex_unlock(&self->_threadLock);
+        return contains;
+    };
+}
 
 - (id  _Nonnull (^)(id _Nonnull))objectForKey_sl {
     return ^(id key) {
