@@ -57,6 +57,40 @@
         return self;
     };
 }
-
+- (id<NSCoding>  _Nonnull (^)(NSString * _Nonnull))objectForKey_sl {
+    return ^(NSString *key) {
+        id<NSCoding> object = self->_memoryCache.objectForKey_sl(key);
+        return object;
+    };
+}
+- (id<NSCoding>  _Nonnull (^)(NSString * _Nonnull, NSSet<Class> * _Nonnull))objectForKeyAndUnchivedClasses_sl {
+    return ^(NSString *key, NSSet <Class>*classes) {
+        id<NSCoding> object = self.objectForKey_sl(key);
+        if (!object) {
+            object = self->_diskCache.objectForKeyAndUnchivedClasses_sl(key, classes);
+            if (object) {
+                self.memoryCache.cacheObjectWithKey_sl(key, object);
+            }
+        }
+        return object;
+    };
+}
+- (SLCache * _Nonnull (^)(NSString * _Nonnull))removeObjectWithKey {
+    return ^(NSString *key) {
+        if (key.length == 0) return self;
+        
+        self.memoryCache.removeObjectWithKey_sl(key);
+        self.diskCache.removeObjectWithKey_sl(key);
+        
+        return self;
+    };
+}
+- (SLCache * _Nonnull (^)(void))removeAllObjects {
+    return ^{
+        self.memoryCache.removeAllObjects_sl();
+        self.diskCache.removeAllObjects();
+        return self;
+    };
+}
 
 @end

@@ -7,6 +7,7 @@
 
 #import "SLDiskCache.h"
 #import "SLKVStorage.h"
+#import "SLKVStorageItem.h"
 
 /**
  * 磁盘对象集合
@@ -56,6 +57,12 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
     dispatch_queue_t _queue;
     
     SLKVStorage *_kv;
+    
+    NSUInteger _countLimit;
+    NSUInteger _costLimit;
+    NSUInteger _timeLimit;
+    
+    NSTimeInterval _autoTrimInterval;
 }
 #pragma mark - 生命周期
 -(instancetype)initWithPath:(NSString *)path {
@@ -70,16 +77,29 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
     }
     
     self = [super init];
-    if (self) {
-        _path = path;
-        _inlineThreshold = threshold;
-        
-        _lock = dispatch_semaphore_create(1);
-        _queue = dispatch_queue_create("com.sweetloser.cache.disk", DISPATCH_QUEUE_CONCURRENT);
-        
-        _kv = [[SLKVStorage alloc] initWithPath:path type:SLKVStorageTypeSQLite];
-        
+    if (!self) {
+        return nil;
     }
+    
+    SLKVStorageType type;
+    if (threshold == 0) {
+        type = SLKVStorageTypeFile;
+    } else if (threshold == NSUIntegerMax) {
+        type = SLKVStorageTypeSQLite;
+    } else {
+        type = SLKVStorageTypeMixed;
+    }
+    _kv = [[SLKVStorage alloc] initWithPath:path type:type];
+    if (!_kv) return nil;
+    
+    _path = path;
+    _inlineThreshold = threshold;
+    _lock = dispatch_semaphore_create(1);
+    _queue = dispatch_queue_create("com.sweetloser.cache.disk", DISPATCH_QUEUE_CONCURRENT);
+    
+    _countLimit = NSUIntegerMax;
+    _costLimit = NSUIntegerMax;
+    _timeLimit = DBL_MAX;
     
     // 存入map
     _SLDiskCacheSetGlobal(self);
@@ -90,6 +110,38 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
     _inlineThreshold = 0;
     _path = nil;
 }
+
+#pragma mark - 清理缓存
+- (void)_trimRecursively {
+    __weak typeof(self) _weak = self;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_autoTrimInterval * NSEC_PER_SEC)), queue, ^{
+        __strong typeof(_weak) self = _weak;
+        if (!self) return;
+        [self _trimInBackground];
+        [self _trimRecursively];
+    });
+}
+- (void)_trimInBackground {
+    __weak typeof(self) _weak = self;
+    dispatch_async(_queue, ^{
+        __strong typeof(_weak) self = _weak;
+        if (!self) return;
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        [self _trimToCount:self->_countLimit];
+        [self _trimToCost:self->_costLimit];
+        dispatch_semaphore_signal(self->_lock);
+    });
+}
+- (void)_trimToCount:(NSUInteger)countLimit {
+    if (countLimit >= INT_MAX) return;
+    [self->_kv removeItemsToFitCount:(int)countLimit];
+}
+- (void)_trimToCost:(NSUInteger)costLimit {
+    if (costLimit >= INT_MAX) return;
+    [self->_kv removeItemsToFitSize:(int)costLimit];
+}
+
 
 #pragma mark - 业务代码
 - (BOOL (^)(NSString * _Nonnull))containObjectForKey_sl {
@@ -108,18 +160,54 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
         return self;
     };
 }
+- (SLDiskCache * _Nonnull (^)(void))removeAllObjects {
+    return ^{
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        [self->_kv removeAllItems];
+        dispatch_semaphore_signal(self->_lock);
+        return self;
+    };
+}
 - (SLDiskCache * _Nonnull (^)(id<NSCoding> _Nonnull, NSString * _Nonnull))cacheObjectWithKey_sl {
     return ^(id<NSCoding> obj, NSString *key) {
+        // 如果key为空，则不做任何操作
         if (!key) return self;
         
+        // 如果缓存对象为空，则删除key对应的缓存
         if (!obj) {
             self.removeObjectWithKey_sl(key);
         }
         
+        NSError *error;
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:obj requiringSecureCoding:YES error:&error];
+        if (error || value == nil) {
+            NSLog(@"object archive error");
+            return self;
+        }
+        
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        [self->_kv saveItemWithKey:key value:value];
+        dispatch_semaphore_signal(self->_lock);
         
         return self;
     };
 }
-
+- (id<NSCoding>  _Nullable (^)(NSString * _Nonnull, NSSet<Class> * _Nonnull))objectForKeyAndUnchivedClasses_sl {
+    return ^(NSString *key, NSSet <Class>*unarchiveClasses) {
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        SLKVStorageItem *item = [self->_kv getItemForKey:key];
+        dispatch_semaphore_signal(self->_lock);
+        if (!item.value) return (id)nil;
+        
+        id object = nil;
+        NSError *error = nil;
+        object = [NSKeyedUnarchiver unarchivedObjectOfClasses:unarchiveClasses fromData:item.value error:&error];
+        if (error != nil || object == nil) {
+            NSLog(@"object unarchive error; %@", error);
+            return (id)nil;
+        };
+        return object;
+    };
+}
 
 @end

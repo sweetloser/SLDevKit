@@ -51,6 +51,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,copy,readonly)SLDiskCache *(^removeObjectWithKey_sl)(NSString *key);
 
+/**
+ * 移除所有缓存对象
+ */
+@property(nonatomic,copy,readonly)SLDiskCache *(^removeAllObjects)(void);
+
+/**
+ * 获取指定key对应的缓存对象
+ */
+@property(nonatomic,copy,readonly)id<NSCoding> _Nullable (^objectForKeyAndUnchivedClasses_sl)(NSString *key, NSSet <Class>*unarchiveClasses);
+
 @end
 
 NS_ASSUME_NONNULL_END

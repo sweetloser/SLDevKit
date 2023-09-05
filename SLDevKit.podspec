@@ -20,7 +20,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'sweetloser' => '18272160172@163.com' }
   s.source           = { :git => 'https://github.com/sweetloser/SLDevKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
   
   s.source_files = 'SLDevKit/SLDevKit.h'
 

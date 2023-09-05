@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SLKVStorageItem;
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
@@ -23,12 +25,22 @@ typedef enum : NSUInteger {
 
 - (instancetype)initWithPath:(NSString *)path type:(SLKVStorageType)type;
 
-
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 - (BOOL)itemExistsForKey:(NSString *)key;
+
 - (BOOL)removeItemForKey:(NSString *)key;
+- (BOOL)removeAllItems;
+- (BOOL)removeItemsToFitCount:(int)countLimit;
+- (BOOL)removeItemsToFitSize:(int)sizeLimit;
+
+
+- (SLKVStorageItem *_Nullable)getItemForKey:(NSString *)key;
+
+- (BOOL)saveItemWithKey:(NSString *)key value:(NSData *)value;
+- (BOOL)saveItemWithKey:(NSString *)key value:(NSData *)value fileName:(NSString *_Nullable)fileName extendedData:(NSData *_Nullable)extendedData;
+
 
 @end
 
