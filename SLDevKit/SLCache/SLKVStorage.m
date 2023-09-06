@@ -10,6 +10,8 @@
 #import "SLKVStorageItem.h"
 
 static const int kPathLengthMax = PATH_MAX - 64;
+static const NSUInteger kMaxErrorRetryCount = 8;
+static const NSTimeInterval kMinRetryTimeInterval = 2.0;
 
 static NSString *const kDBFileName = @"manifest.sqlite";
 static NSString *const kDBShmFileName = @"manifest.sqlite-shm";
@@ -32,8 +34,9 @@ static NSString *const kTrashDirectoryName = @"trash";
     
     dispatch_queue_t _trashQueue;
     
+    NSTimeInterval _dbLastOpenErrorTime;
+    NSUInteger _dbOpenErrorCount;
 }
-
 
 #pragma mark - 生命周期
 - (instancetype)initWithPath:(NSString *)path type:(SLKVStorageType)type {
@@ -43,7 +46,7 @@ static NSString *const kTrashDirectoryName = @"trash";
         return nil;
     }
     
-    if (type > SLKVStorageTypeFile) {
+    if (type > SLKVStorageTypeMixed) {
         NSLog(@"SLKVStorage init error: invalid type: [%lu].", (unsigned long)type);
         return nil;
     }
@@ -84,6 +87,9 @@ static NSString *const kTrashDirectoryName = @"trash";
     }
     
     return self;
+}
+- (void)dealloc {
+    [self _dbClose];
 }
 
 #pragma mark - 业务代码
@@ -301,34 +307,44 @@ static NSString *const kTrashDirectoryName = @"trash";
         CFDictionaryKeyCallBacks keyCallbacks = kCFCopyStringDictionaryKeyCallBacks;
         CFDictionaryValueCallBacks valueCallbacks = {0};
         _dbStmtCache = CFDictionaryCreateMutable(CFAllocatorGetDefault(), 0, &keyCallbacks, &valueCallbacks);
-        
+        _dbLastOpenErrorTime = 0;
+        _dbOpenErrorCount = 0;
         return YES;
     } else {
         _db = NULL;
+        if (_dbStmtCache) CFRelease(_dbStmtCache);
+        _dbStmtCache = NULL;
+        _dbLastOpenErrorTime = CACurrentMediaTime();
+        _dbOpenErrorCount++;
         return NO;
     }
 }
+/**
+ * 关闭数据库
+ *      1) 释放stmt语句缓存
+ *      2) 销毁已经准备好的语句
+ *      3) 关闭数据库连接
+ */
 - (BOOL)_dbClose {
     if (!_db) return YES;
-    BOOL retry = NO;
+    
     int result = 0;
-    BOOL stmtFinalized = NO;
+    
+    if (_dbStmtCache) CFRelease(_dbStmtCache);
+    _dbStmtCache = NULL;
+    
     do {
-        retry = NO;
+        // 销毁已经准备好的sql语句
+        sqlite3_stmt *stmt;
+        while ((stmt = sqlite3_next_stmt(_db, NULL)) != 0) {
+            sqlite3_finalize(stmt);
+        }
+        // 关闭数据库
         result = sqlite3_close(_db);
-        if (result == SQLITE_BUSY || result == SQLITE_LOCKED) {
-            if (!stmtFinalized) {
-                stmtFinalized = YES;
-                sqlite3_stmt *stmt;
-                while ((stmt = sqlite3_next_stmt(_db, NULL)) != 0) {
-                    sqlite3_finalize(stmt);
-                    retry = YES;
-                }
-            }
-        } else if (result != SQLITE_OK) {
+        if (result != SQLITE_OK) {
             NSLog(@"%s line:%d sqlite close failed (%d).", __FUNCTION__, __LINE__, result);
         }
-    } while (retry);
+    } while (0);
     
     _db = NULL;
     return YES;
@@ -340,11 +356,13 @@ static NSString *const kTrashDirectoryName = @"trash";
 - (BOOL)_dbExecute:(NSString *)sql {
     if (sql.length == 0) return NO;
     
+    if (![self _dbCheck]) return NO;
+    
     char *error = NULL;
     int result = sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &error);
     if (error) {
         NSLog(@"%s line:%d sqlite exec failed (%d).", __FUNCTION__, __LINE__, result);
-        free(error);
+        sqlite3_free(error);
     }
     return result == SQLITE_OK;
 }
@@ -354,7 +372,11 @@ static NSString *const kTrashDirectoryName = @"trash";
 }
 - (BOOL)_dbCheck {
     if (!_db) {
-        return [self _dbOpen] && [self _dbInitialize];
+        if (_dbOpenErrorCount < kMaxErrorRetryCount && CACurrentMediaTime() - _dbLastOpenErrorTime > kMinRetryTimeInterval) {
+            return [self _dbOpen] && [self _dbInitialize];
+        } else {
+            return NO;
+        }
     }
     return YES;
 }

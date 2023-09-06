@@ -24,10 +24,6 @@
     cf.addTo(self.view).slLayout().centerXEqualToView_sl(self.view).centerYEqualToView_sl(self.view).whIs_sl(200, 50);
     cf.emptyBorderColor_sl(@"#00FF00").focusBorderColor_sl(@"#FF0000").enteredBorderColor_sl(@"#0000FF");
     cf.show_sl();
-    
-    SLMemoryCache *cache = [[SLMemoryCache alloc] init];
-    cache.cacheObjectWithKey_sl(@"aaaa", @"11111111");
-    
 }
 
 /*

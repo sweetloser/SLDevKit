@@ -11,15 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLDiskCache : NSObject
 
-@property(nonatomic,copy,readonly)NSString *path;
-@property(nonatomic,assign,readonly)NSUInteger inlineThreshold;
+#pragma mark - 初始化方法
 /**
  * 根据缓存地址初始化一个磁盘缓存对象
  *
  * - Parameter path: 缓存地址（全路径）
  */
 - (instancetype)initWithPath:(NSString *)path;
-
 /**
  * 根据缓存地址和数据大小限定值初始化一个磁盘缓存对象
  *
@@ -29,10 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
  *                默认值：20kb
  */
 - (instancetype)initWithPath:(NSString *)path inlineThreshold:(NSUInteger)threshold;
-
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
+#pragma mark - 配置方法
+
+#pragma mark - 业务方法
 /**
  * 缓存中是否包含指定key
  */

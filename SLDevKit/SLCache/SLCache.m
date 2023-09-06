@@ -42,7 +42,13 @@
     
     return self;
 }
-
+#pragma mark - 缓存配置
+- (SLCache * _Nonnull (^)(NSUInteger))countLimit_sl {
+    return ^(NSUInteger countLimit) {
+        self->_memoryCache.countLimit_sl(countLimit);
+        return self;
+    };
+}
 #pragma mark - 业务代码
 - (BOOL (^)(NSString * _Nonnull))containsObjectForKey_sl {
     return ^(NSString *key) {

@@ -17,10 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithName:(NSString *)name;
 - (instancetype)initWithPath:(NSString *)path;
 
+#pragma mark - 配置方法
+@property(nonatomic,copy,readonly)SLCache *(^countLimit_sl)(NSUInteger countLimit);
+
+#pragma mark - 业务方法
 /**
  * 缓存中是否包含指定key对应的对象
  */
-@property(nonatomic,copy)BOOL(^containsObjectForKey_sl)(NSString *key);
+@property(nonatomic,copy,readonly)BOOL(^containsObjectForKey_sl)(NSString *key);
 
 /**
  * 缓存对象
@@ -58,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy,readonly)SLCache *(^removeObjectWithKey)(NSString *key);
 
 /**
- * 清空缓存对象
+ * 清空缓存
  */
 @property(nonatomic,copy,readonly)SLCache *(^removeAllObjects)(void);
 

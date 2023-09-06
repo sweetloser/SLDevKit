@@ -12,6 +12,7 @@
 #import "SLAutoLayoutVC.h"
 #import "SLChainableVC.h"
 #import "SLCustomFieldVC.h"
+#import "SLCacheVC.h"
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -50,12 +51,15 @@
     if (indexPath.row == 0) {
         SLChainableVC *chaimableVc = [[SLChainableVC alloc] init];
         [self.navigationController pushViewController:chaimableVc animated:YES];
-    }else if (indexPath.row == 1) {
+    } else if (indexPath.row == 1) {
         SLAutoLayoutVC *autoLayoutVc = [[SLAutoLayoutVC alloc] init];
         [self.navigationController pushViewController:autoLayoutVc animated:YES];
-    }else if (indexPath.row == 2) {
+    } else if (indexPath.row == 2) {
         SLCustomFieldVC *customFieldVc = [[SLCustomFieldVC alloc] init];
         [self.navigationController pushViewController:customFieldVc animated:YES];
+    } else if (indexPath.row == 3) {
+        SLCacheVC *cacheVc = [[SLCacheVC alloc] init];
+        [self.navigationController pushViewController:cacheVc animated:YES];
     }
 }
 
