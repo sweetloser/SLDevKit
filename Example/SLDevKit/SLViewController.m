@@ -31,15 +31,17 @@
     SLTestItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testItemCell"];
     if (indexPath.row == 0) {
         cell.itemTitleLabel.text = @"链式调用";
-    } else if (indexPath.row == 1){
+    } else if (indexPath.row == 1) {
         cell.itemTitleLabel.text = @"自动布局";
-    }else if (indexPath.row == 2){
+    } else if (indexPath.row == 2) {
         cell.itemTitleLabel.text = @"自定义验证码输入框";
+    } else if (indexPath.row == 3) {
+        cell.itemTitleLabel.text = @"缓存";
     }
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 45;

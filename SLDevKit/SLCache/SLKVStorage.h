@@ -32,6 +32,8 @@ typedef enum : NSUInteger {
 
 - (BOOL)removeItemForKey:(NSString *)key;
 - (BOOL)removeAllItems;
+
+- (BOOL)removeItemsEarlierThanTime:(int)time;
 - (BOOL)removeItemsToFitCount:(int)countLimit;
 - (BOOL)removeItemsToFitSize:(int)sizeLimit;
 

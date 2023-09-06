@@ -8,6 +8,7 @@
 #import "SLDiskCache.h"
 #import "SLKVStorage.h"
 #import "SLKVStorageItem.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 /**
  * 磁盘对象集合
@@ -49,7 +50,32 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
     [_globalMapTables setObject:cache forKey:cache.path];
     dispatch_semaphore_signal(_globalMapTableLock);
 }
-
+static NSString *_SLDiskCacheMD5(NSString *string) {
+    if (!string) return nil;
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(data.bytes, (CC_LONG)data.length, result);
+    return [NSString stringWithFormat:
+                @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+                result[0],  result[1],  result[2],  result[3],
+                result[4],  result[5],  result[6],  result[7],
+                result[8],  result[9],  result[10], result[11],
+                result[12], result[13], result[14], result[15]
+            ];
+}
+static NSString *_SLDiskCachemd5(NSString *string) {
+    if (!string) return nil;
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(data.bytes, (CC_LONG)data.length, result);
+    return [NSString stringWithFormat:
+                @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+                result[0],  result[1],  result[2],  result[3],
+                result[4],  result[5],  result[6],  result[7],
+                result[8],  result[9],  result[10], result[11],
+                result[12], result[13], result[14], result[15]
+            ];
+}
 
 
 @implementation SLDiskCache {
@@ -100,6 +126,7 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
     _countLimit = NSUIntegerMax;
     _costLimit = NSUIntegerMax;
     _timeLimit = DBL_MAX;
+    _autoTrimInterval = 60.f;
     
     // 存入map
     _SLDiskCacheSetGlobal(self);
@@ -130,6 +157,7 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
         dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
         [self _trimToCount:self->_countLimit];
         [self _trimToCost:self->_costLimit];
+        [self _trimToTime:self->_timeLimit];
         dispatch_semaphore_signal(self->_lock);
     });
 }
@@ -140,6 +168,22 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
 - (void)_trimToCost:(NSUInteger)costLimit {
     if (costLimit >= INT_MAX) return;
     [self->_kv removeItemsToFitSize:(int)costLimit];
+}
+- (void)_trimToTime:(NSTimeInterval)timeLimit {
+    if (timeLimit <= 0) {
+        [self removeAllObjects];
+        return;
+    }
+    
+    long timestamp = time(NULL);
+    if (timestamp <= timeLimit) {
+        return;
+    }
+    
+    long timeLine = timestamp - timeLimit;
+    if (timeLine >= INT_MAX) return;
+    
+    [self->_kv removeItemsEarlierThanTime:(int)timeLine];
 }
 
 
@@ -177,7 +221,6 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
         if (!obj) {
             self.removeObjectWithKey_sl(key);
         }
-        
         NSError *error;
         NSData *value = [NSKeyedArchiver archivedDataWithRootObject:obj requiringSecureCoding:YES error:&error];
         if (error || value == nil) {
@@ -185,8 +228,15 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
             return self;
         }
         
+        NSString *fileName = nil;
+        if (self->_kv.type != SLKVStorageTypeSQLite) {
+            // 当缓存策略不为仅数据库缓存时，需考虑是否使用文件缓存
+            if (value.length > self.inlineThreshold) {
+                fileName = [self _fileNameForKey:key];
+            }
+        }
         dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
-        [self->_kv saveItemWithKey:key value:value];
+        [self->_kv saveItemWithKey:key value:value fileName:fileName extendedData:nil];
         dispatch_semaphore_signal(self->_lock);
         
         return self;
@@ -208,6 +258,12 @@ static void _SLDiskCacheSetGlobal(SLDiskCache *cache) {
         };
         return object;
     };
+}
+
+#pragma mark - tools
+- (NSString *)_fileNameForKey:(NSString *)key {
+    NSString *fileName = _SLDiskCachemd5(key);
+    return fileName;
 }
 
 @end

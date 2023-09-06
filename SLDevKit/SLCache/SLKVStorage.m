@@ -155,13 +155,37 @@ static NSString *const kTrashDirectoryName = @"trash";
             } else {
                 break;
             }
-            
             if (!success) break;
         }
     } while (totalSize > sizeLimit && items.count > 0 && success);
     
     if (success) [self _dbCheckpoint];
     return success;
+}
+- (BOOL)removeItemsEarlierThanTime:(int)time {
+    if (time == 0) return [self removeAllItems];
+    
+    if (time == INT_MAX) return YES;
+    
+    if (_type == SLKVStorageTypeSQLite) {
+        // 仅数据库缓存
+        if ([self _dbDeleteItemsWithTimeEarlierThan:time]) {
+            [self _dbCheckpoint];
+            return YES;
+        }
+    }else {
+        // 数据库缓存+文件缓存
+        NSArray <NSString *>*fileNames = [self _dbGetFileNamesWithTimeEarlierThan:time];
+        for (NSString *fileName in fileNames) {
+            [self _fileDeleteWithName:fileName];
+        }
+        if ([self _dbDeleteItemsWithTimeEarlierThan:time]) {
+            [self _dbCheckpoint];
+            return YES;
+        }
+    }
+    
+    return YES;
 }
 - (BOOL)removeAllItems {
     if (![self _dbClose]) return NO;
@@ -175,6 +199,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     return YES;
 }
 - (BOOL)saveItemWithKey:(NSString *)key value:(NSData *)value {
+    
     return [self saveItemWithKey:key value:value fileName:nil extendedData:nil];
 }
 
@@ -532,6 +557,34 @@ static NSString *const kTrashDirectoryName = @"trash";
     }
     return nil;
 }
+- (NSArray <NSString *>*)_dbGetFileNamesWithTimeEarlierThan:(int)time {
+    NSString *sql = @"select filename from manifest where last_access_time < ?1 and filename is not null;";
+    
+    sqlite3_stmt *stmt = [self _dbPrepareStmt:sql];
+    if (!stmt) return nil;
+    sqlite3_bind_int(stmt, 0, time);
+    
+    NSMutableArray <NSString *>*fileNames = [NSMutableArray new];
+    do {
+        int result = sqlite3_step(stmt);
+        if (result == SQLITE_ROW) {
+            char *fileName = (char *)sqlite3_column_text(stmt, 0);
+            if (fileName && *fileName != 0) {
+                NSString *fileNameStr = [NSString stringWithUTF8String:fileName];
+                
+                if (fileNameStr) [fileNames addObject:fileNameStr];
+            }
+        } else if (result == SQLITE_DONE) {
+            break;
+        } else {
+            NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+            fileNames = nil;
+            break;
+        }
+    } while (1);
+    
+    return fileNames;
+}
 - (int)_dbGetTotalItemSize {
     NSString *sql = @"select sum(size) from manifest;";
     sqlite3_stmt *stmt = [self _dbPrepareStmt:sql];
@@ -539,7 +592,7 @@ static NSString *const kTrashDirectoryName = @"trash";
     
     int result = sqlite3_step(stmt);
     if (result != SQLITE_ROW) {
-        NSLog(@"%s line:%d sqlite query error(%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return -1;
     }
     return sqlite3_column_int(stmt, 0);
@@ -550,9 +603,23 @@ static NSString *const kTrashDirectoryName = @"trash";
     if (!stmt) return -1;
     int result = sqlite3_step(stmt);
     if (result != SQLITE_ROW) {
-        NSLog(@"%s line:%d sqlite query error(%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        NSLog(@"%s line:%d sqlite query error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
         return -1;
     }
     return sqlite3_column_int(stmt, 0);
+}
+- (BOOL)_dbDeleteItemsWithTimeEarlierThan:(int)time {
+    NSString *sql = @"delete from manifest where last_access_time < ?1;";
+    sqlite3_stmt *stmt = [self _dbPrepareStmt:sql];
+    if (!stmt) return NO;
+    
+    sqlite3_bind_int(stmt, 0, time);
+    
+    int result = sqlite3_step(stmt);
+    if (result != SQLITE_DONE) {
+        NSLog(@"%s line:%d sqlite delete error (%d): %s", __FUNCTION__, __LINE__, result, sqlite3_errmsg(_db));
+        return NO;
+    }
+    return YES;
 }
 @end
