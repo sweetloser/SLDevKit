@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 #pragma mark - 配置方法
+@property(nonatomic,copy,readonly)SLDiskCache *(^countLimit_sl)(NSUInteger countLimit);
+@property(nonatomic,copy,readonly)SLDiskCache *(^timeLimit_sl)(NSTimeInterval time);
 
 #pragma mark - 业务方法
 /**

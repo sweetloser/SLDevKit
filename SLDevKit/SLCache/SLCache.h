@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 配置方法
 @property(nonatomic,copy,readonly)SLCache *(^countLimit_sl)(NSUInteger countLimit);
+@property(nonatomic,copy,readonly)SLCache *(^timeLimit_sl)(NSTimeInterval time);
 
 #pragma mark - 业务方法
 /**

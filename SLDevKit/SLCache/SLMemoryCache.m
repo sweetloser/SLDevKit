@@ -72,43 +72,57 @@
 #pragma mark - 业务配置
 - (SLMemoryCache * _Nonnull (^)(NSUInteger))countLimit_sl {
     return ^(NSUInteger countLimit) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_countLimit = countLimit;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(NSTimeInterval))timeLimit_sl {
     return ^(NSTimeInterval timeLimit) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_timeLimit = timeLimit;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(NSTimeInterval))autoTrimInterval_sl {
     return ^(NSTimeInterval time) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_autoTrimInterval = time;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(BOOL))releaseAsynchronously_sl {
     return ^(BOOL flag) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_releaseAsynchronously = flag;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(BOOL))releaseOnMainThread_sl {
     return ^(BOOL flag) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_releaseOnMainThread = flag;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(BOOL))shouldRemoveAllObjectsOnMemoryWarning_sl {
     return ^(BOOL flag) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_shouldRemoveAllObjectsOnMemoryWarning = flag;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }
 - (SLMemoryCache * _Nonnull (^)(BOOL))shouldRemoveAllObjectsWhenEnteringBackground_sl {
     return ^(BOOL flag) {
+        pthread_mutex_lock(&self->_threadLock);
         self->_shouldRemoveAllObjectsWhenEnteringBackground = flag;
+        pthread_mutex_unlock(&self->_threadLock);
         return self;
     };
 }

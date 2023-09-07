@@ -46,6 +46,14 @@
 - (SLCache * _Nonnull (^)(NSUInteger))countLimit_sl {
     return ^(NSUInteger countLimit) {
         self->_memoryCache.countLimit_sl(countLimit);
+        self->_diskCache.countLimit_sl(countLimit);
+        return self;
+    };
+}
+- (SLCache * _Nonnull (^)(NSTimeInterval))timeLimit_sl {
+    return ^(NSTimeInterval time) {
+        self->_memoryCache.timeLimit_sl(time);
+        self->_diskCache.timeLimit_sl(time);
         return self;
     };
 }
@@ -71,6 +79,9 @@
 }
 - (id<NSCoding>  _Nonnull (^)(NSString * _Nonnull, NSSet<Class> * _Nonnull))objectForKeyAndUnchivedClasses_sl {
     return ^(NSString *key, NSSet <Class>*classes) {
+        
+        if (key == nil || classes == nil) return (id<NSCoding>)nil;
+        
         id<NSCoding> object = self.objectForKey_sl(key);
         if (!object) {
             object = self->_diskCache.objectForKeyAndUnchivedClasses_sl(key, classes);

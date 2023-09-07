@@ -112,62 +112,24 @@ static NSString *_SLDiskCachemd5(NSString *string);
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillTerminateNotification object:nil];
 }
-#pragma mark - 通知
-- (void)_appWillBeTerminated {
-    dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
-    self->_kv = nil;
-    dispatch_semaphore_signal(self->_lock);
-}
-#pragma mark - 清理缓存
-- (void)_trimRecursively {
-    __weak typeof(self) _weak = self;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_autoTrimInterval * NSEC_PER_SEC)), queue, ^{
-        __strong typeof(_weak) self = _weak;
-        if (!self) return;
-        
-        [self _trimInBackground];
-        [self _trimRecursively];
-    });
-}
-- (void)_trimInBackground {
-    NSLog(@"清理缓存");
-    __weak typeof(self) _weak = self;
-    dispatch_async(_queue, ^{
-        __strong typeof(_weak) self = _weak;
-        if (!self) return;
-        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
-        [self _trimToCount:self->_countLimit];
-        [self _trimToCost:self->_costLimit];
-        [self _trimToTime:self->_timeLimit];
-        dispatch_semaphore_signal(self->_lock);
-    });
-}
-- (void)_trimToCount:(NSUInteger)countLimit {
-    if (countLimit >= INT_MAX) return;
-    [self->_kv removeItemsToFitCount:(int)countLimit];
-}
-- (void)_trimToCost:(NSUInteger)costLimit {
-    if (costLimit >= INT_MAX) return;
-    [self->_kv removeItemsToFitSize:(int)costLimit];
-}
-- (void)_trimToTime:(NSTimeInterval)timeLimit {
-    if (timeLimit <= 0) {
-        [self removeAllObjects];
-        return;
-    }
-    
-    long timestamp = time(NULL);
-    if (timestamp <= timeLimit) {
-        return;
-    }
-    
-    long timeLine = timestamp - timeLimit;
-    if (timeLine >= INT_MAX) return;
-    
-    [self->_kv removeItemsEarlierThanTime:(int)timeLine];
-}
 
+#pragma mark - 配置代码
+- (SLDiskCache * _Nonnull (^)(NSUInteger))countLimit_sl {
+    return ^(NSUInteger countLimit) {
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        self->_countLimit = countLimit;
+        dispatch_semaphore_signal(self->_lock);
+        return self;
+    };
+}
+- (SLDiskCache * _Nonnull (^)(NSTimeInterval))timeLimit_sl {
+    return ^(NSTimeInterval time) {
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        self->_timeLimit = time;
+        dispatch_semaphore_signal(self->_lock);
+        return self;
+    };
+}
 
 #pragma mark - 业务代码
 - (BOOL (^)(NSString * _Nonnull))containObjectForKey_sl {
@@ -240,6 +202,62 @@ static NSString *_SLDiskCachemd5(NSString *string);
         };
         return object;
     };
+}
+
+#pragma mark - 通知
+- (void)_appWillBeTerminated {
+    dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+    self->_kv = nil;
+    dispatch_semaphore_signal(self->_lock);
+}
+
+#pragma mark - 清理缓存
+- (void)_trimRecursively {
+    __weak typeof(self) _weak = self;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_autoTrimInterval * NSEC_PER_SEC)), queue, ^{
+        __strong typeof(_weak) self = _weak;
+        if (!self) return;
+        
+        [self _trimInBackground];
+        [self _trimRecursively];
+    });
+}
+- (void)_trimInBackground {
+    __weak typeof(self) _weak = self;
+    dispatch_async(_queue, ^{
+        __strong typeof(_weak) self = _weak;
+        if (!self) return;
+        dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER);
+        [self _trimToCount:self->_countLimit];
+        [self _trimToCost:self->_costLimit];
+        [self _trimToTime:self->_timeLimit];
+        dispatch_semaphore_signal(self->_lock);
+    });
+}
+- (void)_trimToCount:(NSUInteger)countLimit {
+    if (countLimit >= INT_MAX) return;
+    [self->_kv removeItemsToFitCount:(int)countLimit];
+}
+- (void)_trimToCost:(NSUInteger)costLimit {
+    if (costLimit >= INT_MAX) return;
+    [self->_kv removeItemsToFitSize:(int)costLimit];
+}
+- (void)_trimToTime:(NSTimeInterval)timeLimit {
+    if (timeLimit <= 0) {
+        [self removeAllObjects];
+        return;
+    }
+    
+    long timestamp = time(NULL);
+    if (timestamp <= timeLimit) {
+        return;
+    }
+    
+    long timeLine = timestamp - timeLimit;
+    if (timeLine >= INT_MAX) return;
+    
+    [self->_kv removeItemsEarlierThanTime:(int)timeLine];
 }
 
 #pragma mark - tools
