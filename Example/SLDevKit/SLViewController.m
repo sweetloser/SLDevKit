@@ -13,6 +13,7 @@
 #import "SLChainableVC.h"
 #import "SLCustomFieldVC.h"
 #import "SLCacheVC.h"
+#import <Aspects.h>
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -24,6 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.class aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^{
+        NSLog(@"viewWillAppear1111");
+    } error:nil];
+    [self.class aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^{
+        NSLog(@"viewWillAppear2222");
+    } error:nil];
+    [self aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^{
+        NSLog(@"~~~");
+    } error:nil];
     [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
 }
 

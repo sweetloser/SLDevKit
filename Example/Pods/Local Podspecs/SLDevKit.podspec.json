@@ -1,9 +1,9 @@
 {
   "name": "SLDevKit",
-  "version": "1.0.10",
-  "summary": "A short description of SLDevKit.",
+  "version": "1.0.12",
+  "summary": "iOS开发基础库集合.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/sweetloser/SLDevKit",
+  "homepage": "https://github.com/sweetloser/SLDevKit.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sweetloser/SLDevKit.git",
-    "tag": "1.0.10"
+    "tag": "1.0.12"
   },
   "platforms": {
     "ios": "11.0"
@@ -120,6 +120,15 @@
         ]
       },
       "source_files": "SLDevKit/SLCache/*.{h,m}"
+    },
+    {
+      "name": "SLHooks",
+      "dependencies": {
+        "SLDevKit/SLDefs": [
+
+        ]
+      },
+      "source_files": "SLDevKit/SLHooks/*.{h,m}"
     }
   ]
 }

@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/sweetloser/SLDevKit'
+  s.homepage         = 'https://github.com/sweetloser/SLDevKit.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'sweetloser' => '18272160172@163.com' }
   s.source           = { :git => 'https://github.com/sweetloser/SLDevKit.git', :tag => s.version.to_s }
@@ -80,6 +80,11 @@ TODO: Add long description of the pod here.
   s.subspec "SLCache" do |scc|
     scc.dependency 'SLDevKit/SLDefs'
     scc.source_files = 'SLDevKit/SLCache/*.{h,m}'
+  end
+  
+  s.subspec "SLHooks" do |shk|
+    shk.dependency 'SLDevKit/SLDefs'
+    shk.source_files = 'SLDevKit/SLHooks/*.{h,m}'
   end
   
 #  s.subspec "SLBackTrace" do |sbt|

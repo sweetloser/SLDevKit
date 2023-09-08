@@ -1,39 +1,42 @@
 PODS:
   - Aspects (1.4.1)
-  - SLDevKit (1.0.10):
-    - SLDevKit/SLAutoLayout (= 1.0.10)
-    - SLDevKit/SLCache (= 1.0.10)
-    - SLDevKit/SLCustomField (= 1.0.10)
-    - SLDevKit/SLDefs (= 1.0.10)
-    - SLDevKit/SLFoundation (= 1.0.10)
-    - SLDevKit/SLUIKit (= 1.0.10)
-    - SLDevKit/SLUpdateAlert (= 1.0.10)
-    - SLDevKit/SLUtils (= 1.0.10)
-  - SLDevKit/SLAutoLayout (1.0.10):
+  - SLDevKit (1.0.12):
+    - SLDevKit/SLAutoLayout (= 1.0.12)
+    - SLDevKit/SLCache (= 1.0.12)
+    - SLDevKit/SLCustomField (= 1.0.12)
+    - SLDevKit/SLDefs (= 1.0.12)
+    - SLDevKit/SLFoundation (= 1.0.12)
+    - SLDevKit/SLHooks (= 1.0.12)
+    - SLDevKit/SLUIKit (= 1.0.12)
+    - SLDevKit/SLUpdateAlert (= 1.0.12)
+    - SLDevKit/SLUtils (= 1.0.12)
+  - SLDevKit/SLAutoLayout (1.0.12):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLCache (1.0.10):
+  - SLDevKit/SLCache (1.0.12):
     - SLDevKit/SLDefs
-  - SLDevKit/SLCustomField (1.0.10):
+  - SLDevKit/SLCustomField (1.0.12):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLDefs (1.0.10)
-  - SLDevKit/SLFoundation (1.0.10):
+  - SLDevKit/SLDefs (1.0.12)
+  - SLDevKit/SLFoundation (1.0.12):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLUIKit (1.0.10):
+  - SLDevKit/SLHooks (1.0.12):
+    - SLDevKit/SLDefs
+  - SLDevKit/SLUIKit (1.0.12):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUpdateAlert (1.0.10):
+  - SLDevKit/SLUpdateAlert (1.0.12):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLUtils (1.0.10):
+  - SLDevKit/SLUtils (1.0.12):
     - SLDevKit/SLDefs
   - YYCache (1.0.4)
 
@@ -53,7 +56,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  SLDevKit: 5f14da9c3221a80aefecc7e5bf6e61fb295c1b2f
+  SLDevKit: 6617289f05182965e7c4827491b65c096c4e1c6d
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: 866fd3fdab1eacd2d10412e2c6248e2fd11243ec
