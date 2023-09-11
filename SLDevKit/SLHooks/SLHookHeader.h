@@ -9,16 +9,14 @@
 #define SLHookHeader_h
 
 FOUNDATION_EXTERN const NSString *kSLHookErrorDomain;
+FOUNDATION_EXTERN const NSString *kSLHookSubclassSuffix;
+FOUNDATION_EXTERN const NSString *kSLHookForwardInvocationSelectorName;
+
+#pragma mark - block 解析
 
 typedef void(*__SLHook_BlockInvokeFunction)(void *, ...);
 typedef void(*__SLHook_BlockCopyFunction)(void *, const void *);
 typedef void(*__SLHook_BlockDisposeFunction)(const void *);
-
-struct __SLHook_Block_descriptor_1 {
-    uintptr_t reserved;
-    uintptr_t size;
-};
-
 // flags标志位的含义
 enum {
     __SLHook_BLOCK_DEALLOCATING =      (0x0001),  // runtime
@@ -33,12 +31,15 @@ enum {
     __SLHook_BLOCK_HAS_EXTENDED_LAYOUT=(1 << 31)  // compiler
 };
 
+struct __SLHook_Block_descriptor_1 {
+    uintptr_t reserved;
+    uintptr_t size;
+};
 struct __SLHook_Block_descriptor_2 {
     // 当 flags & BLOCK_HAS_COPY_DISPOSE 为真时，该结构体存在
     __SLHook_BlockCopyFunction copy;
     __SLHook_BlockDisposeFunction dispose;
 };
-
 struct __SLHook_Block_descriptor_3 {
     // 当 flags & BLOCK_HAS_SIGNATURE 为真时，该结构体存在
     const char *signature;
@@ -52,6 +53,9 @@ typedef struct __SLHook_BlockLayout {
     __SLHook_BlockInvokeFunction invoke;                  // block的imp
     struct __SLHook_Block_descriptor_1 *descriptor;
 } *__SLHook_BlockLayout;
+
+
+#define SLHookPositionOptionsFilter 0x7
 
 typedef NS_OPTIONS(NSUInteger, SLHookOptions) {
     SLHookPositionOptionBefore = 0,

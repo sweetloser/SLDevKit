@@ -6,4 +6,6 @@
 //
 #import <Foundation/Foundation.h>
 
-NSString *kSLHookErrorDomain = @"SLHookErrorDomain";
+const NSString *kSLHookErrorDomain = @"SLHookErrorDomain";
+const NSString *kSLHookSubclassSuffix = @"_SLHook_";
+const NSString *kSLHookForwardInvocationSelectorName = @"__slhook_forwardInvocation:";

@@ -17,7 +17,7 @@
 #import "SLAutoLayout.h"
 #import "SLUpdateAlertView.h"
 #import "SLCache.h"
-
+#import "NSObject+SLHooks.h"
 //#import "SLBackTrace.h"
 
 #endif /* SLDevKit_h */
