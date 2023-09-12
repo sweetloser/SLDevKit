@@ -7,10 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import "SLHookHeader.h"
+#import "SLHookInfo.h"
+#import "SLHookUnit.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol SLHookUnit, SLHookInfo;
 
 @interface NSObject (SLHooks)
 

@@ -27,13 +27,14 @@
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
     
-    [self.superclass sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, BOOL b) {
+    id<SLHookUnit> hookUnit = [self.superclass sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, BOOL b) {
         NSLog(@"你相信水吗？");
     } error:nil];
     NSError *error;
-    [self.class sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, NSString *b) {
+    id<SLHookUnit> hookUnit1 = [self.class sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, NSString *b) {
         NSLog(@"你相信光吗？");
     } error:&error];
+    [hookUnit remove];
     
 //    [self.superclass aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionBefore usingBlock:^{
 //        NSLog(@"1111111111111111111111");
