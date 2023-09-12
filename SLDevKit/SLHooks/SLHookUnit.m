@@ -8,10 +8,16 @@
 #import "SLHookUnit.h"
 #import <objc/message.h>
 #import "SLHookHeader.h"
+#import "SLHookInfo.h"
 
 static NSMethodSignature *sl_blockMethodSignature(id block, __strong NSError ** error);
 static BOOL sl_isBlockSignatureCompatibleWithSelector(NSMethodSignature *blockSignature, id object, SEL selector, __strong NSError **error);
+FOUNDATION_EXTERN BOOL sl_removeHook(SLHookUnit *hookUnit, NSError **error);
 @implementation SLHookUnit
+
+- (BOOL)remove {
+    return sl_removeHook(self, NULL);
+}
 
 + (instancetype)hookUnitWithSelector:(SEL)selector object:(id)object options:(SLHookOptions)options block:(id)block error:(NSError *__strong  _Nullable *)errror {
     NSMethodSignature *blockSignature = sl_blockMethodSignature(block, errror);
@@ -26,9 +32,40 @@ static BOOL sl_isBlockSignatureCompatibleWithSelector(NSMethodSignature *blockSi
         hookUnit.block = block;
         hookUnit.blockSignature = blockSignature;
         hookUnit.object = object;
+        hookUnit.options = options;
     }
     
     return hookUnit;
+}
+
+- (BOOL)invokeWithInfo:(id<SLHookInfo>)info {
+    NSInvocation *blockInvocation = [NSInvocation invocationWithMethodSignature:self.blockSignature];
+    NSInvocation *originalInvocation = [info originalInvocation];
+    
+    NSUInteger numberOfArguments = self.blockSignature.numberOfArguments;
+    
+    // 将hookinfo对象设置为block的第二个参数
+    if (numberOfArguments > 1) {
+        [blockInvocation setArgument:&info atIndex:1];
+    }
+    
+    // 依次将原方法调用的参数赋值给block
+    void *argBuff = NULL;
+    for (NSUInteger idx = 2; idx < numberOfArguments; idx++) {
+        const char *type = [originalInvocation.methodSignature getArgumentTypeAtIndex:idx];
+        NSUInteger argSize;
+        NSGetSizeAndAlignment(type, &argSize, NULL);
+        if (!(argBuff = reallocf(argBuff, argSize))) {
+            return NO;
+        }
+        [originalInvocation getArgument:argBuff atIndex:idx];
+        [blockInvocation setArgument:argBuff atIndex:idx];
+    }
+    
+    [blockInvocation invokeWithTarget:self.block];
+    
+    if (argBuff) free(argBuff);
+    return YES;
 }
 
 @end

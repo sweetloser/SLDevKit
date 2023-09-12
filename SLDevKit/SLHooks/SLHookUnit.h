@@ -12,16 +12,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SLHookUnit <NSObject>
+
+- (BOOL)remove;
+
+@end
+
 /**
  * 一个hook单元
  *
  */
-@interface SLHookUnit : NSObject
+@interface SLHookUnit : NSObject<SLHookUnit>
 
-@property(nonatomic,assign)SEL selector;
-@property(nonatomic,strong)id block;
-@property(nonatomic,strong)NSMethodSignature *blockSignature;
-@property(nonatomic,weak)id object;
+@property(nonatomic,assign,nullable)SEL selector;
+@property(nonatomic,strong,nullable)id block;
+@property(nonatomic,strong,nullable)NSMethodSignature *blockSignature;
+@property(nonatomic,weak,nullable)id object;
 @property(nonatomic,assign)SLHookOptions options;
 
 + (instancetype)hookUnitWithSelector:(SEL)selector object:(id)object options:(SLHookOptions)options block:(id)block error:(__strong NSError **)errror;

@@ -66,9 +66,11 @@ typedef NS_OPTIONS(NSUInteger, SLHookOptions) {
 };
 
 typedef NS_ENUM(NSUInteger, SLHookErrorCode) {
-    SLHookErrorSelectorBlacklisted,         /// 函数被列入黑名单；黑名单如下：release, autorelease, retain, forwardInvocation:
-    SLHookErrorDoesNotRespondToSelector,    /// 函数未被实现
-    SLHookErrorMissingBlockSignature,       /// block缺少方法签名
+    SLHookErrorSelectorBlacklisted,                     /// 函数被列入黑名单；黑名单如下：release, autorelease, retain, forwardInvocation:
+    SLHookErrorDoesNotRespondToSelector,                /// 函数未被实现
+    SLHookErrorMissingBlockSignature,                   /// block缺少方法签名
+    SLHookErrorFailedToAllocateClassPair,               /// 动态创建子类失败
+    SLHookErrorSelectorAlreadyHookedInClassHierarchy,   /// 方法已经在类的继承链中被hook
 };
 
 

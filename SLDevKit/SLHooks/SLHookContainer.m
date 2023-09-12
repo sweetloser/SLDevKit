@@ -10,8 +10,8 @@
 
 @implementation SLHookContainer
 
-- (void)addHookUnit:(SLHookUnit *)hookUnit withOptions:(SLHookOptions)hookOptions {
-    SLHookOptions positions = hookOptions & SLHookPositionOptionsFilter;
+- (void)addHookUnit:(SLHookUnit *)hookUnit {
+    SLHookOptions positions = hookUnit.options & SLHookPositionOptionsFilter;
     if (positions == SLHookPositionOptionBefore) {
         self.beforeHooks = [self.beforeHooks arrayByAddingObject:hookUnit];
     } else if (positions == SLHookPositionOptionInstead) {
@@ -20,6 +20,37 @@
         self.afterHooks = [self.afterHooks arrayByAddingObject:hookUnit];
     }
 }
+
+- (BOOL)removeHookUnit:(SLHookUnit *)hookUnit {
+    SLHookOptions positions = hookUnit.options & SLHookPositionOptionsFilter;
+    if (positions == SLHookPositionOptionBefore) {
+        NSUInteger idx = [self.beforeHooks indexOfObjectIdenticalTo:hookUnit];
+        if (idx != NSNotFound) {
+            NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.beforeHooks];
+            [newArray removeObjectAtIndex:idx];
+            self.beforeHooks = newArray;
+            return YES;
+        }
+    } else if (positions == SLHookPositionOptionInstead) {
+        NSUInteger idx = [self.insteadHooks indexOfObjectIdenticalTo:hookUnit];
+        if (idx != NSNotFound) {
+            NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.insteadHooks];
+            [newArray removeObjectAtIndex:idx];
+            self.insteadHooks = newArray;
+            return YES;
+        }
+    } else if (positions == SLHookPositionOptionAfter) {
+        NSUInteger idx = [self.afterHooks indexOfObjectIdenticalTo:hookUnit];
+        if (idx != NSNotFound) {
+            NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.afterHooks];
+            [newArray removeObjectAtIndex:idx];
+            self.afterHooks = newArray;
+            return YES;
+        }
+    }
+    return NO;
+}
+
 - (NSArray *)beforeHooks {
     if (!_beforeHooks) return @[];
     return _beforeHooks;

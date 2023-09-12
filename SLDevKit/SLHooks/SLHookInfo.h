@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol SLHookInfo <NSObject>
 
+- (id)instance;
+- (NSInvocation *)originalInvocation;
+
 @end
 
 @interface SLHookInfo : NSObject<SLHookInfo>

@@ -25,15 +25,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.class sl_hookSelector:@selector(viewDidAppear:) withHookOptions:SLHookPositionOptionAfter replaceBlock:^{
-        NSLog(@"sl~~~");
-    } error:nil];
-    [self.class aspect_hookSelector:@selector(viewDidAppear:) withOptions:AspectPositionAfter usingBlock:^{
-        NSLog(@"~~~");
-    } error:nil];
     [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
+    
+    [self.superclass sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, BOOL b) {
+        NSLog(@"你相信水吗？");
+    } error:nil];
+    NSError *error;
+    [self.class sl_hookSelector:@selector(viewWillAppear:) withHookOptions:SLHookPositionOptionBefore | SLHookOptionRemoveAfterCalled replaceBlock:^(id<SLHookInfo>info, NSString *b) {
+        NSLog(@"你相信光吗？");
+    } error:&error];
+    
+//    [self.superclass aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionBefore usingBlock:^{
+//        NSLog(@"1111111111111111111111");
+//    } error:nil];
+//    [self.class aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionBefore usingBlock:^{
+//        NSLog(@"22222222222222");
+//    } error:nil];
+    [self willBeHooked:@"11111"];
+    [self willBeHooked:@"11111"];
 }
+
+- (void)willBeHooked:(NSString *)a {
+    NSLog(@"啥也不是");
+}
+
 
 #pragma mark - tableview代理方法
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

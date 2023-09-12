@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SLHookUnit, SLHookInfo;
+
 @interface NSObject (SLHooks)
 
-+ (BOOL)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
-- (BOOL)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
++ (id<SLHookUnit>)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
+- (id<SLHookUnit>)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
 
 @end
 

@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)hasHooks;
 
-- (void)addHookUnit:(SLHookUnit *)hookUnit withOptions:(SLHookOptions)hookOptions;
+- (void)addHookUnit:(SLHookUnit *)hookUnit;
+- (BOOL)removeHookUnit:(SLHookUnit *)hookUnit;
 
 @end
 
