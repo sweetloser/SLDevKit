@@ -6,7 +6,7 @@
 //  Copyright (c) 2022 sweetloser. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface SLAppDelegate : UIResponder <UIApplicationDelegate>
 

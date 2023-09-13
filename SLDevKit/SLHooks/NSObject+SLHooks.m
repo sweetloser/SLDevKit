@@ -19,7 +19,6 @@
 static NSString *const SLHookMessagePrefix = @"slhook_";
 
 #pragma mark - C函数定义
-static NSMutableDictionary *sl_getSwizzledClassesDict(void);
 static void sl_performLocked(dispatch_block_t block);
 static BOOL sl_isSelectorAllowedAndTrack(NSObject *self, SEL selector, SLHookOptions options, __strong NSError **error);
 static id sl_addHook(id self, SEL selector, SLHookOptions options, id block, __strong NSError **error);
@@ -27,6 +26,7 @@ static SLHookContainer *sl_getContainerForObject(NSObject *self, SEL selector);
 static void sl_destroyContainerForObject(id<NSObject> self, SEL selector);
 static SEL sl_aliasForSelector(SEL selector);
 static Class sl_hookClass(NSObject *self, __strong NSError **error);
+static NSMutableDictionary *sl_getSwizzledClassesDict(void);
 static void _sl_modifySwizzledClasses(void(^block)(NSMutableSet *swizzledClasses));
 static Class sl_swizzleClassInPlace(Class klass);
 static void sl_swizzleForwardInvocation(Class klass);
@@ -55,7 +55,7 @@ static void sl_cleanupClass(NSObject *self, SEL selector);
 
 @end
 
-#pragma mark - 对执行的代码进行加锁
+#pragma mark - 对执行的代码（block）进行加锁
 static void sl_performLocked(dispatch_block_t block) {
     static dispatch_once_t onceToken;
     static dispatch_semaphore_t _dsema;
@@ -190,6 +190,9 @@ static BOOL sl_isSelectorAllowedAndTrack(NSObject *self, SEL selector, SLHookOpt
     return YES;
 }
 
+/**
+ * 获取全局的已被hook的类的追踪器；存储方式：{class: SLHookTracker}
+ */
 static NSMutableDictionary *sl_getSwizzledClassesDict(void) {
     static dispatch_once_t onceToken;
     static NSMutableDictionary *swizzledClassesDict;
@@ -200,11 +203,11 @@ static NSMutableDictionary *sl_getSwizzledClassesDict(void) {
 }
 
 /**
- * 懒加载待hook方法的container
+ * 懒加载hook单元的容器
  *
  * - Parameters:
- *  - self: 待hook对象
- *  - selector: 待hook方法
+ *   - self: 待hook对象
+ *   - selector: 待hook方法
  */
 static SLHookContainer *sl_getContainerForObject(NSObject *self, SEL selector) {
     SEL aliasSelector = sl_aliasForSelector(selector);
@@ -216,6 +219,13 @@ static SLHookContainer *sl_getContainerForObject(NSObject *self, SEL selector) {
     return hookContainer;
 }
 
+/**
+ * 将hook单元容器和类的关联关系取消
+ *
+ * - Parameters:
+ *   - self: 类
+ *   - selector: 方法名
+ */
 static void sl_destroyContainerForObject(id<NSObject> self, SEL selector) {
     SEL aliasSelector = sl_aliasForSelector(selector);
     objc_setAssociatedObject(self, aliasSelector, nil, OBJC_ASSOCIATION_RETAIN);
@@ -326,6 +336,7 @@ static Class sl_swizzleClassInPlace(Class class) {
  * - Parameter klass: 待hook的类
  */
 static void sl_swizzleForwardInvocation(Class class) {
+    Method m = class_getInstanceMethod(class, @selector(forwardInvocation:));
     IMP originalImp = class_replaceMethod(class, @selector(forwardInvocation:), (IMP)_sl_forwardInvocation_imp, "v@:@");
     if (originalImp) {
         class_addMethod(class, NSSelectorFromString((NSString *)kSLHookForwardInvocationSelectorName), (IMP)originalImp, "v@:@");
@@ -464,7 +475,6 @@ static void sl_prepareClassAndHookSelector(NSObject *self, SEL selector, __stron
 
 #pragma mark - hook forwardInvocation
 static void _sl_forwardInvocation_imp(__unsafe_unretained NSObject *self, SEL selector, NSInvocation *invocation) {
-    NSLog(@"被hook");
     SEL originalSelector = invocation.selector;
     SEL aliasSelector = sl_aliasForSelector(originalSelector);
     invocation.selector = aliasSelector;
@@ -489,7 +499,7 @@ static void _sl_forwardInvocation_imp(__unsafe_unretained NSObject *self, SEL se
         // 没有替换原方法的调用，需调用原方法
         Class klass = object_getClass(invocation.target);
         do {
-            if ((respondsToAlias = [klass instancesRespondToSelector:selector])) {
+            if ((respondsToAlias = [klass instancesRespondToSelector:aliasSelector])) {
                 [invocation invoke];
                 break;
             }
