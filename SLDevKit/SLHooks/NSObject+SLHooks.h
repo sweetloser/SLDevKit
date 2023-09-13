@@ -26,7 +26,26 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface NSObject (SLHooks)
 
+/**
+ * hook类的实例方法
+ *
+ * - Parameters:
+ *   - selector: 待hook的方法
+ *   - options: hook的位置以及是否需要在调用后清除
+ *   - block: 用来hook的block；参数：(id<SLHookInfo> info, ...[原方法的参数列表])
+ *   - error: 错误码
+ */
 + (id<SLHookUnit>)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
+
+/**
+ * hook特定实例的实例方法
+ *
+ * - Parameters:
+ *   - selector: 待hook的方法
+ *   - options: hook的位置以及是否需要在调用后清除
+ *   - block: 用来hook的block；参数：(id<SLHookInfo> info, ...[原方法的参数列表])
+ *   - error: 错误码
+ */
 - (id<SLHookUnit>)sl_hookSelector:(SEL)selector withHookOptions:(SLHookOptions)options replaceBlock:(id)block error:(__strong NSError **)error;
 
 @end
