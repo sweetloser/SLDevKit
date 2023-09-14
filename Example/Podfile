@@ -6,7 +6,8 @@ target 'SLDevKit_Example' do
   pod 'SLDevKit', :path => '../'
   pod 'Aspects'
   pod 'YYCache'
-#  pod 'NerdyUI'
+  pod 'YYModel'
+
   target 'SLDevKit_Tests' do
     inherit! :search_paths
     

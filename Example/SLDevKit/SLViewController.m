@@ -14,6 +14,8 @@
 #import "SLCustomFieldVC.h"
 #import "SLCacheVC.h"
 #import <Aspects.h>
+#import "SLHookVC.h"
+#import "SLModelVC.h"
 
 @interface SLViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -24,7 +26,7 @@
 @implementation SLViewController
 
 - (void)viewDidLoad {
-    NSBundle *a;
+    Class a;
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
 }
@@ -41,11 +43,15 @@
         cell.itemTitleLabel.text = @"自定义验证码输入框";
     } else if (indexPath.row == 3) {
         cell.itemTitleLabel.text = @"缓存";
+    } else if (indexPath.row == 4) {
+        cell.itemTitleLabel.text = @"hook";
+    } else if (indexPath.row == 5) {
+        cell.itemTitleLabel.text = @"模型转换";
     }
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 6;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 45;
@@ -63,6 +69,12 @@
     } else if (indexPath.row == 3) {
         SLCacheVC *cacheVc = [[SLCacheVC alloc] init];
         [self.navigationController pushViewController:cacheVc animated:YES];
+    } else if (indexPath.row == 4) {
+        SLHookVC *hookVc = [[SLHookVC alloc] init];
+        [self.navigationController pushViewController:hookVc animated:YES];
+    } else if (indexPath.row == 5) {
+        SLModelVC *modelVc = [[SLModelVC alloc] init];
+        [self.navigationController pushViewController:modelVc animated:YES];
     }
 }
 

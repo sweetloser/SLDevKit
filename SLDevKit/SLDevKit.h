@@ -18,6 +18,8 @@
 #import "SLUpdateAlertView.h"
 #import "SLCache.h"
 #import "NSObject+SLHooks.h"
+#import "NSObject+SLModel.h"
+
 //#import "SLBackTrace.h"
 
 #endif /* SLDevKit_h */

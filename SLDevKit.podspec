@@ -87,6 +87,12 @@ TODO: Add long description of the pod here.
     shk.source_files = 'SLDevKit/SLHooks/*.{h,m}'
   end
   
+  s.subspec "SLModel" do |smd|
+    smd.dependency 'SLDevKit/SLDefs'
+    smd.dependency 'SLDevKit/SLCache'
+    smd.source_files = 'SLDevKit/SLModel/*.{h,m}'
+  end
+  
 #  s.subspec "SLBackTrace" do |sbt|
 #    sbt.dependency 'SLDevKit/SLDefs'
 #    sbt.dependency 'SLDevKit/SLFoundation'

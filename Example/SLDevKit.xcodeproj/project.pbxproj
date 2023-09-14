@@ -30,6 +30,8 @@
 		BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF35538D298528360030B2D5 /* SLAutoLayoutVC.m */; };
 		BF40A9422AA825780067F57E /* SLCacheVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF40A9412AA825780067F57E /* SLCacheVC.m */; };
 		BF7C02882987A95400E9C05E /* SLTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7C02872987A95300E9C05E /* SLTestData.m */; };
+		BF9579752AB2AD4100AE1A5C /* SLHookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9579742AB2AD4100AE1A5C /* SLHookVC.m */; };
+		BF9579782AB2AD7200AE1A5C /* SLModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9579772AB2AD7200AE1A5C /* SLModelVC.m */; };
 		BFEBB32C2993B1B200FFA1D2 /* SLChainableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */; };
 		D0762EC629150F31002C9F84 /* SLTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = D0762EC529150F31002C9F84 /* SLTestString.m */; };
 		DEEEE8946A48E7F89978AC3F /* libPods-SLDevKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */; };
@@ -83,6 +85,10 @@
 		BF40A9402AA825780067F57E /* SLCacheVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCacheVC.h; sourceTree = "<group>"; };
 		BF40A9412AA825780067F57E /* SLCacheVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCacheVC.m; sourceTree = "<group>"; };
 		BF7C02872987A95300E9C05E /* SLTestData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTestData.m; sourceTree = "<group>"; };
+		BF9579732AB2AD4100AE1A5C /* SLHookVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLHookVC.h; sourceTree = "<group>"; };
+		BF9579742AB2AD4100AE1A5C /* SLHookVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLHookVC.m; sourceTree = "<group>"; };
+		BF9579762AB2AD7200AE1A5C /* SLModelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLModelVC.h; sourceTree = "<group>"; };
+		BF9579772AB2AD7200AE1A5C /* SLModelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLModelVC.m; sourceTree = "<group>"; };
 		BFEBB32A2993B1B200FFA1D2 /* SLChainableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLChainableVC.h; sourceTree = "<group>"; };
 		BFEBB32B2993B1B200FFA1D2 /* SLChainableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLChainableVC.m; sourceTree = "<group>"; };
 		CFD3208F0C36E65BC88DE5B3 /* libPods-SLDevKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLDevKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +184,10 @@
 				BF0EE6FF2A25E108003E5C1E /* SLCustomFieldVC.m */,
 				BF40A9402AA825780067F57E /* SLCacheVC.h */,
 				BF40A9412AA825780067F57E /* SLCacheVC.m */,
+				BF9579732AB2AD4100AE1A5C /* SLHookVC.h */,
+				BF9579742AB2AD4100AE1A5C /* SLHookVC.m */,
+				BF9579762AB2AD7200AE1A5C /* SLModelVC.h */,
+				BF9579772AB2AD7200AE1A5C /* SLModelVC.m */,
 				BF35538729850F0A0030B2D5 /* SLTestItemCell.h */,
 				BF35538829850F0A0030B2D5 /* SLTestItemCell.m */,
 				BF35538929850F0A0030B2D5 /* SLTestItemCell.xib */,
@@ -386,6 +396,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
+				BF9579782AB2AD7200AE1A5C /* SLModelVC.m in Sources */,
+				BF9579752AB2AD4100AE1A5C /* SLHookVC.m in Sources */,
 				BF35538E298528360030B2D5 /* SLAutoLayoutVC.m in Sources */,
 				BF40A9422AA825780067F57E /* SLCacheVC.m in Sources */,
 				BF35538A29850F0A0030B2D5 /* SLTestItemCell.m in Sources */,
