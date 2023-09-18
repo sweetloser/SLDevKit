@@ -33,6 +33,7 @@
 
 @interface Person : NSObject
 
+@property(nonatomic,assign)CGPoint position;
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,assign)NSUInteger age;
 @property(nonatomic,copy)void(^block)(void);
