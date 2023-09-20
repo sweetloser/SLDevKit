@@ -57,7 +57,7 @@
     NSString *json = @"{\"name\":\"房东\",\"age\":29}";
     
     Person *p = [Person sl_modelWithJson:json];
-    
+    NSLog(@"p:%@",p);
     // Do any additional setup after loading the view.
 }
 

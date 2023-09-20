@@ -127,7 +127,7 @@ static Class _sl_NSBlockClass(void);
     if (modelMeta.hasCustomTransformFromDictionary) {
         return [(id<SLModel>)self sl_modelCustomTransformFromDictionary:dictionary];
     }
-    return NO;
+    return YES;
 }
 
 

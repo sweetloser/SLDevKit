@@ -147,7 +147,7 @@
     
     _keyMappedCount = _allPropertyMetas.count;
     _hasCustomWillTransformFromDictionary = ([cls instancesRespondToSelector:@selector(sl_modelCustomWillTransformFromDictionary:)]);
-    _hasCustomTransformFromDictionary = ([cls instanceMethodForSelector:@selector(sl_modelCustomTransformFromDictionary:)]);
+    _hasCustomTransformFromDictionary = ([cls instancesRespondToSelector:@selector(sl_modelCustomTransformFromDictionary:)]);
     _hasCustomTransformToDictionary = ([cls instancesRespondToSelector:@selector(sl_modelCustomTransformToDictionary:)]);
     _hasCustomClassFromDictionary = ([cls respondsToSelector:@selector(sl_modelCustomClassForDictionary:)]);
     
