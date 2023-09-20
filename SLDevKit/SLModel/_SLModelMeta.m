@@ -8,7 +8,7 @@
 #import "_SLModelMeta.h"
 #import "SLMemoryCache.h"
 #import "_SLModelClassPropertyMeta.h"
-#import "SLHookHeader.h"
+#import "_SLModelHeader.h"
 
 @implementation _SLModelMeta
 
