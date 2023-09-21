@@ -1,46 +1,46 @@
 PODS:
   - Aspects (1.4.1)
-  - SLDevKit (1.0.14):
-    - SLDevKit/SLAutoLayout (= 1.0.14)
-    - SLDevKit/SLCache (= 1.0.14)
-    - SLDevKit/SLCustomField (= 1.0.14)
-    - SLDevKit/SLDefs (= 1.0.14)
-    - SLDevKit/SLFoundation (= 1.0.14)
-    - SLDevKit/SLHooks (= 1.0.14)
-    - SLDevKit/SLModel (= 1.0.14)
-    - SLDevKit/SLUIKit (= 1.0.14)
-    - SLDevKit/SLUpdateAlert (= 1.0.14)
-    - SLDevKit/SLUtils (= 1.0.14)
-  - SLDevKit/SLAutoLayout (1.0.14):
+  - SLDevKit (1.0.16):
+    - SLDevKit/SLAutoLayout (= 1.0.16)
+    - SLDevKit/SLCache (= 1.0.16)
+    - SLDevKit/SLCustomField (= 1.0.16)
+    - SLDevKit/SLDefs (= 1.0.16)
+    - SLDevKit/SLFoundation (= 1.0.16)
+    - SLDevKit/SLHooks (= 1.0.16)
+    - SLDevKit/SLModel (= 1.0.16)
+    - SLDevKit/SLUIKit (= 1.0.16)
+    - SLDevKit/SLUpdateAlert (= 1.0.16)
+    - SLDevKit/SLUtils (= 1.0.16)
+  - SLDevKit/SLAutoLayout (1.0.16):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLCache (1.0.14):
+  - SLDevKit/SLCache (1.0.16):
     - SLDevKit/SLDefs
-  - SLDevKit/SLCustomField (1.0.14):
+  - SLDevKit/SLCustomField (1.0.16):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLDefs (1.0.14)
-  - SLDevKit/SLFoundation (1.0.14):
+  - SLDevKit/SLDefs (1.0.16)
+  - SLDevKit/SLFoundation (1.0.16):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLHooks (1.0.14):
+  - SLDevKit/SLHooks (1.0.16):
     - SLDevKit/SLDefs
-  - SLDevKit/SLModel (1.0.14):
+  - SLDevKit/SLModel (1.0.16):
     - SLDevKit/SLCache
     - SLDevKit/SLDefs
-  - SLDevKit/SLUIKit (1.0.14):
+  - SLDevKit/SLUIKit (1.0.16):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUpdateAlert (1.0.14):
+  - SLDevKit/SLUpdateAlert (1.0.16):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLUtils (1.0.14):
+  - SLDevKit/SLUtils (1.0.16):
     - SLDevKit/SLDefs
   - YYCache (1.0.4)
   - YYModel (1.0.4)
@@ -63,7 +63,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  SLDevKit: 8c2d90607fd4627943f5353a1c8f79be3691bf9d
+  SLDevKit: 1188aa9d2e613e51992404cbaebed44c864fc693
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 

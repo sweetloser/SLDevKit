@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "_SLModelHeader.h"
+#import "_SLModelTools.h"
 
 SLModelEncodingType _sl_typeEncodingGetType(const char *typeEncoding) {
     char *type = (char *)typeEncoding;

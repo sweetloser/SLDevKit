@@ -6,7 +6,7 @@
 //
 
 #import "_SLModelClassPropertyInfo.h"
-#import "_SLModelHeader.h"
+#import "_SLModelTools.h"
 
 
 @implementation _SLModelClassPropertyInfo

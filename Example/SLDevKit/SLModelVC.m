@@ -8,6 +8,7 @@
 
 #import "SLModelVC.h"
 #import <SLDevKit/SLDevKit.h>
+#import <YYModel.h>
 
 @protocol AnimalProtocol <NSObject>
 @optional
@@ -56,7 +57,11 @@
     
     NSString *json = @"{\"name\":\"房东\",\"age\":29}";
     
-    Person *p = [Person sl_modelWithJson:json];
+    NSDictionary *dictJson = @{@"name":@"房东", @"age":@28, @"block":^{
+        NSLog(@"blockkkk");
+    }};
+    Person *py = [Person yy_modelWithJSON:dictJson];
+    Person *p = [Person sl_modelWithJson:dictJson];
     NSLog(@"p:%@",p);
     // Do any additional setup after loading the view.
 }

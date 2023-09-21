@@ -6,7 +6,7 @@
 //
 
 #import "_SLModelClassIvarInfo.h"
-#import "_SLModelHeader.h"
+#import "_SLModelTools.h"
 
 @implementation _SLModelClassIvarInfo
 

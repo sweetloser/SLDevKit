@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "_SLModelClassInfo.h"
 #import "_SLModelClassPropertyInfo.h"
-#import "_SLModelHeader.h"
+#import "_SLModelTools.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

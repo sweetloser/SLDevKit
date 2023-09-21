@@ -18,7 +18,7 @@
 #import "SLUpdateAlertView.h"
 #import "SLCache.h"
 #import "NSObject+SLHooks.h"
-#import "NSObject+SLModel.h"
+#import "SLModelHeader.h"
 
 //#import "SLBackTrace.h"
 

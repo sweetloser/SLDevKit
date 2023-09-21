@@ -10,7 +10,15 @@
 #import "_SLModelClassPropertyMeta.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import "_SLModelHeader.h"
+#import "_SLModelTools.h"
+#import "SLModelProtocol.h"
+
+typedef struct {
+    void * _Nullable modelMeta;
+    void * _Nullable model;
+    void * _Nullable dictionary;
+} SLModelSetContext;
+
 
 static void sl_modelSetWithDictionaryFunction(const void *_key, const void *_value, void *context);
 static void sl_modelSetWithPropertyMetaArrayFunction(const void *_propertyMeta, void *_context);
@@ -167,7 +175,7 @@ static void sl_modelSetWithPropertyMetaArrayFunction(const void *_propertyMeta, 
     SLModelSetContext *context = _context;
     __unsafe_unretained NSDictionary *dictionary = (__bridge NSDictionary *)context->dictionary;
     __unsafe_unretained _SLModelClassPropertyMeta *propertyMeta = (__bridge _SLModelClassPropertyMeta *)_propertyMeta;
-    if (propertyMeta.setter) return;
+    if (!propertyMeta.setter) return;
     
     id value = nil;
     
@@ -415,7 +423,7 @@ static void sl_modelSetValueForProperty(__unsafe_unretained id model, __unsafe_u
         }
     } else {
         BOOL isNull = (value == (id)kCFNull);
-        switch (meta.type) {
+        switch (meta.type & SLModelEncodingTypeMask) {
             case SLModelEncodingTypeObject: {
                 if (isNull) {
                     ((void(*)(id,SEL,id))objc_msgSend)(model, meta.setter, nil);
@@ -761,6 +769,9 @@ static NSDate *_sl_NSDateFromString(__unsafe_unretained NSString *string) {
     #undef kParseNum
 }
 
+/**
+ * 获取block的根类
+ */
 static Class _sl_NSBlockClass(void) {
     static Class blockClass = nil;
     static dispatch_once_t onceToken;
