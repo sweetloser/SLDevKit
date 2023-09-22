@@ -12,6 +12,7 @@
 #import <objc/message.h>
 #import "_SLModelTools.h"
 #import "SLModelProtocol.h"
+#import "_SLModelXMLParser.h"
 
 typedef struct {
     void * _Nullable modelMeta;
@@ -28,8 +29,34 @@ static void sl_modelSetNumberToProperty(__unsafe_unretained id model, __unsafe_u
 static void sl_modelSetValueForProperty(__unsafe_unretained id model, __unsafe_unretained id value, __unsafe_unretained _SLModelClassPropertyMeta *meta);
 static NSDate *_sl_NSDateFromString(__unsafe_unretained NSString *string);
 static Class _sl_NSBlockClass(void);
+static NSDictionary *_sl_dealXmlDictionary(NSDictionary *xmlDict);
 
 @implementation NSObject (SLModel)
+
++ (instancetype)sl_modelWithXML:(id)xml {
+    if (!xml) return nil;
+    NSDictionary *xmlDict = nil;
+    if ([xml isKindOfClass:[NSString class]]) {
+        xmlDict = [_SLModelXMLParser sl_parserDataWithXml:xml];
+    } else if ([xml isKindOfClass:[NSData class]]) {
+        xmlDict = [_SLModelXMLParser sl_parserDataWithXml:[[NSString alloc] initWithData:(NSData *)xml encoding:NSUTF8StringEncoding]];
+    }
+    
+    if (!xmlDict || ![xmlDict isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    
+    // 将解析出来的xml字典转化为normal的字典
+    NSDictionary *normalDict = _sl_dealXmlDictionary(xmlDict);
+    
+    // 去除根标签
+    if (normalDict.count == 1) {
+        normalDict = normalDict.allValues.firstObject;
+    }
+    
+    return [self sl_modelWithDictionary:normalDict];
+    
+}
 
 /**
  * json数据转model
@@ -783,4 +810,42 @@ static Class _sl_NSBlockClass(void) {
         }
     });
     return blockClass;
+}
+
+static NSDictionary *_sl_dealXmlDictionary(NSDictionary *xmlDict) {
+    if (!xmlDict) return nil;
+    NSMutableDictionary *dealedDict = [NSMutableDictionary new];
+    [xmlDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            NSString *content = obj[@"content"];
+            if (content) {
+                if ([content isKindOfClass:[NSString class]]) {
+                    // 解析成功
+                    dealedDict[key] = content;
+                } else if ([content isKindOfClass:[NSDictionary class]]) {
+                    dealedDict[key] = _sl_dealXmlDictionary(obj);
+                }
+            } else {
+                dealedDict[key] = _sl_dealXmlDictionary(obj);
+            }
+        } else if ([obj isKindOfClass:[NSArray class]]) {
+            NSMutableArray *tmpArray = [NSMutableArray new];
+            for (NSDictionary *one in obj) {
+                NSString *content = one[@"content"];
+                if (content) {
+                    if ([content isKindOfClass:[NSString class]]) {
+                        // 解析成功
+                        [tmpArray addObject:content];
+                    } else if ([content isKindOfClass:[NSDictionary class]]) {
+                        [tmpArray addObject:_sl_dealXmlDictionary(one)];
+                    }
+                } else {
+                    [tmpArray addObject:_sl_dealXmlDictionary(one)];
+                }
+            }
+            dealedDict[key] = tmpArray;
+        }
+    }];
+    
+    return dealedDict;
 }

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _SLModelXMLParser : NSObject
 
++ (id)sl_parserDataWithXml:(NSString *)xml;
+
 @end
 
 NS_ASSUME_NONNULL_END

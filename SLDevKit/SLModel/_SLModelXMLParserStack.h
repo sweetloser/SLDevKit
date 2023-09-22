@@ -11,6 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _SLModelXMLParserStack : NSObject
 
++ (instancetype)stack;
+
+- (void)push:(id)object;
+- (id)pop;
+
 @end
 
 NS_ASSUME_NONNULL_END

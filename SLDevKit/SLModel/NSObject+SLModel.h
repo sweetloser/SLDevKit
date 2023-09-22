@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSObject (SLModel)
 
 /**
+ *
+ */
++ (nullable instancetype)sl_modelWithXML:(id)xml;
+
+/**
  * json数据转model
  *
  * - Parameter json: json数据【NSString、NSData、NSDictionary】
