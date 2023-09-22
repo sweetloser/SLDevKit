@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLDevKit'
-  s.version          = '1.0.17'
+  s.version          = '1.0.18'
   s.summary          = 'iOS开发基础库集合.'
 
   s.description      = <<-DESC
