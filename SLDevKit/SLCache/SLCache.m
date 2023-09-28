@@ -71,13 +71,13 @@
         return self;
     };
 }
-- (id<NSCoding>  _Nonnull (^)(NSString * _Nonnull))objectForKey_sl {
+- (id<NSCoding>  _Nullable (^)(NSString * _Nonnull))objectForKey_sl {
     return ^(NSString *key) {
         id<NSCoding> object = self->_memoryCache.objectForKey_sl(key);
         return object;
     };
 }
-- (id<NSCoding>  _Nonnull (^)(NSString * _Nonnull, NSSet<Class> * _Nonnull))objectForKeyAndUnchivedClasses_sl {
+- (id<NSCoding>  _Nullable (^)(NSString * _Nonnull, NSSet<Class> * _Nonnull))objectForKeyAndUnchivedClasses_sl {
     return ^(NSString *key, NSSet <Class>*classes) {
         
         if (key == nil || classes == nil) return (id<NSCoding>)nil;

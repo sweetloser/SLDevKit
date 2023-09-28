@@ -23,6 +23,9 @@ SL_DATA_PROP(Empty)base64Encode;
 /// base64解码
 SL_DATA_PROP(Empty)base64Decode;
 
+/// hex编码
+SL_DATA_PROP(Empty)hexEncode_sl;
+
 /**
  * sm4 ecb加密
  * 注意：返回的NSData 并不等于 `self`。

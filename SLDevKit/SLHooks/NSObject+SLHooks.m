@@ -336,7 +336,7 @@ static Class sl_swizzleClassInPlace(Class class) {
  * - Parameter klass: 待hook的类
  */
 static void sl_swizzleForwardInvocation(Class class) {
-    Method m = class_getInstanceMethod(class, @selector(forwardInvocation:));
+    __unused Method m = class_getInstanceMethod(class, @selector(forwardInvocation:));
     IMP originalImp = class_replaceMethod(class, @selector(forwardInvocation:), (IMP)_sl_forwardInvocation_imp, "v@:@");
     if (originalImp) {
         class_addMethod(class, NSSelectorFromString((NSString *)kSLHookForwardInvocationSelectorName), (IMP)originalImp, "v@:@");

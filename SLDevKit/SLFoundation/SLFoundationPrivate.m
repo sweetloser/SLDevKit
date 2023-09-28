@@ -258,4 +258,21 @@ SL_INLINE NSUInteger _maxDecodeLength(NSUInteger encodeLen) {
     return _result;
 }
 
+- (NSData *)_hexEncode {
+    static char *hex = "0123456789abcdef";
+    Byte *hexEncode = malloc(self.length * 2);
+    memset(hexEncode, 0, self.length * 2);
+    Byte *bytes = (Byte *)self.bytes;
+    for (int i = 0; i < self.length; i++) {
+        hexEncode[2*i] = hex[(bytes[i] >> 4) & 0xF];
+        hexEncode[2*i+1] = hex[bytes[i] & 0xF];
+    }
+    
+    NSData *data = [[NSData alloc] initWithBytes:hexEncode length:self.length * 2];
+    free(hexEncode);
+    
+    return data;
+}
+
+
 @end

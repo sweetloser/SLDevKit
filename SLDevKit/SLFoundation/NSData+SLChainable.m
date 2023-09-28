@@ -143,6 +143,10 @@ void _sm4_one_round(const uint32_t sk[32], const uint8_t input[16], uint8_t outp
     SL_CHAINABLE_EMPTY_BLOCK(return [self _base64Decode];);
 }
 
+- (SLChainableNSDataEmptyBlock)hexEncode_sl {
+    SL_CHAINABLE_EMPTY_BLOCK(return [self _hexEncode];);
+}
+
 - (SLChainableNSDataObjectBlock)sm4EcbEncrypt {
     return ^(NSData *keyData){
         

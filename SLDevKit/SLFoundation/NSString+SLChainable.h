@@ -80,6 +80,11 @@ SL_STRING_PROP(Empty)base64Encode;
 /// base64解码
 SL_STRING_PROP(Empty)base64Decode;
 
+@property(nonatomic,copy)NSData *(^base64Decode2Data)(void);
+
+/// hex编码
+SL_STRING_PROP(Empty)hexEncode_sl;
+
 @end
 
 /// 从格式化字符串参数列表中初始化字符串

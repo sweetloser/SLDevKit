@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 参数类型：
  *      1) 指定key
  */
-@property(nonatomic,copy,readonly)id<NSCoding> (^objectForKey_sl)(NSString *key);
+@property(nonatomic,copy,readonly)id<NSCoding> _Nullable (^objectForKey_sl)(NSString *key);
 
 /**
  * 获取指定key的缓存对象
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  *      1) 指定key
  *      2) 从磁盘缓存中获取对象时，解档所需的类集合
  */
-@property(nonatomic,copy,readonly)id<NSCoding> (^objectForKeyAndUnchivedClasses_sl)(NSString *key, NSSet <Class>*classes);
+@property(nonatomic,copy,readonly)id<NSCoding> _Nullable (^objectForKeyAndUnchivedClasses_sl)(NSString *key, NSSet <Class>*classes);
 
 /**
  * 从缓存中删除缓存对象

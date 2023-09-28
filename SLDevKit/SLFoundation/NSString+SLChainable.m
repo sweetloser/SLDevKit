@@ -196,7 +196,22 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
 - (SLChainableNSStringEmptyBlock)base64Decode {
     SL_CHAINABLE_EMPTY_BLOCK(NSData *_encodeData = [self dataUsingEncoding:NSUTF8StringEncoding];
                              NSData *_decodeData = [_encodeData _base64Decode];
-                             return [[NSString alloc] initWithData:_decodeData encoding:NSUTF8StringEncoding];);
+                             NSString *decodeStr = [[NSString alloc] initWithData:_decodeData encoding:NSUTF8StringEncoding];
+                             return decodeStr ?: @"base64 decode error.";
+                             );
+}
+- (NSData * _Nonnull (^)(void))base64Decode2Data {
+    return ^{
+        NSData *_encodeData = [self dataUsingEncoding:NSUTF8StringEncoding];
+        NSData *_decodeData = [_encodeData _base64Decode];
+        return _decodeData;
+    };
+}
+
+- (SLChainableNSStringEmptyBlock)hexEncode_sl {
+    SL_CHAINABLE_EMPTY_BLOCK(NSData *_srcData = [self dataUsingEncoding:NSUTF8StringEncoding];
+                             NSData *_encodeData = [_srcData _hexEncode];
+                             return [[NSString alloc] initWithData:_encodeData encoding:NSUTF8StringEncoding];);
 }
 
 @end

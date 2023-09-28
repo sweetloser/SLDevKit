@@ -46,9 +46,11 @@ BOOL SLObjectIsKindOfClass(NSString *className, id obj);
 
 @interface NSData (SLFoundationPrivate)
 
--(NSData *)_base64Encode;
+- (NSData *)_base64Encode;
 
--(NSData *)_base64Decode;
+- (NSData *)_base64Decode;
+
+- (NSData *)_hexEncode;
 
 @end
 

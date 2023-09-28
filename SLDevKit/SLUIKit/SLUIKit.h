@@ -21,5 +21,6 @@
 #import "UITextField+SLChainable.h"
 #import "UITextView+SLChainable.h"
 #import "NSAttributedString+SLChainable.h"
+#import "UITableViewCell+SLUtils.h"
 
 #endif /* SLUIKit_h */
