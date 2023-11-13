@@ -10,7 +10,8 @@
 #import "SLAutoLayoutPrivate.h"
 #import "UIView+SLAutoLayout.h"
 
-@interface UIView (SLAutoLayout)
+// 在`UIView+SLAutoLayout.m`中实现了`fixedWidth` 和 `fixedHeight` 的getter和setter方法，这里仅需要引入即可，不需要重复实现
+@interface UIView (SLAutoLayout_)
 
 /// 设置固定宽度【设置了之后，宽度就不会在自动布局中被修改】
 @property(nonatomic,copy)NSNumber *fixedWidth;
