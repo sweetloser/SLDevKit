@@ -44,7 +44,7 @@
 
 @end
 
-@interface UIView (SLAutoLayout)
+@interface UIView (SLAutoLayout_)
 
 @property(nonatomic,strong)SLAutoLayoutModel *_Nullable sl_ownLayoutModel;
 
@@ -78,6 +78,13 @@
             [self.superview.sl_autoLayoutModelsArray addObject:layoutModel];
         }
         return layoutModel;
+    };
+}
+
+- (UIView * _Nonnull (^)(void))slUpdateLayout {
+    return ^{
+        [self.superview layoutSubviews];
+        return self;
     };
 }
 

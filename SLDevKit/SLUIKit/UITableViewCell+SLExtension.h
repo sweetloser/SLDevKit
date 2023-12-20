@@ -1,5 +1,5 @@
 //
-//  UITableViewCell+SLUtils.h
+//  UITableViewCell+SLExtension.h
 //  SLDevKit
 //
 //  Created by zengxiangxiang on 2023/9/27.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITableViewCell (SLUtils)
+@interface UITableViewCell (SLExtension)
 
 + (void)sl_registerForTableView:(UITableView *)tableView;
 

@@ -1,13 +1,13 @@
 //
-//  UITableViewCell+SLUtils.m
+//  UITableViewCell+SLExtension.m
 //  SLDevKit
 //
 //  Created by zengxiangxiang on 2023/9/27.
 //
 
-#import "UITableViewCell+SLUtils.h"
+#import "UITableViewCell+SLExtension.h"
 
-@implementation UITableViewCell (SLUtils)
+@implementation UITableViewCell (SLExtension)
 
 + (void)sl_registerForTableView:(UITableView *)tableView {
     Class cls = self;

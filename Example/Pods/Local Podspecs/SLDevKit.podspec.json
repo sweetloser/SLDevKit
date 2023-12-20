@@ -1,6 +1,6 @@
 {
   "name": "SLDevKit",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "summary": "iOS开发基础库集合.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sweetloser/SLDevKit.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sweetloser/SLDevKit.git",
-    "tag": "1.0.17"
+    "tag": "1.0.19"
   },
   "platforms": {
     "ios": "11.0"

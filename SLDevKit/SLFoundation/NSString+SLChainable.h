@@ -80,6 +80,13 @@ SL_STRING_PROP(Empty)base64Encode;
 /// base64解码
 SL_STRING_PROP(Empty)base64Decode;
 
+/// md5摘要
+SL_STRING_PROP(Empty)md5;
+
+/// MD5摘要
+SL_STRING_PROP(Empty)MD5;
+
+
 @property(nonatomic,copy)NSData *(^base64Decode2Data)(void);
 
 /// hex编码

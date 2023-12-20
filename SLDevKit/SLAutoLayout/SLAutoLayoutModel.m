@@ -205,6 +205,13 @@
                               self.leftSpaceToView_sl(value.left, superview).rightSpaceToView_sl(value.right, superview).bottomSpaceToView_sl(value.bottom, superview).topSpaceToView_sl(value.top, superview));
 }
 
+- (UIView * _Nonnull (^)(void))layoutView_sl {
+    return ^{
+        return self.needsAutoResizeView;
+    };
+}
+
+
 #pragma mark - private
 -(void)_frameWithValue:(CGFloat)value key:(NSString *)key {
     if ([key isEqualToString:@"x"]) {

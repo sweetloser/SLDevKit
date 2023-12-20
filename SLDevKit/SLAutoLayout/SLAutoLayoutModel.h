@@ -179,6 +179,8 @@ SL_LAYOUT_MODEL_PROP(Float)offset_sl;
 ///      view.slLayout().spaceToSuperview_sl(10, 20, 30, 40)           {10, 20, 30, 40}
 SL_LAYOUT_MODEL_PROP(Insets)spaceToSuperview_sl;
 
+@property(nonatomic,copy)UIView *(^layoutView_sl)(void);
+
 @end
 
 #define xyIs_sl(...)                    xyIs_sl(SL_MAKE_FLOAT_LIST(__VA_ARGS__))

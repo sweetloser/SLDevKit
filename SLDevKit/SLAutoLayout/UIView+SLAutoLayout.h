@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 开始自动布局
 SL_LAYOUT_MODEL_PROP(Empty)slLayout;
 
+@property(nonatomic,copy,readonly)UIView *(^slUpdateLayout)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

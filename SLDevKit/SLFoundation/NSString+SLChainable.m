@@ -7,7 +7,8 @@
 
 #import "NSString+SLChainable.h"
 #import "SLFoundationPrivate.h"
-
+#import <CommonCrypto/CommonCrypto.h>
+#import "NSData+SLChainable.h"
 
 NSString *SLFormatStringWithArgumentsCount(NSInteger count, ...) {
     va_list argList;
@@ -159,13 +160,12 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
 }
 
 - (SLChainableNSStringEmptyBlock)inDocument {
-    return ^NSString *(){
-        static NSString * documentPath = nil;
-        if (documentPath == nil) {
-            documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-        }
-        return [documentPath stringByAppendingPathComponent:self];
-    };
+    SL_CHAINABLE_EMPTY_BLOCK(
+                             static NSString * documentPath = nil;
+                             if (documentPath == nil) {
+                                 documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+                             }
+                             return [documentPath stringByAppendingPathComponent:self];);
 }
 
 - (SLChainableNSStringEmptyBlock)inCaches {
@@ -200,6 +200,19 @@ NSString *SLStringFromTypeAndValue(const char *type, const void *value) {
                              return decodeStr ?: @"base64 decode error.";
                              );
 }
+
+- (SLChainableNSStringEmptyBlock)md5 {
+    SL_CHAINABLE_EMPTY_BLOCK(const char *cStr = self.UTF8String;
+                             unsigned char buffer[CC_MD5_DIGEST_LENGTH] = {0};
+                             CC_MD5(cStr, (CC_LONG)self.length, buffer);
+                             NSData *bufferData = [NSData dataWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+                             return [[NSString alloc] initWithData:bufferData.hexEncode_sl() encoding:NSUTF8StringEncoding];
+                             );
+}
+- (SLChainableNSStringEmptyBlock)MD5 {
+    SL_CHAINABLE_EMPTY_BLOCK(return self.md5().uppercaseString);
+}
+
 - (NSData * _Nonnull (^)(void))base64Decode2Data {
     return ^{
         NSData *_encodeData = [self dataUsingEncoding:NSUTF8StringEncoding];

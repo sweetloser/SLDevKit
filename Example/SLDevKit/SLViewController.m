@@ -26,7 +26,6 @@
 @implementation SLViewController
 
 - (void)viewDidLoad {
-    Class a;
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SLTestItemCell" bundle:nil] forCellReuseIdentifier:@"testItemCell"];
 }

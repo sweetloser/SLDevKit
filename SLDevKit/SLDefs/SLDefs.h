@@ -9,6 +9,7 @@
 #define SLDefs_h
 #import <objc/objc.h>
 #import <objc/runtime.h>
+#import <UIKit/UIKit.h>
 
 #pragma mark - typedef
 typedef struct SLEdgeInsets {
