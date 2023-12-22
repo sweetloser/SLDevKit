@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLDevKit'
-  s.version          = '1.0.20'
+  s.version          = '1.0.21'
   s.summary          = 'iOS开发基础库集合.'
 
   s.description      = <<-DESC
@@ -91,6 +91,11 @@ TODO: Add long description of the pod here.
     smd.dependency 'SLDevKit/SLDefs'
     smd.dependency 'SLDevKit/SLCache'
     smd.source_files = 'SLDevKit/SLModel/*.{h,m}'
+  end
+  
+  s.subspec "SLLogger" do |slg|
+    slg.source_files = 'SLDevKit/SLLogger/*.{h,cpp}'
+    slg.libraries = 'c++'
   end
   
 #  s.subspec "SLBackTrace" do |sbt|

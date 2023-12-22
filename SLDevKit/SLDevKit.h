@@ -19,6 +19,7 @@
 #import "SLCache.h"
 #import "NSObject+SLHooks.h"
 #import "SLModelHeader.h"
+#import "SLLogger.h"
 
 //#import "SLBackTrace.h"
 
