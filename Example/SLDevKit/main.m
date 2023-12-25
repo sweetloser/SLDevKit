@@ -11,6 +11,9 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        
+        sl_importTableReplace("1", "2", NULL, NULL);
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SLAppDelegate class]));
     }
 }

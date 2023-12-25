@@ -20,6 +20,7 @@
 #import "NSObject+SLHooks.h"
 #import "SLModelHeader.h"
 #import "SLLogger.h"
+#import "SLInlineHooks.hpp"
 
 //#import "SLBackTrace.h"
 

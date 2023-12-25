@@ -42,10 +42,10 @@ id _slConvertValueToString(const char *type, ...) {
 
 
 + (NSString *)wiFiName {
-NSArray *wiFiName = CFBridgingRelease(CNCopySupportedInterfaces());
-id info1 = nil;
-for (NSString *wfName in wiFiName) {
-    info1 = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) wfName);
+    NSArray *wiFiName = CFBridgingRelease(CNCopySupportedInterfaces());
+    id info1 = nil;
+    for (NSString *wfName in wiFiName) {
+        info1 = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) wfName);
         if (info1 && [info1 count]) {
             break;
         }

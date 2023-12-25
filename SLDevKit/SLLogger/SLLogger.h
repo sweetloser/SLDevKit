@@ -34,6 +34,7 @@ public:
     // whether log time.
     bool enable_time_tag;
     
+    // whether sys log.
     bool enable_syslog;
     
     // global logger object.

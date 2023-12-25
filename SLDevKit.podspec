@@ -98,6 +98,11 @@ TODO: Add long description of the pod here.
     slg.libraries = 'c++'
   end
   
+  s.subspec "SLInlineHooks" do |sih|
+    sih.source_files = 'SLDevKit/SLInlineHooks/*{h,hpp,cpp}'
+    sih.dependency 'SLDevKit/SLLogger'
+    sih.libraries = 'c++'
+  end
 #  s.subspec "SLBackTrace" do |sbt|
 #    sbt.dependency 'SLDevKit/SLDefs'
 #    sbt.dependency 'SLDevKit/SLFoundation'
