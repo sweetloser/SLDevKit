@@ -8,6 +8,8 @@
 #ifndef SLProcessRuntimeUtility_hpp
 #define SLProcessRuntimeUtility_hpp
 
+#ifdef __cplusplus
+
 #include <stdio.h>
 #include "SLMemoryAllocator.hpp"
 #include <vector>
@@ -32,4 +34,5 @@ public:
     
 };
 
+#endif // endif __cplusplus
 #endif /* SLProcessRuntimeUtility_hpp */

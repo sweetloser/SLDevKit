@@ -184,7 +184,7 @@
         return nil;
     }
     pthread_mutex_lock(&_threadLock);
-    SLLinkedMapNode *node = CFDictionaryGetValue(_dict, (__bridge const void *)key);
+    SLLinkedMapNode *node = (SLLinkedMapNode *)CFDictionaryGetValue(_dict, (__bridge const void *)key);
     pthread_mutex_unlock(&_threadLock);
     return node;
     

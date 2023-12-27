@@ -52,7 +52,7 @@ typedef struct __SLHook_BlockLayout {
     int32_t reserved;                                   // 保留位
     __SLHook_BlockInvokeFunction invoke;                  // block的imp
     struct __SLHook_Block_descriptor_1 *descriptor;
-} *__SLHook_BlockLayout;
+} *__SLHook_BlockLayout_t;
 
 
 #define SLHookPositionOptionsFilter 0x7

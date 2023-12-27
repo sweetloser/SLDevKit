@@ -11,7 +11,7 @@
 #include <mach-o/dyld_images.h>
 #include <algorithm>
 #include <vector>
-#include "mach_vm.h"
+#include "mach_vm.hpp"
 
 
 std::vector<SLMemRegion> regions;

@@ -1,6 +1,6 @@
 {
   "name": "SLDevKit",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "summary": "iOS开发基础库集合.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sweetloser/SLDevKit.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sweetloser/SLDevKit.git",
-    "tag": "1.0.21"
+    "tag": "1.0.22"
   },
   "platforms": {
     "ios": "11.0"
@@ -144,8 +144,14 @@
     },
     {
       "name": "SLLogger",
-      "source_files": "SLDevKit/SLLogger/*.{h,cpp}",
-      "libraries": "c++"
+      "compiler_flags": "-x objective-c++",
+      "pod_target_xcconfig": {
+        "CLANG_CXX_LANGUAGE_STANDARD": "gnu++11",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF": "NO"
+      },
+      "libraries": "c++",
+      "source_files": "SLDevKit/SLLogger/*.{h,cpp}"
     },
     {
       "name": "SLInlineHooks",
@@ -155,7 +161,13 @@
 
         ]
       },
-      "libraries": "c++"
+      "compiler_flags": "-x objective-c++",
+      "libraries": "c++",
+      "pod_target_xcconfig": {
+        "CLANG_CXX_LANGUAGE_STANDARD": "gnu++11",
+        "CLANG_CXX_LIBRARY": "libc++",
+        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF": "NO"
+      }
     }
   ]
 }

@@ -40,7 +40,7 @@
 }
 
 - (SLChainableUIImageViewIntBlock)cMode {
-    SL_CHAINABLE_INT_BLOCK(self.contentMode = value;);
+    SL_CHAINABLE_INT_BLOCK(self.contentMode = (UIViewContentMode)value;);
 }
 
 @end

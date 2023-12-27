@@ -80,7 +80,7 @@ FOUNDATION_EXTERN BOOL sl_removeHook(SLHookUnit *hookUnit, NSError **error);
  */
 static NSMethodSignature *sl_blockMethodSignature(id block, __strong NSError ** error) {
     // 解析 block
-    __SLHook_BlockLayout layout = (__bridge void *)block;
+    __SLHook_BlockLayout_t layout = (__SLHook_BlockLayout_t)(__bridge void *)block;
     if ((layout->flags & __SLHook_BLOCK_HAS_SIGNATURE) == 0) {
         // block没有签名信息
         NSString *errorDescription = [NSString stringWithFormat:@"block【%@】没有方法签名信息", block];
@@ -89,12 +89,12 @@ static NSMethodSignature *sl_blockMethodSignature(id block, __strong NSError ** 
     }
     void *descriptor = layout->descriptor;
     // 跳过 descriptor_1 的地址
-    descriptor = descriptor + sizeof(uintptr_t) * 2;
+    descriptor = (void *)((uintptr_t)descriptor + (uintptr_t)(sizeof(uintptr_t) * 2));
     
     // 跳过 descriptor_2 地址 （如果存在）
     if ((layout->flags & __SLHook_BLOCK_HAS_COPY_DISPOSE) != 0) {
         // 如果存在 copy dispose，则将指针往后移 16 字节（两个指针所占用的内存）
-        descriptor = descriptor + 2 * sizeof(void *);
+        descriptor = (void *)((uintptr_t)descriptor + (uintptr_t)(2 * sizeof(void *)));
     }
     
     if (!descriptor) {

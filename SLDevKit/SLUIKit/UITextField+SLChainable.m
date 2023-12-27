@@ -33,7 +33,7 @@
 }
 
 - (SLChainableUITextFieldIntBlock)textAlign {
-    SL_CHAINABLE_INT_BLOCK(self.textAlignment = value);
+    SL_CHAINABLE_INT_BLOCK(self.textAlignment = (NSTextAlignment)value);
 }
 
 - (SLChainableUITextFieldIntBlock)secure {
@@ -41,14 +41,14 @@
 }
 
 - (SLChainableUITextFieldIntBlock)clearMode {
-    SL_CHAINABLE_INT_BLOCK(self.clearButtonMode = value);
+    SL_CHAINABLE_INT_BLOCK(self.clearButtonMode = (UITextFieldViewMode)value);
 }
 
 - (SLChainableUITextFieldIntBlock)keyboard {
-    SL_CHAINABLE_INT_BLOCK(self.keyboardType = value);
+    SL_CHAINABLE_INT_BLOCK(self.keyboardType = (UIKeyboardType)value);
 }
 - (SLChainableUITextFieldIntBlock)returnKey {
-    SL_CHAINABLE_INT_BLOCK(self.returnKeyType = value);
+    SL_CHAINABLE_INT_BLOCK(self.returnKeyType = (UIReturnKeyType)value);
 }
 
 @end

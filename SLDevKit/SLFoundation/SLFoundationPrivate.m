@@ -181,7 +181,7 @@ SL_INLINE NSUInteger _maxDecodeLength(NSUInteger encodeLen) {
     NSUInteger _resultLen = _calcEncodedLength(self.length);
     [_result setLength:_resultLen];
     NSUInteger unEncodedLen = self.length;
-    BytePtr _resultBytes = [_result mutableBytes];
+    BytePtr _resultBytes = (BytePtr)[_result mutableBytes];
     BytePtr _selfBytes = (BytePtr)[self bytes];
     while (unEncodedLen > 2) {
         // 取第一Byte的高6bit作为索引
@@ -220,7 +220,7 @@ SL_INLINE NSUInteger _maxDecodeLength(NSUInteger encodeLen) {
     
     NSUInteger _unDecodeLen = self.length;
     BytePtr _selfBytes = (BytePtr)[self bytes];
-    BytePtr _resultBytes = [_result mutableBytes];
+    BytePtr _resultBytes = (BytePtr)[_result mutableBytes];
     
     // 将'='的长度忽略
     while (*(_selfBytes+_unDecodeLen-1) == '=') {
@@ -259,8 +259,8 @@ SL_INLINE NSUInteger _maxDecodeLength(NSUInteger encodeLen) {
 }
 
 - (NSData *)_hexEncode {
-    static char *hex = "0123456789abcdef";
-    Byte *hexEncode = malloc(self.length * 2);
+    static char *hex = (char *)"0123456789abcdef";
+    Byte *hexEncode = (Byte *)malloc(self.length * 2);
     memset(hexEncode, 0, self.length * 2);
     Byte *bytes = (Byte *)self.bytes;
     for (int i = 0; i < self.length; i++) {

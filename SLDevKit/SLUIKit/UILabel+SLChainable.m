@@ -35,7 +35,7 @@
 }
 
 - (SLChainableUILabelIntBlock)textAlign {
-    SL_CHAINABLE_INT_BLOCK(self.textAlignment = value;);
+    SL_CHAINABLE_INT_BLOCK(self.textAlignment = (NSTextAlignment)value;);
 }
 
 @end
