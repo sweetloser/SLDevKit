@@ -144,12 +144,6 @@
     },
     {
       "name": "SLLogger",
-      "compiler_flags": "-x objective-c++",
-      "pod_target_xcconfig": {
-        "CLANG_CXX_LANGUAGE_STANDARD": "gnu++11",
-        "CLANG_CXX_LIBRARY": "libc++",
-        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF": "NO"
-      },
       "libraries": "c++",
       "source_files": "SLDevKit/SLLogger/*.{h,cpp}"
     },
@@ -161,13 +155,7 @@
 
         ]
       },
-      "compiler_flags": "-x objective-c++",
-      "libraries": "c++",
-      "pod_target_xcconfig": {
-        "CLANG_CXX_LANGUAGE_STANDARD": "gnu++11",
-        "CLANG_CXX_LIBRARY": "libc++",
-        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF": "NO"
-      }
+      "libraries": "c++"
     }
   ]
 }

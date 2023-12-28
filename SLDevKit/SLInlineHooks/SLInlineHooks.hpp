@@ -13,14 +13,7 @@ extern "C" {
 #endif
 
 #include <stdio.h>
-#include <stdint.h>
-
-typedef uintptr_t sl_addr_t;
-typedef uint32_t sl_addr32_t;
-typedef uint64_t sl_addr64_t;
-
-typedef void *sl_dummy_func_t;
-typedef void *sl_asm_func_t;
+#include "SLTypeAlias.hpp"
 
 #if defined(__arm__)
 
@@ -89,6 +82,18 @@ typedef struct {
 
 #endif
 
+void *sl_symbolResolver(const char *image_name, const char *symbol_name);
+
+/**
+ * replace the given import symbol, as fishhook did.
+ * 
+ * @param image_name the module name used to search for symbols. null-able, if null, it is found in all modules.
+ * @param symbol_name name of the symbol to be replaced.
+ * @param fake_func function to replace.
+ * @param orig_func_ptr a pointer to save the original function.
+ * 
+ * @return returns 0 if success, otherwise -1 and prints error message in debug mode.
+ */
 int sl_importTableReplace(char *image_name, char *symbol_name, sl_dummy_func_t fake_func, sl_dummy_func_t *orig_func_ptr);
 
 #ifdef __cplusplus

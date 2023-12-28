@@ -9,29 +9,14 @@
 #include <sys/mman.h>
 #include <mach/mach.h>
 #include <mach/vm_map.h>
-#include <mach-o/nlist.h>
-#include <mach-o/loader.h>
 #include "SLProcessRuntimeUtility.hpp"
-#include "SLInlineHooks.hpp"
+#include "SLTypeAlias.hpp"
 #include "SLLogger.h"
 #include <ptrauth.h>
+#include "mach_o.hpp"
 
 #ifdef __cplusplus
 extern "C" {
-#endif
-
-#if defined(__LP64__)
-typedef mach_header_64 mach_header_t;
-typedef segment_command_64 segment_command_t;
-typedef section_64 section_t;
-typedef nlist_64 nlist_t;
-#define LC_SEGMENT_ARCH_DEPENDENT LC_SEGMENT_64
-#else
-typedef mach_header mach_header_t;
-typedef segment_command segment_command_t;
-typedef section section_t;
-typedef nlist nlist_t;
-#define LC_SEGMENT_ARCH_DEPENDENT LC_SEGMENT
 #endif
 
 static void *iterate_indirect_symtab(char *symbol_name, section_t *section, intptr_t slide, nlist_t *symtab, char *strtab, uint32_t *indirect_symtab) {

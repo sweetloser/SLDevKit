@@ -173,7 +173,7 @@ void sl_logger_log_impl(void *logger, SLLOGLevel level, const char *fmt, ...);
         SLLOG(SL_LOG_LEVEL_INFO, fmt, ##__VA_ARGS__);                                       \
     }while(0)
 
-#define SLIWARN_LOG(fmt, ...)                                                               \
+#define SLWARN_LOG(fmt, ...)                                                                \
     do {                                                                                    \
         SLLOG(SL_LOG_LEVEL_WARN, fmt, ##__VA_ARGS__);                                       \
     }while(0)
