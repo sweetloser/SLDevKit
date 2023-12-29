@@ -106,8 +106,71 @@ int sl_shared_cache_load_symbols(sl_shared_cache_ctx_t *ctx) {
     }
     
     ctx->latest_shared_cache_format = latest_shared_cache_format;
+    {
+        auto mmap_shared_cache = ctx->mmap_shared_cahce;
+        auto localInfo = (struct dyld_cache_local_symbols_info *)((char *)mmap_shared_cache + localSymbolsOffset);
+        ctx->local_symbols_info = localInfo;
+        
+        if (ctx->latest_shared_cache_format) {
+            auto localEntries_64 = (struct dyld_cache_local_symbols_entry_64 *)((char *)localInfo + localInfo->entriesOffset);
+            ctx->local_symbols_entries_64 = localEntries_64;
+        } else {
+            auto localEntries = (struct dyld_cache_local_symbols_entry *)((char *)localInfo + localInfo->entriesOffset);
+            ctx->local_symbols_entries = localEntries;
+        }
+        
+        ctx->symtab = (nlist_t *)((char *)localInfo + localInfo->nlistOffset);
+        ctx->strtab = ((char *)localInfo) + localInfo->stringsOffset;
+    }
     
+    return 0;
+}
+
+bool sl_shared_cache_is_contain(sl_shared_cache_ctx_t *ctx, sl_addr_t addr, size_t length) {
+    struct dyld_cache_header *runtime_shared_cache;
+    if (ctx) {
+        runtime_shared_cache = ctx->runtime_shared_cache;
+    } else {
+        runtime_shared_cache = shared_cache_get_load_addr();
+    }
     
+    sl_addr_t region_start = runtime_shared_cache->sharedRegionStart + ctx->runtime_slide;
+    sl_addr_t region_end = region_start + runtime_shared_cache->sharedRegionSize;
     
+    if (addr >= region_start && addr <= region_end) {
+        return true;
+    }
+    
+    return false;
+}
+
+int sl_shared_cache_get_symbol_table(sl_shared_cache_ctx_t *ctx, mach_header_t *image_header, nlist_t **out_symtab, uint32_t *out_symtab_count, char **out_strtab) {
+    uint64_t textOffsetInCache = (uint64_t)image_header - (uint64_t)ctx->runtime_shared_cache;
+    
+    nlist_t *localNlists = nullptr;
+    uint32_t localNlistCount = 0;
+    const char *localStrings = nullptr;
+    
+    const uint32_t entriesCount = ctx->local_symbols_info->entriesCount;
+    for (uint32_t i = 0; i < entriesCount; i++) {
+        if (ctx->latest_shared_cache_format) {
+            if (ctx->local_symbols_entries_64[i].dylibOffset == textOffsetInCache) {
+                uint32_t localNlistStart = ctx->local_symbols_entries_64[i].nlistStartIndex;
+                localNlistCount = ctx->local_symbols_entries_64[i].nlistCount;
+                localNlists = &ctx->symtab[localNlistStart];
+                break;
+            }
+        } else {
+            if (ctx->local_symbols_entries[i].dylibOffset == textOffsetInCache) {
+                uint32_t localNlistStart = ctx->local_symbols_entries[i].nlistStartIndex;
+                localNlistCount = ctx->local_symbols_entries[i].nlistCount;
+                localNlists = &ctx->symtab[localNlistStart];
+                break;
+            }
+        }
+    }
+    *out_symtab = localNlists;
+    *out_symtab_count = (uint32_t)localNlistCount;
+    *out_strtab = (char *)ctx->strtab;
     return 0;
 }

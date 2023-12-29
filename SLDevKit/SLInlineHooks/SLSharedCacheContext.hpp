@@ -37,6 +37,10 @@ int sl_shared_cache_ctx_init(sl_shared_cache_ctx_t *ctx);
 
 int sl_shared_cache_load_symbols(sl_shared_cache_ctx_t *ctx);
 
+bool sl_shared_cache_is_contain(sl_shared_cache_ctx_t *ctx, sl_addr_t addr, size_t length);
+
+int sl_shared_cache_get_symbol_table(sl_shared_cache_ctx_t *ctx, mach_header_t *image_header, nlist_t **out_symtab, uint32_t *out_symtab_count, char **out_strtab);
+
 #ifdef __cplusplus
 }
 #endif
