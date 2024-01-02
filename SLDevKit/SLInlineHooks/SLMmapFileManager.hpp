@@ -17,8 +17,6 @@
 #include <unistd.h>
 
 #ifdef __cplusplus
-extern "C" {
-#endif
 class SLMmapFileManager {
     const char *file_;
     uint8_t *mmap_buffer_;
@@ -66,8 +64,6 @@ public:
     }
 };
 
-#ifdef __cplusplus
-} // extern "C"
 #endif
 
 #endif /* SLMmapFileManager_hpp */
