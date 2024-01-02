@@ -12,6 +12,12 @@
 #include "SLTypeAlias.hpp"
 #include "SLSharedCacheContext.hpp"
 #include "SLMachOContext.hpp"
+#include <mach/task_info.h>
+#include <mach/task.h>
+#include <mach/mach_init.h>
+#include <mach-o/dyld_images.h>
+#include "SLLogger.h"
+
 
 void *sl_symbolResolver(const char *image_name, const char *symbol_name) {
     uintptr_t result = 0;
@@ -67,8 +73,38 @@ void *sl_symbolResolver(const char *image_name, const char *symbol_name) {
 #endif
 #endif
         
-        
-        
+        result = sl_macho_symbol_resolve(header, symbol_name);
+        if (result) {
+            return (void *)result;
+        }
     }
-    return nullptr;
+    
+#if !defined(BUILDIND_KERNEL)
+    mach_header_t *dyld_header = NULL;
+    if (image_name != NULL && strcmp(image_name, "dyld") == 0) {
+        task_dyld_info_data_t task_dyld_info;
+        mach_msg_type_number_t count = TASK_DYLD_INFO_COUNT;
+        if (task_info(mach_task_self(), TASK_DYLD_INFO, (task_info_t)&task_dyld_info, &count)) {
+            return NULL;
+        }
+        
+        const struct dyld_all_image_infos *infos = (struct dyld_all_image_infos *)task_dyld_info.all_image_info_addr;
+        dyld_header = (mach_header_t *)infos->dyldImageLoadAddress;
+        sl_macho_ctx_t ctx;
+        sl_macho_ctx_init(&ctx, dyld_header, true);
+        result = (uintptr_t)sl_macho_ctx_symbol_resolve(&ctx, symbol_name);
+        
+        bool is_dyld_in_cache = ((mach_header_t *)dyld_header)->flags & MH_DYLIB_IN_CACHE;
+        if (!is_dyld_in_cache && result == 0) {
+            result = sl_macho_file_symbol_resolve(dyld_header->cputype, dyld_header->cpusubtype, "/usr/lib/dyld", (char *)symbol_name);
+            result += (uintptr_t)dyld_header;
+        }
+    }
+#endif
+    
+    if (result == 0) {
+        SLDEBUG_LOG("symbol resolver failed: %s", symbol_name);
+    }
+    
+    return (void *)result;
 }

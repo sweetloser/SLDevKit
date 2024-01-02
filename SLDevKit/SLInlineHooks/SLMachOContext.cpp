@@ -7,6 +7,10 @@
 
 #include "SLMachOContext.hpp"
 #include <string.h>
+#include "SLMmapFileManager.hpp"
+#include <mach-o/fat.h>
+
+#define ASSERT(x)
 
 void sl_macho_ctx_init(sl_macho_ctx_t *ctx, mach_header_t *header, bool is_runtime_mode) {
     memset(ctx, 0, sizeof(sl_macho_ctx_t));
@@ -128,6 +132,102 @@ uintptr_t sl_macho_ctx_iterate_symbol_table(sl_macho_ctx_t *ctx, const char *sym
     return 0;
 }
 
+uintptr_t sl_read_uleb128(const uint8_t **pp, const uint8_t *end) {
+    uint8_t *p = (uint8_t *)*pp;
+    uint64_t result = 0;
+    int bit = 0;
+    do {
+        if (p == end) {
+            ASSERT(p==end);
+        }
+        
+        uint64_t slice = *p & 0x7f;
+        if (bit > 63) {
+            ASSERT(bit > 63)
+        } else {
+            result = result | (slice << bit);
+            bit += 7;
+        }
+    } while (*p++ & 0x80);
+    return result;
+}
+
+uint8_t *sl_tail_walk(const uint8_t *start, const uint8_t *end, const char *symbol) {
+    uint32_t visitedNodeOffsets[128];
+    int visitedNodeOffsetCount = 0;
+    visitedNodeOffsets[visitedNodeOffsetCount++] = 0;
+    const uint8_t *p = start;
+    while (p < end) {
+        uint64_t terminalSize = *p++;
+        if (terminalSize > 127) {
+            --p;
+            terminalSize = sl_read_uleb128(&p, end);
+        }
+        if ((*symbol == '\0') && (terminalSize != 0)) {
+            return (uint8_t *)p;
+        }
+        const uint8_t *children = p + terminalSize;
+        if (children > end) {
+            return NULL;
+        }
+        uint8_t childrenRemaining = *children++;
+        p = children;
+        uint64_t nodeOffset = 0;
+        
+        for (; childrenRemaining > 0; --childrenRemaining) {
+            const char *ss = symbol;
+            bool wrongEdge = false;
+            
+            char c = *p;
+            while (c != '\0') {
+                if (!wrongEdge) {
+                    if (c != *ss) {
+                        wrongEdge = true;
+                    }
+                    ++ss;
+                }
+                ++p;
+                c = *p;
+            }
+            if (wrongEdge) {
+                ++p;
+                while ((*p & 0x80) != 0) {
+                    ++p;
+                }
+                ++p;
+                if (p > end) {
+                    return nullptr;
+                }
+            } else {
+                ++p;
+                nodeOffset = sl_read_uleb128(&p, end);
+                if (nodeOffset == 0 || (&start[nodeOffset] > end)) {
+                    return nullptr;
+                }
+                symbol = ss;
+                break;
+            }
+        }
+        
+        if (nodeOffset != 0) {
+            if (nodeOffset > (uint64_t)(end - start)) {
+                return NULL;
+            }
+            
+            for (int i = 0; i < visitedNodeOffsetCount; ++i) {
+                if (visitedNodeOffsets[i] == nodeOffset) {
+                    return NULL;
+                }
+            }
+            visitedNodeOffsets[visitedNodeOffsetCount] = (uint32_t)nodeOffset;
+            p = &start[nodeOffset];
+        } else {
+            p = end;
+        }
+    }
+    return NULL;
+}
+
 uintptr_t sl_macho_ctx_iterate_exported_symbol(sl_macho_ctx_t *ctx, const char *symbol_name, uint64_t *out_flags) {
     if (ctx->texg_seg == NULL || ctx->linkedit_seg == NULL) {
         return 0;
@@ -149,7 +249,29 @@ uintptr_t sl_macho_ctx_iterate_exported_symbol(sl_macho_ctx_t *ctx, const char *
     
     uint8_t *exports_start = (uint8_t *)exports;
     uint8_t *exports_end = (uint8_t *)exports_start + trieFileSize;
-    return 0;
+    
+    uint8_t *node = (uint8_t *)sl_tail_walk(exports_start, exports_end, symbol_name);
+    if (node == NULL) {
+        return 0;
+    }
+    
+    const uint8_t *p = node;
+    const uintptr_t flags = sl_read_uleb128(&p, exports_end);
+    if (out_flags) {
+        *out_flags = flags;
+    }
+    if (flags & EXPORT_SYMBOL_FLAGS_REEXPORT) {
+        const uint64_t ordinal = sl_read_uleb128(&p, exports_end);
+        const char *importedName = (const char *)p;
+        if (importedName[0] == '\0') {
+            importedName = symbol_name;
+            return 0;
+        }
+        return (uintptr_t)importedName;
+    }
+    
+    uint64_t trieValue = sl_read_uleb128(&p, exports_end);
+    return trieValue;
 }
 
 uintptr_t sl_macho_ctx_symbol_resolve_options(sl_macho_ctx *ctx, const char *symbol_name_pattern, sl_resolve_symbol_type_t type) {
@@ -163,19 +285,79 @@ uintptr_t sl_macho_ctx_symbol_resolve_options(sl_macho_ctx *ctx, const char *sym
     
     if (type & SL_RESOLVE_SYMBOL_TYPE_EXPORTED) {
         uint64_t flags;
-        uintptr_t result;
+        uintptr_t result = sl_macho_ctx_iterate_exported_symbol(ctx, symbol_name_pattern, &flags);
+        if (result) {
+            
+        }
     }
     
     return 0;
 }
 
+uintptr_t sl_macho_ctx_symbol_resolve(sl_macho_ctx_t *ctx, const char *symbol_name_pattern) {
+    return sl_macho_ctx_symbol_resolve_options(ctx, symbol_name_pattern, SL_RESOLVE_SYMBOL_TYPE_ALL);
+}
+
 uintptr_t sl_macho_symbol_resolve_options(mach_header_t *header, const char *symbol_name_pattern, sl_resolve_symbol_type_t type) {
     sl_macho_ctx_t ctx;
     sl_macho_ctx_init(&ctx, header, true);
-    return 0;
+    
+    return sl_macho_ctx_symbol_resolve_options(&ctx, symbol_name_pattern, type);
 }
 
 uintptr_t sl_macho_symbol_resolve(mach_header_t *header, const char *symbol_name_pattern) {
     
     return sl_macho_symbol_resolve_options(header, symbol_name_pattern, SL_RESOLVE_SYMBOL_TYPE_ALL);
+}
+
+uintptr_t sl_macho_file_memory_symbol_resolve(cpu_type_t in_cputype, cpu_subtype_t in_cpusubtype, const uint8_t *file_mem, char *symbol_name_pattern) {
+    mach_header_t *header = (mach_header_t *)file_mem;
+    struct fat_header *fh = (struct fat_header *)file_mem;
+    if (fh->magic == OSSwapBigToHostInt32(FAT_MAGIC)) {
+        const struct fat_arch *archs = (struct fat_arch *)(((uintptr_t)fh) + sizeof(struct fat_header));
+        mach_header_t *header_arm64 = NULL;
+        mach_header_t *header_arm64e = NULL;
+        mach_header_t *header_x64 = NULL;
+        for (size_t i = 0; i < OSSwapBigToHostInt32(fh->nfat_arch); i++) {
+            uint64_t offset;
+            uint64_t len;
+            cpu_type_t cputype = (cpu_type_t)OSSwapBigToHostInt32(archs[i].cputype);
+            cpu_subtype_t cpusubtype = (cpu_subtype_t)OSSwapBigToHostInt32(archs[i].cpusubtype);
+            offset = OSSwapBigToHostInt32(archs[i].offset);
+            len = OSSwapBigToHostInt32(archs[i].size);
+            if (cputype == CPU_TYPE_X86_64) {
+                header_x64 = (mach_header_t *)&file_mem[offset];
+            } else if (cputype == CPU_TYPE_ARM64 && (cpusubtype & ~CPU_SUBTYPE_MASK) == CPU_SUBTYPE_ARM64E) {
+                header_arm64e = (mach_header_t *)&file_mem[offset];
+            } else if (cputype == CPU_TYPE_ARM64) {
+                header_arm64 = (mach_header_t *)&file_mem[offset];
+            }
+            
+            if ((cputype == in_cputype) && ((cpusubtype & in_cpusubtype) == in_cpusubtype)) {
+                header = (mach_header_t *)&file_mem[offset];
+                break;
+            }
+        }
+        if (header == (mach_header_t *)file_mem) {
+            if (in_cputype == 0 && in_cpusubtype == 0) {
+#if defined(__arm64__) || defined(__aarch64__)
+                header = header_arm64e ? header_arm64e : header_arm64;
+#endif
+            }
+        }
+    }
+    
+    sl_macho_ctx_t ctx;
+    sl_macho_ctx_init(&ctx, header, false);
+    return sl_macho_ctx_symbol_resolve_options(&ctx, symbol_name_pattern, SL_RESOLVE_SYMBOL_TYPE_SYMBOL_TABLE);
+}
+
+uintptr_t sl_macho_file_symbol_resolve(cpu_type_t cpu, cpu_subtype_t subtype, const char *file, char *symol_name_pattern) {
+    SLMmapFileManager mng(file);
+    auto mmap_buffer = mng.map();
+    if (!mmap_buffer) {
+        return 0;
+    }
+    
+    return sl_macho_file_memory_symbol_resolve(cpu, subtype, mmap_buffer, symol_name_pattern);
 }
