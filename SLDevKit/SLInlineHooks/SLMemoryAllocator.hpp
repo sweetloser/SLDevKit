@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include "SLInlineHooks.hpp"
+#include <vector>
 
 enum SLMemoryPermission {
     kNoAccess,
@@ -36,6 +37,33 @@ struct SLMemRange {
         this->end = start + size;
     }
 };
+
+struct SLMemBlock : SLMemRange {
+    sl_addr_t addr;
+    
+    SLMemBlock() : SLMemRange(0, 0), addr(0) {}
+    
+    SLMemBlock(sl_addr_t addr, size_t size) : SLMemRange(addr, size), addr(addr) {}
+    
+    void reset(sl_addr_t addr, size_t size) {
+        SLMemRange::reset(addr, size);
+        this->addr = addr;
+    }
+};
+
+struct SLMemoryArena : SLMemRange {
+    sl_addr_t addr;
+    sl_addr_t cursor_addr;
+    
+    std::vector<SLMemBlock *> memory_blocks;
+    
+    SLMemoryArena(sl_addr_t addr, size_t size) : SLMemRange(addr, size), addr(addr), cursor_addr(addr) {}
+    
+    virtual SLMemBlock *allocMemBlock(size_t size);
+};
+
+using SLCodeMemBlock = SLMemBlock;
+using SLCodeMemoryArena = SLMemoryArena;
 
 class SLMemoryAllocator {
 public:

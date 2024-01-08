@@ -183,9 +183,9 @@ void sl_logger_log_impl(void *logger, SLLOGLevel level, const char *fmt, ...);
         SLLOG(SL_LOG_LEVEL_ERROR, fmt, ##__VA_ARGS__);                                      \
     }while(0)
 
-#define SLFALAT_LOG(fmt, ...)                                                               \
+#define SLFALAL_LOG(fmt, ...)                                                               \
     do {                                                                                    \
-        SLLOG(SL_LOG_LEVEL_FALAT, fmt, ##__VA_ARGS__);                                      \
+        SLLOG(SL_LOG_LEVEL_FATAL, fmt, ##__VA_ARGS__);                                      \
     }while(0)
 
 #endif /* SLLogger_hpp */

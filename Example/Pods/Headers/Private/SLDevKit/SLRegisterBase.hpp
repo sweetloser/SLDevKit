@@ -1,0 +1,1 @@
+../../../../../SLDevKit/SLInlineHooks/SLRegisterBase.hpp

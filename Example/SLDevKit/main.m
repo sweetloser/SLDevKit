@@ -20,7 +20,7 @@ void sl_nslog(NSString *fmt, ...) {
 int main(int argc, char * argv[]) {
     @autoreleasepool {
 //        sl_importTableReplace(NULL, "NSLog", sl_nslog, (void **)&orig_nslog);
-        orig_nslog = sl_symbolResolver("SLDevKit", "sl_nslog");
+        orig_nslog = sl_symbolResolver("dyld", "vm_protect");
         MYLOG(@"aaaaa=:%s===========",argv[0]);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SLAppDelegate class]));
     }
