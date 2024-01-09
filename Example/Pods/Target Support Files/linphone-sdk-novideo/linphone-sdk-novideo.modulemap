@@ -1,0 +1,6 @@
+module linphonesw {
+  umbrella header "linphone-sdk-novideo-umbrella.h"
+
+  export *
+  module * { export * }
+}

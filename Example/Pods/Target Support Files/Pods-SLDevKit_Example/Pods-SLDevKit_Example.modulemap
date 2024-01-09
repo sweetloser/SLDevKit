@@ -1,4 +1,4 @@
-framework module Pods_SLDevKit_Example {
+module Pods_SLDevKit_Example {
   umbrella header "Pods-SLDevKit_Example-umbrella.h"
 
   export *

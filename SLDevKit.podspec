@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLDevKit'
-  s.version          = '1.0.23'
+  s.version          = '1.0.24'
   s.summary          = 'iOS开发基础库集合.'
 
   s.description      = <<-DESC
@@ -62,7 +62,7 @@ TODO: Add long description of the pod here.
     scf.dependency 'SLDevKit/SLUIKit'
     scf.dependency 'SLDevKit/SLFoundation'
     scf.dependency 'SLDevKit/SLAutoLayout'
-
+    
     scf.source_files = 'SLDevKit/SLCustomField/*.{h,m}'
 
   end
@@ -83,6 +83,7 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec "SLHooks" do |shk|
+    shk.dependency 'linphone-sdk-novideo'
     shk.dependency 'SLDevKit/SLDefs'
     shk.source_files = 'SLDevKit/SLHooks/*.{h,m}'
   end

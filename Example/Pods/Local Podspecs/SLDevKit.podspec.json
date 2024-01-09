@@ -124,6 +124,9 @@
     {
       "name": "SLHooks",
       "dependencies": {
+        "linphone-sdk-novideo": [
+
+        ],
         "SLDevKit/SLDefs": [
 
         ]

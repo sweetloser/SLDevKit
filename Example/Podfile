@@ -1,5 +1,7 @@
 #use_frameworks!
 
+source 'https://gitlab.linphone.org/BC/public/podspec.git'
+
 platform :ios, '11.0'
 
 target 'SLDevKit_Example' do
@@ -7,7 +9,7 @@ target 'SLDevKit_Example' do
   pod 'Aspects'
   pod 'YYCache'
   pod 'YYModel'
-
+  pod 'linphone-sdk-novideo'
   target 'SLDevKit_Tests' do
     inherit! :search_paths
     

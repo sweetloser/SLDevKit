@@ -1,5 +1,6 @@
 PODS:
   - Aspects (1.4.1)
+  - linphone-sdk-novideo (5.2.112)
   - SLDevKit (1.0.23):
     - SLDevKit/SLAutoLayout (= 1.0.23)
     - SLDevKit/SLCache (= 1.0.23)
@@ -29,6 +30,7 @@ PODS:
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
   - SLDevKit/SLHooks (1.0.23):
+    - linphone-sdk-novideo
     - SLDevKit/SLDefs
   - SLDevKit/SLInlineHooks (1.0.23):
     - SLDevKit/SLLogger
@@ -52,11 +54,14 @@ PODS:
 
 DEPENDENCIES:
   - Aspects
+  - linphone-sdk-novideo
   - SLDevKit (from `../`)
   - YYCache
   - YYModel
 
 SPEC REPOS:
+  https://gitlab.linphone.org/BC/public/podspec.git:
+    - linphone-sdk-novideo
   trunk:
     - Aspects
     - YYCache
@@ -68,10 +73,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  SLDevKit: c86b15f408d90e30c5c4fa8abf433e7527009725
+  linphone-sdk-novideo: 59d4d269f564909108bae583ed5dc03ae0bd14d6
+  SLDevKit: adcddfc48fbcc477b9efb86af2033faad04c908b
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 179d0fa8141bb501dbf654b1c57eff0bf5f895da
+PODFILE CHECKSUM: 6fde8cb447ffbc8fcf7c3d05865c980d9b499f03
 
 COCOAPODS: 1.14.2
