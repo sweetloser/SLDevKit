@@ -86,9 +86,9 @@ typedef struct {
     
 }SLRegisterContext;
 
-#endif
-
 typedef void(*sl_instrument_callback_t)(void *address, SLRegisterContext *ctx);
+
+#endif
 
 enum sl_ref_label_type_t { kLabelImm19 };
 
