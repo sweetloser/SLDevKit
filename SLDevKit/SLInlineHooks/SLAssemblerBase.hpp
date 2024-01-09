@@ -17,6 +17,7 @@
 class SLAssemblerBase {
 public:
     explicit SLAssemblerBase(void *address);
+    
     ~SLAssemblerBase();
     
     size_t ip_offset() const;

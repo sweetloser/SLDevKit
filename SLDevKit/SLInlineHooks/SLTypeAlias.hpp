@@ -8,10 +8,6 @@
 #ifndef SLTypeAlias_h
 #define SLTypeAlias_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stdint.h>
 
 typedef uintptr_t sl_addr_t;
@@ -86,14 +82,41 @@ typedef struct {
     
 }SLRegisterContext;
 
-typedef void(*sl_instrument_callback_t)(void *address, SLRegisterContext *ctx);
+#elif defined(_M_IX86) || defined(__i386__)
+typedef struct _RegisterContext {
+  uint32_t dummy_0;
+  uint32_t esp;
+
+  uint32_t dummy_1;
+  uint32_t flags;
+
+  union {
+    struct {
+      uint32_t eax, ebx, ecx, edx, ebp, esp, edi, esi;
+    } regs;
+  } general;
+
+} SLRegisterContext;
+#elif defined(_M_X64) || defined(__x86_64__)
+typedef struct {
+  uint64_t dummy_0;
+  uint64_t rsp;
+
+  union {
+    struct {
+      uint64_t rax, rbx, rcx, rdx, rbp, rsp, rdi, rsi, r8, r9, r10, r11, r12, r13, r14, r15;
+    } regs;
+  } general;
+
+  uint64_t dummy_1;
+  uint64_t flags;
+} SLRegisterContext;
 
 #endif
+
+typedef void(*sl_instrument_callback_t)(void *address, SLRegisterContext *ctx);
 
 enum sl_ref_label_type_t { kLabelImm19 };
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* SLTypeAlias_h */

@@ -23,8 +23,6 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
   
   s.source_files = 'SLDevKit/SLDevKit.h'
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.subspec "SLDefs" do |sd|
     sd.source_files = 'SLDevKit/SLDefs/*.{h,m}'
   end
@@ -106,6 +104,7 @@ TODO: Add long description of the pod here.
 #    sih.dependency 'SLDevKit/SLLogger'
 #    sih.libraries = "c++"
 #  end
+
 #  s.subspec "SLBackTrace" do |sbt|
 #    sbt.dependency 'SLDevKit/SLDefs'
 #    sbt.dependency 'SLDevKit/SLFoundation'

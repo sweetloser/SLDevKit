@@ -1,1 +1,0 @@
-../../../Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-umbrella.h

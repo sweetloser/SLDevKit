@@ -1,67 +1,62 @@
 PODS:
   - Aspects (1.4.1)
-  - linphone-sdk-novideo (5.2.112)
-  - SLDevKit (1.0.23):
-    - SLDevKit/SLAutoLayout (= 1.0.23)
-    - SLDevKit/SLCache (= 1.0.23)
-    - SLDevKit/SLCustomField (= 1.0.23)
-    - SLDevKit/SLDefs (= 1.0.23)
-    - SLDevKit/SLFoundation (= 1.0.23)
-    - SLDevKit/SLHooks (= 1.0.23)
-    - SLDevKit/SLInlineHooks (= 1.0.23)
-    - SLDevKit/SLLogger (= 1.0.23)
-    - SLDevKit/SLModel (= 1.0.23)
-    - SLDevKit/SLUIKit (= 1.0.23)
-    - SLDevKit/SLUpdateAlert (= 1.0.23)
-    - SLDevKit/SLUtils (= 1.0.23)
-  - SLDevKit/SLAutoLayout (1.0.23):
+  - SLDevKit (1.0.24):
+    - SLDevKit/SLAutoLayout (= 1.0.24)
+    - SLDevKit/SLCache (= 1.0.24)
+    - SLDevKit/SLCustomField (= 1.0.24)
+    - SLDevKit/SLDefs (= 1.0.24)
+    - SLDevKit/SLFoundation (= 1.0.24)
+    - SLDevKit/SLHooks (= 1.0.24)
+    - SLDevKit/SLInlineHooks (= 1.0.24)
+    - SLDevKit/SLLogger (= 1.0.24)
+    - SLDevKit/SLModel (= 1.0.24)
+    - SLDevKit/SLUIKit (= 1.0.24)
+    - SLDevKit/SLUpdateAlert (= 1.0.24)
+    - SLDevKit/SLUtils (= 1.0.24)
+  - SLDevKit/SLAutoLayout (1.0.24):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLCache (1.0.23):
+  - SLDevKit/SLCache (1.0.24):
     - SLDevKit/SLDefs
-  - SLDevKit/SLCustomField (1.0.23):
+  - SLDevKit/SLCustomField (1.0.24):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLDefs (1.0.23)
-  - SLDevKit/SLFoundation (1.0.23):
+  - SLDevKit/SLDefs (1.0.24)
+  - SLDevKit/SLFoundation (1.0.24):
     - SLDevKit/SLDefs
     - SLDevKit/SLUtils
-  - SLDevKit/SLHooks (1.0.23):
-    - linphone-sdk-novideo
+  - SLDevKit/SLHooks (1.0.24):
     - SLDevKit/SLDefs
-  - SLDevKit/SLInlineHooks (1.0.23):
+  - SLDevKit/SLInlineHooks (1.0.24):
     - SLDevKit/SLLogger
-  - SLDevKit/SLLogger (1.0.23)
-  - SLDevKit/SLModel (1.0.23):
+  - SLDevKit/SLLogger (1.0.24)
+  - SLDevKit/SLModel (1.0.24):
     - SLDevKit/SLCache
     - SLDevKit/SLDefs
-  - SLDevKit/SLUIKit (1.0.23):
+  - SLDevKit/SLUIKit (1.0.24):
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUtils
-  - SLDevKit/SLUpdateAlert (1.0.23):
+  - SLDevKit/SLUpdateAlert (1.0.24):
     - SLDevKit/SLAutoLayout
     - SLDevKit/SLDefs
     - SLDevKit/SLFoundation
     - SLDevKit/SLUIKit
-  - SLDevKit/SLUtils (1.0.23):
+  - SLDevKit/SLUtils (1.0.24):
     - SLDevKit/SLDefs
   - YYCache (1.0.4)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Aspects
-  - linphone-sdk-novideo
   - SLDevKit (from `../`)
   - YYCache
   - YYModel
 
 SPEC REPOS:
-  https://gitlab.linphone.org/BC/public/podspec.git:
-    - linphone-sdk-novideo
   trunk:
     - Aspects
     - YYCache
@@ -73,11 +68,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  linphone-sdk-novideo: 59d4d269f564909108bae583ed5dc03ae0bd14d6
-  SLDevKit: adcddfc48fbcc477b9efb86af2033faad04c908b
+  SLDevKit: f5ce27c4b2c3bcd5016e11ea742083561370cd2b
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 6fde8cb447ffbc8fcf7c3d05865c980d9b499f03
+PODFILE CHECKSUM: 8a3893456101ea1bd93ecf9a6439c47ec9856f9a
 
 COCOAPODS: 1.14.2

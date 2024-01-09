@@ -69,7 +69,7 @@ public:
     
     inline explicit SLMemOperand(SLRegister base, SLRegister regoffset, SLExtend extend, unsigned extend_imm) : base_(base), regoffset_(regoffset), offset_(0), addrmode_(Offset), shift_(NO_SHIFT), extend_(extend), shift_extend_imm_(extend_imm) {}
     
-    inline explicit SLMemOperand(SLRegister)
+//    inline explicit SLMemOperand(SLRegister)
 private:
     SLRegister base_;
     SLRegister regoffset_;
