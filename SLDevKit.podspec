@@ -82,7 +82,6 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec "SLHooks" do |shk|
-    shk.dependency 'linphone-sdk-novideo'
     shk.dependency 'SLDevKit/SLDefs'
     shk.source_files = 'SLDevKit/SLHooks/*.{h,m}'
   end
@@ -99,11 +98,11 @@ TODO: Add long description of the pod here.
     
   end
   
-#  s.subspec "SLInlineHooks" do |sih|
-#    sih.source_files = 'SLDevKit/SLInlineHooks/*{h,hpp,cpp}'
-#    sih.dependency 'SLDevKit/SLLogger'
-#    sih.libraries = "c++"
-#  end
+  s.subspec "SLInlineHooks" do |sih|
+    sih.source_files = 'SLDevKit/SLInlineHooks/*{h,hpp,cpp}'
+    sih.dependency 'SLDevKit/SLLogger'
+    sih.libraries = "c++"
+  end
 
 #  s.subspec "SLBackTrace" do |sbt|
 #    sbt.dependency 'SLDevKit/SLDefs'

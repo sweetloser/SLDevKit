@@ -15,9 +15,11 @@
 #include "SLConstantsArm64.hpp"
 #include "SLUtilityMacro.hpp"
 #include "SLCPURegister.hpp"
+#include "SLOperand.hpp"
 
 #define Rd(rd)  (rd.code() << kRdShift)
 #define Rt(rt)  (rt.code() << kRtShift)
+#define Rn(rn)  (rn.code() << kRnShift)
 
 class SLAssemblerArm64 : public SLAssemblerBase{
 public:
@@ -67,6 +69,37 @@ public:
         uint32_t immlo = (uint32_t)LeftShift(bits(imm >> 12, 0, 1), 2, 29);
         uint32_t immhi = (uint32_t)LeftShift(bits(imm >> 12, 2, 20), 19, 5);
         emit(ADRP | Rd(rd) | immlo | immhi);
+    }
+    
+    void add(const SLRegister &rd, const SLRegister &rn, int64_t imm) {
+        if (rd.is64Bits() && rn.is64Bits()) {
+            // 64-bit register.
+            addSubImmediate(rd, rn, SLOperand(imm), OPT_X(ADD, imm));
+        } else {
+            // 32-bit register.
+            addSubImmediate(rd, rn, SLOperand(imm), OPT_W(ADD, imm));
+        }
+    }
+    
+    void sub(const SLRegister &rd, const SLRegister &rn, int64_t imm) {
+        if (rd.is64Bits() && rn.is64Bits()) {
+            // 64-bit register.
+            addSubImmediate(rd, rn, SLOperand(imm), OPT_X(SUB, imm));
+        } else {
+            // 32-bit register.
+            addSubImmediate(rd, rn, SLOperand(imm), OPT_W(SUB, imm));
+        }
+    }
+    
+private:
+    void addSubImmediate(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand, SLAddSubImmediateOP op) {
+        if (operand.isImmediate()) {
+            int64_t imediate = operand.immediate();
+            int32_t imm12 = (int32_t)LeftShift(imediate, 12, 10);
+            emit((uint32_t)op | (uint32_t)Rd(rd) | (uint32_t)Rn(rn) | (uint32_t)imm12);
+        } else {
+            SLFATAL_LOG("unreachable code!!!");
+        }
     }
 };
 

@@ -13,7 +13,7 @@
 #define CHECK_WITH_MSG(condition, message)          \
 do {                                                \
     if (!(condition)) {                             \
-        SLFALAL_LOG("check failed: %s.", message);  \
+        SLFATAL_LOG("check failed: %s.", message);  \
     }                                               \
 } while(0)
 

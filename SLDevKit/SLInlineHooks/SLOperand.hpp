@@ -69,7 +69,61 @@ public:
     
     inline explicit SLMemOperand(SLRegister base, SLRegister regoffset, SLExtend extend, unsigned extend_imm) : base_(base), regoffset_(regoffset), offset_(0), addrmode_(Offset), shift_(NO_SHIFT), extend_(extend), shift_extend_imm_(extend_imm) {}
     
-//    inline explicit SLMemOperand(SLRegister)
+    inline explicit SLMemOperand(SLRegister base, SLRegister regoffset, SLShift shift = LSL, unsigned shift_imm = 0) : base_(base), regoffset_(regoffset), offset_(0), addrmode_(Offset), shift_(shift), extend_(NO_EXTEND), shift_extend_imm_(shift_imm) {}
+    
+    inline explicit SLMemOperand(SLRegister base, const SLOperand &offset, SLAddrMode addrmode = Offset) : base_(base), regoffset_(InvalidRegister), addrmode_(addrmode) {
+        if (offset.isShiftedRegister()) {
+            regoffset_ = offset.reg();
+            shift_ = offset.shift();
+            shift_extend_imm_ = offset.shift_extend_imm();
+            
+            extend_ = NO_EXTEND;
+            offset_ = 0;
+        } else if (offset.isExtendedRegister()) {
+            regoffset_ = offset.reg();
+            extend_ = offset.extend();
+            shift_extend_imm_ = offset.shift_extend_imm();
+            
+            shift_ = NO_SHIFT;
+            offset_ = 0;
+        }
+    }
+    
+    const SLRegister &base() const {
+        return base_;
+    }
+    const SLRegister &regoffset() const {
+        return regoffset_;
+    }
+    int64_t offset() const {
+        return offset_;
+    }
+    SLAddrMode addrmode() const {
+        return addrmode_;
+    }
+    SLShift shift() const {
+        return shift_;
+    }
+    SLExtend extend() const {
+        return extend_;
+    }
+    unsigned shift_extend_imm() const {
+        return shift_extend_imm_;
+    }
+    
+    bool isImmediateOffset() const {
+        return (addrmode_ == Offset);
+    }
+    bool isRegisterOffset() const {
+        return (addrmode_ == Offset);
+    }
+    bool isPreIndex() const {
+        return (addrmode_ == PreIndex);
+    }
+    bool isPostIndex() const {
+        return addrmode_ == PostIndex;
+    }
+    
 private:
     SLRegister base_;
     SLRegister regoffset_;
