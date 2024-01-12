@@ -16,7 +16,9 @@
 class SLLabel {
 public:
     SLLabel(sl_addr_t addr) : pos_(addr) {}
-    
+    sl_addr_t pos() {
+        return pos_;
+    }
 protected:
     sl_addr_t pos_;
 };

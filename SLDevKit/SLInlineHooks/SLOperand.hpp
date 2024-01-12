@@ -136,6 +136,77 @@ private:
     SLAddrMode addrmode_;
 };
 
+class SLOPEncode {
+public:
+    static int32_t sf(const SLRegister &reg, int32_t op) {
+        return (op | sf(reg));
+    }
+    static int32_t sf(const SLRegister &reg) {
+        if (reg.is64Bits()) {
+            return LeftShift(1, 1, 31);
+        }
+        return 0;
+    }
+    
+    static int32_t v(const SLRegister &reg, int32_t op) {
+        return (op | sf(reg));
+    }
+    static int32_t v(const SLRegister &reg) {
+        if (reg.isVRegister()) {
+            return LeftShift(1, 1, 26);
+        }
+        return 0;
+    }
+    
+    static int32_t l(bool load_or_store) {
+        if (load_or_store) {
+            return LeftShift(1, 1, 22);
+        }
+        return 0;
+    }
+    
+    static int32_t shift(SLShift shift) {
+        return LeftShift(shift, 2, 22);
+    }
+    
+    static int encodeLogicalImmediate(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand) {
+        int64_t imm = operand.immediate();
+        int32_t n, imms, immr;
+        immr = bits(imm, 0, 5);
+        imms = bits(imm, 6, 11);
+        n = bit(imm, 12);
+        
+        return (sf(rd) | LeftShift(immr, 6, 16) | LeftShift(imms, 6, 10) | Rd(rd) | Rn(rn));
+    }
+    
+    static int32_t encodeLogicalShift(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand) {
+        return (sf(rd) | shift(operand.shift()) | Rm(operand.reg()) | LeftShift(operand.shift_extend_imm(), 6, 10) | Rn(rn) | Rd(rd));
+    }
+    
+    static int32_t loadStorePair(SLLoadStorePairOP op, SLRegister rt, SLRegister rt2, const SLMemOperand &addr) {
+        int32_t scale = 2;
+        int32_t opc = 0;
+        int imm7;
+        opc = bits(op, 30, 31);
+        if (rt.isRegister()) {
+            scale += bit(opc, 1);
+        } else if (rt.isVRegister()) {
+            scale += opc;
+        }
+        imm7 = (int)(addr.offset() >> scale);
+        return LeftShift(imm7, 7, 15);
+    }
+    
+    static int32_t scale(int32_t op) {
+        int scale = 0;
+        if ((op & SLLoadStoreUnsignedOffsetFixed) == SLLoadStoreUnsignedOffsetFixed) {
+            scale = bits(op, 30, 31);
+        }
+        return scale;
+    }
+public:
+    
+};
 
 #endif
 #endif /* SLOperand_hpp */

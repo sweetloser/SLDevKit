@@ -135,5 +135,10 @@ constexpr SLRegister wLR    = w30;
 
 #define InvalidRegister SLCPURegister::invalidRegister()
 
+#define Rd(rd)  (rd.code() << kRdShift)
+#define Rt(rt)  (rt.code() << kRtShift)
+#define Rn(rn)  (rn.code() << kRnShift)
+#define Rm(rm)  (rm.code() << kRmShift)
+
 #endif
 #endif /* SLCPURegister_hpp */

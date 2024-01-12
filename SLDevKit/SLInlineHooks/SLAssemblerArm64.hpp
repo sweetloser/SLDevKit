@@ -17,10 +17,6 @@
 #include "SLCPURegister.hpp"
 #include "SLOperand.hpp"
 
-#define Rd(rd)  (rd.code() << kRdShift)
-#define Rt(rt)  (rt.code() << kRtShift)
-#define Rn(rn)  (rn.code() << kRnShift)
-
 class SLAssemblerArm64 : public SLAssemblerBase{
 public:
     SLAssemblerArm64(void *address) : SLAssemblerBase(address) {
@@ -91,7 +87,64 @@ public:
         }
     }
     
+    void b(int64_t offset) {
+        // encode offset:
+        int32_t imm26 = bits(offset >> 2, 0, 25);
+        emit(B | imm26);
+    }
+    void b(SLLabel *label) {
+        int offset = linkAndGetByteOffsetTo(label);
+        b(offset);
+    }
+    void br(SLRegister rn) {
+        emit(BR | Rn(rn));
+    }
+    void blr(SLRegister rn) {
+        emit(BLR | Rn(rn));
+    }
+    
+    void ldr(SLRegister rt, int64_t imm) {
+        SLLoadRegLiteralOP op;
+        switch (rt.type()) {
+            case SLCPURegister::kRegister_W:
+                op = OPT_W(LDR, literal);
+                break;
+            case SLCPURegister::kRegister_X:
+                op = OPT_X(LDR, literal);
+                break;
+            case SLCPURegister::kSIMD_FP_Register_S:
+                op = OPT_S(LDR, literal);
+                break;
+            case SLCPURegister::kSIMD_FP_Register_D:
+                op = OPT_D(LDR, literal);
+                break;
+            case SLCPURegister::kSIMD_FP_Register_Q:
+                op = OPT_Q(LDR, literal);
+                break;
+            default:
+                SLFATAL_LOG("%s\n", "unreachable code!!!");
+                op = SLLoadRegLiteralOPMask;
+                break;
+        }
+        emitLoadRegLiteral(op, rt, imm);
+    }
+    
+    void ldr(const SLCPURegister &rt, const SLMemOperand &src) {
+        loadStore(OP_X(LDR), rt, src);
+    }
+    
 private:
+    // label helpers.
+    int linkAndGetByteOffsetTo(SLLabel *label) {
+        int offset = (int)label->pos() - (int)pc_offset();
+        return offset;
+    }
+    // load helpers.
+    void emitLoadRegLiteral(SLLoadRegLiteralOP op, SLRegister rt, int64_t imm) {
+        const int32_t encoding = (int32_t)(op | LeftShift(imm, 26, 5) | Rt(rt));
+        emit(encoding);
+    }
+    
     void addSubImmediate(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand, SLAddSubImmediateOP op) {
         if (operand.isImmediate()) {
             int64_t imediate = operand.immediate();
@@ -99,6 +152,18 @@ private:
             emit((uint32_t)op | (uint32_t)Rd(rd) | (uint32_t)Rn(rn) | (uint32_t)imm12);
         } else {
             SLFATAL_LOG("unreachable code!!!");
+        }
+    }
+    
+    void loadStore(SLLoadStoreOP op, SLCPURegister rt, const SLMemOperand &addr) {
+        int64_t imm12 = addr.offset();
+        if (addr.isImmediateOffset()) {
+            imm12 = addr.offset() >> SLOPEncode::scale(SLLoadStoreUnsignedOffsetFixed | op);
+            emit((uint32_t)(SLLoadStoreUnsignedOffsetFixed | op | LeftShift(imm12, 12, 10) | Rn(addr.base()) | Rt(rt)));
+        } else if (addr.isRegisterOffset()) {
+            
+        } else {
+            
         }
     }
 };
