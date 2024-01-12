@@ -16,9 +16,14 @@
 
 class SLAssemblerBase {
 public:
-    explicit SLAssemblerBase(void *address);
+    explicit SLAssemblerBase(void *address) {
+        realized_addr_ = address;
+        buffer_ = nullptr;
+    }
     
-    ~SLAssemblerBase();
+    ~SLAssemblerBase() {
+        buffer_ = nullptr;
+    }
     
     size_t ip_offset() const;
     size_t pc_offset() const;

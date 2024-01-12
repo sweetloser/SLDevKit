@@ -7,14 +7,14 @@
 
 #include "SLAssemblerBase.hpp"
 
-SLAssemblerBase::SLAssemblerBase(void *address) {
-    realized_addr_ = address;
-    buffer_ = nullptr;
-}
-
-SLAssemblerBase::~SLAssemblerBase() {
-    buffer_ = nullptr;
-}
+//SLAssemblerBase::SLAssemblerBase(void *address) {
+//    realized_addr_ = address;
+//    buffer_ = nullptr;
+//}
+//
+//SLAssemblerBase::~SLAssemblerBase() {
+//    buffer_ = nullptr;
+//}
 
 size_t SLAssemblerBase::ip_offset() const {
     return reinterpret_cast<SLCodeBufferBase *>(buffer_)->getBufferSize();
