@@ -13,13 +13,9 @@
 #include "SLTypeAlias.hpp"
 
 #ifdef __cplusplus
-extern "C" {
-#endif
 
 void sl_instrument_routing_dispatch(SLInterceptEntry *entry, SLRegisterContext *ctx);
 
-#ifdef __cplusplus
-}
 #endif
 
 #endif /* SLInstrumentRoutingHandler_hpp */

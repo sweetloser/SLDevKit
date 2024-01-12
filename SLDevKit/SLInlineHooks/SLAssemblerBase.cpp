@@ -48,6 +48,9 @@ void SLAssemblerBase::appendRelocLabel(SLRelocLabel *label) {
 void SLAssemblerBase::setRealizedAddress(void *address) {
     realized_addr_ = address;
 }
+void *SLAssemblerBase::getRealizedAddress() {
+    return realized_addr_;
+}
 
 void SLAssemblerBase::flushICache(sl_addr_t start, int size) {}
 void SLAssemblerBase::flushICache(sl_addr_t start, sl_addr_t end) {}
