@@ -10,6 +10,7 @@
 #include "SLTypeAlias.hpp"
 #include "pac_kit.h"
 #include "SLInterceptor.hpp"
+#include "SLIntructionInstrumentRouting.hpp"
 
 int sl_instrument(void *address, sl_instrument_callback_t pre_handler) {
     if (!address) {
@@ -31,7 +32,10 @@ int sl_instrument(void *address, sl_instrument_callback_t pre_handler) {
     
     entry = new SLInterceptEntry(SLInterceptEntryTypeInstructionInstrument, (sl_addr_t)address);
     
-    
+    auto routing = new SLIntructionInstrumentRouting(entry, pre_handler, nullptr);
+    routing->prepare();
+    routing->dispatchRouting();
+    routing->commit();
     
     SLInterceptor::sharedInterceptor()->add(entry);
     

@@ -211,11 +211,48 @@ enum SLLoadStoreOP {
   V(OP_Q(STP),    0b10, 1, 0),   \
   V(OP_Q(LDP),    0b10, 1, 1)
 // clang-format on
+
 enum SLLoadStorePairOP {
 #define SLLoadStorePairOpSub(opc, V, L) LeftShift(opc, 2, 30) | LeftShift(V, 1, 26) | LeftShift(L, 1, 22)
 #define SL_LOAD_STORE_PAIR(opname, opc, V, L) OP(opname) = SLLoadStorePairOpSub(opc, V, L)
   SL_LOAD_STORE_PAIR_OP_LIST(SL_LOAD_STORE_PAIR)
 #undef LOAD_STORE_PAIR
+};
+
+enum SLLoadStorePairOffsetOP {
+    SLLoadStorePairOffsetOPFixed        = 0x29000000,
+    SLLoadStorePairOffsetOPFixedMask    = 0x3B800000,
+    SLLoadStorePairOffsetOPMask         = 0xFFC00000,
+    
+#define SLLoadStorePairOffsetOPSub(opc, V, L)       \
+    SLLoadStorePairOffsetOPFixed | LeftShift(opc, 2, 30) | LeftShift(V, 1, 26) | LeftShift(L, 1, 22)
+#define SLLOAD_STORE_PAIR_OFFSET(opname, opc, V, L) OPT(opname, offset) = SLLoadStorePairOffsetOPSub(opc, V, L)
+    SL_LOAD_STORE_PAIR_OP_LIST(SLLOAD_STORE_PAIR_OFFSET)
+#undef SLLOAD_STORE_PAIR_OFFSET
+};
+
+enum SLLoadStorePairPostIndexOP {
+    SLLoadStorePairPostIndexOPFixed             = 0x28800000,
+    SLLoadStorePairPostIndexOPFixedMask         = 0x3B800000,
+    SLLoadStorePairPostIndexOPMask              = 0xFFC00000,
+    
+#define SLLoadStorePairPostOPSub(opc, V, L)     \
+    SLLoadStorePairPostIndexOPFixed | LeftShift(opc, 2, 30) | LeftShift(V, 1, 26) | LeftShift(L, 1, 22)
+#define SLLOAD_STORE_PAIR_POST_INDEX(opname, opc, V, L) OPT(opname, post) = SLLoadStorePairPostOPSub(opc, V, L)
+    SL_LOAD_STORE_PAIR_OP_LIST(SLLOAD_STORE_PAIR_POST_INDEX)
+#undef SLLOAD_STORE_PAIR_POST_INDEX
+};
+
+enum SLLoadStorePairPreIndexOP {
+    SLLoadStorePairPreIndexOPFixed          = 0x29800000,
+    SLLoadStorePairPreIndexOPFixedMask      = 0x3B800000,
+    SLLoadStorePairPreIndexOPMask           = 0xFFC00000,
+    
+#define SLLoadStorePairPreOPSub(opc, V, L)      \
+    SLLoadStorePairPreIndexOPFixed | LeftShift(opc, 2, 30) | LeftShift(V, 1, 26) | LeftShift(L, 1, 22)
+#define SLLOAD_STORE_PAIR_PRE_INDEX(opname, opc, V, L)  OPT(opname, pre) = SLLoadStorePairPreOPSub(opc, V, L)
+    SL_LOAD_STORE_PAIR_OP_LIST(SLLOAD_STORE_PAIR_PRE_INDEX)
+#undef SLLOAD_STORE_PAIR_PRE_INDEX
 };
 
 // Load/store unsigned offset.
@@ -230,6 +267,33 @@ enum SLLoadStoreUnsignedOffset {
   OPT(opname, unsigned) = SLLoadStoreUnsignedOffsetSub(size, V, opc)
   SL_LOAD_STORE_OP_LIST(SL_LOAD_STORE_UNSIGNED_OFFSET)
 #undef SL_LOAD_STORE_UNSIGNED_OFFSET
+};
+
+
+// Generic fields.
+enum SLGenericInstrField {
+    SixtyFourBits   = 0x80000000,
+    ThirtyTwoBits   = 0x00000000,
+    FP32            = 0x00000000,
+    FP64            = 0x00400000
+};
+
+enum SLMoveWideImmediateOP {
+    SLMoveWideImmediateOPFixed          = 0x12800000,
+    SLMoveWideImmediateOPFixedMask      = 0x1F800000,
+    SLMoveWideImmediateOPMask           = 0xFF800000,
+    
+    OP(MOVN)                            = 0x00000000,
+    OP(MOVZ)                            = 0x40000000,
+    OP(MOVK)                            = 0x60000000,
+    
+#define SLMoveWideImmediateOPSub(sf, opc)   SLMoveWideImmediateOPFixed | LeftShift(sf, 1, 31) | LeftShift(opc, 2, 29)
+    OP_W(MOVN)                          = SLMoveWideImmediateOPFixed | MOVN,
+    OP_X(MOVN)                          = SLMoveWideImmediateOPFixed | MOVN | SixtyFourBits,
+    OP_W(MOVZ)                          = SLMoveWideImmediateOPFixed | MOVZ,
+    OP_X(MOVZ)                          = SLMoveWideImmediateOPFixed | MOVZ | SixtyFourBits,
+    OP_W(MOVK)                          = SLMoveWideImmediateOPFixed | MOVK,
+    OP_X(MOVK)                          = SLMoveWideImmediateOPFixed | MOVK | SixtyFourBits,
 };
 
 /**
@@ -256,6 +320,20 @@ SLAddSubImmediateOPFixed | LeftShift(sf, 1, 31) | LeftShift(op, 1, 30) | LeftShi
     OPT_X(ADDS, imm)    = SLAddSubImmediateOpSub(1, 0, 1),
     OPT_X(SUB, imm)     = SLAddSubImmediateOpSub(1, 1, 0),
     OPT_X(SUBS, imm)    = SLAddSubImmediateOpSub(1, 1, 1),
+};
+
+
+enum SLLogicalOP {
+    SLLogicOPMask       = 0x60200000,
+    NOT                 = 0x00200000,
+    AND                 = 0x00000000,
+    BIC                 = AND | NOT,
+    ORR                 = 0x20000000,
+    ORN                 = ORR | NOT,
+    EOR                 = 0x40000000,
+    EON                 = EOR | NOT,
+    ANDS                = 0x60000000,
+    BICS                = ANDS | NOT,
 };
 
 #endif /* SLConstantsArm64_hpp */

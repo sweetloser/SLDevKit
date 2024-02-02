@@ -17,13 +17,13 @@
 #include "SLCPURegister.hpp"
 #include "SLOperand.hpp"
 
-class SLAssemblerArm64 : public SLAssemblerBase{
+class SLAssembler : public SLAssemblerBase{
 public:
-    SLAssemblerArm64(void *address) : SLAssemblerBase(address) {
+    SLAssembler(void *address) : SLAssemblerBase(address) {
         buffer_ = new SLCodeBuffer();
     }
     
-    ~SLAssemblerArm64() {
+    ~SLAssembler() {
         if (buffer_) {
             delete buffer_;
         }
@@ -133,6 +133,55 @@ public:
         loadStore(OP_X(LDR), rt, src);
     }
     
+    void str(const SLCPURegister &rt, const SLMemOperand &src) {
+        loadStore(OP_X(STR), rt, src);
+    }
+    
+    void ldp(const SLRegister &rt1, const SLRegister &rt2, const SLMemOperand &src) {
+        if (rt1.type() == SLRegister::kSIMD_FP_Register_128) {
+            loadStorePair(OP_Q(LDP), rt1, rt2, src);
+        } else if (rt1.type() == SLRegister::kRegister_X) {
+            loadStorePair(OP_X(LDP), rt1, rt2, src);
+        } else {
+            // 未定义
+        }
+    }
+    
+    void stp(const SLRegister &rt1, const SLRegister &rt2, const SLMemOperand &dst) {
+        if (rt1.type() == SLRegister::kSIMD_FP_Register_128) {
+            loadStorePair(OP_Q(STP), rt1, rt2, dst);
+        } else if (rt1.type() == SLRegister::kRegister_X) {
+            loadStorePair(OP_X(STP), rt1, rt2, dst);
+        } else {
+            // 未定义
+        }
+    }
+    
+    void mov(const SLRegister &rd, const SLRegister &rn) {
+        if (rd.is(SP) || rn.is(SP)) {
+            add(rd, rn, 0);
+        } else {
+            if (rd.is64Bits()) {
+                orr(rd, xzr, SLOperand(rn));
+            } else {
+                orr(rd, wzr, SLOperand(rn));
+            }
+        }
+    }
+    
+    void movk(const SLRegister &rd, uint64_t imm, int shift = -1) {
+        moveWide(rd, imm, shift, MOVK);
+    }
+    void movn(const SLRegister &rd, uint64_t imm, int shift = -1) {
+        moveWide(rd, imm, shift, MOVN);
+    }
+    void movz(const SLRegister &rd, uint64_t imm, int shift = -1) {
+        moveWide(rd, imm, shift, MOVZ);
+    }
+    void orr(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand) {
+        logical(rd, rn, operand, ORR);
+    }
+    
 private:
     // label helpers.
     int linkAndGetByteOffsetTo(SLLabel *label) {
@@ -161,11 +210,49 @@ private:
             imm12 = addr.offset() >> SLOPEncode::scale(SLLoadStoreUnsignedOffsetFixed | op);
             emit((uint32_t)(SLLoadStoreUnsignedOffsetFixed | op | LeftShift(imm12, 12, 10) | Rn(addr.base()) | Rt(rt)));
         } else if (addr.isRegisterOffset()) {
-            
+            // 未定义
         } else {
+            // 未定义
+        }
+    }
+    
+    void loadStorePair(SLLoadStorePairOP op, SLCPURegister rt1, SLCPURegister rt2, const SLMemOperand &addr) {
+        int32_t combine_fields_op = SLOPEncode::loadStorePair(op, rt1, rt2, addr) | Rt2(rt2) | Rn(addr.base()) | Rt(rt1);
+        int32_t addrmodeop;
+        
+        if (addr.isImmediateOffset()) {
+            addrmodeop = SLLoadStorePairOffsetOPFixed;
+        } else {
+            if (addr.isPreIndex()) {
+                addrmodeop = SLLoadStorePairPreIndexOPFixed;
+            } else {
+                addrmodeop = SLLoadStorePairPostIndexOPFixed;
+            }
+        }
+        emit(op | addrmodeop | combine_fields_op);
+    }
+    
+    void moveWide(SLRegister rd, uint64_t imm, int shift, SLMoveWideImmediateOP op) {
+        if (shift > 0) {
+            shift /= 16;
+        } else {
+            shift = 0;
+        }
+        
+        int32_t imm16 = (int32_t)LeftShift(imm, 16, 5);
+        emit(SLMoveWideImmediateOPFixed | op | SLOPEncode::sf(rd) | LeftShift(shift, 2, 21) | imm16 | Rd(rd));
+    }
+    
+    void logical(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand, SLLogicalOP op) {
+        if (operand.isImmediate()) {
             
         }
     }
+    void logicalImmediate(const SLRegister &rd, const SLRegister &rn, const SLOperand &operand, SLLogicalOP op) {
+        int32_t combine_fields_op = SLOPEncode::encodeLogicalImmediate(rd, rn, operand);
+        emit(op | combine_fields_op);
+    }
+    
 };
 
 #endif

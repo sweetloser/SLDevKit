@@ -15,6 +15,15 @@ extern "C" {
 #include <stdio.h>
 #include "SLTypeAlias.hpp"
 
+/**
+ * memory code patch.
+ * 
+ * @param address address description
+ * @param buffer buffer description
+ * @param buffer_size buffer_size description
+ */
+int sl_codePatch(void *address, uint8_t *buffer, uint32_t buffer_size);
+
 
 int sl_instrument(void *address, sl_instrument_callback_t pre_handler);
 

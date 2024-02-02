@@ -20,5 +20,117 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CCD383B-2D2B-4768-8AE4-3F4A122E72B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SLDevKit/main.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "main(argc, argv)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "7CCD383B-2D2B-4768-8AE4-3F4A122E72B5 - 6a4741b4a621dcd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "SLDevKit_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zengxiangxiang/sl/git/SLDevKit/Example/SLDevKit/main.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "7CCD383B-2D2B-4768-8AE4-3F4A122E72B5 - 6a4741b4a621dd56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "SLDevKit_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zengxiangxiang/sl/git/SLDevKit/Example/SLDevKit/main.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20570CB1-3525-4581-9FC6-C72395CBC3DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SLDevKit/SLInlineHooks/SLCodePatchImpl.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "sl_codePatch(address, buffer, buffer_size)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "20570CB1-3525-4581-9FC6-C72395CBC3DA - 9147f598a4ac1067"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sl_codePatch"
+                  moduleName = "SLDevKit_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zengxiangxiang/sl/git/SLDevKit/SLDevKit/SLInlineHooks/SLCodePatchImpl.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "20570CB1-3525-4581-9FC6-C72395CBC3DA - 9147f598a4ac1067"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sl_codePatch"
+                  moduleName = "SLDevKit_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zengxiangxiang/sl/git/SLDevKit/SLDevKit/SLInlineHooks/SLCodePatchImpl.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCCD0560-4714-491E-B5FE-557300997EE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SLDevKit/SLInlineHooks/SLInstrumentImpl.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "sl_instrument(address, pre_handler)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -28,7 +28,9 @@ public:
         trampoline_target_ = 0;
     }
     
+    // pure vitrual function
     virtual void dispatchRouting() = 0;
+    
     virtual void prepare();
     virtual void active();
     void commit();
@@ -53,6 +55,8 @@ public:
     
     
 public:
+protected:
+    bool generateRelocateCode();
 protected:
     SLInterceptEntry *entry_;
     

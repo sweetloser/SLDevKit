@@ -11,6 +11,17 @@
 // left/right shift
 #define LeftShift(a, b, c)  ((a & ((1 << b) - 1)) << c)
 
+// align
+#ifndef ALIGN
+#define ALIGN ALIGN_FLOOR
+#endif
+
+// partition the memory according to the specified size.
+// the memory page where the given address is located.
+#define ALIGN_FLOOR(address, range) ((uintptr_t)address & ~((uintptr_t)range - 1))
+// the next page of the memory page where the address is located.
+#define ALIGN_CEIL(address, range) (((uintptr_t)address + (uintptr_t)range - 1) & ~((uintptr_t)range - 1))
+
 // The mask of a given bit.
 // eg. submask(4) ===> 0b11111 = 0x1f = 31
 #define submask(x) ((1L << ((x) + 1)) - 1)
@@ -30,5 +41,8 @@
 
 // set values from st to fn bits.
 #define set_bits(obj, st, fn, bits) obj = (((~(submask(fn - st) << st)) & obj) | (bits << st))
+
+#define PUBLIC __attribute__((visibility("default")))
+#define INTERNAL __attribute__((visibility("internal")))
 
 #endif /* SLUtilityMacro_hpp */

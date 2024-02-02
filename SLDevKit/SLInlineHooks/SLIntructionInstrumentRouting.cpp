@@ -15,5 +15,9 @@ void SLIntructionInstrumentRouting::buildRouting() {
     handler = pac_strip(handler);
 #endif
     
-    
+}
+
+void SLIntructionInstrumentRouting::dispatchRouting() {
+    buildRouting();
+    generateRelocateCode();
 }

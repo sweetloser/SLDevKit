@@ -137,6 +137,7 @@ constexpr SLRegister wLR    = w30;
 
 #define Rd(rd)  (rd.code() << kRdShift)
 #define Rt(rt)  (rt.code() << kRtShift)
+#define Rt2(rt) (rt.code() << kRt2Shift)
 #define Rn(rn)  (rn.code() << kRnShift)
 #define Rm(rm)  (rm.code() << kRmShift)
 
