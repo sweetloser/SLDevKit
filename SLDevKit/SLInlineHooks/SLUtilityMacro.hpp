@@ -45,4 +45,8 @@
 #define PUBLIC __attribute__((visibility("default")))
 #define INTERNAL __attribute__((visibility("internal")))
 
+#if defined(__arm64__) || defined(__aarch64__)
+#define SL_ARM64_TMP_REG_NDX_0 17
+#endif
+
 #endif /* SLUtilityMacro_hpp */

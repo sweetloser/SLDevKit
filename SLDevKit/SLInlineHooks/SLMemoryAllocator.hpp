@@ -14,14 +14,6 @@
 #include "SLInlineHooks.hpp"
 #include <vector>
 
-enum SLMemoryPermission {
-    kNoAccess,
-    kRead,
-    kReadWrite,
-    kReadWriteExecute,
-    kReadExecute,
-};
-
 struct SLMemRange {
     sl_addr_t start;
     sl_addr_t end;
@@ -64,11 +56,36 @@ struct SLMemoryArena : SLMemRange {
 
 using SLCodeMemBlock = SLMemBlock;
 using SLCodeMemoryArena = SLMemoryArena;
+using SLDataMemoryArena = SLMemoryArena;
+using SLDataMemBlock = SLMemBlock;
 
+class SLNearMemoryAllocator;
 class SLMemoryAllocator {
-public:
+    friend class SLNearMemoryAllocator;
     
+private:
+    std::vector<SLCodeMemoryArena *> code_arenas;
+    std::vector<SLDataMemoryArena *> data_arenas;
+    
+private:
+    static SLMemoryAllocator *shared_allocator;
+    
+public:
+    static SLMemoryAllocator *sharedAllocator();
+    
+public:
+    SLCodeMemoryArena *allocateCodeMemoryArena(uint32_t size);
+    SLCodeMemBlock *allocteExecBlock(uint32_t size);
+    uint8_t *allocateExecMemory(uint32_t size);
+    uint8_t *allocateExecMemory(uint8_t *buffer, uint32_t buffer_size);
+    
+    SLDataMemoryArena *allocateDataMemoryArena(uint32_t size);
+    SLDataMemBlock *allocateDataBlock(uint32_t size);
+    uint8_t *allocateDataMemory(uint32_t size);
+    uint8_t *allocateDataMemory(uint8_t *buffer, uint32_t buffer_size);
 };
+
+
 
 #endif  // endif __cplusplus
 #endif /* SLMemoryAllocator_hpp */

@@ -9,8 +9,10 @@
 #define SLClosureTrampoline_hpp
 
 #include <stdio.h>
-#ifdef __cplusplus
 #include <vector>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef struct {
     void *adress;
@@ -19,6 +21,10 @@ typedef struct {
     void *carry_data;
 }SLClosureTrampolineEntry;
 
+#ifdef __cplusplus
+}
+#endif
+
 class SLClosureTrampoline {
 private:
     static std::vector<SLClosureTrampolineEntry> *trampolines_;
@@ -26,7 +32,5 @@ private:
 public:
     static SLClosureTrampolineEntry *createClosureTrampoline(void *carry_data, void *carry_handler);
 };
-
-#endif
 
 #endif /* SLClosureTrampoline_hpp */

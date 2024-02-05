@@ -118,5 +118,13 @@ typedef void(*sl_instrument_callback_t)(void *address, SLRegisterContext *ctx);
 
 enum sl_ref_label_type_t { kLabelImm19 };
 
+enum SLMemoryPermission {
+    kNoAccess,
+    kRead,
+    kReadWrite,
+    kReadWriteExecute,
+    kReadExecute,
+};
+
 
 #endif /* SLTypeAlias_h */
