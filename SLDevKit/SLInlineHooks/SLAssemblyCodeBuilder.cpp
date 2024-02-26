@@ -14,6 +14,17 @@ SLAssemblyCode * SLAssemblyCodeBuilder::finalizeFromTurboAssembler(SLAssemblerBa
     if (!realized_addr) {
         size_t buffer_size = 0;
         buffer_size = buffer->getBufferSize();
+        
+        auto block = SLMemoryAllocator::sharedAllocator()->allocteExecBlock((uint32_t)buffer_size);
+        if (block == nullptr) {
+            return nullptr;
+        }
+        
+        realized_addr = block->addr;
+        assembler->setRealizedAddress((void *)realized_addr);
     }
-    auto block = SLMemoryAllocator();
+    
+    sl_codePatch((void *)realized_addr, buffer->getBuffer(), (uint32_t)buffer->getBufferSize());
+    auto block = new SLAssemblyCode(realized_addr, buffer->getBufferSize());
+    return block;
 }

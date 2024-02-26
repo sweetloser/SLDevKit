@@ -8,6 +8,8 @@
 #include "SLInterceptRouting.hpp"
 #include "SLInstructionRelocationARM64.hpp"
 #include "SLLogger.h"
+#include "SLRoutingPluginInterface.hpp"
+#include "SLNormalTrampoline.hpp"
 
 void SLInterceptRouting::prepare() {
 }
@@ -37,13 +39,35 @@ bool SLInterceptRouting::generateRelocateCode() {
     
     return true;
 }
+
+bool SLInterceptRouting::generateTrampolineBuffer(sl_addr_t src, sl_addr_t dst) {
+    if (SLRoutingPluginManager::near_branch_trampoline) {
+        auto plugin = static_cast<SLRoutingPluginInterface *>(SLRoutingPluginManager::near_branch_trampoline);
+        if (plugin->generateTrampolineBuffer(this, src, dst) == false) {
+            SLDEBUG_LOG("failed enable near branch trampoline plugin");
+        }
+    }
+    
+    if (getTrampolineBuffer() == nullptr) {
+        auto tramp_buffer = generateNormalTrampolineBuffer(src, dst);
+        setTrampolineBuffer(tramp_buffer);
+    }
+    
+    return true;
+}
+
 void SLInterceptRouting::active() {
     auto ret = sl_codePatch((void *)entry_->patched_addr, trampoline_buffer_->getBuffer(), (uint32_t)trampoline_buffer_->getBufferSize());
     if (ret == -1) {
+        SLERROR_LOG("[intercept routing] active failed");
         return;
     }
+    SLDEBUG_LOG("[intercept routing] active");
 }
 void SLInterceptRouting::commit() {
     this->active();
+}
+SLInterceptEntry *SLInterceptRouting::getInterceptEntry() {
+    return entry_;
 }
 

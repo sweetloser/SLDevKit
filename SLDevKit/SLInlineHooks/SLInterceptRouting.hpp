@@ -57,6 +57,9 @@ public:
 public:
 protected:
     bool generateRelocateCode();
+    
+    bool generateTrampolineBuffer(sl_addr_t src, sl_addr_t dst);
+    
 protected:
     SLInterceptEntry *entry_;
     
