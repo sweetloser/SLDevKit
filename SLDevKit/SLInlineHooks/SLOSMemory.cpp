@@ -7,6 +7,8 @@
 
 #include "SLOSMemory.hpp"
 #include <unistd.h>
+#include <sys/errno.h>
+#include "SLCheckLogging.hpp"
 #include <sys/mman.h>
 #if defined(__APPLE__)
 #include <dlfcn.h>
@@ -55,4 +57,19 @@ void *SLOSMemory::allocate(size_t size, SLMemoryPermission access, void *fixed_a
         return nullptr;
     }
     return result;
+}
+
+bool SLOSMemory::free(void *address, size_t size) {
+    return munmap(address, size) == 0;
+}
+bool SLOSMemory::release(void *address, size_t size) {
+    return munmap(address, size) == 0;
+}
+bool SLOSMemory::setPermission(void *address, size_t size, SLMemoryPermission access) {
+    int prot = getProtectionFromMemoryPermission(access);
+    int ret = mprotect(address, size, prot);
+    if (ret) {
+        SLERROR_LOG("SLOSMemory::setPermission: %s\n", strerror(errno));
+    }
+    return ret == 0;
 }

@@ -15,7 +15,7 @@ extern "C" {
 #endif
 
 typedef struct {
-    void *adress;
+    void *address;
     int size;
     void *carry_handler;
     void *carry_data;

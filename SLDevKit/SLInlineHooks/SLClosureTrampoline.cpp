@@ -7,6 +7,8 @@
 
 #include "SLClosureTrampoline.hpp"
 #include "SLTurboAssembler.hpp"
+#include "SLAssemblyCodeBuilder.hpp"
+#include "SLClosureBridge.hpp"
 
 SLClosureTrampolineEntry *SLClosureTrampoline::createClosureTrampoline(void *carry_data, void *carry_handler) {
     SLClosureTrampolineEntry *tramp_entry = nullptr;
@@ -35,6 +37,16 @@ SLClosureTrampolineEntry *SLClosureTrampoline::createClosureTrampoline(void *car
     _ pseudoBind(&entry_label);
     _ emitInt64((uint64_t)tramp_entry);
     _ pseudoBind(&forward_bridge_label);
+    _ emitInt64((uint64_t)get_closure_bridge());
+    
+    auto closure_tramp = SLAssemblyCodeBuilder::finalizeFromTurboAssembler(static_cast<SLAssemblerBase *>(&turbo_assembler_));
+    
+    tramp_entry->address = (void *)closure_tramp->addr;
+    tramp_entry->size = (int)closure_tramp->size;
+    tramp_entry->carry_data = carry_data;
+    tramp_entry->carry_handler = carry_handler;
+    
+    delete closure_tramp;
     
     return tramp_entry;
 }

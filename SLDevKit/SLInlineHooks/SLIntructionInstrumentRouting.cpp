@@ -16,11 +16,13 @@ void SLIntructionInstrumentRouting::buildRouting() {
     handler = pac_strip(handler);
 #endif
     auto closure_trampoline = SLClosureTrampoline::createClosureTrampoline(entry_, handler);
-    this->setTrampolineTarget((sl_addr_t)closure_trampoline->adress);
+    this->setTrampolineTarget((sl_addr_t)closure_trampoline->address);
     
     sl_addr_t from = entry_->patched_addr;
     
     sl_addr_t to = getTrampolineTraget();
+    
+    generateTrampolineBuffer(from, to);
     
 }
 

@@ -50,6 +50,7 @@ SLCodeMemBlock *SLMemoryAllocator::allocteExecBlock(uint32_t size) {
     if (!block) {
         auto arena_size = ALIGN_CEIL(size, SLOSMemory::pageSize());
         auto arena = allocateCodeMemoryArena((uint32_t)arena_size);
+        block = arena->allocMemBlock(size);
         CHECK_NOT_NULL(block);
     }
     return block;

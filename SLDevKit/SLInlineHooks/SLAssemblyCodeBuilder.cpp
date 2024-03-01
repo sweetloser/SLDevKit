@@ -25,6 +25,7 @@ SLAssemblyCode * SLAssemblyCodeBuilder::finalizeFromTurboAssembler(SLAssemblerBa
     }
     
     sl_codePatch((void *)realized_addr, buffer->getBuffer(), (uint32_t)buffer->getBufferSize());
+    
     auto block = new SLAssemblyCode(realized_addr, buffer->getBufferSize());
     return block;
 }

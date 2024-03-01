@@ -22,8 +22,9 @@ int main(int argc, char * argv[]) {
     
     uint8_t ret[4] = {0x1F, 0x20, 0x03, 0xD5};
     
-    sl_codePatch(&add, ret, 4);
+//    sl_codePatch(&add, ret, 4);
     sl_instrument(&add, (sl_instrument_callback_t)&callback);
+    add(10, 20);
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SLAppDelegate class]));
     }

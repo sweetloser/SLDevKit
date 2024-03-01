@@ -7,6 +7,7 @@
 //
 
 #import "SLHookVC.h"
+#import <SLDevKit/SLDevKit.h>
 
 @interface SLHookVC ()
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.bgColor(@"#FFF");
     // Do any additional setup after loading the view.
 }
 

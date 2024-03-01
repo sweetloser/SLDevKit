@@ -6,3 +6,7 @@
 //
 
 #include "SLExternalReference.hpp"
+
+const void *SLExternalReference::address() {
+    return address_;
+}

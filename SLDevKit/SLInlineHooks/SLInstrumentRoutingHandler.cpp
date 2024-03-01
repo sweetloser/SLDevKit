@@ -7,6 +7,7 @@
 
 #include "SLInstrumentRoutingHandler.hpp"
 #include "SLIntructionInstrumentRouting.hpp"
+#include "SLCommonBridgeHandler.hpp"
 
 void sl_instrument_forward_handler(SLInterceptEntry *entry, SLRegisterContext *ctx) {
     auto routing = static_cast<SLIntructionInstrumentRouting *>(entry->routing);
@@ -14,6 +15,7 @@ void sl_instrument_forward_handler(SLInterceptEntry *entry, SLRegisterContext *c
         auto handler = (sl_instrument_callback_t)routing->pre_handler;
         (*handler)((void *)entry->patched_addr, ctx);
     }
+    sl_set_routing_bridge_next_hop(ctx, (void *)entry->relocated_addr);
 }
 
 void sl_instrument_routing_dispatch(SLInterceptEntry *entry, SLRegisterContext *ctx) {
