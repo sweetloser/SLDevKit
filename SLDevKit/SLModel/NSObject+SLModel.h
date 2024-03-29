@@ -30,12 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)sl_modelWithDictionary:(NSDictionary *)dictionary;
 
-/**
- * 根据字典更新对象的属性值
- *
- * - Parameter dictionary: 字典对象
- */
-- (BOOL)sl_modelSetWithDictionary:(NSDictionary *)dictionary;
+///**
+// * 根据字典更新对象的属性值
+// *
+// * - Parameter dictionary: 字典对象
+// */
+//- (BOOL)sl_modelSetWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

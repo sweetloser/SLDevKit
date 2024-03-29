@@ -226,7 +226,7 @@
 @end
 
 /// 顶部安全区高度
-CGFloat _safeDistanceTop(void) {
+__attribute__((always_inline)) CGFloat _safeDistanceTop(void) {
     if (@available(iOS 13.0, *)) {
         NSSet *set = [UIApplication sharedApplication].connectedScenes;
         UIWindowScene *windowScene = [set anyObject];
@@ -240,7 +240,7 @@ CGFloat _safeDistanceTop(void) {
 }
 
 /// 底部安全区高度
-CGFloat _safeDistanceBottom(void) {
+__attribute__((always_inline)) CGFloat _safeDistanceBottom(void) {
     if (@available(iOS 13.0, *)) {
         NSSet *set = [UIApplication sharedApplication].connectedScenes;
         UIWindowScene *windowScene = [set anyObject];
@@ -255,7 +255,7 @@ CGFloat _safeDistanceBottom(void) {
 
 
 /// 顶部状态栏高度（包括安全区）
-CGFloat _statusBarHeight(void) {
+__attribute__((always_inline)) CGFloat _statusBarHeight(void) {
     if (@available(iOS 13.0, *)) {
         NSSet *set = [UIApplication sharedApplication].connectedScenes;
         UIWindowScene *windowScene = [set anyObject];
@@ -267,26 +267,26 @@ CGFloat _statusBarHeight(void) {
 }
 
 /// 导航栏高度
-CGFloat _navigationBarHeight(void) {
+__attribute__((always_inline)) CGFloat _navigationBarHeight(void) {
     return 44.0f;
 }
 
 /// 状态栏+导航栏的高度
-CGFloat _navigationFullHeight(void) {
+__attribute__((always_inline)) CGFloat _navigationFullHeight(void) {
     return _statusBarHeight() + _navigationBarHeight();
 }
 
 /// 底部导航栏高度
-CGFloat _tabBarHeight(void) {
+__attribute__((always_inline)) CGFloat _tabBarHeight(void) {
     return 49.0f;
 }
 
 /// 底部导航栏高度（包括安全区）
-CGFloat _tabBarFullHeight(void) {
+__attribute__((always_inline)) CGFloat _tabBarFullHeight(void) {
     return _tabBarHeight() + _safeDistanceBottom();
 }
 
-UIEdgeInsets SLConvertSLEdgeInsetsToUIEdgeInsets(SLEdgeInsets insets, NSInteger number) {
+__attribute__((always_inline)) UIEdgeInsets SLConvertSLEdgeInsetsToUIEdgeInsets(SLEdgeInsets insets, NSInteger number) {
     UIEdgeInsets newInsets;
     CGFloat a = insets.value.top;
     CGFloat b = insets.value.left;
