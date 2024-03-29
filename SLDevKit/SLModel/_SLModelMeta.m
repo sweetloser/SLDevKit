@@ -54,6 +54,7 @@
                     }
                 }
             }];
+            genericMapper = tmp;
         }
     }
     
